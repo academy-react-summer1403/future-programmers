@@ -46,22 +46,8 @@ return (
                 </Form>
             </Formik>
         </div>
-
-        <div className='w-[72%] h-auto mt-6 pt-5 flex flex-row flex-wrap justify-between gap-y-24'>
-            {Course.map((item, index)=>{
-                return(
-                    <CourseCard 
-                    key={index}
-                    image={item.image}
-                    topic={item.topic} 
-                    explain={item.explain} 
-                    teacher={item.teacher} 
-                    time={item.time} 
-                    price={item.price} />  
-                );   
-            })}             
-        </div>
-        <div className='w-[310px] h-full pb-3 mt-[19px] ml-5 rounded-[20px] bg-white '> 
+        <div className='flex'>
+        <div className='w-[310px] h-fit pb-3 mt-[19px] ml-5 rounded-[20px] bg-white '> 
             <h2 className='mr-2 mt-1'>فیلترها</h2>
             <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[97%] mx-auto">
                 <input type="checkbox" name="my-accordion-2" defaultChecked />
@@ -92,6 +78,23 @@ return (
                 </div>
             </div>              
         </div>
+        <div className='w-[72%] h-auto mt-6 pt-5 flex flex-row flex-wrap justify-start gap-x-4 gap-y-24'>
+            {Course.map((item, index)=>{
+                return(
+                    <CourseCard 
+                    key={index}
+                    image={item.image}
+                    topic={item.topic} 
+                    explain={item.explain} 
+                    teacher={item.teacher} 
+                    time={item.time} 
+                    price={item.price} />  
+                );   
+            })}             
+        </div>
+        </div>
+
+      
     </div>
     <div className='w-[100%] text-center'>
         <div className="join my-5">
