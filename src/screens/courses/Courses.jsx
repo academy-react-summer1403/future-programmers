@@ -1,6 +1,5 @@
 import {Formik, Field, Form} from 'formik';
-import CourseCard from './CourseCard';
-import { useState } from 'react';
+import CourseCard from '../../component/CoursePage/CourseCard';
 import Accardion from '../../Components/Accardion';
 
 const Courses = () => {
