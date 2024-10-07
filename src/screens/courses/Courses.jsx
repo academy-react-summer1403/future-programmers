@@ -53,21 +53,91 @@ return (
                 <input type="checkbox" name="my-accordion-2" defaultChecked />
                 <div className="collapse-title text-[14px]">دسته بندی</div>
                 <div className="collapse-content">
-                    <p>hello</p> 
+
+                    <div className="form-control">
+                        <label className="label cursor-pointer">
+                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
+                            <span className="label-text absolute right-14">ری اکت </span>
+                        </label>
+                    </div>
+                    <div className="form-control">
+                        <label className="label cursor-pointer">
+                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
+                            <span className="label-text absolute right-14">ری اکت </span>
+                        </label>
+                    </div>
+                    <div className="form-control">
+                        <label className="label cursor-pointer">
+                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
+                            <span className="label-text absolute right-14">ری اکت </span>
+                        </label>
+                    </div>
+                    <div className="form-control">
+                        <label className="label cursor-pointer">
+                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
+                            <span className="label-text absolute right-14">ری اکت </span>
+                        </label>
+                    </div>
                 </div>
             </div>
             <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[97%] mx-auto">
                 <input type="checkbox" name="my-accordion-2" />
                 <div className="collapse-title text-[14px]">نوع دوره</div>
                 <div className="collapse-content">
-                    <p>hello</p>
+                <div className="form-control">
+                        <label className="label cursor-pointer">
+                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
+                            <span className="label-text absolute right-14">ری اکت </span>
+                        </label>
+                    </div>
+                    <div className="form-control">
+                        <label className="label cursor-pointer">
+                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
+                            <span className="label-text absolute right-14">ری اکت </span>
+                        </label>
+                    </div>
+                    <div className="form-control">
+                        <label className="label cursor-pointer">
+                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
+                            <span className="label-text absolute right-14">ری اکت </span>
+                        </label>
+                    </div>
+                    <div className="form-control">
+                        <label className="label cursor-pointer">
+                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
+                            <span className="label-text absolute right-14">ری اکت </span>
+                        </label>
+                    </div>
                 </div>
             </div>
             <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[97%] mx-auto">
                 <input type="checkbox" name="my-accordion-2" />
                 <div className="collapse-title text-[14px]">سطح دوره</div>
                 <div className="collapse-content">
-                    <p>hello</p>
+                <div className="form-control">
+                        <label className="label cursor-pointer">
+                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
+                            <span className="label-text absolute right-14">ری اکت </span>
+                        </label>
+                    </div>
+                    <div className="form-control">
+                        <label className="label cursor-pointer">
+                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
+                            <span className="label-text absolute right-14">ری اکت </span>
+                        </label>
+                    </div>
+                    <div className="form-control">
+                        <label className="label cursor-pointer">
+                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
+                            <span className="label-text absolute right-14">ری اکت </span>
+                        </label>
+                    </div>
+                    <div className="form-control">
+                        <label className="label cursor-pointer">
+                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
+                            <span className="label-text absolute right-14">ری اکت </span>
+                        </label>
+                    </div>
                 </div>
             </div>   
             <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[97%] mx-auto">
