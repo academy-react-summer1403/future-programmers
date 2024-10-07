@@ -10,9 +10,9 @@ const Courses = () => {
     {image:'public/01.jpg',topic:'آموزش ری اکت 3', explain:'آموزش می دهیم. آموزش نمی دهیم', teacher:'استاد سه',time:'12:12:12', price:'رایگان!'}
 ])
 
-const FilterState=(topic)=>{
-    setCourse(Course.filter((f)=>f.course === Course.topic))
-}
+// const FilterState=(topic)=>{
+//     setCourse(Course.filter((f)=>f.course === Course.topic))
+// }
 
 return (
 <div className='bg-[#a09f9f] font-[sans]'>
