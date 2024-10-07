@@ -50,9 +50,8 @@ return (
         <div className='flex'>
         <div className='w-[310px] h-fit pb-3 mt-[19px] ml-5 rounded-[20px] bg-white '> 
             <h2 className='mr-2 mt-1'>فیلترها</h2>
-            <Accardion topic='دسته بندی' subject1='فرانت اند' subject2='بک اند' subject3='React' subject4='Next js' />
-            <Accardion  topic='نوع دوره' subject1='حضوری' subject2='آنلاین' subject3='حضوری-آنلاین'/>
-            <Accardion topic='سطح دوره' subject1='مبتدی' subject2='متوسط' subject3='پیشرفته'/>
+            <Accardion />
+         
             <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[97%] mx-auto">
                 <input type="checkbox" name="my-accordion-2" />
                 <div className="collapse-title text-[14px]"> قیمت</div>
