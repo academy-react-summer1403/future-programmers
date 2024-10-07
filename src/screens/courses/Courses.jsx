@@ -1,6 +1,7 @@
 import {Formik, Field, Form} from 'formik';
 import CourseCard from './CourseCard';
 import { useState } from 'react';
+import Accardion from '../../Components/Accardion';
 
 const Courses = () => {
   const[Course, setCourse]=useState([
@@ -49,97 +50,9 @@ return (
         <div className='flex'>
         <div className='w-[310px] h-fit pb-3 mt-[19px] ml-5 rounded-[20px] bg-white '> 
             <h2 className='mr-2 mt-1'>فیلترها</h2>
-            <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[97%] mx-auto">
-                <input type="checkbox" name="my-accordion-2" defaultChecked />
-                <div className="collapse-title text-[14px]">دسته بندی</div>
-                <div className="collapse-content">
-
-                    <div className="form-control">
-                        <label className="label cursor-pointer">
-                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
-                            <span className="label-text absolute right-14">ری اکت </span>
-                        </label>
-                    </div>
-                    <div className="form-control">
-                        <label className="label cursor-pointer">
-                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
-                            <span className="label-text absolute right-14">ری اکت </span>
-                        </label>
-                    </div>
-                    <div className="form-control">
-                        <label className="label cursor-pointer">
-                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
-                            <span className="label-text absolute right-14">ری اکت </span>
-                        </label>
-                    </div>
-                    <div className="form-control">
-                        <label className="label cursor-pointer">
-                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
-                            <span className="label-text absolute right-14">ری اکت </span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[97%] mx-auto">
-                <input type="checkbox" name="my-accordion-2" />
-                <div className="collapse-title text-[14px]">نوع دوره</div>
-                <div className="collapse-content">
-                <div className="form-control">
-                        <label className="label cursor-pointer">
-                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
-                            <span className="label-text absolute right-14">ری اکت </span>
-                        </label>
-                    </div>
-                    <div className="form-control">
-                        <label className="label cursor-pointer">
-                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
-                            <span className="label-text absolute right-14">ری اکت </span>
-                        </label>
-                    </div>
-                    <div className="form-control">
-                        <label className="label cursor-pointer">
-                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
-                            <span className="label-text absolute right-14">ری اکت </span>
-                        </label>
-                    </div>
-                    <div className="form-control">
-                        <label className="label cursor-pointer">
-                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
-                            <span className="label-text absolute right-14">ری اکت </span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[97%] mx-auto">
-                <input type="checkbox" name="my-accordion-2" />
-                <div className="collapse-title text-[14px]">سطح دوره</div>
-                <div className="collapse-content">
-                <div className="form-control">
-                        <label className="label cursor-pointer">
-                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
-                            <span className="label-text absolute right-14">ری اکت </span>
-                        </label>
-                    </div>
-                    <div className="form-control">
-                        <label className="label cursor-pointer">
-                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
-                            <span className="label-text absolute right-14">ری اکت </span>
-                        </label>
-                    </div>
-                    <div className="form-control">
-                        <label className="label cursor-pointer">
-                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
-                            <span className="label-text absolute right-14">ری اکت </span>
-                        </label>
-                    </div>
-                    <div className="form-control">
-                        <label className="label cursor-pointer">
-                            <input type="checkbox" defaultChecked className="checkbox checkbox-primary" />
-                            <span className="label-text absolute right-14">ری اکت </span>
-                        </label>
-                    </div>
-                </div>
-            </div>   
+            <Accardion topic='دسته بندی' subject1='فرانت اند' subject2='بک اند' subject3='React' subject4='Next js' />
+            <Accardion  topic='نوع دوره' subject1='حضوری' subject2='آنلاین' subject3='حضوری-آنلاین'/>
+            <Accardion topic='سطح دوره' subject1='مبتدی' subject2='متوسط' subject3='پیشرفته'/>
             <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[97%] mx-auto">
                 <input type="checkbox" name="my-accordion-2" />
                 <div className="collapse-title text-[14px]"> قیمت</div>
