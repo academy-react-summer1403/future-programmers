@@ -43,7 +43,7 @@ return (
                     <label htmlFor='#' className='cursor-pointer checked:[text-[red] font-bold]'>ارزان ترین</label>
                     
 
-                    <button type='submit' className='bg-slate-400 p-3 rounded-xl'>جستجو کن</button>
+                    <button type='submit' className='bg-slate-400 p-3 rounded-xl mr-[200px]'>جستجو کن</button>
                 </Form>
             </Formik>
         </div>
