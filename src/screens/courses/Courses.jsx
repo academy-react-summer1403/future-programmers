@@ -1,6 +1,7 @@
 import {Formik, Field, Form} from 'formik';
 import CourseCard from '../../component/CourseCard/CourseCard';
-import Accardion from '../../Components/Accardion';
+import Accardion from '../../component/accardion/accardion';
+
 
 const Courses = () => {
   const Course=[
