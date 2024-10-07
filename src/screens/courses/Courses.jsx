@@ -47,7 +47,7 @@ return (
             </Formik>
         </div>
 
-        <div className='w-[74%] h-auto mt-6 pt-5 flex flex-row flex-wrap justify-between gap-y-24'>
+        <div className='w-[72%] h-auto mt-6 pt-5 flex flex-row flex-wrap justify-between gap-y-24'>
             {Course.map((item, index)=>{
                 return(
                     <CourseCard 
@@ -61,28 +61,36 @@ return (
                 );   
             })}             
         </div>
-        <div className='w-[310px] h-96 mt-[19px] ml-5 rounded-[20px] bg-white'> 
-            <div className="collapse collapse-arrow bg-base-200">
+        <div className='w-[310px] h-full pb-3 mt-[19px] ml-5 rounded-[20px] bg-white '> 
+            <h2 className='mr-2 mt-1'>فیلترها</h2>
+            <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[97%] mx-auto">
                 <input type="checkbox" name="my-accordion-2" defaultChecked />
-                <div className="collapse-title text-xl font-medium">Click to open this one and close others</div>
+                <div className="collapse-title text-[14px]">دسته بندی</div>
+                <div className="collapse-content">
+                    <p>hello</p> 
+                </div>
+            </div>
+            <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[97%] mx-auto">
+                <input type="checkbox" name="my-accordion-2" />
+                <div className="collapse-title text-[14px]">نوع دوره</div>
                 <div className="collapse-content">
                     <p>hello</p>
                 </div>
             </div>
-            <div className="collapse collapse-arrow bg-base-200">
+            <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[97%] mx-auto">
                 <input type="checkbox" name="my-accordion-2" />
-                <div className="collapse-title text-xl font-medium">Click to open this one and close others</div>
+                <div className="collapse-title text-[14px]">سطح دوره</div>
                 <div className="collapse-content">
                     <p>hello</p>
                 </div>
-            </div>
-            <div className="collapse collapse-arrow bg-base-200">
+            </div>   
+            <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[97%] mx-auto">
                 <input type="checkbox" name="my-accordion-2" />
-                <div className="collapse-title text-xl font-medium">Click to open this one and close others</div>
+                <div className="collapse-title text-[14px]"> قیمت</div>
                 <div className="collapse-content">
                     <p>hello</p>
                 </div>
-            </div>               
+            </div>              
         </div>
     </div>
     <div className='w-[100%] text-center'>
