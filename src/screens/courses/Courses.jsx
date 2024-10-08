@@ -2,6 +2,8 @@ import {Formik, Field, Form} from 'formik';
 import CourseCard from '../../component/CourseCard/CourseCard';
 import Accardion from '../../component/accardion/accardion';
 import FormField from '../../component/Fields/FormField';
+// import UseDarkMood from './UseDarkMood';
+import { useEffect, useState } from 'react';
 
 
 const Courses = () => {
@@ -14,36 +16,57 @@ const Courses = () => {
 
 
 
+
+// const [theme,setTheme]=useState('light')
+// const toggleTheme =()=>{
+//     if(theme==='light'){
+//         window.localStorage.setItem('theme','dark')
+//         setTheme('dark')
+//     }else{
+//         window.localStorage.setItem('theme','light')
+//         setTheme('light')
+//     }
+// }
+// useEffect(()=>{
+//     const localTheme = window.localStorage.getItem('theme')
+//     if(localTheme){
+//         setTheme(localTheme)
+//         console.log('first')
+//     }
+//     console.log('fi')
+// },[])
+
 return (
-<div className='bg-[#a09f9f] font-[sans] dark'>
+<div className='bg-[#a09f9f] font-[sans]
+                dark:bg-slate-900'>
 
         <div className='flex flex-row-reverse flex-wrap gap-x-2 gap-y-4 w-[90%] mx-[auto]'>
-        <div className='border-[1px_solid_red] w-[100%] flex justify-between'>
-            <h1>دوره ها</h1>
-            <h1> 5 دوره آموزشی</h1>
+        <div className='w-[100%] flex justify-between'>
+            <h1 className='dark:text-white'>دوره ها</h1>
+            <h1 className='dark:text-white'> 5 دوره آموزشی</h1>
         </div>
-        <div className='w-[100%] h-[115px] bg-white rounded-[20px] flex items-center mt-[10px] gap-5'>
+        <div className='w-[100%] h-[115px] bg-white rounded-[20px] flex items-center mt-[10px] gap-5
+        dark:bg-slate-600'>
             <Formik initialValues={{SearchCourse:'', New:'',BestSelling:'',Expensive:'',Cheap:'' , sort:null }}>
-                <Form  className='w-[100%] h-[115px] bg-white rounded-[20px] flex items-center mt-[10px] gap-5'>
+                <Form  className='w-[100%] h-[115px] bg-white rounded-[20px] flex items-center mt-[10px] gap-5 dark:bg-black'>
             
-                    <Field className='p-5 mr-[1%] bg-[url(public/search.svg)] bg-no-repeat bg-left text-base font-bold [background-size:35px] shadow-inner shadow-slate-400 rounded-xl' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
-                    <h1 className='font-bold pr-2 mr-4'>مرتب سازی</h1>
+                    <Field className='p-5 mr-[1%] bg-[url(public/search.svg)] bg-no-repeat bg-left text-base font-bold [background-size:35px] shadow-inner shadow-slate-400 rounded-xl dark:bg-slate-500 dark:text-white' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
+                    <h1 className='font-bold pr-2 mr-4 dark:text-white'>مرتب سازی</h1>
 
                     <FormField FieldTopic={'جدیدترین'} name={'New'}/>
                     <FormField FieldTopic={'پرفروش ترین'} name={'BestSelling'}/>
                     <FormField FieldTopic={'گران ترین'} name={'Expensive'}/>
                     <FormField FieldTopic={'ارزان ترین'} name={'Cheap'}/>
                     
-
-                    <button type='submit' className='bg-slate-400 p-3 rounded-xl mr-[200px]'>جستجو کن</button>
+                    <button type='submit'  className='bg-slate-400 p-3 rounded-xl mr-[200px] dark:text-white'>جستجو کن</button>
                 </Form>
             </Formik>
         </div>
         <div className='flex'>
-        <div className='w-[310px] h-fit pb-3 mt-[19px] ml-5 rounded-[20px] bg-white '> 
-            <h2 className='mr-2 mt-1'>فیلترها</h2>
+        <div className='w-[310px] h-fit pb-3 mt-[19px] ml-5 rounded-[20px] bg-white dark:bg-slate-600'> 
+            <h2 className='mr-2 mt-1 dark:text-white'>فیلترها</h2>
             <Accardion />
-         
+
             <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[97%] mx-auto">
                 <input type="checkbox" name="my-accordion-2" />
                 <div className="collapse-title text-[14px]"> قیمت</div>

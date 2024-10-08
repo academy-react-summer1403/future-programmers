@@ -5,7 +5,7 @@ function CheckBox({topic, }) {
     <div className="form-control">
     <label className="label cursor-pointer">
         <input type="checkbox" defaultChecked  className="checkbox checkbox-primary" />
-        <span className="label-text absolute right-14">{topic}</span>
+        <span className="label-text absolute right-14 dark:text-white">{topic}</span>
     </label>
 </div>
   )

@@ -5,7 +5,7 @@ function FormField({FieldTopic, name}) {
   return (
     <div>
         <Field className='hidden' type='radio'  name={name}  />
-        <label htmlFor='#' className='cursor-pointer '>{FieldTopic}</label>
+        <label htmlFor='#' className='cursor-pointer dark:text-white'>{FieldTopic}</label>
     </div>
   )
 }
