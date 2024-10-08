@@ -71,7 +71,14 @@ return (
                 <input type="checkbox" name="my-accordion-2" />
                 <div className="collapse-title text-[14px]"> قیمت</div>
                 <div className="collapse-content">
-                    <p>hello</p>
+                    {/* <p>hello</p> */}
+                    <output  className='block text-center text-[red]'>   0 </output>
+                    <span className='relative bottom-[23px]'> از </span>
+                    <input type="range" min={0} max="10000000" value="0" step='50000' className="range" />
+
+                    <output className='block text-center text-[red] mt-[10px]'>  1000000 </output>
+                    <span className='relative bottom-[24px]'> تا </span>
+                    <input type="range" min={0} max="1000000" value="1000000" step='50000' className="range" /> 		
                 </div>
             </div>              
         </div>
