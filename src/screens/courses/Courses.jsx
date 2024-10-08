@@ -12,12 +12,10 @@ const Courses = () => {
     {image:'public/01.jpg',topic:'آموزش ری اکت 3', explain:'آموزش می دهیم. آموزش نمی دهیم', teacher:'استاد سه',time:'12:12:12', price:'رایگان!'}
 ]
 
-// const FilterState=(topic)=>{
-//     setCourse(Course.filter((f)=>f.course === Course.topic))
-// }
+
 
 return (
-<div className='bg-[#a09f9f] font-[sans]'>
+<div className='bg-[#a09f9f] font-[sans] dark'>
 
         <div className='flex flex-row-reverse flex-wrap gap-x-2 gap-y-4 w-[90%] mx-[auto]'>
         <div className='border-[1px_solid_red] w-[100%] flex justify-between'>
