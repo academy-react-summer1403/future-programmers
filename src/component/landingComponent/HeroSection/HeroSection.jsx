@@ -4,17 +4,20 @@ import React from 'react'
 
 const HeroSection = () => {
     return (
-        <div className=" bg-gray-100">
+        <div className=" ">
             {/* Header */}
-            <div className="bg-white py-8">
-                <div className=" mx-auto px-4 flex  justify-around">
-                    <div className="text-center md:text-right   w-[40%]">
-                        <h1 className="text-3xl font-bold mb-4 mt-20 font-bold text-5xl text-blue-400">دنبال چی می گردی؟</h1>
-                        <p className="text-gray-600 mb-2 mt-10">
+            <div className=" py-8 ">
+                <div className=" mx-auto px-4 flex flex-col-reverse md:flex-row  justify-around">
+                    <div className="text-center md:text-right  w-full md:w-[40%]">
+                        <h1 className="text-3xl mx-auto  font-bold mb-4 mt-20  text-blue-400">دنبال چی می گردی؟</h1>
+                        <p className="text-gray-600 dark:text-slate-50 mb-2 mt-10">
                             رشد کسب و کار شما با کمک به استفاده از دیجیتال مارکتینگ
                         </p>
-                        <input type="text" />
-                        <p className="font-semibold">آکادمی سپهر</p>
+                        <input type="text" className='my-3'/>
+                        <h3 className="font-semibold text-3xl">آکادمی سپهر</h3>
+                        <p className='mt-4 sm:w-[70%] md:w-full mx-auto'>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
+                        </p>
                     </div>
                     <div className="relative   w-[405]">
                         <img
