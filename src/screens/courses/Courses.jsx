@@ -81,10 +81,10 @@ return (
     </div>
     <div className='w-[100%] text-center'>
         <div className="join my-5">
-            <button className="join-item btn">1</button>
-            <button className="join-item btn btn-active">2</button>
-            <button className="join-item btn">3</button>
-            <button className="join-item btn">4</button>
+            <button className="join-item btn dark:bg-gray-400">1</button>
+            <button className="join-item btn btn-active dark:bg-gray-400">2</button>
+            <button className="join-item btn dark:bg-gray-400">3</button>
+            <button className="join-item btn dark:bg-gray-400">4</button>
         </div>
     </div>
     
