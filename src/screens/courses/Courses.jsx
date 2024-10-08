@@ -1,6 +1,7 @@
 import {Formik, Field, Form} from 'formik';
 import CourseCard from '../../component/CourseCard/CourseCard';
 import Accardion from '../../component/accardion/accardion';
+import FormField from '../../component/Fields/FormField';
 
 
 const Courses = () => {
@@ -28,19 +29,12 @@ return (
                 <Form  className='w-[100%] h-[115px] bg-white rounded-[20px] flex items-center mt-[10px] gap-5'>
             
                     <Field className='p-5 mr-[1%] bg-[url(public/search.svg)] bg-no-repeat bg-left text-base font-bold [background-size:35px] shadow-inner shadow-slate-400 rounded-xl' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
-                    <h1 className='font-bold pr-2'>مرتب سازی</h1>
+                    <h1 className='font-bold pr-2 mr-4'>مرتب سازی</h1>
 
-                    <Field className='hidden' type='radio'  name='New'  />
-                    <label htmlFor='#' className='cursor-pointer pr-4 checked:[text-[red] font-bold]'>جدیدترین</label>
-
-                    <Field className='hidden' type='radio'  name='BestSelling'  />
-                    <label htmlFor='#' className='cursor-pointer checked:[text-[red] font-bold]'>پرفروش ترین</label>
-
-                    <Field className='hidden' type='radio'  name='Expensive'  />
-                    <label htmlFor='#' className='cursor-pointer checked:[text-[red] font-bold]'>گران ترین</label>
-
-                    <Field className='hidden' type='radio'  name='Cheap'  />
-                    <label htmlFor='#' className='cursor-pointer checked:[text-[red] font-bold]'>ارزان ترین</label>
+                    <FormField FieldTopic={'جدیدترین'} name={'New'}/>
+                    <FormField FieldTopic={'پرفروش ترین'} name={'BestSelling'}/>
+                    <FormField FieldTopic={'گران ترین'} name={'Expensive'}/>
+                    <FormField FieldTopic={'ارزان ترین'} name={'Cheap'}/>
                     
 
                     <button type='submit' className='bg-slate-400 p-3 rounded-xl mr-[200px]'>جستجو کن</button>
