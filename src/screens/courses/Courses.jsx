@@ -24,20 +24,20 @@ return (
             <h1 className='dark:text-white'>دوره ها</h1>
             <h1 className='dark:text-white'> 5 دوره آموزشی</h1>
         </div>
-        <div className='w-[100%] h-[115px] bg-white rounded-[20px] flex items-center mt-[10px] gap-5
+        <div className='w-[100%] md:h-[115px] sm:h-[80px] bg-white rounded-[20px] flex items-center mt-[10px] gap-5
         dark:bg-slate-600'>
             <Formik initialValues={{SearchCourse:'', New:'',BestSelling:'',Expensive:'',Cheap:'' , sort:null }}>
-                <Form  className='w-[100%] h-[115px] bg-white rounded-[20px] flex items-center mt-[10px] gap-5 dark:bg-black'>
+                <Form  className='w-[100%] md:h-[115px] sm:h-[80px] bg-white rounded-[20px] flex items-center  md:gap-4 sm:gap-0 dark:bg-black'>
             
-                    <Field className='p-5 mr-[1%] bg-[url(public/search.svg)] bg-no-repeat bg-left text-base font-bold [background-size:35px] shadow-inner shadow-slate-400 rounded-xl dark:bg-slate-500 dark:text-white' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
-                    <h1 className='font-bold pr-2 mr-4 dark:text-white'>مرتب سازی</h1>
+                    <Field className='md:p-4 sm:p-2 md:w-[25%] sm:w-[190px] mr-[1%] bg-[url(public/search.svg)] bg-no-repeat bg-left md:text-base sm:text-[13px] font-bold md:[background-size:35px] sm:[background-size:25px] shadow-inner shadow-slate-400 rounded-xl dark:bg-slate-500 dark:text-white' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
+                    <h1 className='font-bold md:pr-2 md:mr-4 md:text-[15px] sm:text-[11px] sm:w-[65px] sm:mr-[10px] md:w-[97px] dark:text-white'>مرتب سازی</h1>
 
                     <FormField FieldTopic={'جدیدترین'} name={'New'}/>
                     <FormField FieldTopic={'پرفروش ترین'} name={'BestSelling'}/>
                     <FormField FieldTopic={'گران ترین'} name={'Expensive'}/>
                     <FormField FieldTopic={'ارزان ترین'} name={'Cheap'}/>
                     
-                    <button type='submit'  className='bg-slate-400 p-3 rounded-xl mr-[200px] dark:text-white'>جستجو کن</button>
+                    <button type='submit'  className='bg-slate-400 md:p-4 sm:p-2 sm:text-[14px] md:text-[16px] rounded-xl md:mr-[200px] sm:mr-[40px] dark:text-white'>جستجو کن</button>
                 </Form>
             </Formik>
         </div>
