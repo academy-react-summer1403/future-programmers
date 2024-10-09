@@ -7,6 +7,18 @@ export default {
   ],
   theme: {
     extend: {},
+    screens: {
+      'mobile': '412px',
+      // => @media (min-width: 412px) { ... }
+      
+      'tablet': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'laptop': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+
+    },
   },
   plugins: [
     require('daisyui'),
