@@ -18,7 +18,7 @@ const Header = () => {
       </div>
 
       {/* Middle Section: Links */}
-      <nav className='flex ml-auto gap-4 '>
+      <nav className='md:flex hidden ml-auto gap-4 '>
         <Link href='#home' className='text-gray-700 hover:text-blue-500'>
           خانه
         </Link>
@@ -36,6 +36,7 @@ const Header = () => {
         </Link>
 
       </nav>
+      
       {/* Left Section: Buttons */}
       <div className="flex gap-4 me-10">
         <button onClick={handleDark}>

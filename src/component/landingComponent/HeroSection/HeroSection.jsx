@@ -19,7 +19,7 @@ const HeroSection = () => {
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
                         </p>
                     </div>
-                    <div className="relative   w-[405]">
+                    <div className="relative hidden md:block w-[405]">
                         <img
                             src="./header-bg.png"
                             alt="Hero"

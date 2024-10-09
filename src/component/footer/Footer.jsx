@@ -19,7 +19,7 @@ const RelatedLinks = () => {
 // Contact Section Component
 const ContactSection = () => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg w-1/3">
+    <div className="bg-white dark:bg-gray-400 p-6 rounded-lg shadow-lg w-1/3">
       <h4 className="font-bold text-xl mb-4">به ما بپیوندید</h4>
       <p className="text-gray-600 mb-4">
         در دوره آموزش پیشرفته درس، قصد داریم نیروهای جوان و مدرس پرکار آماده کنیم که
@@ -55,7 +55,7 @@ const BottomSection = () => {
 // Footer Component (Main)
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 py-10 px-6 rtl">
+    <footer className="bg-gray-100 dark:bg-gray-500 py-10 px-6 rtl">
       <div className="container mx-auto flex justify-between items-start space-x-8">
         {/* Right Side - Related Links (3 columns) */}
         <div className="flex-1 flex justify-between space-x-8">

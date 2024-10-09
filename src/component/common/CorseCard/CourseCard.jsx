@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const CourseCard = ({course , index}) => {
     return (
-        <div key={index} className="bg-white px-4 shadow-2xl  rounded-2xl mt-4 w-full sm:w-[45%]  xl:w-[20%] h-[450px] ">
+        <div key={index} className="bg-white dark:bg-gray-400 px-4 shadow-2xl  rounded-2xl mt-4 w-full sm:w-[45%]  xl:w-[20%] h-[450px] ">
 
             <img
                 src={course.image}
