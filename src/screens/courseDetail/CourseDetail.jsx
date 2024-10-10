@@ -32,7 +32,7 @@ function CourseDetail() {
           <img></img>
           <h1></h1>
           <h4></h4>
-          <p className:''> ssss</p>
+          <p > ssss</p>
         </div>
         <div className='w-[33%] h-[385px] bg-white rounded-[20px] absolute left-0 bottom-0'></div>
       </div>
