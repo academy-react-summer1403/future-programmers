@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './component/layout/Layout'
 import Landing from './screens/landing/Landing'
 import Courses from './screens/courses/Courses'
-import CourseDetail from './screens/courseDatail/CourseDetail'
+import CourseDetail from './screens/courseDetail/CourseDetail'
 
 function App() {
   const myRoutes = createBrowserRouter([
