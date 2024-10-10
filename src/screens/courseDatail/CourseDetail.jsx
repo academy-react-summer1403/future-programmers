@@ -2,7 +2,9 @@ import React from 'react'
 
 function CourseDetail() {
   return (
-    <div></div>
+    <div className='bg-[#e6e5e5] font-[sans] dark:bg-slate-700'>
+
+    </div>
   )
 }
 

@@ -16,7 +16,7 @@ const Courses = () => {
 
 
 return (
-<div className='bg-[#a09f9f] font-[sans] dark:bg-slate-900'>
+<div className='bg-[#e6e5e5] font-[sans] dark:bg-slate-700'>
 
         <div className='flex flex-row-reverse flex-wrap gap-x-2 gap-y-4 w-[90%] mx-[auto]'>
         <div className='w-[100%] flex justify-between'>
