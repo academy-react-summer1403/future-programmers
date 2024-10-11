@@ -11,7 +11,7 @@ export default {
       'mobile': '412px',
       // => @media (min-width: 412px) { ... }
       
-      'tablet': '640px',
+      'tablet': '641px',
       // => @media (min-width: 640px) { ... }
 
       'laptop': '1024px',
