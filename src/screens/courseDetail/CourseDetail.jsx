@@ -1,6 +1,6 @@
 import React from 'react'
 import SimilarCourse from './SimilarCourse'
-import {Formik, Field, Form} from 'formik';
+
 
 
 function CourseDetail() {
