@@ -1,5 +1,7 @@
 import React from 'react'
 import SimilarCourse from './SimilarCourse'
+import {Formik, Field, Form} from 'formik';
+
 
 function CourseDetail() {
     
@@ -47,7 +49,17 @@ function CourseDetail() {
           </div>
         </div>
 
-        <div className='w-[64%] h-[400px] bg-white mt-[30px] rounded-[20px] dark:bg-slate-500'></div>
+        <div className='w-[64%] h-[400px] bg-white mt-[30px] rounded-[20px] dark:bg-slate-500'>
+          <div className='w-[85%] h-[90%] my-[20px] mx-auto'>
+            <h1 className='text-[25px] text-cyan-700 inline dark:text-white'>نظرات</h1>
+              <div className='border-[2px] border-cyan-700 dark:border-black rounded-[20px] h-[250px] mt-[5px]'>
+                <textarea className='w-[99%] h-[240px] mr-[6px] mt-[4px] rounded-[20px] [outline:none] dark:bg-slate-500 dark:text-white' >نظر خود را اینجا بنویسید</textarea>
+              </div>
+              <button className='bg-cyan-700 mt-[10px]  py-3 px-4 rounded-[10px] text-white'>ارسال نظر</button>
+            
+
+          </div>
+        </div>
       </div>
 
       
