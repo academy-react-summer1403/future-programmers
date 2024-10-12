@@ -6,7 +6,7 @@ function Accardion() {
     <>
         <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[97%] mx-auto dark:bg-slate-500">
             <input type="checkbox" name="my-accordion-2" defaultChecked />
-            <div className="collapse-title laptop:text-[14px] tablet:text-[12px]">دسته بندی</div>
+            <div className="collapse-title text-[14px] md:max-lg:text-[12px]">دسته بندی</div>
             <div className="collapse-content">
                 <CheckBox topic='فرانت اند'  />
                 <CheckBox topic='بک اند' />
@@ -17,7 +17,7 @@ function Accardion() {
 
         <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[97%] mx-auto">
             <input type="checkbox" name="my-accordion-2" />
-            <div className="collapse-title laptop:text-[14px] tablet:text-[12px]">نوع دوره</div>
+            <div className="collapse-title text-[14px] md:max-lg:text-[12px]">نوع دوره</div>
             <div className="collapse-content">
 
                 <CheckBox topic='حضوری' />
@@ -28,7 +28,7 @@ function Accardion() {
 
         <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[97%] mx-auto">
             <input type="checkbox" name="my-accordion-2"  />
-            <div className="collapse-title laptop:text-[14px] tablet:text-[12px]">سطح دوره</div>
+            <div className="collapse-title text-[14px] md:max-lg:text-[12px]">سطح دوره</div>
             <div className="collapse-content">
                 <CheckBox topic='مبتدی' />
                 <CheckBox topic='متوسط' />
