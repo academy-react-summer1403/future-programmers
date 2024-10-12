@@ -3,9 +3,9 @@ import { Field } from 'formik'
 
 function FormField({FieldTopic, name}) {
   return (
-    <div>
+    <div className='md:max-lg:mr-[10px]'>
         <Field className='hidden' type='radio'  name={name}  />
-        <label htmlFor='#' className='cursor-pointer dark:text-white tablet:text-[11px] laptop:text-[16px] tablet:mr-[8px] '>{FieldTopic}</label>
+        <label htmlFor='#' className='cursor-pointer dark:text-white text-[16px] md:max-lg:text-[12px]'>{FieldTopic}</label>
     </div>
   )
 }
