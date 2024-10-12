@@ -26,7 +26,7 @@ return (
             <Formik initialValues={{SearchCourse:'', New:'',BestSelling:'',Expensive:'',Cheap:'' , sort:null }}>
                 <Form  className='w-[100%] h-[115px] md:max-lg:h-[100%] bg-white rounded-[20px] flex items-center md:max-lg:gap-0 gap-4 gap-0 dark:bg-black'>
             
-                    <Field className='p-4 md:max-lg:p-2 w-[25%] md:max-lg:w-[27%] mr-[1%] bg-[url(public/search.svg)] bg-no-repeat bg-left text-base md:max-lg:text-[11px] font-bold [background-size:35px] md:max-lg:[background-size:25px] shadow-inner shadow-slate-400 rounded-xl dark:bg-slate-500 dark:text-white' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
+                    <Field className='p-4 md:max-lg:p-2 w-[25%] md:max-lg:w-[27%] mr-[1%] bg-[url(public/search.svg)] bg-no-repeat bg-left text-base md:max-lg:text-[11px] font-bold [background-size:35px] md:max-lg:[background-size:25px] shadow-inner shadow-slate-400 rounded-xl dark:bg-slate-400 dark:placeholder-white' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
                     <h1 className='font-bold pr-2 mr-4 text-[15px] md:max-lg:text-[11px] md:max-lg:mr-[10px] md:max-lg:pr-0 md:max-lg:w-[75px] w-[97px] dark:text-white'>مرتب سازی</h1>
 
                     <FormField FieldTopic={'جدیدترین'} name={'New'}/>
@@ -38,12 +38,12 @@ return (
                 </Form>
             </Formik>
         </div>
-        <div className='flex mobile:flex-wrap md:max-lg:flex-nowrap mobile:max-md:max-lg:justify-center'>
+        <div className='flex sm:max-md:flex-wrap md:max-lg:flex-nowrap sm:max-md:max-md:max-lg:justify-center'>
             <div className='w-[310px] md:max-lg:w-[25%] h-fit pb-3 mt-[19px] ml-5 rounded-[20px] bg-white dark:bg-slate-600'> 
                 <h2 className='mr-2 mt-1 md:max-lg:text-[15px] dark:text-white'>فیلترها</h2>
                 <Accardion />
 
-                <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[97%] mx-auto">
+                <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[95%] mx-auto dark:bg-slate-500">
                     <input type="checkbox" name="my-accordion-2" />
                     <div className="collapse-title text-[14px] md:max-lg:text-[12px]"> قیمت</div>
                     <div className="collapse-content">
