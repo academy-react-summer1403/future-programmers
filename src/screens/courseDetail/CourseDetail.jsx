@@ -29,14 +29,26 @@ function CourseDetail() {
 
       <div className=' flex flex-wrap justify-between w-[88%] mx-auto mt-5 dark:bg-slate-700 pb-[30px] overflow-hidden'>
 
-        <div className='w-[63%] h-[auto] pb-3 bg-white rounded-[20px] sm:max-md:w-[100%] md:max-lg:w-[100%] dark:bg-slate-500'>
-          <h1 className='mt-[3%] mr-[3%] text-cyan-700 font-bold text-[20px] sm:max-md:text-[17px] dark:text-black'>توضیحات</h1>
-          <p className='mr-[3%] w-[90%] break-words sm:max-md:text-[15px] dark:text-white '> jfjfjfjfjfjfj   jfjfjfjfjfjfj The longest word in any of the major English language dictionaries is pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it is the same as silicosis. The longest word in any of the major English language dictionaries is pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it is the same as silicosis.</p>
-          <p className='mr-[3%] w-[90%] break-words sm:max-md:text-[15px] dark:text-white'> jfjfjfjfjfjfj   jfjfjfjfjfjfj The longest word in any of the major English language dictionaries is pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it is the same as silicosis. The longest word in any of the major English language dictionaries is pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it is the same as silicosis.</p>
-          <p className='mr-[3%] w-[90%] break-words sm:max-md:text-[15px] dark:text-white'> jfjfjfjfjfjfj   jfjfjfjfjfjfj The longest word in any of the major English language dictionaries is pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it is the same as silicosis. The longest word in any of the major English language dictionaries is pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it is the same as silicosis.</p>
+        <div className='w-[63%] pb-3 bg-white rounded-[20px] sm:max-md:w-[100%] md:max-lg:w-[100%] dark:bg-slate-500'>
+          <h1 className='mt-[3%] mr-[3%] my-3 text-cyan-700 font-bold text-[20px] sm:max-md:text-[17px] dark:text-black'>توضیحات</h1>
+          <p className='mr-[3%] w-[95%] break-words sm:max-md:text-[15px] dark:text-white '> jfjfjfjfjfjfj   jfjfjfjfjfjfj The longest word in any of the major English language dictionaries is pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it is the same as silicosis. The longest word in any of the major English language dictionaries is pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it is the same as silicosis.</p>
+          <p className='mr-[3%] w-[95%] break-words sm:max-md:text-[15px] dark:text-white'> jfjfjfjfjfjfj   jfjfjfjfjfjfj The longest word in any of the major English language dictionaries is pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it is the same as silicosis. The longest word in any of the major English language dictionaries is pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it is the same as silicosis.</p>
+          <p className='mr-[3%] w-[95%] break-words sm:max-md:text-[15px] dark:text-white'> jfjfjfjfjfjfj   jfjfjfjfjfjfj The longest word in any of the major English language dictionaries is pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it is the same as silicosis. The longest word in any of the major English language dictionaries is pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it is the same as silicosis.</p>
+           
+          <div className='w-[100%] mx-[auto] pb-5'>
+            <div className='w-[100%] h-[400px] bg-white mt-[30px] sm:max-md:mt-0 rounded-[20px] sm:max-md:w-[100%] md:max-lg:w-[100%] dark:bg-slate-500'>
+            <div className='w-[85%] h-[90%] my-[20px]  mx-auto'>
+              <h1 className='text-[25px] text-cyan-700 inline dark:text-white'>نظرات</h1>
+              <div className='border-[2px] border-cyan-700 dark:border-black rounded-[20px] h-[250px] mt-[5px]'>
+                <textarea className='w-[99%] h-[240px] mr-[6px] mt-[4px] rounded-[20px] [outline:none] sm:max-md:w-[97%]  dark:bg-slate-500 dark:text-white' >نظر خود را اینجا بنویسید</textarea>
+              </div>
+              <button className='bg-cyan-700 mt-[10px]  py-3 px-4 rounded-[10px] text-white'>ارسال نظر</button>
+           </div>
+        </div>
+      </div>
         </div>
 
-        <div className='flex flex-wrap w-[33%] gap-y-3 sm:max-md:w-[100%] md:max-lg:w-[100%] md:max-lg:justify-between md:max-lg:mt-5'>
+        <div className='flex flex-wrap w-[33%] sm:max-md:w-[100%] md:max-lg:w-[100%] md:max-lg:justify-between md:max-lg:mt-5'>
 
           <div className='w-[99%] h-[385px] sm:max-md:w-[100%] sm:max-md:mt-3 md:max-lg:w-[47%] bg-white rounded-[20px]  dark:bg-slate-500'>
             <img className='w-[18%] h-[18%] mt-[20px] mr-[27px] rounded-[50%] sm:max-md:h-[70px] sm:max-md:w-[70px] md:max-lg:h-[16%]' src='public/01.jpg'></img>
@@ -46,7 +58,7 @@ function CourseDetail() {
             <div className='align-center mt-[10px]'><a href='#' className='text-[12px] [background:url(public/external-link.svg)_no-repeat_93%_0%] pr-[30px] mr-[75px] sm:max-md:mr-[30%] md:max-lg:mr-[41px]'>مشاهده سایر آموزش های این استاد</a></div>
           </div>
 
-          <div className=' w-[99%] h-[385px] bg-white rounded-[20px] dark:bg-slate-500 sm:max-md:top-[992px] sm:max-md:w-[100%] sm:max-md:mt-3 md:max-lg:w-[47%]'>
+          <div className=' w-[99%] h-[385px] mb-[115px] bg-white rounded-[20px] dark:bg-slate-500 sm:max-md:top-[992px] sm:max-md:w-[100%] sm:max-md:mt-3 md:max-lg:w-[47%]'>
             <h1 className='relative right-[30px] top-[30px] text-[20px] text-cyan-700 inline dark:text-white'>دوره های مشابه</h1>
             <div className='relative top-[35px]'>
               {TeachersCourses.map((item,index)=>{
@@ -62,19 +74,7 @@ function CourseDetail() {
         </div>
       </div>
 
-      <div className='w-[88%] mx-[auto] pb-5'>
-      <div className='w-[64%] h-[400px] bg-white mt-[30px] sm:max-md:mt-0 rounded-[20px] sm:max-md:w-[100%] md:max-lg:w-[100%] dark:bg-slate-500'>
-          <div className='w-[85%] h-[90%] my-[20px]  mx-auto'>
-            <h1 className='text-[25px] text-cyan-700 inline dark:text-white'>نظرات</h1>
-              <div className='border-[2px] border-cyan-700 dark:border-black rounded-[20px] h-[250px] mt-[5px]'>
-                <textarea className='w-[99%] h-[240px] mr-[6px] mt-[4px] rounded-[20px] [outline:none] sm:max-md:w-[97%]  dark:bg-slate-500 dark:text-white' >نظر خود را اینجا بنویسید</textarea>
-              </div>
-              <button className='bg-cyan-700 mt-[10px]  py-3 px-4 rounded-[10px] text-white'>ارسال نظر</button>
-            
-
-          </div>
-        </div>
-      </div>
+      
       
       
     </div>
