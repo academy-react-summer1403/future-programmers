@@ -39,7 +39,7 @@ return (
             </Formik>
         </div>
         <div className='flex sm:max-md:flex-wrap md:max-lg:flex-nowrap sm:max-md:max-md:max-lg:justify-center'>
-            <div className='w-[310px] md:max-lg:w-[25%] h-fit pb-3 mt-[19px] ml-5 rounded-[20px] bg-white dark:bg-slate-600'> 
+            <div className='w-[310px] md:max-lg:w-[25%]  sm:max-md:hidden h-fit pb-3 mt-[19px] ml-5 rounded-[20px] bg-white dark:bg-slate-600'> 
                 <h2 className='mr-2 mt-1 md:max-lg:text-[15px] dark:text-white'>فیلترها</h2>
                 <Accardion />
 
@@ -58,7 +58,7 @@ return (
                     </div>
                 </div>              
             </div>
-            <div className='w-[72%] h-auto mt-6 pt-5 flex flex-row flex-wrap justify-start gap-x-4 gap-y-24 md:max-lg:gap-y-16'>
+            <div className='w-[72%] mt-6 pt-5 flex flex-row flex-wrap justify-start gap-x-4 gap-y-24 md:max-lg:gap-y-16 sm:max-md:w-full sm:max-md:gap-y-11'>
                 {Course.map((item, index)=>{
                     return(
                         <CourseCard 
