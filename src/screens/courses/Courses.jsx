@@ -61,7 +61,7 @@ return (
                     </div>
                 </div>              
             </div>
-            <div className='w-[72%] mt-6 pt-5 h-fit flex flex-row flex-wrap justify-start gap-x-4 gap-y-24 md:max-lg:gap-y-16 sm:max-md:w-full sm:max-md:gap-y-11'>
+            <div className='w-[72%] mt-6 pt-5 h-fit flex flex-row flex-wrap justify-start gap-x-4 gap-y-12 md:max-lg:gap-y-10 sm:max-md:w-full sm:max-md:gap-y-11'>
                 {Course.map((item, index)=>{
                     return(
                         <CourseCard 
