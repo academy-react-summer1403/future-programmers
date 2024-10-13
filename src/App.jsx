@@ -26,6 +26,10 @@ function App() {
           path:'coursedetail',
           element:<CourseDetail/>
         },
+        {
+          path:'newsdetail',
+          element:<NewsDetail/>
+        },
       ]
     }
   ])
