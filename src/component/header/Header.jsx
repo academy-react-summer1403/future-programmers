@@ -42,7 +42,7 @@ const Header = () => {
         <button onClick={handleDark}>
           <img src="./moon.png" alt="" />
         </button>
-        <Link>
+        <Link to='/profile'>
           <img src="./profile-user.png" alt="" />
         </Link>
 
