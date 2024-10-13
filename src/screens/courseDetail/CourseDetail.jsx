@@ -46,7 +46,7 @@ function CourseDetail() {
           </div>
         </div>
 
-        <div className='flex flex-wrap w-[33%] gap-y-5 max-md:w-[100%] md:max-lg:w-[100%] md:max-lg:justify-between md:max-lg:mt-5'>
+        <div className='flex flex-wrap h-[800px] max-lg:h-[400px] max-md:h-[800px] w-[33%] gap-y-5 max-md:w-[100%] md:max-lg:w-[100%] md:max-lg:justify-between md:max-lg:mt-5'>
 
           <div className='w-[99%] h-[385px] max-md:w-[100%] max-md:mt-3 md:max-lg:w-[47%] bg-white rounded-[20px]  dark:bg-slate-500'>
             <img className='w-[18%] h-[18%] mt-[20px] mr-[27px] rounded-[50%] max-md:h-[70px] max-md:w-[70px] md:max-lg:h-[16%]' src='public/01.jpg'></img>
