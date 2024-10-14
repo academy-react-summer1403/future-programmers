@@ -33,7 +33,7 @@ return (
                             {/* Page content here */}
                             <label htmlFor="my-drawer" className="btn btn-primary drawer-button">Open drawer</label>
                         </div>
-                        <div className="drawer-side right-[50%] z-[999] sm:right-[59%] ">
+                        <div className="drawer-side  z-[999] max-md:w-[44%] max-md:right-[78%] ">
                             <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
                             <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
                             {/* Sidebar content here */}
