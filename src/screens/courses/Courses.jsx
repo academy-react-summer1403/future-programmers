@@ -1,7 +1,8 @@
 import {Formik, Field, Form} from 'formik';
 import CourseCard from '../../component/CourseCard/CourseCard';
 import Accardion from '../../component/accardion/accardion';
-import FormField from '../../component/Fields/FormField';
+// import FormField from '../../component/Fields/FormField';
+import TopCategory from '../../component/topCategory/TopCategory';
 // import UseDarkMood from './UseDarkMood';
 
 
@@ -26,18 +27,25 @@ return (
             <Formik initialValues={{SearchCourse:'', New:'',BestSelling:'',Expensive:'',Cheap:'' , sort:null }}>
                 <Form  className='w-[100%] h-[115px] md:max-lg:h-[100%] max-md:h-[100%] bg-white rounded-[20px] flex items-center md:max-lg:gap-0 gap-4 gap-0 dark:bg-black'>
             
-                    <Field className='p-4 md:max-lg:p-2 w-[25%] md:max-lg:w-[27%] max-md:w-[50%] max-md:mx mr-[1%] bg-[url(public/search.svg)] bg-no-repeat bg-left text-base md:max-lg:text-[11px] font-bold [background-size:35px] md:max-lg:[background-size:25px] shadow-inner shadow-slate-400 rounded-xl dark:bg-slate-400 dark:placeholder-white' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
-                    <div className='items-center hidden md:flex'>
-                        <h1 className='font-bold pr-2 mr-4 text-[15px] md:max-lg:text-[11px] md:max-lg:mr-[10px] md:max-lg:pr-0 md:max-lg:w-[75px] w-[97px] dark:text-white'>مرتب سازی</h1>
-
-                        <FormField FieldTopic={'جدیدترین'} name={'New'}/>
-                        <FormField FieldTopic={'پرفروش ترین'} name={'BestSelling'}/>
-                        <FormField FieldTopic={'گران ترین'} name={'Expensive'}/>
-                        <FormField FieldTopic={'ارزان ترین'} name={'Cheap'}/>
-
-                        <button type='submit'  className='bg-slate-400 p-4 md:max-lg:p-2 text-[16px] md:max-lg:text-[14px]  rounded-xl mr-[180px] md:max-lg:mr-[40px] dark:text-white'>جستجو کن</button>
+                <div className="drawer md:hidden w-[100px] mr-[7%]">
+                        <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+                        <div className="drawer-content">
+                            {/* Page content here */}
+                            <label htmlFor="my-drawer" className="btn btn-primary drawer-button">Open drawer</label>
+                        </div>
+                        <div className="drawer-side right-[50%] z-[999] sm:right-[59%] ">
+                            <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+                            <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+                            {/* Sidebar content here */}
+                            <li><a>Sidebar Item 1</a></li>
+                            <li><a>Sidebar Item 2</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    
+
+                    <Field className='p-4 md:max-lg:p-2 w-[25%] md:max-lg:w-[27%] max-md:w-[50%] max-md:mx mr-[1%] bg-[url(public/search.svg)] bg-no-repeat bg-left text-base md:max-lg:text-[11px] font-bold [background-size:35px] md:max-lg:[background-size:25px] shadow-inner shadow-slate-400 rounded-xl dark:bg-slate-400 dark:placeholder-white' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
+                    <TopCategory />
+
                 </Form>
             </Formik>
         </div>
