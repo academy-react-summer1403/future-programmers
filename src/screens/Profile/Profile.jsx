@@ -6,10 +6,10 @@ import { Outlet } from 'react-router-dom'
 const Profile = () => {
   return (
     <div className='flex justify-around'>
-        <div className='w-[30%] border-2 border-red-400'>
+        <div className='w-[30%]'>
             <SideBar/>
         </div>
-        <div className='w-[60%] border-2 border-blue-400'>
+        <div className='w-[60%]'>
             <ProfileHeader/>
             <Outlet/>
         </div>

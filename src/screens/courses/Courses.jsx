@@ -14,7 +14,6 @@ const Courses = () => {
     {image:'public/01.jpg',topic:'آموزش ری اکت 3', explain:'آموزش می دهیم. آموزش نمی دهیم', teacher:'استاد سه',time:'12:12:12', price:'رایگان!'}
 ]
 
-
 return (
 <div className='bg-[#e6e5e5] font-[sans] dark:bg-slate-700'>
 
