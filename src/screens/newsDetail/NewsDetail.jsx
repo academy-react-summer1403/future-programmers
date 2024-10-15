@@ -16,7 +16,7 @@ function NewsDetail() {
                 <div className='w-[100%] h-[50px] rounded-[15px] bg-white dark:bg-slate-600 dark:text-white'></div>
             </div>
 
-            <div className='w-[88%] mx-auto mt-[70px] pb-[30px] max-lg:mt-[50px] max-md:pb-[10px] max-md:mt-[40px] max-sm:mt-[25px] border border-transparent'>
+            <div className='w-[88%] mx-auto mt-[70px] pb-[30px] max-lg:mt-[50px] max-md:pb-[10px] max-md:mt-10 max-sm:mt-[25px] border border-transparent'>
                 <h1 className='mt-[16px] mr-[36%] pb-[5px] text-[20px] max-md:text-[15px] max-lg:mr-[42%] max-sm:text-[15px] max-sm:mr-[41%]'>سرتیتر خبر</h1>
                 <div className='w-[92%] h-[400px] relative rounded-[15px] mr-[8%] mt-[15px] bg-white dark:bg-slate-600 max-lg:h-[380px] max-md:h-[250px] max-sm:h-[200px] max-sm:mt-[5px]'>
                     <div className='w-[36%] h-[410px] bg-[#9F9F9F] relative left-[9%] bottom-[16%] rounded-[25px] rotate-[9deg] max-lg:h-[390px] max-lg:w-[41%] max-md:h-[267px] max-md:bottom-[24%] max-sm:h-[200px] max-sm:bottom-[25%]'>
