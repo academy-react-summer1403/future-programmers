@@ -38,7 +38,7 @@ const NewCourse = () => {
         <section className=" mx-auto ">
             <div className="container mx-auto px-4">
                 <div className='flex '>
-                    <h2 className="text-2xl font-bold mb-8 mr-[45%] text-blue-700">جدیدترین دوره‌ها</h2>
+                    <h2 className="text-2xl font-bold mb-8 text-blue-700">جدیدترین دوره‌ها</h2>
                     <h3 className='mr-auto mt5'>مشاهده همه </h3>
                 </div>
                 <div className="flex flex-wrap gap-6 justify-evenly mt-10 ">

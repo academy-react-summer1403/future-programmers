@@ -56,9 +56,9 @@ const BottomSection = () => {
 const Footer = () => {
   return (
     <footer className="bg-gray-100 dark:bg-gray-500 py-10 px-6 rtl">
-      <div className="container mx-auto flex justify-between items-start space-x-8">
+      <div className="container mx-auto flex flex-col lg:flex-row justify-between items-start space-x-8">
         {/* Right Side - Related Links (3 columns) */}
-        <div className="flex-1 flex justify-between space-x-8">
+        <div className="flex-1 flex flex-col lg:flex-row justify-center space-x-8">
           <RelatedLinks />
           <RelatedLinks />
           <RelatedLinks />

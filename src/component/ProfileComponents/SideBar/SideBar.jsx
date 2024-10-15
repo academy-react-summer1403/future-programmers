@@ -17,31 +17,45 @@ const SidePanel = () => {
       {/* Links Section */}
       <div className="flex flex-col gap-4 mt-12">
         <Link
-          to="/dashboard"
+          to="/profile"
           className="flex items-center gap-3 text-lg font-medium text-gray-700"
         >
-          <FaHome /> <span>پیشخوان</span>
+          پیشخوان
         </Link>
 
         <Link
-          to="/my-courses"
+          to="/profile/ReserveCourse"
           className="flex items-center gap-3 text-lg font-medium text-gray-700"
         >
-          <FaBook /> <span>دوره‌های من</span>
+          دوره‌های رزرو شده
         </Link>
 
         <Link
-          to="/my-tickets"
+          to="/profile/AcceptCourse"
           className="flex items-center gap-3 text-lg font-medium text-gray-700"
         >
-          <FaRegCommentDots /> <span>تیکت من</span>
+          دوره های من
         </Link>
 
         <Link
-          to="/logout"
+          to="/profile/FavoriteNews"
           className="flex items-center gap-3 text-lg font-medium text-gray-700"
         >
-          <FaSignOutAlt /> <span>خروج</span>
+          اخبار مورد علاقه
+        </Link>
+
+        <Link
+          to="/profile/FavoriteCourse"
+          className="flex items-center gap-3 text-lg font-medium text-gray-700"
+        >
+          دوره های مورد علاقه
+        </Link>
+
+        <Link
+          to="/profile/EditProfile"
+          className="flex items-center gap-3 text-lg font-medium text-gray-700"
+        >
+            ویرایش پروفایل
         </Link>
       </div>
     </div>

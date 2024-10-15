@@ -25,21 +25,19 @@ const courses = [
 
 ];
 
-const AcceptCourse = () => {
+const FavoriteNews = () => {
   return (
     <div>
-      <h2>دوره های تایید شذه  AcceptCourse</h2>
+      <h2>اخبار مورد علاقه FavoriteNews</h2>
       <div className="flex flex-wrap gap-6 justify-evenly mt-10 ">
 
         {courses.map((course, index) => (
           <CustomCard course={course} index={index} />
         ))}
       </div>
-
-
-
     </div>
+
   )
 }
 
-export default AcceptCourse
+export default FavoriteNews

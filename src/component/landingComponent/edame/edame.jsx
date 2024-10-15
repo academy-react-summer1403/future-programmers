@@ -32,22 +32,44 @@ const Edame = () => {
         </div>
       </section>
       <section className="py-12">
-        <div className="container mx-auto px-4 flex flex-nowrap">
-          <img className='' src='./Image 6.png'></img>
-          <div className="p-6 text-center w-1/2 content-center">
+        <div className="container mx-auto px-4  md:flex flex-nowrap">
+          <div className='md:w-1/2'>
+            <img className='' src='./Image 6.png' />
+          </div>
+          <div className="p-6 text-center md:w-1/2 content-center">
             <div className='flex flex-wrap justify-between content-center'>
               <div className='flex flex-wrap justify-around basis-full'>
-                <p>3</p>
+                {/* <p>3</p>
                 <p>12</p>
                 <p>4</p>
-                <p>5</p>
+                <p>5</p> */}
+                <div className='w-[20%]'>
+                  <h2>3</h2>
+                  <h3>Lorem ipsum dolor sit amet.</h3>
+                </div>
+                <div className='w-[20%]'>
+                  <h2>3</h2>
+                  <h3>Lorem ipsum dolor sit amet.</h3>
+                </div >
+                <div className='w-[20%]'>
+                  <h2>3</h2>
+                  <h3>Lorem ipsum dolor sit amet.</h3>
+                </div>
+                <div className='w-[20%]'>
+                  <h2>3</h2>
+                  <h3>Lorem ipsum dolor sit amet.</h3>
+                </div>
+
+
+
+
               </div>
-              <div className='flex flex-wrap justify-around basis-full'>
+              {/* <div className='flex flex-wrap justify-around basis-full'>
                 <p>دانشجو آکادمی</p>
                 <p>دوره اموزش</p>
                 <p>استاد فعال</p>
                 <p>رضایت مندی</p>
-              </div>
+              </div> */}
 
             </div>
           </div>
