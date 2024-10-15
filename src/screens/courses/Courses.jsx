@@ -1,9 +1,11 @@
 import {Formik, Field, Form} from 'formik';
 import CourseCard from '../../component/CourseCard/CourseCard';
-import Accardion from '../../component/accardion/accardion';
+// import Accardion from '../../component/accardion/accardion';
 // import FormField from '../../component/Fields/FormField';
 import TopCategory from '../../component/topCategory/TopCategory';
 import Sorting from '../../component/sort/sorting';
+import Filters from '../../component/filters/UsualFilters';
+import FilterInTop from '../../component/filters/FilterInTop';
 // import UseDarkMood from './UseDarkMood';
 
 
@@ -31,31 +33,17 @@ return (
                     <Sorting />
 
                     <Field className='p-4 md:max-lg:p-2 w-[25%] md:max-lg:w-[27%] max-md:w-[50%] max-md:mx mr-[1%] bg-[url(public/search.svg)] bg-no-repeat bg-left text-base md:max-lg:text-[11px] font-bold [background-size:35px] md:max-lg:[background-size:25px] shadow-inner shadow-slate-400 rounded-xl dark:bg-slate-400 dark:placeholder-white' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
+                    
                     <TopCategory />
+                    <FilterInTop />
+
 
                 </Form>
             </Formik>
         </div>
         <div className='flex sm:max-md:flex-wrap md:max-lg:flex-nowrap sm:max-md:max-md:max-lg:justify-center'>
-            <div className='w-[310px] md:max-lg:w-[25%]  sm:max-md:hidden h-fit pb-3 mt-[19px] ml-5 rounded-[20px] bg-white dark:bg-slate-600'> 
-                <h2 className='mr-2 mt-1 md:max-lg:text-[15px] dark:text-white'>فیلترها</h2>
-                <Accardion />
+            <Filters />
 
-                <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[95%] mx-auto dark:bg-slate-500">
-                    <input type="checkbox" name="my-accordion-2" />
-                    <div className="collapse-title text-[14px] md:max-lg:text-[12px]"> قیمت</div>
-                    <div className="collapse-content">
-                        {/* <p>hello</p> */}
-                        <output  className='block text-center text-[red]'>   0 </output>
-                        <span className='relative bottom-[23px]'> از </span>
-                        <input type="range" min={0} max="10000000" value="0" step='50000' className="range" />
-
-                        <output className='block text-center text-[red] mt-[10px]'>  1000000 </output>
-                        <span className='relative bottom-[24px]'> تا </span>
-                        <input type="range" min={0} max="1000000" value="1000000" step='50000' className="range" /> 		
-                    </div>
-                </div>              
-            </div>
             <div className='w-[72%] mt-6 pt-5 h-fit flex flex-row flex-wrap justify-start gap-x-4 gap-y-12 md:max-lg:gap-y-10 sm:max-md:w-full sm:max-md:gap-y-11'>
                 {Course.map((item, index)=>{
                     return(
