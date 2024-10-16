@@ -3,7 +3,6 @@ import CourseCard from '../../component/CourseCard/CourseCard';
 // import Accardion from '../../component/accardion/accardion';
 // import FormField from '../../component/Fields/FormField';
 import TopCategory from '../../component/topCategory/TopCategory';
-import Sorting from '../../component/sort/sorting';
 import Filters from '../../component/filters/UsualFilters';
 import FilterInTop from '../../component/filters/FilterInTop';
 // import UseDarkMood from './UseDarkMood';
@@ -19,18 +18,18 @@ const Courses = () => {
 
 
 return (
-<div className='bg-[#e6e5e5] font-[sans] dark:bg-slate-700'>
+<div className='bg-[#e6e5e5] font-[sans] dark:bg-[#152a38]'>
 
         <div className='flex flex-row-reverse flex-wrap gap-x-2 gap-y-4 w-[90%] mx-[auto]'>
         <div className='w-[100%] flex justify-between'>
-            <h1 className='dark:text-white'>دوره ها</h1>
-            <h1 className='dark:text-white'> 5 دوره آموزشی</h1>
+            <h1 className='dark:text-[#d1d4c9]'>دوره ها</h1>
+            <h1 className='dark:text-[#d1d4c9]'> 5 دوره آموزشی</h1>
         </div>
-        <div className='w-[100%] h-[115px] md:max-lg:h-[70px] max-md:h-[90px] max-sm:h-[65px] bg-white rounded-[20px] flex items-center mt-[10px] dark:bg-slate-600'>
+        <div className='w-[100%] h-[115px] md:max-lg:h-[70px] max-md:h-[90px] max-sm:h-[65px] bg-white rounded-[20px] flex items-center mt-[10px] dark:bg-[#29435c]'>
             <Formik initialValues={{SearchCourse:'', New:'',BestSelling:'',Expensive:'',Cheap:'' , sort:null }}>
-                <Form  className='w-[100%] h-[115px] md:max-lg:h-[100%] max-md:h-[100%] bg-white rounded-[20px] flex items-center md:max-lg:gap-0 gap-4 gap-0 dark:bg-black'>
+                <Form  className='w-[100%] h-[115px] md:max-lg:h-[100%] max-md:h-[100%] bg-white rounded-[20px] flex items-center md:max-lg:gap-0 gap-4 gap-0 dark:bg-[#29435c]'>
             
-                    <Field className='p-4 md:max-lg:p-2 w-[25%] md:max-lg:w-[27%] max-md:w-[50%] max-md:mx max-sm:w-[70%] mr-[1%] max-sm:mr-[3%] bg-[url(public/search.svg)] [background-position-y:center] max-sm:[background-position-x:3%] bg-no-repeat text-base max-sm:p-[9px] md:max-lg:text-[11px] font-bold [background-size:35px] md:max-lg:[background-size:25px] max-sm:[background-size:25px] max-sm:text-[13px] [center] shadow-inner shadow-slate-400 rounded-xl dark:bg-slate-400 dark:placeholder-white' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
+                    <Field className='p-4 md:max-lg:p-2 w-[25%] md:max-lg:w-[27%] max-md:w-[50%] max-md:mx max-sm:w-[70%] mr-[1%] max-sm:mr-[3%] bg-[url(public/search.svg)] [background-position-y:center] max-sm:[background-position-x:3%] bg-no-repeat text-base max-sm:p-[9px] md:max-lg:text-[11px] font-bold [background-size:35px] md:max-lg:[background-size:25px] max-sm:[background-size:25px] max-sm:text-[13px] [center] shadow-inner shadow-slate-400 rounded-xl dark:bg-[#556e53] dark:placeholder-[#d1d4c9]' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
                     <TopCategory />
 
                     {/* <Sorting /> */}
@@ -62,10 +61,10 @@ return (
     </div>
     <div className='w-[100%] text-center h-14 my-auto mt-3'>
         <div className="join y-5 md:max-lg:my-1">
-            <button className="join-item btn dark:bg-gray-400">1</button>
-            <button className="join-item btn btn-active dark:bg-gray-400">2</button>
-            <button className="join-item btn dark:bg-gray-400">3</button>
-            <button className="join-item btn dark:bg-gray-400">4</button>
+            <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">1</button>
+            <button className="join-item btn btn-active dark:bg-[#29435c] dark:text-[#d1d4c9]">2</button>
+            <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">3</button>
+            <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">4</button>
         </div>
     </div>
     
