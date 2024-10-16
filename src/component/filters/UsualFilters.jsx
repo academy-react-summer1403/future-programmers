@@ -6,7 +6,7 @@ import Accardion from "../accardion/accardion"
 function Filters() {
   return (
     <div className='w-[310px] md:max-lg:w-[25%]  max-md:hidden h-fit pb-3 mt-[19px] ml-5 rounded-[20px] bg-white dark:bg-slate-600'> 
-      <h2 className='mr-2 mt-1 md:max-lg:text-[15px] dark:text-white'>فیلترها</h2>
+      <h2 className='mr-4 mt-3 pb-2 md:max-lg:text-[15px] dark:text-white'>فیلترها</h2>
       <Accardion />
 
       <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[95%] mx-auto dark:bg-slate-500">
