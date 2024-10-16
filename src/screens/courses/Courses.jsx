@@ -26,14 +26,14 @@ return (
             <h1 className='dark:text-white'>دوره ها</h1>
             <h1 className='dark:text-white'> 5 دوره آموزشی</h1>
         </div>
-        <div className='w-[100%] h-[115px] md:max-lg:h-[70px] max-md:h-[90px] bg-white rounded-[20px] flex items-center mt-[10px] dark:bg-slate-600'>
+        <div className='w-[100%] h-[115px] md:max-lg:h-[70px] max-md:h-[90px] max-sm:h-[65px] bg-white rounded-[20px] flex items-center mt-[10px] dark:bg-slate-600'>
             <Formik initialValues={{SearchCourse:'', New:'',BestSelling:'',Expensive:'',Cheap:'' , sort:null }}>
                 <Form  className='w-[100%] h-[115px] md:max-lg:h-[100%] max-md:h-[100%] bg-white rounded-[20px] flex items-center md:max-lg:gap-0 gap-4 gap-0 dark:bg-black'>
             
-                    <Field className='p-4 md:max-lg:p-2 w-[25%] md:max-lg:w-[27%] max-md:w-[50%] max-md:mx mr-[1%] bg-[url(public/search.svg)] bg-no-repeat bg-left text-base md:max-lg:text-[11px] font-bold [background-size:35px] md:max-lg:[background-size:25px] shadow-inner shadow-slate-400 rounded-xl dark:bg-slate-400 dark:placeholder-white' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
+                    <Field className='p-4 md:max-lg:p-2 w-[25%] md:max-lg:w-[27%] max-md:w-[50%] max-md:mx max-sm:w-[70%] mr-[1%] max-sm:mr-[3%] bg-[url(public/search.svg)] [background-position-y:center] max-sm:[background-position-x:3%] bg-no-repeat text-base max-sm:p-[9px] md:max-lg:text-[11px] font-bold [background-size:35px] md:max-lg:[background-size:25px] max-sm:[background-size:25px] max-sm:text-[13px] [center] shadow-inner shadow-slate-400 rounded-xl dark:bg-slate-400 dark:placeholder-white' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
                     <TopCategory />
 
-                    <Sorting />
+                    {/* <Sorting /> */}
                     <FilterInTop />
 
                 </Form>
@@ -42,7 +42,7 @@ return (
         <div className='flex sm:max-md:flex-wrap md:max-lg:flex-nowrap sm:max-md:max-md:max-lg:justify-center'>
             <Filters />
 
-            <div className='w-[72%] mt-6 pt-5 h-fit flex flex-row flex-wrap justify-start gap-x-4 gap-y-12 max-md:justify-between md:max-lg:gap-y-10 max-md:w-full sm:max-md:gap-y-11'>
+            <div className='w-[72%] mt-6 pt-5 h-fit flex flex-row flex-wrap justify-start gap-x-4 gap-y-12 max-md:justify-between md:max-lg:gap-y-10 max-md:w-full max-sm:justify-center sm:max-md:gap-y-11'>
                 {Course.map((item, index)=>{
                     return(
                         <CourseCard 

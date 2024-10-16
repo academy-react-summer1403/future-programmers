@@ -4,7 +4,7 @@ import CheckBox from './checkBox'
 function Accardion() {
   return (
     <>
-        <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[95%] mx-auto  dark:bg-slate-500">
+        <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[95%] mx-auto max-md:w-[100%] max-md:mr-0  dark:bg-slate-500">
             <input type="checkbox" name="my-accordion-2" defaultChecked />
             <div className="collapse-title text-[14px] md:max-lg:text-[12px]">دسته بندی</div>
             <div className="collapse-content">

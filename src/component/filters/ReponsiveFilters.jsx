@@ -5,8 +5,8 @@ import Accardion from "../accardion/accardion"
 
 function ReponsiveFilters() {
   return (
-    <div className='w-[90%] mx-[auto] h-fit pb-3 mt-[19px] ml-5 rounded-[20px]'> 
-    <h2 className='mr-2 mt-1 md:max-lg:text-[15px] dark:text-white'>فیلترها</h2>
+    <div className='w-[90%] mx-[auto] h-fit pb-3 mt-[19px] ml-5  border-t-4 border-indigo-500 max-md:mt-[40px]'> 
+    <h2 className='mr-3 mt-3 md:max-lg:text-[15px] pb-2 dark:text-white'>فیلترها</h2>
     <Accardion />
 
     <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[95%] mx-auto dark:bg-slate-500">
