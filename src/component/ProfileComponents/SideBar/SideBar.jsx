@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaHome, FaBook, FaRegCommentDots, FaSignOutAlt } from "react-icons/fa";
+import logoPic from "../../../../public/header icon.png"
 
 const SidePanel = () => {
   return (
@@ -9,7 +10,7 @@ const SidePanel = () => {
       {/* Logo Section */}
       <div className="flex items-center gap-3">
         <div className=" p-4 rounded-full">
-          <img src="header icon.png" alt="Logo" className="w-10 h-10" />
+          <img src={logoPic} alt="Logo" className="w-10 h-10" />
         </div>
         <span className="text-xl font-bold">آکادمی سپهر</span>
       </div>
