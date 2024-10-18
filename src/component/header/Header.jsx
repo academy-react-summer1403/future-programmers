@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HeaderHamburgerMenu } from './HeaderHamburgerMenu';
 
 // Header Component
 const Header = () => {
@@ -16,9 +17,7 @@ const Header = () => {
         <img src="header icon.png" alt="" className="w-10 h-10" />
         <span className="ml-2 text-xl font-bold"></span>
         <div className='md:hidden mr-2'>
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 7.50004C15 7.50004 11.3176 12.5 10 12.5C8.68233 12.5 5 7.5 5 7.5" stroke="#2F2F2F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
+          <HeaderHamburgerMenu />
         </div>
       </div>
 
