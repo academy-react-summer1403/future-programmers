@@ -8,6 +8,13 @@ import Landing from './screens/landing/Landing'
 import Courses from './screens/courses/Courses'
 import CourseDetail from './screens/courseDetail/CourseDetail'
 import NewsDetail from './screens/newsDetail/NewsDetail'
+import Profile from './screens/Profile/Profile'
+import Pishkhan from './component/ProfileComponents/Pishkhan/Pishkhan'
+import ReserveCourse from './component/ProfileComponents/ReserveCourse/ReserveCourse'
+import AcceptCourse from './component/ProfileComponents/AcceptCourse/AcceptCourse'
+import EditProfile from './component/ProfileComponents/EditProfile/EditProfile'
+import FavoriteNews from './component/ProfileComponents/FavoriteNews/FavoriteNews'
+import FavoriteCourse from './component/ProfileComponents/FavoriteCourse/FavoriteCourse'
 
 function App() {
   const myRoutes = createBrowserRouter([
@@ -31,6 +38,37 @@ function App() {
           path:'newsdetail',
           element:<NewsDetail/>
         },
+      ]
+    },
+    {
+      path:'/profile',
+      element:<Profile/>,
+      children:[
+        {
+          path:'',
+          element:<Pishkhan/>
+        },
+        {
+          path:'ReserveCourse',
+          element:<ReserveCourse/>
+        }, 
+        {
+          path:'AcceptCourse',
+          element:<AcceptCourse/>
+        }, 
+        {
+          path:'FavoriteNews',
+          element:<FavoriteNews/>
+        }, 
+        {
+          path:'FavoriteCourse',
+          element:<FavoriteCourse/>
+        }, 
+        
+        {
+          path:'EditProfile',
+          element:<EditProfile/>
+        },                        
       ]
     }
   ])
