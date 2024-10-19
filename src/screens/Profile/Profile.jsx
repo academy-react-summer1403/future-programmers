@@ -4,8 +4,9 @@ import ProfileHeader from '../../component/ProfileComponents/ProfileHeader/Profi
 import { Outlet } from 'react-router-dom'
 
 const Profile = () => {
+  
   return (
-    <div className='flex justify-around'>
+    <div className='flex justify-around dark:bg-gray-300'>
         <div className='w-[30%]'>
             <SideBar/>
         </div>

@@ -1,16 +1,20 @@
 // src/components/Header.jsx
-import React from "react";
+import React, { useState } from "react";
 import { FaRegMoon, FaRegUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Moon from "../../../../public/moon.png"
 import Profile from "../../../../public/profile-user.png"
 
 const Header = () => {
-  const handleDark = () =>{
-    document.documentElement.classList.toggle('dark')
-  }
+  const [dark, setdark] = useState(false);
+
+  const handleDark = () => {
+    document.documentElement.classList.toggle("dark");
+    setdark(!dark);
+  };
+
   return (
-    <div className="flex justify-between items-center px-10 py-4 bg-gray-100 rounded-3xl">
+    <div className="flex justify-between items-center px-10 py-4 bg-gray-100 rounded-3xl dark:bg-gray-400">
       {/* Welcome Message */}
       <div className="text-xl font-bold text-gray-700">
         آرمان غنی زاده عزیز؛ خوش آمدی 👋
@@ -18,9 +22,10 @@ const Header = () => {
       {/* Icons */}
       <div className="flex gap-4 me-10">
         <button onClick={handleDark}>
-          <img src={Moon} alt="" />
+          {dark === false && <img src="./moon.png" alt="" />}
+          {dark === true && <img src="./sun.png" alt="" />}
         </button>
-        <Link to='/profile'>
+        <Link to='/'>
           <img src={Profile} alt="" />
         </Link>
 

@@ -4,7 +4,7 @@ import CourseCard from '../../CourseCard/CourseCard'
 const Pishkhan = () => {
 
   return (
-    <div className='flex flex-wrap gap-10 justify-around'>
+    <div className='flex flex-wrap gap-10 justify-around mt-10 dark:bg-gray-400'>
       <div className='flex w-1/3 border-2 border-dashed rounded-full px-2 border-violet-400'>
         <h4>نام :</h4>
         <h2>درسا</h2>

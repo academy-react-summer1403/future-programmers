@@ -6,7 +6,7 @@ import logoPic from "../../../../public/header icon.png"
 
 const SidePanel = () => {
   return (
-    <div className=" h-screen bg-white border border-gray-300 rounded-3xl p-6 flex flex-col justify- items-center">
+    <div className=" h-screen bg-white dark:bg-gray-400 border border-gray-300 rounded-3xl p-6 flex flex-col justify- items-center ">
       {/* Logo Section */}
       <div className="flex items-center gap-3">
         <div className=" p-4 rounded-full">
