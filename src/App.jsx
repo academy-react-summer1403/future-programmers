@@ -43,6 +43,10 @@ function App() {
           element:<CourseDetail/>
         },
         {
+          path:'/news',
+          element:<News/>
+        },
+        {
           path:'newsdetail',
           element:<NewsDetail/>
         },
@@ -64,10 +68,7 @@ function App() {
       path:'/singIn',
       element:<SingIn/>
     },
-    {
-      path:'/news',
-      element:<News/>
-    },
+
 
 
 
