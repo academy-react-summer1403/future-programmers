@@ -15,6 +15,14 @@ import AcceptCourse from './component/ProfileComponents/AcceptCourse/AcceptCours
 import EditProfile from './component/ProfileComponents/EditProfile/EditProfile'
 import FavoriteNews from './component/ProfileComponents/FavoriteNews/FavoriteNews'
 import FavoriteCourse from './component/ProfileComponents/FavoriteCourse/FavoriteCourse'
+import StepOne from './screens/register/StepOne'
+import StepTwo from './screens/register/StepTwo'
+import StepThree from './screens/register/StepThree'
+import SingIn from './screens/singIn/singIn'
+import News from './screens/page news/News'
+
+
+
 
 function App() {
   const myRoutes = createBrowserRouter([
@@ -40,6 +48,30 @@ function App() {
         },
       ]
     },
+    {
+      path:'/stepone',
+      element:<StepOne/>
+    }, 
+    {
+      path:'/steptwo',
+      element:<StepTwo/>
+    },     
+    {
+      path:'/stepthree',
+      element:<StepThree/>
+    },  
+    {
+      path:'/singIn',
+      element:<SingIn/>
+    },
+    {
+      path:'/news',
+      element:<News/>
+    },
+
+
+
+
     {
       path:'/profile',
       element:<Profile/>,
@@ -70,7 +102,8 @@ function App() {
           element:<EditProfile/>
         },                        
       ]
-    }
+    },
+    
   ])
 
   return (
