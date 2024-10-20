@@ -11,6 +11,9 @@ const onSuccess = (response) =>{
 }
 const onError = (err) =>{
     console.log(err)
+    if(err.response.status === 404){
+        alert('API not found')
+    }
     return Promise.reject(err);
 }
 
