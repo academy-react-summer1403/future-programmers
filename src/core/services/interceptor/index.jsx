@@ -10,7 +10,8 @@ const onSuccess = (response) =>{
     return response.data;
 }
 const onError = (err) =>{
-
+    console.log(err)
+    return Promise.reject(err);
 }
 
 instance.interceptors.response.use(onSuccess,onError );
