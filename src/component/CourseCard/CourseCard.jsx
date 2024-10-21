@@ -3,7 +3,7 @@ import React from 'react'
 const CourseCard = ({image,topic, explain, teacher, time, price}) => {
   return (
     <div className=" relative w-[278px] max-sm:w-[95%] max-md:w-[31%] md:max-lg:w-[30%] h-[360px] max-md:h-[300px] md:max-lg:h-[220px] bg-white rounded-[20px] dark:dark:bg-[#29435c] dark:text-[#d1d4c9]">
-        <img src={image} className="w-[92%] h-36 md:max-lg:h-[42%] mx-auto relative bottom-6 rounded-3xl"></img>
+        <img src={image} className="w-[92%] h-36 md:max-lg:h-[42%] mx-auto border border-[gray] relative bottom-6 rounded-3xl"></img>
         <h1 className="text-[14px] max-md:text-[12px] md:max-lg:text-[9px] font-bold mr-1 relative bottom-3 md:max-lg:bottom-4 dark:text-[#d1d4c9]">{topic}</h1>
         <p className="w-[97%] h-20 max-sm:relative max-sm:bottom-[7px] max-sm:text-[11px] max-md:text-[10px] max-md:h-14 md:max-lg:h-16 mr-1 md:max-lg:mx-auto text-[13px] md:max-lg:text-[8px] md:max-lg:relative md:max-lg:bottom-3 bottom-0 overflow-hidden dark:text-[#d1d4c9]">{explain}</p>
         <ul className="relative top-3 mr-1 max-md:text-[11px] max-md:mt-[1px] max-md:top-[0] md:max-lg:top-[-10px] text-[13px] md:max-lg:text-[10px] list-disc list-inside text-[#0004ff] dark:text-[#d1d4c9]"><li>{teacher}</li></ul>
