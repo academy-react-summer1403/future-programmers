@@ -1,7 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import http from '../../../core/services/interceptor'
 
-const CourseCard = ({title , image , describe , teacher , index}) => {
+const CourseCard = ({ title, image, describe, teacher, index , id , userIsLiked}) => {
+    const handleLike = async () => {
+        const res = await http.post(`/Course/AddCourseLike?CourseId=${id}`)
+        console.log(res)
+    }
     return (
         <div key={index} className="bg-white dark:bg-gray-400 px-4 shadow-2xl  rounded-2xl mt-4 w-full sm:w-[45%]  xl:w-[20%] h-[450px] ">
 
@@ -17,6 +22,7 @@ const CourseCard = ({title , image , describe , teacher , index}) => {
                 <Link className='mt-4 text-blue-800'>
                     جزییات
                 </Link>
+                {userIsLiked === true && <img src="./heart.png" className='w-4 h-4 mt-5' alt="" onClick={handleLike}/>}
             </div>
         </div>
     )
