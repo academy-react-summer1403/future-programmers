@@ -1,7 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CourseCard from '../../CourseCard/CourseCard'
+import axios from 'axios'
+import http from '../../../core/services//interceptor'
+
 
 const Pishkhan = () => {
+
+  const getProfile = async () => {
+    const res = await http.get('https://classapi.sepehracademy.ir/api/SharePanel/GetProfileInfo')
+    console.log(res)
+  }
+
+
+  useEffect(() => {
+    getProfile()
+  }, []);
 
   return (
     <div className='flex flex-wrap gap-10 justify-around mt-10 dark:bg-gray-400'>

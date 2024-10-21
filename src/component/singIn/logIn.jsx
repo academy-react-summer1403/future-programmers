@@ -1,9 +1,32 @@
 import React, { useState } from "react";
 import Log from "./Log";
 import { Link } from "react-router-dom";
+import { Field, Form, Formik } from "formik";
+import axios from "axios";
+import { setItem } from "../../core/services/common/storage.services";
+
+
+
 const LogIn = () => {
+
+  const handleLogin =async (values) => {
+    const res = await axios.post('https://classapi.sepehracademy.ir/api/Sign/Login', values)
+    console.log(res.data.token)
+    setItem("token" ,res.data.token)
+  }
+
+  
   return (
     <div className=" dark:bg-gray-600  h-screen flex justify-center">
+      {/* <Formik initialValues={{phoneOrGmail:'' , password:'' , rememberMe:false}} onSubmit={handleLogin}>
+      
+        <Form>
+          <Field type='text' name='phoneOrGmail' placeholder='phoneOrGmail' />
+          <Field type='text' name='password' placeholder='password'/>
+          <Field type='checkbox' name='rememberMe' />
+          <button type="submit">click</button>
+        </Form>
+      </Formik> */}
     <div className="flex justify-around border border-black-500 h-[580px] hover:text-black-1000 w-screen m-auto   dark:bg-gray-600 dark:text-white  rounded-lg">
       <div className="   h-[500px]  rounded-lg  pt-[20px]">
         <div className="  h-[55px] w-[327px] mx-auto ">
@@ -25,9 +48,7 @@ const LogIn = () => {
           <Log />
         </div>
 
-        {/* <div className=" h-[53px] w-[327px] text-center rounded-lg ">
-  <h3 className='text-xl h-[53px] font-sans text-white bg-[#436E8E] rounded-lg '> ادامه</h3>
-</div> */}
+
         <div className="  h-[19px] w-[327px]">
           <div className="text-xs">
             <a
