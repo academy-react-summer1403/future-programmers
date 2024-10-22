@@ -7,7 +7,7 @@ import CardNews2 from './CardNews2'
 
 const News = () => {
   return (
-    <div>
+    <div className='bg-[#F3F4F6] dark:bg-[#041c3254]'>
         <SearchBar/>
         <LineNews/>
         <CardNews/>

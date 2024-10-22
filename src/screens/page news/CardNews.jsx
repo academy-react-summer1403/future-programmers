@@ -11,16 +11,17 @@ const CardNews = () => {
   return (
     <div>
     <div className=''>
-    <div className=' bg-[#F3F4F6]  w-[100%] h-auto '>
-    <div className=' bg-[#fff]  flex flex-wrap justify-center w-[80%] mr-32 h-96 mb-24'>
+    <div className='  bg-[#F3F4F6]  w-[100%] h-auto dark:bg-[#041c3254] '>
+    <div className=' bg-[#fff]  flex flex-wrap justify-center w-[95%]  h-96 mb-24 mr-9 dark:bg-[#041c3254] dark:text-white'>
     
     {CardList.map((item , index)=>{
         return(
-                    <div  key={index} className=' border-l-4 border-[#707070] w-[20%] h-[90%]  mt-3 '>
+                    <div  key={index} className=' border-l-4 border-[#707070] w-[25%] h-[90%]  mt-3 dark:bg-[#041c3254] '>
 
                     <div className='w-[100%] h-[60%]'>
-                        <img src="" alt="" />
+                        <img src="./newspaper.png" alt="" className='w-full h-full'/>
                     </div >
+
                     <div className=' '>
                     <div className='  text-xl mr-2'>
                         {item.title}
