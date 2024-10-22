@@ -1,6 +1,6 @@
 // import React from 'react'
 
-import TopCategoryResposive from "../topCategory/TopCategoryResposive"
+import TopCategoryResposive from "../topSorting/TopCategoryResposive"
 import ReponsiveFilters from "./ReponsiveFilters"
 
 

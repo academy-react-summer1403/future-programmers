@@ -2,13 +2,13 @@ import {Formik, Field, Form} from 'formik';
 import CourseCard from '../../component/CourseCard/CourseCard';
 // import Accardion from '../../component/accardion/accardion';
 // import FormField from '../../component/Fields/FormField';
-import TopCategory from '../../component/topCategory/TopCategory';
 import Filters from '../../component/filters/UsualFilters';
 import FilterInTop from '../../component/filters/FilterInTop';
 // import http from "../../core/services/interceptor"
 import { useEffect, useState } from 'react';
 import { getlist } from '../../core/services/api/course';
 import pic from '../../../public/item1.png'
+import TopSorting from '../../component/topSorting/TopSorting';
 // import UseDarkMood from './UseDarkMood';
 
 
@@ -48,7 +48,7 @@ return (
                 <Form  className='w-[100%] h-[115px] md:max-lg:h-[100%] max-md:h-[100%] bg-white rounded-[20px] flex items-center md:max-lg:gap-0 gap-4 gap-0 dark:bg-[#29435c]'>
             
                     <Field  className='p-4 md:max-lg:p-2 w-[25%] md:max-lg:w-[27%] max-md:w-[50%] max-md:mx max-sm:w-[70%] mr-[1%] max-sm:mr-[3%] bg-[url(public/search.svg)] [background-position-y:center] max-sm:[background-position-x:3%] bg-no-repeat text-base max-sm:p-[9px] md:max-lg:text-[11px] font-bold [background-size:35px] md:max-lg:[background-size:25px] max-sm:[background-size:25px] max-sm:text-[13px] [center] shadow-inner shadow-slate-400 rounded-xl dark:bg-[#556e53] dark:placeholder-[#d1d4c9]' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
-                    <TopCategory />
+                    <TopSorting />
 
                     {/* <Sorting /> */}
                     <FilterInTop />

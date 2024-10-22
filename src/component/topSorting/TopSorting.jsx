@@ -1,6 +1,6 @@
 import FormField from "../Fields/FormField"
 
-function TopCategory() {
+function TopSorting() {
   return (
     <div className='items-center hidden max-sm:hidden md:flex '>
         <h1 className='font-bold pr-2 mr-4 text-[15px] md:max-lg:text-[11px] md:max-lg:mr-[10px] md:max-lg:pr-0 md:max-lg:w-[75px] w-[97px] dark:text-[#d1d4c9]'>مرتب سازی</h1>
@@ -15,4 +15,4 @@ function TopCategory() {
   )
 }
 
-export default TopCategory
+export default TopSorting
