@@ -4,7 +4,6 @@ import CourseCard from '../../component/CourseCard/CourseCard';
 // import FormField from '../../component/Fields/FormField';
 import Filters from '../../component/filters/UsualFilters';
 import FilterInTop from '../../component/filters/FilterInTop';
-// import http from "../../core/services/interceptor"
 import { useEffect, useState } from 'react';
 import { getlist } from '../../core/services/api/course';
 import pic from '../../../public/item1.png'
