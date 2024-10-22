@@ -23,12 +23,12 @@ return (
         >
             {()=>(
                 <Form>
-                    <div className='mb-4'>
+                    <div className='mb-4 '>
                         <Field 
                         type='tel'
                         name='phoneNumber'
                         placeholder='شماره موبایل'
-                        className='border border-gray-300 p-2 w-full rounded '
+                        className='border border-gray-300 text-right p-2 w-full rounded '
 />
                         <ErrorMessage
                         name='phoneNumber'

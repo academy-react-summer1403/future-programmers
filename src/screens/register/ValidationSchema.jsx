@@ -24,9 +24,23 @@ const ValidationSchema = () => {
         >
             {()=>(
                 <Form>
+                  <div className='mb-4'>
+                  <Field 
+                        type='tel'
+                        name='phoneNumber'
+                        placeholder=' نام و نام خانوادگی'
+                        className='border border-gray-300  text-right p-2 w-full rounded  '
+/>
+                        <ErrorMessage
+                        name='phoneNumber'
+                        component={"p"}
+                        className='text-red-500 text-sm validationSchema'
+                        />
+
+                  </div>
                     <div className='mb-4'>
 
-                        {/* <Field 
+                        <Field 
                         type='tel'
                         name='phoneNumber'
                         placeholder='شماره موبایل'
@@ -36,9 +50,10 @@ const ValidationSchema = () => {
                         name='phoneNumber'
                         component={"p"}
                         className='text-red-500 text-sm validationSchema'
-                        /> */}
+                        />
 
-<VerificationInput 
+
+{/* <VerificationInput 
 classNames={{
     container: "container",
     character: "character",
@@ -46,10 +61,23 @@ classNames={{
     characterSelected: "character--selected",
     characterFilled: "character--filled",
   }}
-  />
+  /> */}
                     </div>
 
-                    
+                  <div className=''>
+                  <Field 
+                        type='tel'
+                        name='phoneNumber'
+                        placeholder=' رمز عبور'
+                        className='border border-gray-300  text-right p-2 w-full rounded  '
+/>
+                        <ErrorMessage
+                        name='phoneNumber'
+                        component={"p"}
+                        className='text-red-500 text-sm validationSchema'
+                        />
+
+                  </div>
 
                     <div dir='ltr' className="form-control  ">
   <label className="label cursor-pointer ">

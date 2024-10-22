@@ -65,7 +65,7 @@ classNames= {{
                     </div>
                     <button  type='submit'
                         className=' bg-[#436E8E] h-[43px]  rounded w-full'>
-                <h2 className='text-white w-full ' >ورود  </h2>
+                <h2 className='text-white w-full ' > تایید  </h2>
                     </button>
                 </Form>
             )}
