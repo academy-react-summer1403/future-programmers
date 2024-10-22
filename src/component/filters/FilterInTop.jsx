@@ -1,6 +1,6 @@
 // import React from 'react'
 
-import TopCategoryResposive from "../topSorting/TopCategoryResposive"
+import TopSortingResponsive from "../topSorting/TopSortingResponsive"
 import ReponsiveFilters from "./ReponsiveFilters"
 
 
@@ -16,7 +16,7 @@ function FilterInTop() {
             <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
             <ul className="menu bg-base-200 text-base-content min-h-full p-4 dark:bg-[#29435c]">
                 {/* Sidebar content here */}
-                <TopCategoryResposive />
+                <TopSortingResponsive />
                 <ReponsiveFilters />
             </ul>
         </div>

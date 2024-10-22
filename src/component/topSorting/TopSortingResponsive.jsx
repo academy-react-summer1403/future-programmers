@@ -1,6 +1,6 @@
 import FormField from "../Fields/FormField"
 
-function TopCategoryResposive() {
+function TopSortingResponsive() {
   return (
     <>
     <h1 className=' pr-1 mr-2 mt-2 pb-2 max-md:text-[13px] display-[inline]  dark:text-[#d1d4c9]'>مرتب سازی</h1>
@@ -17,4 +17,4 @@ function TopCategoryResposive() {
   )
 }
 
-export default TopCategoryResposive
+export default TopSortingResponsive
