@@ -43,15 +43,11 @@ return (
             <h1 className='dark:text-[#d1d4c9]'>دوره ها</h1>
             <h1 className='dark:text-[#d1d4c9]'> 5 دوره آموزشی</h1>
         </div>
-        <div className='w-[100%] h-[90px] max-lg:h-[70px] max-sm:h-[65px] bg-white rounded-[20px] flex items-center mt-[10px] dark:bg-[#29435c]'>
-                <div  className='w-[100%] h-[100%] bg-white rounded-[20px] flex items-center md:max-lg:gap-0 gap-4 gap-0 dark:bg-[#29435c]'>
-                    <SearchBox />
-                    <TopSorting />
-
-                    {/* <Sorting /> */}
-                    <FilterInTop />
-
-                </div>
+        <div className='w-[100%] h-[90px] max-lg:h-[70px] bg-white max-sm:h-[65px] bg-white rounded-[20px] flex items-center mt-[10px] md:max-lg:gap-0 gap-4 gap-0 dark:bg-[#29435c]'>    
+            <SearchBox />
+            <TopSorting />
+            {/* <Sorting /> */}
+            <FilterInTop />
         </div>
         <div className='flex sm:max-md:flex-wrap md:max-lg:flex-nowrap sm:max-md:max-md:max-lg:justify-center'>
             <Filters />
