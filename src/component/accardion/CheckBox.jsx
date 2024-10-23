@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CheckBox({topic, }) {
+function CheckBox({topic}) {
   return (
     <div className="form-control">
     <label className="label cursor-pointer">
