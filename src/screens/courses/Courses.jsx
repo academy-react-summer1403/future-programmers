@@ -49,10 +49,10 @@ return (
             {/* <Sorting /> */}
             <FilterInTop />
         </div>
-        <div className='flex sm:max-md:flex-wrap md:max-lg:flex-nowrap sm:max-md:max-md:max-lg:justify-center'>
+        <div className='flex sm:max-md:flex-wrap md:max-lg:flex-nowrap justify-between'>
             <Filters />
 
-            <div className='w-[72%] mt-6 pt-5 h-fit flex flex-row flex-wrap justify-start gap-x-4 gap-y-12 max-md:justify-between md:max-lg:gap-y-10 max-md:w-full max-sm:justify-center sm:max-md:gap-y-11'>
+            <div className='w-[75%] mt-6 pt-5 h-fit flex flex-wrap justify-start gap-x-5 gap-y-12 max-md:justify-between md:max-lg:gap-y-10 max-md:w-full max-sm:justify-center sm:max-md:gap-y-11'>
                 {Course.map((item, index)=>{
                     return(
                         <CourseCard 
