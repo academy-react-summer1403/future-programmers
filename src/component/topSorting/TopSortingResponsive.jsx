@@ -1,19 +1,16 @@
-import FormField from "../Fields/FormField"
 
 function TopSortingResponsive() {
   return (
-    <>
-    <h1 className=' pr-1 mr-2 mt-2 pb-2 max-md:text-[13px] display-[inline]  dark:text-[#d1d4c9]'>مرتب سازی</h1>
-
-    <div className='items-center shadow shadow-black w-[90%]  mt-[10px] rounded-[20px] max-md:pb-[10px] dark:bg-[#556e53]'>
-
-        <FormField FieldTopic={'جدیدترین'} name={'New'}/>
-        <FormField FieldTopic={'پرفروش ترین'} name={'BestSelling'}/>
-        <FormField FieldTopic={'گران ترین'} name={'Expensive'}/>
-        <FormField FieldTopic={'ارزان ترین'} name={'Cheap'}/>
-
-        <button type='submit'  className='bg-slate-400 p-4 text-[14px] rounded-xl max-md:text-[12px] max-md:p-2 max-md:mr-[9%] max-md:mt-[10px] dark:bg-[#29435c] dark:text-[#d1d4c9]'>جستجو کن</button>
-    </div></>
+ <div className='mt-[10px]'>
+        <ul className=''>
+          <h1 className="pr-[15px] text-[14px] dark:text-[#d1d4c9]">مرتب سازی</h1>
+          <li className='mt-[8px] max-md:mr-[2%]'><span className='cursor-pointer text-[14px] max-md:text-[14px] dark:text-[#d1d4c9]'>جدیدترین</span></li>
+          <li className='max-md:mr-[2%]'><span className='cursor-pointer text-[14px] max-md:text-[14px] dark:text-[#d1d4c9]'>پرفروش ترین</span></li>
+          <li className='max-md:mr-[2%]'><span className='cursor-pointer text-[14px] max-md:text-[14px] dark:text-[#d1d4c9]'>گران ترین</span></li>
+          <li className='max-md:mr-[2%]'><span className='cursor-pointer text-[14px] max-md:text-[14px] dark:text-[#d1d4c9]'>ارزانترین</span></li>
+        </ul>
+        <button type='submit'  className='bg-slate-400 p-3 mr-[16px] mt-[10px] text-[14px] rounded-xl dark:text-[#d1d4c9] dark:bg-[#556e53]'>جستجو کن</button>
+    </div>
   )
 }
 
