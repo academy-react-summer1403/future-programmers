@@ -44,7 +44,7 @@ return (
         </div>
         <div className='w-[100%] h-[115px] md:max-lg:h-[70px] max-md:h-[90px] max-sm:h-[65px] bg-white rounded-[20px] flex items-center mt-[10px] dark:bg-[#29435c]'>
             <Formik initialValues={{SearchCourse:'', New:'',BestSelling:'',Expensive:'',Cheap:'' , sort:null }}>
-                <Form  className='w-[100%] h-[115px] md:max-lg:h-[100%] max-md:h-[100%] bg-white rounded-[20px] flex items-center md:max-lg:gap-0 gap-4 gap-0 dark:bg-[#29435c]'>
+                <div  className='w-[100%] h-[115px] md:max-lg:h-[100%] max-md:h-[100%] bg-white rounded-[20px] flex items-center md:max-lg:gap-0 gap-4 gap-0 dark:bg-[#29435c]'>
             
                     <Field  className='p-4 md:max-lg:p-2 w-[25%] md:max-lg:w-[27%] max-md:w-[50%] max-md:mx max-sm:w-[70%] mr-[1%] max-sm:mr-[3%] bg-[url(public/search.svg)] [background-position-y:center] max-sm:[background-position-x:3%] bg-no-repeat text-base max-sm:p-[9px] md:max-lg:text-[11px] font-bold [background-size:35px] md:max-lg:[background-size:25px] max-sm:[background-size:25px] max-sm:text-[13px] [center] shadow-inner shadow-slate-400 rounded-xl dark:bg-[#556e53] dark:placeholder-[#d1d4c9]' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
                     <TopSorting />
@@ -52,7 +52,7 @@ return (
                     {/* <Sorting /> */}
                     <FilterInTop />
 
-                </Form>
+                </div>
             </Formik>
         </div>
         <div className='flex sm:max-md:flex-wrap md:max-lg:flex-nowrap sm:max-md:max-md:max-lg:justify-center'>
