@@ -20,6 +20,7 @@ const Courses = () => {
 //     {image:'public/01.jpg',topic:'آموزش ری اکت 3', explain:'آموزش می دهیم. آموزش نمی دهیم', teacher:'استاد سه',time:'12:12:12', price:'رایگان!'}
 // ]
 const [Course, setCourse] = useState([])
+
 // console.log('Course',Course)
 
 const getAllCoursesList = async ()=>{
@@ -61,8 +62,8 @@ return (
                         topic={item.title} 
                         explain={item.describe} 
                         teacher={item.teacherName} 
-                        time={item.lastUpdate} 
-                        price={item.cost} />  
+                        time={item.lastUpdate.toString().slice(11,19)} 
+                        price={item.cost.toString().slice(-9,-1)} />  
                     );   
                 })}             
             </div>
