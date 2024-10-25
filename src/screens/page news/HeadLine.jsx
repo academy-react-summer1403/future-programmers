@@ -2,9 +2,11 @@ import React from 'react'
 
 const HeadLine = () => {
   return (
-    <div className=' flex border border-purple-500 w-5/6 h-64 mr-24'>
-      
+    
+    <div className=' flex dark:bg-[#041c3254] border-[#707070] w-[95%] h-64 mr-9 bg-white border-l-4 ' >
+<img src="./" alt="" />
     </div>
+    
   )
 }
 

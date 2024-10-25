@@ -11,12 +11,12 @@ const CardNews2 = () => {
   return (
     <div>
       <div className=''>
-    <div className='  bg-[#F3F4F6]  w-[100%] h-auto '>
-    <div className='  bg-[#fff] border border-blue-600 flex flex-wrap justify-center w-[90%] mr-11 h-96 mt-8 '>
+    <div className='  bg-[#F3F4F6]  w-[100%] h-auto dark:bg-[#041c3254] '>
+    <div className='  bg-[#fff]  flex flex-wrap justify-center w-[95%]  h-96 mt-8 mr-9 dark:bg-[#041c3254] dark:text-white '>
     
     {CardList.map((item , index)=>{
         return(
-                    <div  key={index} className=' border-l-4 border-[#707070] w-[20%] h-[90%]  mt-3 '>
+                    <div  key={index} className=' border-l-4 border-[#707070] p-4 w-[25%] h-[90%]  mt-3 '>
 
                     <div className='w-[100%] h-[60%]'>
                         <img src="" alt="" />

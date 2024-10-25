@@ -1,59 +1,78 @@
+import { Field, Form, Formik } from "formik";
 import React, { useState } from "react";
+import { login } from "../../core/services/api/auth";
+import { useNavigate } from "react-router-dom";
+import { getItem, setItem } from "../../core/services/common/storage.services";
 
 const Log = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [password, setPassword] = useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+
+  const navigate = useNavigate();
+
+    const handleLogin =async (values) => {
+      try {
+        const result= await login(values)
+        console.log(result.token)
+      setItem("token" ,result.token)
+      navigate(getItem("token") ? "/" :null);
+
+
+      } catch (err) {
+        console.log(err)
+      }
+
+
+    }
+
   return (
     <div className="  h-[300px] mt-20    ">
-      <form onSubmit={handleSubmit} className="  ">
-        <div className=" border border-#707070-500 w-[325px] h-[53px]  m-3 rounded-lg ">
-          <input
-            className="text-right bg-[#F3F4F6] h-full w-[325px] rounded-lg "
-            placeholder=" نام"
-            type="text"
-            id="firstName"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            required
-          />
-        </div>
+
+<Formik initialValues={{phoneOrGmail:"",password:"",rememberMe:false}} onSubmit={handleLogin}>
+  <Form>
+    
 
 
-
-        
         <div className="border border-#707070-500 w-[327px] h-[53px] flex justify-content m-3 gap-[2px] rounded-lg ">
-          <input
+          <Field
             className="text-right bg-[#F3F4F6] w-full "
             placeholder=" شماره تماس"
             type="text"
-            id="lastName"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
+           name='phoneOrGmail'
+
             required
           />
         </div>
         <div className="border border-#707070-500  h-[53px] flex justify-content m-3 gap-[2px] rounded-lg">
-          <input
+          <Field
             className="text-right bg-[#F3F4F6]  w-full"
             placeholder=" رمز عبور"
             type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            name="password"
+
+
             required
           />
-        </div>
+        </div >
+        <div className="ml-2">
         <button
-          className="border border-#707070-500 w-[100%] h-[53px] text-center m-1 gap-[2px] bg-[#436E8E] text-center rounded-lg"
+          className="text-white w-[100%] h-[53px]  m-1 gap-[2px] bg-[#436E8E] text-center rounded-lg"
           type="submit"
         >
+        
           ورود
         </button>
-      </form>
+
+
+        <button
+          className="border border-#707070-500 w-[100%] h-[53px]  m-1 gap-[2px] bg-[#fff] text-center rounded-lg"
+          type="submit"
+        >
+        
+          بازگشت به صفحه اصلی
+        </button>
+        </div>
+
+      </Form>
+      </Formik>
     </div>
   );
 };
