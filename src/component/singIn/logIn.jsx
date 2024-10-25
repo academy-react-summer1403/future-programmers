@@ -64,7 +64,7 @@ const LogIn=()=>{
               target="-blank"
               rel="noopener noreferrer "
             >
-فراموشی رمز            </a>{" "}
+فراموشی رمز            </a>{" "} 
           </div>
 
 
@@ -78,7 +78,7 @@ const LogIn=()=>{
       <div className="hidden md:block h-[550px]  rounded-lg  ">
         <img src="./Image.png" alt="" className="w-[100%] h-[100%]" />
       </div>
-    </div>
+    </div>*/}
   </div>
 
   );

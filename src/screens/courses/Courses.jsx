@@ -13,19 +13,15 @@ import SearchBox from '../../component/SearchBoxInCourses/SearchBox';
 
 
 const Courses = () => {
-//   const Course=[
-//     {image:'public/01.jpg', topic:'آموزش ری اکت 1', explain:'آموزش می دهیم. آموزش نمی دهیم', teacher:'استاد یک',time:'12:12:12', price:'رایگان!'},
-//     {image:'public/01.jpg',topic:'آموزش ری اکت 2', explain:'آموزش می دهیم. آموزش می دهیم', teacher:'استاد دو',time:'12:12:12', price:'رایگان!'},
-//     {image:'public/01.jpg',topic:'آموزش ری اکت 3', explain:'آموزش می دهیم. آموزش نمی دهیم', teacher:'استاد سه',time:'12:12:12', price:'رایگان!'},
-//     {image:'public/01.jpg',topic:'آموزش ری اکت 3', explain:'آموزش می دهیم. آموزش نمی دهیم', teacher:'استاد سه',time:'12:12:12', price:'رایگان!'}
-// ]
+
 const [Course, setCourse] = useState([])
+const [sort, setSort] = useState('')
 
-// console.log('Course',Course)
+console.log(sort, 'sort')
 
-const getAllCoursesList = async ()=>{
+const getAllCoursesList = async (sort)=>{
     try {
-        const result = await getlist()
+        const result = await getlist(sort)
         setCourse(result.courseFilterDtos)
     } catch (error) {
         console.log(error)
@@ -33,8 +29,8 @@ const getAllCoursesList = async ()=>{
 }
 
 useEffect(()=>{
-    getAllCoursesList() 
-},[])
+    getAllCoursesList(sort) 
+},[sort]);
 
 return (
 <div className='bg-[#e6e5e5] font-[sans] dark:bg-[#152a38]'>
@@ -45,8 +41,8 @@ return (
             <h1 className='dark:text-[#d1d4c9]'> 5 دوره آموزشی</h1>
         </div>
         <div className='w-[100%] h-[90px] max-lg:h-[70px] bg-white max-sm:h-[65px] bg-white rounded-[20px] flex items-center mt-[10px] md:max-lg:gap-0 gap-4 gap-0 dark:bg-[#29435c]'>    
-            <SearchBox />
-            <TopSorting />
+            <SearchBox  />
+            <TopSorting setSort={setSort}/>
             {/* <Sorting /> */}
             <FilterInTop />
         </div>
