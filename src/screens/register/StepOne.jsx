@@ -2,9 +2,9 @@ import FormPhone from "./FormPhone"
 
 const StepOne = () => {
   return (
-    <div className='dark:bg-gray-600  h-screen flex justify-center bg-white'>
-      <div className='flex justify-around border-black-500 h-[580px] dark:bg-gray-600 dark:text-white shadow-lg  w-5/6 m-auto '>
-        <div className=' border border-[#ccc] h-[580px] w-[1349px] rounded-lg pt[20px] flex gap-52'>
+    <div className='dark:bg-gray-600  h-screen flex justify-center bg-[#F3F4F6] '>
+      <div className='flex justify-around  h-[580px] dark:bg-gray-600 bg-white dark:text-white shadow-lg  w-5/6 m-auto '>
+        <div className=' h-[580px] w-[1349px] rounded-lg pt[20px] flex gap-52'>
           <div className='h-[500px] w-[351px] rounded-lg mr-[140px] '>
 
 <div className='  h-[10%] mt-8 w-[90%] mr-1 flex'>
@@ -47,7 +47,7 @@ const StepOne = () => {
 ">با عضویت در سایت، تمامی قوانین و شرایط استفاده از خدمات
 آکادمی سپهر را پذیرفته اید</h2>
           </div>
-          <div className='  hidden md:block h-[100%] w-[50%]'>
+          <div className='  hidden md:block h-[100%] w-[500px]'>
             <img className="w-[100%] h-[100%]" src="./Image.png" alt="" />
           </div>
         </div>
