@@ -13,7 +13,6 @@ const NewCourse = () => {
 
     const getTopCourses =async () => {
         const res = await axios.get('https://classapi.sepehracademy.ir/api/Home/GetCoursesTop?Count=4')
-        console.log(res.data)
         setList(res.data)
       }
 
@@ -34,7 +33,7 @@ const NewCourse = () => {
                     <h2 className="text-2xl font-bold mb-8 text-blue-700">برترین دوره‌ها</h2>
                     <h3 className='mr-auto mt5'>مشاهده همه </h3>
                 </div>
-                <div className="flex flex-wrap gap-6 justify-evenly mt-10 ">
+                <div className="flex flex-wrap gap-6 justify-evenly m-10">
 
                     {List?.map((course, index) => (
                         <CourseCard title={course.title} image={course.tumbImageAddress} describe={course.describe}

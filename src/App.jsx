@@ -20,6 +20,7 @@ import StepTwo from './screens/register/StepTwo'
 import StepThree from './screens/register/StepThree'
 import SingIn from './screens/singIn/singIn'
 import News from './screens/page news/News'
+import UploadImage from './component/ProfileComponents/UploadImage/UploadImage'
 
 
 
@@ -101,7 +102,13 @@ function App() {
         {
           path:'EditProfile',
           element:<EditProfile/>
-        },                        
+        },  
+        
+        {
+          path:'UploadImage',
+          element:<UploadImage/>
+        },
+      
       ]
     },
     

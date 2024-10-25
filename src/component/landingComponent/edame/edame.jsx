@@ -2,19 +2,27 @@ import React, { useEffect, useState } from "react";
 import CourseCard from "../../common/CorseCard/CourseCard";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import http from '../../../core/services/interceptor'
 
 const Edame = () => {
   const [techersList, settechersList] = useState(null);
+  const [landingInfo, setLandingInfo] = useState(null);
 
   const getTeachers = async () => {
-    const res = await axios.get(
+    const res = await http.get(
       "https://classapi.sepehracademy.ir/api/Home/GetTeachers"
     );
-    settechersList(res.data);
+    settechersList(res);
   };
+
+  const getLandingInfo = async () => { 
+    const res = await http.get("https://classapi.sepehracademy.ir/api/Home/LandingReport");
+    setLandingInfo(res)
+  }
 
   useEffect(() => {
     getTeachers();
+    getLandingInfo();
   }, []);
 
   return (
@@ -77,22 +85,27 @@ const Edame = () => {
                 <p>12</p>
                 <p>4</p>
                 <p>5</p> */}
-                <div className="w-[20%]">
-                  <h2>3</h2>
-                  <h3>Lorem ipsum dolor sit amet.</h3>
+                  <div
+                    className="w-[20%]">
+                  <h2>{landingInfo?.teacherCount }</h2>
+                    <h3>تعداد معلمان</h3>
                 </div>
-                <div className="w-[20%]">
-                  <h2>3</h2>
-                  <h3>Lorem ipsum dolor sit amet.</h3>
-                </div>
-                <div className="w-[20%]">
-                  <h2>3</h2>
-                  <h3>Lorem ipsum dolor sit amet.</h3>
-                </div>
-                <div className="w-[20%]">
-                  <h2>3</h2>
-                  <h3>Lorem ipsum dolor sit amet.</h3>
-                </div>
+                <div
+                    className="w-[20%]">
+                  <h2>{landingInfo?.studentCount }</h2>
+                    <h3>تعداد دانشجویان</h3>
+                  </div>
+                  <div
+                    className="w-[20%]">
+                  <h2>{ landingInfo?.courseCount}</h2>
+                    <h3>تعداد کورس ها</h3>
+                  </div>
+                  <div
+                    className="w-[20%]">
+                  <h2>{ landingInfo?.newsCount}</h2>
+                    <h3>تعداد خبر ها</h3>
+                  </div>
+
               </div>
               {/* <div className='flex flex-wrap justify-around basis-full'>
                 <p>دانشجو آکادمی</p>
