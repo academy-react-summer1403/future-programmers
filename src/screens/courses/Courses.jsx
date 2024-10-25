@@ -2,13 +2,13 @@ import {Formik, Field, Form} from 'formik';
 import CourseCard from '../../component/CourseCard/CourseCard';
 // import Accardion from '../../component/accardion/accardion';
 // import FormField from '../../component/Fields/FormField';
-import TopCategory from '../../component/topCategory/TopCategory';
 import Filters from '../../component/filters/UsualFilters';
 import FilterInTop from '../../component/filters/FilterInTop';
-// import http from "../../core/services/interceptor"
 import { useEffect, useState } from 'react';
 import { getlist } from '../../core/services/api/course';
 import pic from '../../../public/item1.png'
+import TopSorting from '../../component/topSorting/TopSorting';
+import SearchBox from '../../component/SearchBoxInCourses/SearchBox';
 // import UseDarkMood from './UseDarkMood';
 
 
@@ -20,6 +20,7 @@ const Courses = () => {
 //     {image:'public/01.jpg',topic:'آموزش ری اکت 3', explain:'آموزش می دهیم. آموزش نمی دهیم', teacher:'استاد سه',time:'12:12:12', price:'رایگان!'}
 // ]
 const [Course, setCourse] = useState([])
+
 // console.log('Course',Course)
 
 const getAllCoursesList = async ()=>{
@@ -43,23 +44,16 @@ return (
             <h1 className='dark:text-[#d1d4c9]'>دوره ها</h1>
             <h1 className='dark:text-[#d1d4c9]'> 5 دوره آموزشی</h1>
         </div>
-        <div className='w-[100%] h-[115px] md:max-lg:h-[70px] max-md:h-[90px] max-sm:h-[65px] bg-white rounded-[20px] flex items-center mt-[10px] dark:bg-[#29435c]'>
-            <Formik initialValues={{SearchCourse:'', New:'',BestSelling:'',Expensive:'',Cheap:'' , sort:null }}>
-                <Form  className='w-[100%] h-[115px] md:max-lg:h-[100%] max-md:h-[100%] bg-white rounded-[20px] flex items-center md:max-lg:gap-0 gap-4 gap-0 dark:bg-[#29435c]'>
-            
-                    <Field  className='p-4 md:max-lg:p-2 w-[25%] md:max-lg:w-[27%] max-md:w-[50%] max-md:mx max-sm:w-[70%] mr-[1%] max-sm:mr-[3%] bg-[url(public/search.svg)] [background-position-y:center] max-sm:[background-position-x:3%] bg-no-repeat text-base max-sm:p-[9px] md:max-lg:text-[11px] font-bold [background-size:35px] md:max-lg:[background-size:25px] max-sm:[background-size:25px] max-sm:text-[13px] [center] shadow-inner shadow-slate-400 rounded-xl dark:bg-[#556e53] dark:placeholder-[#d1d4c9]' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
-                    <TopCategory />
-
-                    {/* <Sorting /> */}
-                    <FilterInTop />
-
-                </Form>
-            </Formik>
+        <div className='w-[100%] h-[90px] max-lg:h-[70px] bg-white max-sm:h-[65px] bg-white rounded-[20px] flex items-center mt-[10px] md:max-lg:gap-0 gap-4 gap-0 dark:bg-[#29435c]'>    
+            <SearchBox />
+            <TopSorting />
+            {/* <Sorting /> */}
+            <FilterInTop />
         </div>
-        <div className='flex sm:max-md:flex-wrap md:max-lg:flex-nowrap sm:max-md:max-md:max-lg:justify-center'>
+        <div className='flex sm:max-md:flex-wrap md:max-lg:flex-nowrap justify-between'>
             <Filters />
 
-            <div className='w-[72%] mt-6 pt-5 h-fit flex flex-row flex-wrap justify-start gap-x-4 gap-y-12 max-md:justify-between md:max-lg:gap-y-10 max-md:w-full max-sm:justify-center sm:max-md:gap-y-11'>
+            <div className='w-[75%] mt-6 pt-5 h-fit flex flex-wrap justify-start gap-x-5 gap-y-12 max-md:justify-between md:max-lg:gap-y-10 max-md:w-full max-sm:justify-center sm:max-md:gap-y-11'>
                 {Course.map((item, index)=>{
                     return(
                         <CourseCard 
@@ -68,8 +62,8 @@ return (
                         topic={item.title} 
                         explain={item.describe} 
                         teacher={item.teacherName} 
-                        time={item.lastUpdate} 
-                        price={item.cost} />  
+                        time={item.lastUpdate.toString().slice(11,19)} 
+                        price={item.cost.toString().slice(-9,-1)} />  
                     );   
                 })}             
             </div>
