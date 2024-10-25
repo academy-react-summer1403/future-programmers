@@ -11,15 +11,15 @@ const CardNews2 = () => {
   return (
     <div>
       <div className=''>
-    <div className='  bg-[#F3F4F6]  w-[100%] h-auto dark:bg-[#041c3254] '>
-    <div className='  bg-[#fff]  flex flex-wrap justify-center w-[95%]  h-96 mt-8 mr-9 dark:bg-[#041c3254] dark:text-white '>
+    <div className='  bg-[#F3F4F6]   w-[100%]  dark:bg-[#041c3254]  '>
+    <div className='  bg-[#fff]  flex flex-wrap justify-center w-[95%]   mr-9 dark:bg-[#041c3254] dark:text-white '>
     
     {CardList.map((item , index)=>{
         return(
-                    <div  key={index} className=' border-l-4 border-[#707070] p-4 w-[25%] h-[90%]  mt-3 '>
+                    <div  key={index} className=' border-l-4 border-[#707070] p-4 w-[25%] h-[70%]  mt-3 '>
 
                     <div className='w-[100%] h-[60%]'>
-                        <img src="" alt="" />
+                    <img src="./newspaper.png" alt="" className='w-full h-full'/>
                     </div >
                     <div className=' '>
                     <div className='  text-xl mr-2'>
@@ -39,12 +39,35 @@ const CardNews2 = () => {
             </div>
         )
     })}
+
+
+
+<div>
+    <div className="join">
+  <input
+    className="join-item btn btn-square"
+    type="radio"
+    name="options"
+    aria-label="1"
+    defaultChecked />
+  <input className="join-item btn btn-square" type="radio" name="options" aria-label="2" />
+  <input className="join-item btn btn-square" type="radio" name="options" aria-label="3" />
+  <input className="join-item btn btn-square" type="radio" name="options" aria-label="4" />
+  <input className="join-item btn btn-square" type="radio" name="options" aria-label="5" />
+  <input className="join-item btn btn-square" type="radio" name="options" aria-label="6" />
+  <input className="join-item btn btn-square" type="radio" name="options" aria-label="7" />
+</div>
+    
+</div>
       </div>
-     </div>
+
+    </div>
 
 
 
     </div>
+
+  
     </div>
   )
 }

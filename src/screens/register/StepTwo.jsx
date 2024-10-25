@@ -3,10 +3,10 @@ import StepNumber from './StepNumber'
 const StepTwo = () => {
   return (
 
-    <div className='dark:bg-gray-600 h-screen flex justify-center bg-white '>
-    <div className='flex justify-around border-black-500 h-[580px] hover:text-black-1000  shadow-lg  w-5/6 m-auto dark:bg-gray-600 '>
-      <div className=' border border-[#ccc] h-[580px] w-[1349px] rounded-lg pt[20px] flex gap-52'>
-        <div className='h-[500px] w-[351px] rounded-lg mr-[140px] '>
+    <div className='dark:bg-gray-600 h-screen flex justify-center   bg-[#F3F4F6] '>
+    <div className='flex justify-around border-black-500 h-[580px] bg-white  rounded-lg shadow-lg  w-5/6 m-auto dark:bg-gray-600 '>
+      <div className='  h-[580px] w-[1349px] rounded-lg pt[20px] flex gap-52'>
+        <div className='h-[500px] w-[351px] rounded-lg mr-[140px]'>
 
 <div className='  h-[10%] mt-8 w-[90%] mr-1 flex'>
 <div className=' h-[50px] w-[65px]' >
@@ -46,7 +46,7 @@ rel="noopener noreferrer "> حریم خصوصی </a>
 ">با عضویت در سایت، تمامی قوانین و شرایط استفاده از خدمات
 آکادمی سپهر را پذیرفته اید</h2>
         </div>
-        <div className=' hidden md:block h-[100%] w-[50%]'>
+        <div className=' hidden md:block h-[100%] w-[500px]'>
           <img src="./Image.png" alt="" className='w-[100%] h-[100%]'/>
         </div>
       </div>

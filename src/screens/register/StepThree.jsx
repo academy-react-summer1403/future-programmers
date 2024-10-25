@@ -2,9 +2,9 @@ import React from 'react'
 import ValidationSchema from './ValidationSchema';
 const StepThree = () => {
   return (
-    <div className=' dark:bg-gray-600 h-screen flex justify-center bg-white'>
-    <div className='flex shadow-lg  w-5/6 justify-around border-black-500 h-[580px] hover:text-black-1000  m-auto dark:bg-gray-600 '>
-      <div className=' border border-gray-300 h-[580px] w-[1349px] rounded-lg pt[20px] flex gap-52'>
+    <div className=' dark:bg-gray-600 h-screen   flex justify-center bg-[#F3F4F6]'>
+    <div className='flex shadow-lg  rounded-lg w-5/6 justify-around border-black-500 h-[580px] bg-white  m-auto dark:bg-gray-600 '>
+      <div className='  h-[580px] w-[1349px] rounded-lg pt[20px] flex gap-52'>
         <div className='h-[500px] w-[351px] rounded-lg mr-[140px] '>
 
 <div className='  h-[10%] mt-8 w-[90%] mr-1 flex'>
@@ -43,8 +43,8 @@ rel="noopener noreferrer ">    قوانین و شرایط </a>
 </div>
 
         </div>
-        <div className='  h-[500px] w-[40%]'>
-          <img src="./Image.png" alt="" />
+        <div className='  h-[500px] w-[500px] ml-32 '>
+          <img src="./Image.png" alt=""  className='w-[100%] h-[100%]'/>
         </div>
       </div>
     </div>

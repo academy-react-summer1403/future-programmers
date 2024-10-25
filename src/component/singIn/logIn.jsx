@@ -6,8 +6,8 @@ import LanguageSwitcher from './LanguageSwitcher'
 const LogIn = () => {
   return (
     
-    <div className=" dark:bg-gray-600  h-screen flex justify-center bg-white  ">
-    <div className="flex justify-around  w-5/6 m-auto shadow-lg   dark:bg-gray-600   rounded-lg">
+    <div className=" dark:bg-gray-600  h-screen flex justify-center bg-[#F3F4F6]  ">
+    <div className="flex justify-around  w-5/6 m-auto shadow-lg  bg-white dark:bg-gray-600   rounded-lg">
       <div className="   h-[500px]  rounded-lg  pt-[20px]">
         <div className="  h-[55px] w-[327px] mx-auto ">
           <div className="flex   h-[50px]  text-xl ">
