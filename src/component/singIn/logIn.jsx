@@ -22,7 +22,7 @@ const LogIn=()=>{
           <button type="submit">click</button>
         </Form>
       </Formik>
-    {/* <div className="flex justify-around border border-black-500 h-[580px] hover:text-black-1000 w-screen m-auto   dark:bg-gray-600 dark:text-white  rounded-lg">
+      <div className="flex justify-around border border-black-500 h-[580px] hover:text-black-1000 w-screen m-auto   dark:bg-gray-600 dark:text-white  rounded-lg">
       <div className="   h-[500px]  rounded-lg  pt-[20px]">
         <div className="  h-[55px] w-[327px] mx-auto ">
           <div className="flex   h-[50px]  text-xl ">
