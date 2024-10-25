@@ -16,12 +16,13 @@ const Courses = () => {
 
 const [Course, setCourse] = useState([])
 const [sort, setSort] = useState('')
+const [search, setSearch] = useState('')
 
-console.log(sort, 'sort')
+console.log(search, 'sort')
 
-const getAllCoursesList = async (sort)=>{
+const getAllCoursesList = async (sort, search)=>{
     try {
-        const result = await getlist(sort)
+        const result = await getlist(sort, search)
         setCourse(result.courseFilterDtos)
     } catch (error) {
         console.log(error)
@@ -29,8 +30,8 @@ const getAllCoursesList = async (sort)=>{
 }
 
 useEffect(()=>{
-    getAllCoursesList(sort) 
-},[sort]);
+    getAllCoursesList(sort,search) 
+},[sort,search]);
 
 return (
 <div className='bg-[#e6e5e5] font-[sans] dark:bg-[#152a38]'>
@@ -41,7 +42,7 @@ return (
             <h1 className='dark:text-[#d1d4c9]'> 5 دوره آموزشی</h1>
         </div>
         <div className='w-[100%] h-[90px] max-lg:h-[70px] bg-white max-sm:h-[65px] bg-white rounded-[20px] flex items-center mt-[10px] md:max-lg:gap-0 gap-4 gap-0 dark:bg-[#29435c]'>    
-            <SearchBox  />
+            <SearchBox setSearch={setSearch} />
             <TopSorting setSort={setSort}/>
             {/* <Sorting /> */}
             <FilterInTop />
