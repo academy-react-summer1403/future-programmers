@@ -17,7 +17,7 @@ function Footer() {
 
         <div className='w-1/5  max-sm:w-[100%] max-md:w-[30%]'>
           <div className='h-1/3 sm:max-md:h-[40%]'><img src={Logo} className='rounded-[30%] h-[100%] w-[46%] max-sm:w-[30%] max-md:w-[42%] max-md:h-[95%] m-[auto]'></img></div>
-          <div className='bg-slate-400 text-center rounded-[23px] mt-[35px] max-md:mt-[25px] max-md:w-[75%] max-md:mr-[12%] max-sm:mt-[15px] max-sm:w-[50%] max-sm:mr-[25%]'><a href='' className='text-[20px] max-md:text-[15px] max-lg:text-[17px] max-sm:m-x:auto'>info@pazhooheshgah.ir</a></div>
+          <div className='bg-slate-400 text-center rounded-[23px] mt-[35px] max-md:mt-[25px] max-md:w-[75%] max-md:mr-[12%] max-sm:mt-[15px] w-[70%] mr-[15%] max-sm:w-[50%] max-sm:mr-[25%]'><a href='' className='relative bottom-[2px] text-[16px] max-md:text-[15px] max-lg:text-[12px] max-sm:m-x:auto'>info@pazhooheshgah.ir</a></div>
           <div className='flex justify-center gap-3 mt-[15%] max-sm:mt-[5%] max-md:mt-[7%]'>
             <div className='bg-slate-400 w-[40px] h-[40px] sm:max-md:w-[32px] sm:max-md:h-[32px] rounded-[50%]'><a href='#'><img src={linkedin} className='w-[79%] mr-[10%] mt-[10%] sm:max-md:w-[25px]'></img></a></div>
             <div className='bg-slate-400 w-[40px] h-[40px] sm:max-md:w-[32px] sm:max-md:h-[32px] rounded-[50%]'><a href='#'><img src={youtube} className='w-[79%] mr-[10%] mt-[10%] sm:max-md:w-[25px]'></img></a></div>
