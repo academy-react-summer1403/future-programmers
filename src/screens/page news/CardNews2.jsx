@@ -43,7 +43,7 @@ const CardNews2 = () => {
 
 
 <div>
-    <div className="join">
+    {/* <div className="join">
   <input
     className="join-item btn btn-square"
     type="radio"
@@ -56,7 +56,7 @@ const CardNews2 = () => {
   <input className="join-item btn btn-square" type="radio" name="options" aria-label="5" />
   <input className="join-item btn btn-square" type="radio" name="options" aria-label="6" />
   <input className="join-item btn btn-square" type="radio" name="options" aria-label="7" />
-</div>
+</div> */}
     
 </div>
       </div>
