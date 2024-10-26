@@ -20,6 +20,17 @@ const LogIn=()=>{
     
     <div className=" dark:bg-gray-600  h-screen flex justify-center bg-[#F3F4F6]  ">
     <div className="flex justify-around  w-5/6 m-auto shadow-lg  bg-white dark:bg-gray-600   rounded-lg">
+    <div className=" dark:bg-gray-600  h-screen flex justify-center">
+      <Formik initialValues={{phoneOrGmail:'' , password:'' , rememberMe:false}} onSubmit={handleLogin}>
+      
+        <Form>
+          <Field type='text' name='phoneOrGmail' placeholder='phoneOrGmail' />
+          <Field type='text' name='password' placeholder='password'/>
+          <Field type='checkbox' name='rememberMe' />
+          <button type="submit">click</button>
+        </Form>
+      </Formik>
+    <div className="flex justify-around border border-black-500 h-[580px] hover:text-black-1000 w-screen m-auto   dark:bg-gray-600 dark:text-white  rounded-lg">
       <div className="   h-[500px]  rounded-lg  pt-[20px]">
         <div className="  h-[55px] w-[327px] mx-auto ">
           <div className="flex   h-[50px]  text-xl ">
@@ -61,7 +72,7 @@ const LogIn=()=>{
               target="-blank"
               rel="noopener noreferrer "
             >
-فراموشی رمز            </a>{" "}
+فراموشی رمز            </a>{" "} 
           </div>
 
 
@@ -79,19 +90,22 @@ const LogIn=()=>{
     </div>
   
   
+    </div>
+
+
+    
   </div>
 
 
 </div>
+</div>
 
 </div>
+
 
   );
 
 }
-
-
-
 
 
 export default LogIn;
