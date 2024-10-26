@@ -8,11 +8,11 @@ import Logo from '../../../public/Logo.png';
 
 function Footer() {
   return (
-    <div className=' border-solid dark:bg-[#152a38] dark:text-[#d1d4c9]'>
+    <div className=' border-solid font-[sans] dark:bg-[#152a38] dark:text-[#d1d4c9]'>
       <div className='flex relative top-[15px] max-sm:flex-col-reverse'>
-        <div className='w-2/5 border[1px_solid_red] text-[12px] max-sm:w-[100%] max-md:w-[35%] '>
+        <div className='w-2/5 border[1px_solid_red] text-[11px] max-sm:w-[100%] max-md:w-[35%] '>
           <p className='mr-[17%] mt-[12%] w-[74%] max-sm:mt-[10%] max-md:mt-[20%] max-md:mx-auto max-md:w-[84%]'>مجموعه آموزشی فلان فعالیت خود را از سال 1390 آغاز کرده است و امروز به بزرگترین کلونی برنامه نویسی شمال کشور تبدیل شده است.</p>
-          <p className='mr-[17%] mt-[4%] w-[74%] font-bold text-[16px] max-md:mx-auto max-sm:text-[15px] max-md:w-[84%] max-md:text-[13px] max-md:mt-[5%]'> ساری، جاده خزر، میدان فرح آباد، جنب مجتمع دنیای آرزو  43332000-011</p>
+          <p className='mr-[17%] mt-[4%] w-[74%] font-bold text-[13px] max-md:mx-auto max-sm:text-[15px] max-md:w-[84%] max-md:text-[13px] max-md:mt-[5%]'> ساری، جاده خزر، میدان فرح آباد، جنب مجتمع دنیای آرزو  43332000-011</p>
         </div>
 
         <div className='w-1/5  max-sm:w-[100%] max-md:w-[30%]'>
@@ -26,7 +26,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className='w-2/5 flex items-center text-[13px] max-lg:text-[12px] max-sm:hidden max-md:w-[35%]'>
+        <div className='w-2/5 flex items-center text-[13px] max-lg:text-[10px] max-sm:hidden max-md:w-[35%]'>
           <ul className='mr-14 list-disc mt-4 leading-6 sm:max-md:leading-5 sm:max-lg:mr-[50px]'>
             <li><a href='#'>دوره ها</a></li>
             <li><a href='#'>اخبار و مقالات</a></li>
@@ -43,7 +43,7 @@ function Footer() {
         </div>
       </div>
       <div className='bg-slate-400 dark:bg-[#29435c] h-[31px] relative bottom-[-31px] max-md:bottom-[-30px] border border-transparent'>
-        <h3 className=' text-center max-sm:text-[13px] mt-[4px]'>کلیه حقوق این وبسایت متعلق به آموزشگاه فلان می باشد.</h3>
+        <h3 className=' text-center max-md:text-[13px] mt-[4px]'>کلیه حقوق این وبسایت متعلق به آموزشگاه فلان می باشد.</h3>
       </div>
     </div>
   )
