@@ -1,15 +1,25 @@
+import Sort from "./Sort"
 
-function TopSortingResponsive() {
+function TopSortingResponsive({setSort}) {
+  const data = [
+    {value: 'cost', lable:'قیمت'},
+    {value: 'likeCount', lable:'محبوب ترین ها'},
+    {value: 'courseRate', lable:'بروزترین ها'},
+  ]
   return (
- <div className='mt-[10px]'>
-        <ul className=''>
-          <h1 className="pr-[15px] text-[14px] dark:text-[#d1d4c9]">مرتب سازی</h1>
-          <li className='mt-[8px] max-md:mr-[2%]'><span className='cursor-pointer text-[14px] max-md:text-[14px] dark:text-[#d1d4c9]'>جدیدترین</span></li>
-          <li className='max-md:mr-[2%]'><span className='cursor-pointer text-[14px] max-md:text-[14px] dark:text-[#d1d4c9]'>پرفروش ترین</span></li>
-          <li className='max-md:mr-[2%]'><span className='cursor-pointer text-[14px] max-md:text-[14px] dark:text-[#d1d4c9]'>گران ترین</span></li>
-          <li className='max-md:mr-[2%]'><span className='cursor-pointer text-[14px] max-md:text-[14px] dark:text-[#d1d4c9]'>ارزانترین</span></li>
-        </ul>
-        <button type='submit'  className='bg-slate-400 p-3 mr-[16px] mt-[10px] text-[14px] rounded-xl dark:text-[#d1d4c9] dark:bg-[#556e53]'>جستجو کن</button>
+ <div className='mt-[10px] dark:text-[#d1d4c9]'>
+          <h1 className="mr-[6%] text-[15px]">مرتب سازی</h1>
+         <ul onChange={(e)=>setSort(e.target.value)} >
+        {data.map((item, index)=>{
+          return(<Sort 
+            key={index} 
+            value={item.value}  
+            id={item.lable}
+          htmlFor={item.lable} 
+          topicSort={item.lable} />
+            )
+        })}
+      </ul>
     </div>
   )
 }
