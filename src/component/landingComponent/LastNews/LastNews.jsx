@@ -19,7 +19,7 @@ const LastNews = () => {
 
 
     return (
-        <section className="mt-10 flex justify-center">
+        <section className="mt-10 flex justify-center bg-[#e6e5e5] font-[sans] dark:bg-[#152a38]">
             <div className="container justify-center items-center">
                 <div className='flex pt-20 justify-center'>
                     <h2 className="font-bold text-center text-blue-400 text-4xl">آخرین اخبار</h2>

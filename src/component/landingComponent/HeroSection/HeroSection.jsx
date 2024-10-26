@@ -4,7 +4,7 @@ import React from 'react'
 
 const HeroSection = () => {
     return (
-        <div className=" ">
+        <div className=" bg-[#e6e5e5] font-[sans] dark:bg-[#152a38]">
             {/* Header */}
             <div className=" py-8 ">
                 <div className=" mx-auto px-4 flex flex-col-reverse md:flex-row  justify-around">

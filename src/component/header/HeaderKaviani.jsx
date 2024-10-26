@@ -4,7 +4,7 @@ import Bag from '../../../public/bag.png';
 import EmptyLike from '../../../public/Like.empty.png';
 function Header() {
   return (
-    <div className='border h-[120px] flex'>
+    <div className='border h-[120px] flex bg-[#e6e5e5] font-[sans] dark:bg-[#152a38]'>
         <div className='w-1/4'>
             <img src={Logo} className='w-24 h-[84%] mr-[15%] mt-[10px] rounded-3xl'></img>
         </div>
