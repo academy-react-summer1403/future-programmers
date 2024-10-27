@@ -1,7 +1,7 @@
 import { Field, Form, Formik } from "formik";
 import React, { useState } from "react";
 import { login } from "../../core/services/api/auth";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { getItem, setItem } from "../../core/services/common/storage.services";
 
 const Log = () => {
@@ -61,14 +61,17 @@ const Log = () => {
           ورود
         </button>
 
-
+        <NavLink to={'/'}>
         <button
           className="border border-#707070-500 w-[100%] h-[53px]  m-1 gap-[2px] bg-[#fff] text-center rounded-lg"
           type="submit"
         >
         
+        
           بازگشت به صفحه اصلی
         </button>
+        </NavLink>
+
         </div>
 
       </Form>

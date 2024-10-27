@@ -1,11 +1,12 @@
 import FormPhone from "./FormPhone"
+import { NavLink, useNavigate } from "react-router-dom";
 
 const StepOne = () => {
   return (
     <div className='dark:bg-gray-600  h-screen flex justify-center bg-[#F3F4F6] '>
-      <div className='flex justify-around  h-[580px] dark:bg-gray-600 bg-white dark:text-white shadow-lg  w-5/6 m-auto '>
-        <div className=' h-[580px] w-[1349px] rounded-lg pt[20px] flex gap-52'>
-          <div className='h-[500px] w-[351px] rounded-lg mr-[140px] '>
+      <div className='  flex justify-around   h-[580px] dark:bg-gray-600 bg-white dark:text-white shadow-lg  w-5/6 m-auto '>
+        <div className='  h-[580px] w-[1349px] rounded-lg pt[20px] flex gap-52'>
+          <div className=' h-[500px] w-[351px] rounded-lg mr-[140px] '>
 
 <div className='  h-[10%] mt-8 w-[90%] mr-1 flex'>
   <div className=' h-[50px] w-[65px]' >
@@ -15,8 +16,10 @@ const StepOne = () => {
 </div>
 
 <div className="mt-2 text-lg">
-<h3 className='mt-7 font-bold text-lg text-[#555555] '> ثبت نام با موبایل</h3>
+<h3 className='mt-7 font-bold text-lg text-[#555555] '>  ثبت نام با موبایل</h3>
 </div>
+
+
 
 {/* <div className='flex '>
 <h2 className='font-light'> حساب کاربری ندارید ؟ </h2>
@@ -33,16 +36,14 @@ const StepOne = () => {
 </div>
 
 
-
-
+<NavLink to={'/SingIn'}>
 <div className="flex whitespace-nowrap">
-<h2 className="text-[#8D8D8D] text-xs mr-2"> ثبت نام با ایمیل </h2>
-
-<a href="#" 
- className=" text-#8D8D8D-500 hover:text-#8D8D8D-800 underline text-xs mr-52 text-[#8D8D8D] "
- target="-blank"
- rel="noopener noreferrer "> حریم خصوصی </a>
+<h2 className="text-[#8D8D8D] text-xs mr-2">  ورود با   شماره موبایل یا ایمیل </h2>
 </div>
+</NavLink>
+
+
+
 <h2 className=" text-xs mt-8  text-[#8D8D8D] mr-2
 ">با عضویت در سایت، تمامی قوانین و شرایط استفاده از خدمات
 آکادمی سپهر را پذیرفته اید</h2>

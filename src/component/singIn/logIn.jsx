@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Log from "./Log";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import { Field, Form, Formik } from "formik";
 import axios from "axios";
@@ -13,14 +13,14 @@ const LogIn=()=>{
   
   return (
 
-    <div className=" dark:bg-gray-600  h-screen flex justify-center "> 
+    <div className=" text-[sans] dark:bg-gray-600  bg-[#F3F4F6]   w-[1360px] flex justify-center "> 
 
-    <div className="flex justify-around border border-black-500 h-[580px] hover:text-black-1000 w-screen m-auto   dark:bg-gray-600 dark:text-white  rounded-lg">
+    {/* <div className=" border border-pink-400 flex justify-around  h-[680px] w-[100%] m-auto   dark:bg-gray-600 dark:text-white  rounded-lg"> */}
 
     
-    <div className=" dark:bg-gray-600  h-screen flex justify-center bg-[#F3F4F6]  ">
-    <div className="flex justify-around  w-5/6 m-auto shadow-lg  bg-white dark:bg-gray-600   rounded-lg">
-    <div className=" dark:bg-gray-600  h-screen flex justify-center">
+    <div className="  dark:bg-gray-600  h-[600px] flex justify-center bg-[#F3F4F6]  ">
+    <div className=" flex  w-5/6 m-auto shadow-lg  bg-white dark:bg-gray-600   rounded-lg">
+    <div className="  dark:bg-gray-600  w-[100%] h-full flex justify-center">
 
       {/* <Formik initialValues={{phoneOrGmail:'' , password:'' , rememberMe:false}} onSubmit={handleLogin}>
       
@@ -32,7 +32,7 @@ const LogIn=()=>{
         </Form>
       </Formik> */}
 
-    <div className="flex justify-around border border-black-500 h-[580px] hover:text-black-1000 w-screen m-auto   dark:bg-gray-600 dark:text-white  rounded-lg">
+    <div className="  flex justify-around dark:border-black shadow-xl border border-black-500 h-[580px] hover:text-black-1000 w-screen m-auto   dark:bg-gray-600 dark:text-white  rounded-lg">
       <div className="   h-[500px]  rounded-lg  pt-[20px]">
         <div className="  h-[55px] w-[327px] mx-auto ">
           <div className="flex   h-[50px]  text-xl ">
@@ -45,8 +45,14 @@ const LogIn=()=>{
             </div>
 
           <div className="flex mt-5">
+
             <h3 className="text-sm dark:text-white">حساب کاربری ندارید؟ </h3>
-            <Link className="text-blue-700 underline text-sm">ثبت نام کنید </Link>
+
+
+            <Link to={'/StepOne'}  className="text-blue-700 underline text-sm dark:text-white" >ثبت نام کنید 
+           
+            
+            </Link>
           </div>
           
         </div>
@@ -58,7 +64,7 @@ const LogIn=()=>{
 
 
         <div className="  whitespace-nowrap">
-          <div className="flex text-xs  ">
+          {/* <div className="flex text-xs  ">
 
             <a
               href="#"
@@ -66,16 +72,16 @@ const LogIn=()=>{
               target="-blank"
               rel="noopener noreferrer "
             >
-              قوانین و شرایط
-            </a>{" "}
+            </a>
+
             <a
               href="#"
               className=" text-#8D8D8D-500 mr-44  hover:text-#8D8D8D-800 underline dark:text-white  "
               target="-blank"
               rel="noopener noreferrer "
             >
-فراموشی رمز            </a>{" "} 
-          </div>
+فراموشی رمز            </a>
+          </div> */}
 
 
             
@@ -100,7 +106,7 @@ const LogIn=()=>{
 
 
 </div>
-</div>
+{/* </div> */}
 
 </div>
 

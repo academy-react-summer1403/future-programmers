@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import Logo from '../../../public/Logo.png';
+
 import { Link, NavLink } from "react-router-dom";
 import { HeaderHamburgerMenu } from "./HeaderHamburgerMenu";
 
-// Header Component
 const Header = () => {
   const [dark, setdark] = useState(false);
 
@@ -10,73 +11,52 @@ const Header = () => {
     document.documentElement.classList.toggle("dark");
     setdark(!dark);
   };
+  
   return (
-    <div className=" border border-blue-500 flex justify-between items-center w-full py-4 px-6 bg-white shadow-md dark:bg-gray-400 ">
-      {/* Right Section: Logo */}
-      <div className="flex items-center ">
-        <img src="header icon.png" alt="" className="w-10 h-10" />
+    <div className=" text-[sans] bg-white flex justify-between items-center w-full py-4 px-6  shadow-2xl dark:bg-[#152a38] dark:border-b-2">
+      <div className="flex items-center  ">
+        <img src="header icon.png" alt="" className="w-14 h-14" />
         <span className=" ml-2 text-xl font-bold"></span>
         <div className="md:hidden mr-2">
           <HeaderHamburgerMenu />
         </div>
       </div>
-        <div className="flex justify-right gap-5 w-[50%] h-10 mt-6">
+
+
+        <div className=" dark:text-white flex justify-center  gap-5 w-[50%] h-10 mt-6">
           <NavLink to={'/'}>
-                <div className=" w-20 h-10">
-            <h2>صفحه نخست</h2>
+                <div className=" mb-3 ">
+            <h2 className="   hover:border-b-2 border-orange-500 ">صفحه نخست</h2>
           </div>
           </NavLink>
             
-          <div className=" w-20 h-10">
-            <h2>دوره ها</h2>
+          <div className="mb-3  w-14 h-10">
+            <h2 className="hover:border-b-2 border-orange-500">دوره ها</h2>
           </div>
-          <div className=" w-20 h-10">
-          <h2>مقالات</h2>
+          <div className="mb-3  w-14 h-10">
+          <h2 className="hover:border-b-2 border-orange-500">اساتید</h2>
 
           </div>
-          <div className=" w-20 h-10">
-          <h2>درباره ما</h2>
+          <NavLink to={'/news'}>
+          <div className="mb-3 flex ">
+          <h2 className="hover:border-b-2 border-orange-500">اخبار و مقالات </h2>
 
           </div>
-                <NavLink to={'/singIn'}>
-  <div className=" w-28 h-10">
-          <h2>ورود / ثبت نام</h2>
+          </NavLink>
+          
+          <div className="mb-3  w-20 h-10">
+          <h2 className=" hover:border-b-2  border-orange-500"> تماس با ما </h2>
 
           </div>
-                </NavLink>
+                
 
         
 
         </div>
-        
-      {/* Middle Section: Links */}
-      {/* <nav className="md:flex hidden ml-auto gap-4 ">
-        <Link to="/" className="text-gray-700 hover:text-blue-500">
-          خانه
-        </Link>
-
-        <Link to="/courses" className="text-gray-700 hover:text-blue-500">
-          دوره ها
-        </Link>
-
-        <Link href="#about" className="text-gray-700 hover:text-blue-500">
-          درباره ما
-        </Link>
-
-        <Link href="#contact" className="text-gray-700 hover:text-blue-500">
-          تماس با ما
-        </Link>
 
 
 
-        <Link href="#SingIn" className="text-gray-700 hover:text-blue-500">
-        ورود        </Link>
-
-        <Link href="#SingIn" className="text-gray-700 hover:text-blue-500">
-              </Link>
-      </nav> */}
-
-      {/* Left Section: Buttons */}
+    
       <div className="flex gap-4 me-10">
         <button onClick={handleDark}>
           {/* {dark === false && <img src="./moon.png" alt="" />}
@@ -121,8 +101,21 @@ const Header = () => {
         <Link to="/profile">
           <img src="./profile-user.png" alt="" />
         </Link>
+
+
+
+        <NavLink to={'/singIn'}>
+  <div className="  bg-[#3dc2f7] rounded-full mt-1   justify-end w-28 h-10">
+          <h2 className="  text-center hover:text-lg dark:text-white">ورود / ثبت نام </h2>
+
+          </div>
+                </NavLink>
+
       </div>
     </div>
+
+
+
   );
 };
 
