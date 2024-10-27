@@ -1,6 +1,5 @@
 import Sort from "./Sort"
 
-
 function TopSorting({setSort}) {
 
   const data = [
