@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import CourseCard from '../../common/CorseCard/CourseCard';
 import axios from 'axios';
@@ -27,7 +27,7 @@ const NewCourse = () => {
 
 
     return (
-        <section className=" mx-auto ">
+        <section className=" mx-auto overflow-hidden bg-[#f3f4f6] font-[sans] dark:bg-[#152a38] dark:text-[#d1d4c9] border border-black">
             <div className="container mx-auto px-4">
                 <div className='flex '>
                     <h2 className="text-2xl font-bold mb-8 text-blue-700">برترین دوره‌ها</h2>
