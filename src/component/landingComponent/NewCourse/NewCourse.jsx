@@ -23,13 +23,13 @@ const NewCourse = () => {
 
 
     return (
-        <section className=" mx-auto overflow-hidden bg-[#f3f4f6] font-[sans] dark:bg-[#152a38] dark:text-[#d1d4c9] border border-black">
-            <div className="container mx-auto px-4">
-                <div className='flex '>
-                    <h2 className="text-2xl font-bold mb-8 text-blue-700">برترین دوره‌ها</h2>
-                    <h3 className='mr-auto mt5'>مشاهده همه </h3>
+        <section className=" mx-auto overflow-hidden pb-[30px] bg-[#f3f4f6] font-[sans] dark:bg-[#152a38] dark:text-[#d1d4c9]">
+            <div className="w-[90%] mx-auto max-sm:pt-2 px-4">
+                <div className='flex justify-between'>
+                    <h2 className="text-2xl font-bold text-blue-700 max-sm:text-[14px] max-lg:text-[18px] dark:text-[#d1d4c9]">برترین دوره‌ها</h2>
+                    <h3 className='max-sm:text-[14px] my-auto'>مشاهده همه </h3>
                 </div>
-                <div className="flex flex-wrap gap-6 justify-evenly m-10">
+                <div className="flex flex-wrap justify-between max-md:gap-y-11 max-sm:pt-[30px] max-lg:pt-[35px] pt-[45px] ">
                     {List?.map((course, index) => (
                         <CourseCard 
                             key={index} 
