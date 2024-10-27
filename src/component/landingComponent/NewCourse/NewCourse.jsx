@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import CourseCard from '../../common/CorseCard/CourseCard';
 import axios from 'axios';
+import picture from '../../../../public/cImage.png';
 
 
 
@@ -9,14 +10,10 @@ const NewCourse = () => {
 
     const [List, setList] = useState(null);
 
-
-
     const getTopCourses =async () => {
         const res = await axios.get('https://classapi.sepehracademy.ir/api/Home/GetCoursesTop?Count=4')
         setList(res.data)
     }
-
-
 
     
     useEffect(() => {
@@ -33,10 +30,16 @@ const NewCourse = () => {
                     <h3 className='mr-auto mt5'>مشاهده همه </h3>
                 </div>
                 <div className="flex flex-wrap gap-6 justify-evenly m-10">
-
                     {List?.map((course, index) => (
-                        <CourseCard key={index} title={course.title} image={course.tumbImageAddress} describe={course.describe}
-                            teacher={course.teacherName} index={index} id={course.courseId} userIsLiked={course.userIsLiked} />
+                        <CourseCard 
+                            key={index} 
+                            title={course.title} 
+                            image={course.tumbImageAddress??picture} 
+                            describe={course.describe}
+                            teacher={course.teacherName}
+                            id={course.courseId} 
+                            userIsLiked={course.userIsLiked} 
+                        />
                     ))}
                 </div>
             </div>
