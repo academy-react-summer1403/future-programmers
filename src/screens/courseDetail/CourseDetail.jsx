@@ -12,7 +12,7 @@ function CourseDetail() {
   ]
     
   return (
-    <div className='bg-[#e6e5e5] font-[sans] dark:bg-slate-700 overflow-hidden dark:bg-[#152a38]'>
+    <div className='bg-[#f3f4f6] font-[sans] dark:bg-slate-700 overflow-hidden dark:bg-[#152a38]'>
 
       <div className='w-[88%] mx-auto flex'>
         <div className=' relative h-[380px] w-[100%] max-md:h-[250px] md:max-lg:h-[300px] mt-4 rounded-[30px] bg-[url(public/p.01.png)] bg-no-repeat [background-size:100%_100%]'>

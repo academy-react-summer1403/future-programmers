@@ -10,7 +10,7 @@ function NewsDetail() {
 
     ]
     return (
-        <div className='bg-[#e6e5e5] font-[sans] dark:bg-[#152a38]'>
+        <div className='bg-[#f3f4f6] font-[sans] dark:bg-[#152a38]'>
             <div className='w-[88%] mx-auto flex pt-[15px]'>
                 <div className='w-[100%] h-[50px] rounded-[15px] bg-white dark:bg-[#29435c] dark:text-[#d1d4c9]'></div>
             </div>

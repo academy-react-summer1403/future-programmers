@@ -34,7 +34,7 @@ useEffect(()=>{
 },[sort,search]);
 
 return (
-<div className='bg-[#e6e5e5] font-[sans] dark:bg-[#152a38]'>
+<div className='bg-[#f3f4f6] font-[sans] dark:bg-[#152a38]'>
 
         <div className='flex flex-row-reverse flex-wrap gap-x-2 gap-y-4 w-[90%] mx-[auto]'>
         <div className='w-[100%] flex justify-between'>

@@ -8,7 +8,7 @@ import Logo from '../../../public/Logo.png';
 
 function Footer() {
   return (
-    <div className=' border-solid font-[sans] dark:bg-[#152a38] dark:text-[#d1d4c9]'>
+    <div className=' border-solid font-[sans] bg-[#f3f4f6] dark:bg-[#152a38] dark:text-[#d1d4c9]'>
       <div className='flex relative top-[15px] max-sm:flex-col-reverse'>
         <div className='w-2/5 border[1px_solid_red] text-[11px] max-sm:w-[100%] max-md:w-[35%] '>
           <p className='mr-[17%] mt-[12%] w-[74%] max-sm:mt-[10%] max-md:mt-[20%] max-md:mx-auto max-md:w-[84%]'>مجموعه آموزشی فلان فعالیت خود را از سال 1390 آغاز کرده است و امروز به بزرگترین کلونی برنامه نویسی شمال کشور تبدیل شده است.</p>
