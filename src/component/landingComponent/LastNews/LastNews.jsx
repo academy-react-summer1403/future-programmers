@@ -22,7 +22,7 @@ const LastNews = () => {
             <div className="w-[90%] mx-auto px-4">
                 <h2 className="text-2xl font-bold text-blue-400">آخرین اخبار</h2>
 
-                <div className="flex flex-wrap gap-2 justify-evenly mt-10 ">
+                <div className="flex flex-wrap gap-2 justify-evenly mt-10">
                     {NewsList?.map((item, index) => {
                         return (
                             <div key={index} className='bg-white rounded-3xl w-[90%] mt-8 md:w-[40%] lg:w-[20%] h-96  '>
