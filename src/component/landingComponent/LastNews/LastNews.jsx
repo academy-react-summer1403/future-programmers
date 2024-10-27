@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import telegram from '../../../../public/Image 1.png'
 import axios from 'axios';
+import NewsCard from './newsCard.jsx'
 
 
 
@@ -19,29 +19,23 @@ const LastNews = () => {
 
 
     return (
-        <section className="mt-10 flex justify-center">
-            <div className="container justify-center items-center">
-                <div className='flex pt-20 justify-center'>
-                    <h2 className="font-bold text-center text-blue-400 text-4xl">آخرین اخبار</h2>
-                    <img src={telegram} className='mr-20 w-20 h-20'></img>
-                </div>
+        <section className="flex justify-center overflow-hidden pb-[20px] bg-[#f3f4f6] font-[sans] dark:bg-[#152a38] dark:text-[#d1d4c9] border border-black">
+            <div className="w-[90%] mx-auto px-4">
+                <h2 className="text-2xl font-bold text-blue-400">آخرین اخبار</h2>
 
-                <div className="flex flex-wrap gap-2 justify-evenly mt-10 ">
-                
-                    {NewsList?.map((item, index) => {
-                        return (
-                            <div className='bg-white rounded-3xl w-[90%] mt-8 md:w-[40%] lg:w-[20%] h-96  '>
-                                <img src={item.currentImageAddressTumb} alt="" className='mx-auto rounded-sm -top-5 relative w-11/12 h-3/6 object-fill' />
-                                <h1 className='font-extrabold'>{item.title}</h1>
-                                <p className='mt-2'>{item.miniDescribe}</p>
-                                <h3 className='text-xs font-semibold'>نویسنده : {item.addUserFullName }</h3>
-                                
-                            </div>
+                <div className="flex flex-wrap justify-between gap-y-3 mt-5">
+                    {NewsList?.map((item, index) => (
+                            <NewsCard 
+                            key={index}
+                            image={item.currentImageAddressTumb}
+                            newsTitle={item.title}
+                            newsText={item.miniDescribe}
+                            writer={item.addUserFullName}  
+                            />
                         )
-                    })}
-
+                    )}
                 </div>
-                <div className='float-left pl-8'>مشاهده همه اخبار</div>
+                <div className='text-left'>مشاهده همه اخبار</div>
             </div>
         </section>
     )

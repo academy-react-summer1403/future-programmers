@@ -34,37 +34,36 @@ useEffect(()=>{
 },[sort,search]);
 
 return (
-<div className='bg-[#e6e5e5] font-[sans] dark:bg-[#152a38]'>
+<div className='bg-[#f3f4f6] font-[sans] dark:bg-[#152a38]'>
 
         <div className='flex flex-row-reverse flex-wrap gap-x-2 gap-y-4 w-[90%] mx-[auto]'>
-        <div className='w-[100%] flex justify-between'>
-            <h1 className='dark:text-[#d1d4c9]'>دوره ها</h1>
-            <h1 className='dark:text-[#d1d4c9]'> 5 دوره آموزشی</h1>
-        </div>
-        <div className='w-[100%] h-[90px] max-lg:h-[70px] bg-white max-sm:h-[65px] bg-white rounded-[20px] flex items-center mt-[10px] md:max-lg:gap-0 gap-4 gap-0 dark:bg-[#29435c]'>    
-            <SearchBox setSearch={setSearch} />
-            <TopSorting setSort={setSort}/>
-            {/* <Sorting /> */}
-            <FilterInTop />
-        </div>
-        <div className='flex sm:max-md:flex-wrap md:max-lg:flex-nowrap justify-between'>
-            <Filters />
-
-            <div className='w-[75%] mt-6 pt-5 h-fit flex flex-wrap justify-start gap-x-5 gap-y-12 max-md:justify-between md:max-lg:gap-y-10 max-md:w-full max-sm:justify-center sm:max-md:gap-y-11'>
-                {Course.map((item, index)=>{
-                    return(
-                        <CourseCard 
-                        key={index}
-                        image={item.tumbImageAddress??pic}
-                        topic={item.title} 
-                        explain={item.describe} 
-                        teacher={item.teacherName} 
-                        time={item.lastUpdate.toString().slice(11,19)} 
-                        price={item.cost.toString().slice(-9,-1)} />  
-                    );   
-                })}             
+            <div className='w-[100%] flex justify-between'>
+                <h1 className='dark:text-[#d1d4c9]'>دوره ها</h1>
+                <h1 className='dark:text-[#d1d4c9]'> 5 دوره آموزشی</h1>
             </div>
-        </div>
+            <div className='w-[100%] h-[90px] max-lg:h-[70px] max-sm:h-[65px] bg-white rounded-[20px] flex items-center mt-[10px] md:max-lg:gap-0 gap-4 dark:bg-[#29435c]'>    
+                <SearchBox setSearch={setSearch} />
+                <TopSorting setSort={setSort}/>
+                {/* <Sorting /> */}
+                <FilterInTop />
+            </div>
+            <div className='flex sm:max-md:flex-wrap md:max-lg:flex-nowrap justify-between'>
+                <Filters />
+                <div className='w-[75%] mt-6 pt-5 h-fit flex flex-wrap justify-start gap-x-5 gap-y-12 max-md:justify-between md:max-lg:gap-y-10 max-md:w-full max-sm:justify-center sm:max-md:gap-y-11'>
+                    {Course.map((item, index)=>{
+                        return(
+                            <CourseCard 
+                            key={index}
+                            image={item.tumbImageAddress??pic}
+                            topic={item.title} 
+                            explain={item.describe} 
+                            teacher={item.teacherName} 
+                            time={item.lastUpdate.toString().slice(11,19)} 
+                            price={item.cost.toString().slice(-9,-1)} />  
+                        );   
+                    })}             
+                </div>
+            </div>
 
       
     </div>

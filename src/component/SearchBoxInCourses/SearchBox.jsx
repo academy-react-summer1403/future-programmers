@@ -1,10 +1,11 @@
 
 function SearchBox({setSearch}) {
   return (
-    <div>
-        
-            <input onChange={(e)=>setSearch(e.target.value)} className='lg:p-4 md:max-lg:p-2 mr-[3%] bg-[url(public/search.svg)] [background-position-y:center] max-sm:[background-position-x:3%] bg-no-repeat text-base max-md:p-[9px] md:max-lg:text-[11px] font-bold [background-size:35px] md:max-lg:[background-size:25px] max-sm:[background-size:25px] max-sm:text-[13px] [center] shadow-inner shadow-slate-400 rounded-xl dark:bg-[#556e53] dark:placeholder-[#d1d4c9]' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
-
+    <div>  
+      <input
+      onChange={(e)=>setSearch(e.target.value)}
+      type='text' placeholder='جستجوی دوره' name='SearchCourse' 
+      className='lg:p-4 md:max-lg:p-2 mr-[3%] bg-[url(public/courseSearch.svg)] dark:bg-[url(public/darkcourseSearch.svg)] [background-position-y:center] max-sm:[background-position-x:3%] [background-position-x:2%] bg-no-repeat text-base max-md:p-[9px] md:max-lg:text-[11px] font-bold [background-size:35px] md:max-lg:[background-size:25px] max-sm:[background-size:25px] max-sm:text-[13px] [center] shadow-inner shadow-slate-400 rounded-xl dark:bg-[#556e53] dark:placeholder-[#d1d4c9]'   />
     </div>
   )
 }

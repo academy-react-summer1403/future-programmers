@@ -26,7 +26,7 @@ const Edame = () => {
   }, []);
 
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen bg-[#e6e5e5] font-[sans] dark:bg-[#152a38] ">
       {/* Best Selling Courses Section */}
       <section className="py-12">
         <div className="container mx-auto px-4">
@@ -118,7 +118,7 @@ const Edame = () => {
         </div>
       </section>
       {/* Category Section */}
-      <section className="py-12 bg-gray-50 dark:bg-gray-500">
+      <section className="py-12 ">
         <div className="container mx-auto px-4">
           <h2 className="text-xl font-bold text-center mb-6">دسته بندی</h2>
           <div className="flex flex-wrap justify-evenly gap-6">
