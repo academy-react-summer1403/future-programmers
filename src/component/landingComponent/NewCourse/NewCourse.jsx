@@ -14,15 +14,14 @@ const NewCourse = () => {
     const getTopCourses =async () => {
         const res = await axios.get('https://classapi.sepehracademy.ir/api/Home/GetCoursesTop?Count=4')
         setList(res.data)
-      }
+    }
 
 
 
     
-      useEffect(() => {
-        getTopCourses()
-        
-      }, []);
+    useEffect(() => {
+        getTopCourses()    
+    }, []);
 
 
 
@@ -36,7 +35,7 @@ const NewCourse = () => {
                 <div className="flex flex-wrap gap-6 justify-evenly m-10">
 
                     {List?.map((course, index) => (
-                        <CourseCard title={course.title} image={course.tumbImageAddress} describe={course.describe}
+                        <CourseCard key={index} title={course.title} image={course.tumbImageAddress} describe={course.describe}
                             teacher={course.teacherName} index={index} id={course.courseId} userIsLiked={course.userIsLiked} />
                     ))}
                 </div>
