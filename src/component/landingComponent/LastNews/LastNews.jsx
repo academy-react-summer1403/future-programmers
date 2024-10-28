@@ -19,7 +19,7 @@ const LastNews = () => {
 
 
     return (
-        <section className="flex justify-center overflow-hidden pb-[20px] bg-[#f3f4f6] font-[sans] dark:bg-[#152a38] dark:text-[#d1d4c9] border border-black">
+        <section className="flex justify-center overflow-hidden pt-5 pb-[20px] bg-[#f3f4f6] font-[sans] dark:bg-[#152a38] dark:text-[#d1d4c9] border border-black">
             <div className="w-[90%] mx-auto px-4">
                 <h2 className="text-2xl font-bold text-blue-400">آخرین اخبار</h2>
 
