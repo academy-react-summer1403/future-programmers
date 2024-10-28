@@ -1,6 +1,6 @@
 import { Field, Form, Formik } from "formik";
 import React, { useState } from "react";
-import { login } from "../../core/services/api/auth";
+// import { login } from "../../core/services/api/auth";
 import { useNavigate } from "react-router-dom";
 import { getItem, setItem } from "../../core/services/common/storage.services";
 
@@ -10,10 +10,9 @@ const Log = () => {
 
     const handleLogin =async (values) => {
       try {
-        const result= await login(values)
+        const res = await http.post('/Sign/Login', values)
         console.log(result.token)
-      setItem("token" ,result.token)
-      navigate(getItem("token") ? "/" :null);
+        setItem("token" ,result.token)
 
 
       } catch (err) {

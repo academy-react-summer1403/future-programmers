@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import { FaRegMoon, FaRegUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Moon from "../../../../public/moon.png"
+import moon from "../../../../public/moon.png"
+import sun from "../../../../public/sun.png"
 import Profile from "../../../../public/profile-user.png"
 
 const Header = () => {
@@ -22,8 +23,8 @@ const Header = () => {
       {/* Icons */}
       <div className="flex gap-4 me-10">
         <button onClick={handleDark}>
-          {dark === false && <img src="./moon.png" alt="" />}
-          {dark === true && <img src="./sun.png" alt="" />}
+          {dark === false && <img src={moon} alt="" />}
+          {dark === true && <img src={sun} alt="" />}
         </button>
         <Link to='/'>
           <img src={Profile} alt="" />

@@ -46,7 +46,7 @@ const Header = () => {
           {dark === false && <img src="./moon.png" alt="" />}
           {dark === true && <img src="./sun.png" alt="" />}
         </button>
-        <Link to="/profile">
+        <Link to="/profile/pishkhan">
           <img src="./profile-user.png" alt="" />
         </Link>
       </div>

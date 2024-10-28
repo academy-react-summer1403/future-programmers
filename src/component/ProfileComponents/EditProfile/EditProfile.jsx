@@ -8,10 +8,10 @@ const EditProfile = () => {
   useEffect(() => {}, []);
 
   return (
-    <div className="flex">
+    <div className="flex dark:bg-gray-400 mt-10 p-4 pb-20 rounded-2xl">
       <Formik initialValues={{ LName: "", FName: "", ReceiveMessageEvent: "" }}>
         <Form className="w-7/12">
-          <div className="flex justify-around mt-8">
+          <div className="flex justify-around mt-8 gap-4">
             <input
               type="text"
               placeholder="نام"
@@ -24,7 +24,7 @@ const EditProfile = () => {
             />
           </div>
 
-          <div className="flex justify-around mt-8">
+          <div className="flex justify-around mt-8  gap-4">
             <input
               type="text"
               placeholder="کد ملی"
@@ -37,7 +37,7 @@ const EditProfile = () => {
             />
           </div>
 
-          <div className="flex justify-around mt-8">
+          <div className="flex justify-around mt-8  gap-4">
             <input
               type="date"
               placeholder="تاریخ تولد"
@@ -52,7 +52,7 @@ const EditProfile = () => {
             </select>
           </div>
 
-          <div className="flex justify-around mt-8">
+          <div className="flex justify-around mt-8  gap-4">
             <input
               type="text"
               placeholder="ایمیل"
@@ -65,7 +65,7 @@ const EditProfile = () => {
             />
           </div>
 
-          <div className="flex justify-around mt-8">
+          <div className="flex justify-around mt-8  gap-4">
             <input
               type="text"
               className="input input-bordered w-full max-w-xs"
