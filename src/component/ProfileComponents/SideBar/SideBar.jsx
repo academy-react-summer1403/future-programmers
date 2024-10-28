@@ -1,6 +1,6 @@
 // src/components/SidePanel.jsx
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaHome, FaBook, FaRegCommentDots, FaSignOutAlt } from "react-icons/fa";
 import logoPic from "../../../../public/header icon.png"
 import http from "../../../core/services//interceptor";
@@ -32,54 +32,54 @@ const SidePanel = () => {
 
       {/* Links Section */}
       <div className="flex flex-col gap-4 mt-12">
-        <Link
+        <NavLink
           to="/profile"
-          className="flex items-center gap-3 text-lg font-medium text-gray-700"
+          className={({isActive, isPending}) => isPending ? "pending" : isActive ? "underline" : "flex items-center gap-3 text-lg font-medium text-gray-700"}
         >
           پیشخوان
-        </Link>
+        </NavLink>
 
-        <Link
+        <NavLink
           to="/profile/ReserveCourse"
-          className="flex items-center gap-3 text-lg font-medium text-gray-700"
+          className={({isActive, isPending}) => isPending ? "pending" : isActive ? "underline flex items-center gap-3 text-lg font-medium text-gray-700" : "flex items-center gap-3 text-lg font-medium text-gray-700"}
         >
           دوره‌های رزرو شده
-        </Link>
+        </NavLink>
 
-        <Link
+        <NavLink
           to="/profile/AcceptCourse"
-          className="flex items-center gap-3 text-lg font-medium text-gray-700"
+          className={({isActive, isPending}) => isPending ? "pending" : isActive ? "underline flex items-center gap-3 text-lg font-medium text-gray-700" : "flex items-center gap-3 text-lg font-medium text-gray-700"}
         >
           دوره های من
-        </Link>
+        </NavLink>
 
-        <Link
+        <NavLink
           to="/profile/FavoriteNews"
-          className="flex items-center gap-3 text-lg font-medium text-gray-700"
+          className={({isActive, isPending}) => isPending ? "pending" : isActive ? "underline flex items-center gap-3 text-lg font-medium text-gray-700" : "flex items-center gap-3 text-lg font-medium text-gray-700"}
         >
           اخبار مورد علاقه
-        </Link>
+        </NavLink>
 
-        <Link
+        <NavLink
           to="/profile/FavoriteCourse"
-          className="flex items-center gap-3 text-lg font-medium text-gray-700"
+          className={({isActive, isPending}) => isPending ? "pending" : isActive ? "underline flex items-center gap-3 text-lg font-medium text-gray-700" : "flex items-center gap-3 text-lg font-medium text-gray-700"}
         >
           دوره های مورد علاقه
-        </Link>
+        </NavLink>
 
-        <Link
+        <NavLink
           to="/profile/EditProfile"
-          className="flex items-center gap-3 text-lg font-medium text-gray-700"
+          className={({isActive, isPending}) => isPending ? "pending" : isActive ? "underline flex items-center gap-3 text-lg font-medium text-gray-700" : "flex items-center gap-3 text-lg font-medium text-gray-700"}
         >
             ویرایش پروفایل
-        </Link>
-
+        </NavLink>
+{/* 
         <Link
           to="/profile/UploadImage"
           className="flex items-center gap-3 text-lg font-medium text-gray-700"
         >
           اپلود عکس
-        </Link>
+        </Link> */}
 
 
       </div>
