@@ -3,6 +3,7 @@ import HeroSection from '../../component/landingComponent/HeroSection/HeroSectio
 import NewCourse from '../../component/landingComponent/NewCourse/NewCourse'
 import LastNews from '../../component/landingComponent/LastNews/LastNews'
 import Edame from '../../component/landingComponent/edame/edame'
+import BestTeacher from '../../component/landingComponent/BestTeacher/BestTeacher'
 
 const Landing = () => {
   return (
@@ -10,6 +11,7 @@ const Landing = () => {
       <HeroSection />
       <NewCourse/>
       <LastNews/>
+      <BestTeacher/>
       <Edame/>
     </>
   )
