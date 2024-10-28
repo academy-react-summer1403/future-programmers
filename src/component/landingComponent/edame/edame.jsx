@@ -16,7 +16,7 @@ const Edame = () => {
   };
 
   const getLandingInfo = async () => { 
-    const res = await http.get("https://classapi.sepehracademy.ir/api/Home/LandingReport");
+    const res = await http.get("api/Home/LandingReport");
     setLandingInfo(res)
   }
 
