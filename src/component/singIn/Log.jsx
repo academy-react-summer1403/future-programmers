@@ -10,10 +10,9 @@ const Log = () => {
 
     const handleLogin =async (values) => {
       try {
-        const result= await login(values)
+        const res = await http.post('/Sign/Login', values)
         console.log(result.token)
-      setItem("token" ,result.token)
-      navigate(getItem("token") ? "/" :null);
+        setItem("token" ,result.token)
 
 
       } catch (err) {

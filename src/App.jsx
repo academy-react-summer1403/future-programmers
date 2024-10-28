@@ -79,7 +79,7 @@ function App() {
       element:<Profile/>,
       children:[
         {
-          path:'',
+          path:'pishkhan',
           element:<Pishkhan/>
         },
         {

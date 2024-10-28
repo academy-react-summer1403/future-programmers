@@ -7,7 +7,14 @@ import axios from "axios";
 import { setItem } from "../../core/services/common/storage.services";
 
 
-const LogIn=()=>{
+const LogIn = () => {
+  
+  const handleLogin =async (values) => {
+    const res = await axios.post('https://classapi.sepehracademy.ir/api/Sign/Login', values)
+    console.log(res.data.token)
+    setItem("token" ,res.data.token)
+  }
+
 
   
   
