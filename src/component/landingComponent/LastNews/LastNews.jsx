@@ -21,7 +21,7 @@ const LastNews = () => {
     return (
         <section className="flex justify-center overflow-hidden pt-5 pb-[20px] max-sm:pb-[10px] bg-[#f3f4f6] font-[sans] dark:bg-[#152a38] ">
             <div className="w-[90%] mx-auto px-4">
-                <h2 className="text-2xl max-sm:text-[14px] max-md:text-[17px] max-lg:text-[18px] font-bold max-sm:pr-[11px] pr-[2%] text-blue-400">آخرین اخبار</h2>
+                <h2 className="text-2xl max-sm:text-[14px] max-md:text-[17px] max-lg:text-[18px] font-bold max-sm:pr-[11px] pr-[2%] text-[#436e8e]">آخرین اخبار</h2>
 
                 <div className="flex flex-wrap justify-between gap-y-3 mt-5 max-sm:mt-3">
                     {NewsList?.map((item, index) => (
