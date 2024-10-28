@@ -21,9 +21,9 @@ const LastNews = () => {
     return (
         <section className="flex justify-center overflow-hidden pt-5 pb-[20px] bg-[#f3f4f6] font-[sans] dark:bg-[#152a38] dark:text-[#d1d4c9] border border-black">
             <div className="w-[90%] mx-auto px-4">
-                <h2 className="text-2xl font-bold text-blue-400">آخرین اخبار</h2>
+                <h2 className="text-2xl max-sm:text-[14px] max-md:text-[17px] max-lg:text-[18px] font-bold max-sm:pr-[11px] pr-[2%] text-blue-400">آخرین اخبار</h2>
 
-                <div className="flex flex-wrap justify-between gap-y-3 mt-5">
+                <div className="flex flex-wrap justify-between gap-y-3 mt-5 max-sm:mt-3">
                     {NewsList?.map((item, index) => (
                             <NewsCard 
                             key={index}
@@ -35,7 +35,7 @@ const LastNews = () => {
                         )
                     )}
                 </div>
-                <div className='text-left'>مشاهده همه اخبار</div>
+                <h4 className='text-left mt-[1%] pl-[1%]'><a href=''> مشاهده همه اخبار</a></h4>
             </div>
         </section>
     )
