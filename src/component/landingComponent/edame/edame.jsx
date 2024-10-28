@@ -15,7 +15,7 @@ const Edame = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#f3f4f6] font-[sans] dark:bg-[#152a38] border border-black">
+    <div className="min-h-screen bg-[#f3f4f6] font-[sans] dark:bg-[#152a38]">
       {/* Best Selling Courses Section */}
       {/* Services Section */}
       <section className="py-12">
