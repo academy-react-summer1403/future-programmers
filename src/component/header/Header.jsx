@@ -100,7 +100,7 @@ const Header = () => {
 </label>
 
         </button>
-        <Link to="/profile">
+        <Link to="/profile/pishkhan">
           <img src="./profile-user.png" alt="" />
         </Link>
 

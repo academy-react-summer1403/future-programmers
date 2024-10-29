@@ -1,67 +1,25 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import CourseCard from "../../common/CorseCard/CourseCard";
-import axios from "axios";
-import { Link } from "react-router-dom";
 import http from '../../../core/services/interceptor'
 
 const Edame = () => {
-  const [techersList, settechersList] = useState(null);
   const [landingInfo, setLandingInfo] = useState(null);
 
-  const getTeachers = async () => {
-    const res = await http.get(
-      "https://classapi.sepehracademy.ir/api/Home/GetTeachers"
-    );
-    settechersList(res);
-  };
-
   const getLandingInfo = async () => { 
-    const res = await http.get("https://classapi.sepehracademy.ir/api/Home/LandingReport");
+    const res = await http.get("api/Home/LandingReport");
     setLandingInfo(res)
   }
 
   useEffect(() => {
-    getTeachers();
     getLandingInfo();
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#e6e5e5] font-[sans] dark:bg-[#152a38] ">
+    <div className="bg-[#f3f4f6] font-[sans] dark:bg-[#152a38]">
       {/* Best Selling Courses Section */}
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center mb-8"> مدرسین</h2>
-          <div className="flex flex-wrap justify-evenly gap-6">
-            {techersList?.map((item, index) => (
-              <div
-                key={index}
-                className="bg-white dark:bg-gray-400 px-4 shadow-2xl  rounded-2xl mt-4 w-full sm:w-[45%]  xl:w-[20%] h-[450px] "
-              >
-                <img
-                  src={item.pictureAddress}
-                  className="relative -top-5 w-full h-40 object-cover rounded"
-                />
-                <h3 className=" text-lg font-bold">{item.fullName}</h3>
-                <p className="text-gray-600 text-sm mt-2 h-[145px] overflow-clip ">
-                </p>
-
-                <div className="flex justify-between">
-                  <Link className="mt-4 text-blue-800">جزییات</Link>
-                </div>
-              </div>
-            ))}
-          </div>
-          <a
-            href="#"
-            className="block text-center mt-6 text-blue-500 hover:underline"
-          >
-            مشاهده همه
-          </a>
-        </div>
-      </section>
-
       {/* Services Section */}
-      <section className="py-12">
+
+      {/* <section className="py-12">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold text-center mb-8">خدمات</h2>
           <div className=" p-6 rounded-lg shadow-md text-center">
@@ -72,8 +30,9 @@ const Edame = () => {
             </p>
           </div>
         </div>
-      </section>
-      <section className="py-12">
+      </section> */}
+
+      {/* <section className="py-12">
         <div className="container mx-auto px-4  md:flex flex-nowrap">
           <div className="md:w-1/2">
             <img className="" src="./Image 6.png" />
@@ -81,10 +40,6 @@ const Edame = () => {
           <div className="p-6 text-center md:w-1/2 content-center">
             <div className="flex flex-wrap justify-between content-center">
               <div className="flex flex-wrap justify-around basis-full">
-                {/* <p>3</p>
-                <p>12</p>
-                <p>4</p>
-                <p>5</p> */}
                   <div
                     className="w-[20%]">
                   <h2>{landingInfo?.teacherCount }</h2>
@@ -107,30 +62,27 @@ const Edame = () => {
                   </div>
 
               </div>
-              {/* <div className='flex flex-wrap justify-around basis-full'>
-                <p>دانشجو آکادمی</p>
-                <p>دوره اموزش</p>
-                <p>استاد فعال</p>
-                <p>رضایت مندی</p>
-              </div> */}
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+
+      
       {/* Category Section */}
       <section className="py-12 ">
         <div className="container mx-auto px-4">
           <h2 className="text-xl font-bold text-center mb-6">دسته بندی</h2>
-          <div className="flex flex-wrap justify-evenly gap-6">
+          <div className="flex flex-wrap justify-evenly gap-6 dark:text-[#d1d4c9]">
             {categories.map((category, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-400 rounded-lg shadow-md p-6 text-center md:basis-[22%] basis-full"
+                className="bg-white dark:bg-[#29435e] rounded-lg shadow-md p-6 text-center md:basis-[22%] basis-full"
               >
                 <img
                   src={category.image}
                   alt={category.title}
-                  className="w-full h-24 object-contain mb-4 rounded dark:bg-gray-400"
+                  className="w-full h-24  object-contain mb-4 rounded dark:bg-[#29435e]"
                 />
                 <h3 className="text-lg font-bold">{category.title}</h3>
                 <h4 className="text-lg font-normal">{category.description}</h4>
