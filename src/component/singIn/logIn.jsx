@@ -20,7 +20,7 @@ const LogIn = () => {
   
   return (
 
-    <div className=" text-[sans]   bg-[#F3F4F6]   w-[100%] overflow-hidden flex justify-center "> 
+    <div className=" font-[sans]   bg-[#F3F4F6]   w-[100%] overflow-hidden flex justify-center "> 
 
     {/* <div className=" border border-pink-400 flex justify-around  h-[680px] w-[100%] m-auto   dark:bg-gray-600 dark:text-white  rounded-lg"> */}
 
