@@ -3,7 +3,7 @@ import React from 'react'
 const LineNews = () => {
   return (
     <div> 
-        <div className=' bg-[#F3F4F6]  h-36 dark:bg-[#041c3254]  '>
+        <div className=' bg-[#F3F4F6]  h-36 dark:bg-[#152a38]  '>
 
         <h1 className=' flex text-xs text-start text-[#8D8D8D] mr-16 dark:text-white'> خبر نامه سپهر</h1>
 

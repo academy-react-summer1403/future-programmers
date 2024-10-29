@@ -8,7 +8,7 @@ const SearchBar = () => {
   return (
 
     
-    <div className=" text-{sans} dark:bg-[#041c3254]  w-full   flex flex-wrap bg-[#F3F4F6]">
+    <div className=" font-[sans] dark:bg-[#152a38]  w-full   flex flex-wrap bg-[#F3F4F6]">
       <div className=" bg-white w-[95%] flex justify-between h-24  m-auto rounded-2xl dark:bg-[#29435c]  mb-7 sm:flex-nowrap  ">
         {/* <div className=" flex items-center w-[100%] h-[90px]  bg-pink-300 rounded-md shadow-md font-bold "> */}
           {/* <div className=" bg-blue-300  flex items-center  mr-4 w-full h-[100%]  "> */}
