@@ -11,9 +11,9 @@ const validationSchema = yup.object().shape({
 });
 return (
 <>
-<div className='flex items-center justify-center bg-gray-100'>
-        <div className='bg-white p-6 rounded-lg  w-96'>
-            <h2 className='text-2xl font-bold mb-4 text-center'>  </h2>
+<div className='flex items-center justify-center bg-gray-100 dark:bg-[#678cb1]'>
+        <div className=' bg-white p-6 rounded-lg dark:bg-[#678cb1] w-96'>
+            <h2 className=' text-sm font-light mb-4 text-right'>   </h2>
         <Formik
         
         initialValues={{PhoneNumber: ''}}

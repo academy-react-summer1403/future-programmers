@@ -6,6 +6,7 @@ const SignupForm = () => {
         e.preventDefault();
         setSuccessMessage('ثبت نام با موفقیت انجام شد!');
     }
+    
 return (
     <div className="max-w-md mx-auto mt-10">
     {successMessage && (
@@ -15,7 +16,7 @@ return (
         </div>
 
 </div>
-    )
-}
+    );
+};
 
 export default SignupForm

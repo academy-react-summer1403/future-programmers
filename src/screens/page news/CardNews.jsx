@@ -11,14 +11,14 @@ const CardNews = () => {
   return (
     <div>
     <div className=''>
-    <div className='  bg-[#F3F4F6]  w-[100%]  dark:bg-[#041c3254] '>
+    <div className=' text-{sans} flex-wrap bg-[#F3F4F6]  w-[100%]  dark:bg-[#152a38] dark:text-[#d1d4c9] '>
     <div className='bg-[#fff]  flex flex-wrap justify-center w-[95%]  mr-9 dark:bg-[#041c3254] dark:text-white'>
     
     {CardList.map((item , index)=>{
         return(
-                    <div  key={index} className='  flex-wrap   w-[25%] h-[90%]   dark:bg-[#041c3254] '>
+                    <div  key={index} className='flex-wrap w-[25%] h-[90%]   dark:bg-[#041c3254] '>
 
-                    <div className=' pr-5 mt-8  w-{100%] h-[60%] gap-2'>
+                    <div className=' pr-5 mt-8  w-{100%] h-[60%] gap-2  '>
                         <img src="./newspaper.png" alt=""  className='w-[96%] h-52   '/>
                     </div >
 

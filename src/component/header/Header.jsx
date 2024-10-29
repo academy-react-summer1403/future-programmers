@@ -13,7 +13,7 @@ const Header = () => {
   };
   
   return (
-    <div className=" text-[sans] bg-white flex justify-between items-center w-full py-4 px-6  shadow-2xl dark:bg-[#152a38] dark:border-b-2">
+    <div className=" text-[sans] bg-[#f9f9f9] flex justify-between items-center w-full py-4 px-6  shadow-2xl dark:bg-[#152a38] ">
       <div className="flex items-center  ">
         <img src="header icon.png" alt="" className="w-14 h-14" />
         <span className=" ml-2 text-xl font-bold"></span>
@@ -29,10 +29,12 @@ const Header = () => {
             <h2 className="   hover:border-b-2 border-orange-500 ">صفحه نخست</h2>
           </div>
           </NavLink>
-            
-          <div className="mb-3  w-14 h-10">
+            <NavLink to={'/Courses'}>
+             <div className="mb-3  w-14 h-10">
             <h2 className="hover:border-b-2 border-orange-500">دوره ها</h2>
-          </div>
+          </div>  
+            </NavLink>
+         
           <div className="mb-3  w-14 h-10">
           <h2 className="hover:border-b-2 border-orange-500">اساتید</h2>
 
@@ -105,8 +107,8 @@ const Header = () => {
 
 
         <NavLink to={'/singIn'}>
-  <div className="  bg-[#3dc2f7] rounded-full mt-1   justify-end w-28 h-10">
-          <h2 className="  text-center hover:text-lg dark:text-white">ورود / ثبت نام </h2>
+  <div className="  bg-[#01cec9] flex justify-center text-sm rounded-full mt-1 items-center text-white w-28 h-10">
+          <h2 className="  text-center  dark:text-white">ورود / ثبت نام </h2>
 
           </div>
                 </NavLink>

@@ -9,9 +9,9 @@ const FormPhone = () => {
 
 return (
 <>
-<div className='flex items-center justify-center bg-gray-100'>
-        <div className='bg-white p-6 rounded-lg  w-96'>
-            <h2 className='text-2xl font-bold mb-4 text-center'>  </h2>
+<div className='flex items-center justify-center bg-gray-100 dark:bg-[#678cb1]'>
+        <div className='bg-white p-6  rounded-lg  w-96 dark:bg-[#678cb1]'>
+            <h2 className='text-2xl font-bold mb-4 text-center '>  </h2>
         <Formik
         
         initialValues={{PhoneNumber: ''}}
@@ -28,7 +28,7 @@ return (
                         type='tel'
                         name='phoneNumber'
                         placeholder='شماره موبایل'
-                        className='border border-gray-300 text-right p-2 w-full rounded '
+                        className='border border-gray-300 text-right p-2 w-full rounded dark:text-black '
 />
                         <ErrorMessage
                         name='phoneNumber'

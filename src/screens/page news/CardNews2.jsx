@@ -11,8 +11,8 @@ const CardNews2 = () => {
   return (
     <div>
       <div className=''>
-    <div className='  bg-[#F3F4F6]   w-[100%]  dark:bg-[#041c3254]  '>
-    <div className='  bg-[#fff]  flex flex-wrap justify-center w-[95%] h-[500px] mr-9 dark:bg-[#041c3254] dark:text-white '>
+    <div className='  bg-[#F3F4F6]   w-[100%]  dark:bg-[#152a38] dark:text-[#d1d4c9]  '>
+    <div className='  bg-[#fff]  flex flex-wrap justify-center w-[95%] h-[500px] mr-9 dark:bg-[#152a38] dark:text-[#d1d4c9]  '>
     
     {CardList.map((item , index)=>{
         return(

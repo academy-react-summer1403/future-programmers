@@ -13,14 +13,14 @@ const LogIn=()=>{
   
   return (
 
-    <div className=" text-[sans] dark:bg-gray-600  bg-[#F3F4F6]   w-[1360px] flex justify-center "> 
+    <div className=" text-[sans]   bg-[#F3F4F6]   w-[100%] overflow-hidden flex justify-center "> 
 
     {/* <div className=" border border-pink-400 flex justify-around  h-[680px] w-[100%] m-auto   dark:bg-gray-600 dark:text-white  rounded-lg"> */}
 
     
-    <div className="  dark:bg-gray-600  h-[600px] flex justify-center bg-[#F3F4F6]  ">
-    <div className=" flex  w-5/6 m-auto shadow-lg  bg-white dark:bg-gray-600   rounded-lg">
-    <div className="  dark:bg-gray-600  w-[100%] h-full flex justify-center">
+    <div className="  dark:bg-[#152a38]  h-[600px] flex justify-center bg-[#F3F4F6]  ">
+    <div className=" dark:bg-[#678cb1] flex  w-5/6 m-auto shadow-lg  bg-white    rounded-lg">
+    <div className="    w-[100%] h-full flex justify-center">
 
       {/* <Formik initialValues={{phoneOrGmail:'' , password:'' , rememberMe:false}} onSubmit={handleLogin}>
       
@@ -32,12 +32,12 @@ const LogIn=()=>{
         </Form>
       </Formik> */}
 
-    <div className="  flex justify-around dark:border-black shadow-xl border border-black-500 h-[580px] hover:text-black-1000 w-screen m-auto   dark:bg-gray-600 dark:text-white  rounded-lg">
+    <div className="  flex justify-around dark:border-black shadow-xl border border-black-500 h-[580px] hover:text-black-1000 w-screen m-auto    dark:text-white  rounded-lg">
       <div className="   h-[500px]  rounded-lg  pt-[20px]">
         <div className="  h-[55px] w-[327px] mx-auto ">
           <div className="flex   h-[50px]  text-xl ">
-            <img src="./Logo.png" alt="" className="h-[100%] w-[20%]" />
-            <h2 className="ms-10 mt-2  dark:text-white">آکادمی سپهر </h2>
+            <img src="./Logo.png" alt="" className="h-[100%] w-[20%] " />
+            <h2 className="  mr-4 mt-2 font-bold dark:text-white">آکادمی سپهر </h2>
           </div>
 
         <div className="mt-2 text-lg">
@@ -91,8 +91,8 @@ const LogIn=()=>{
       
       </div>
       
-      <div className="hidden md:block h-[550px]  rounded-lg  ">
-        <img src="./Image.png" alt="" className="w-[100%] h-[100%]" />
+      <div className="hidden md:block h-[578px]  w-[500px]  ">
+        <img src="./Image.png" alt="" className="w-[100%] h-[100%] mr-20 rounded-xl" />
       </div>
       
     </div>

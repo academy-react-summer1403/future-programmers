@@ -4,9 +4,9 @@ import Sort2 from "./Sort2"
 function TopSorting2() {
 
   const data = [
-    {value: 'cost', lable:'قیمت'},
-    {value: 'likeCount', lable:'محبوب ترین ها'},
-    {value: 'courseRate', lable:'بروزترین ها'},
+    {value: 'cost', lable:'مرتب سازی'},
+    {value: 'likeCount', lable:' جدید ترین'},
+    {value: 'courseRate', lable:'قدیمی ترین'},
   ]
   return (
     <div className='items-center md:flex mr-[25px] max-xl:mr-[5px] max-lg:mr-[15px]'>
