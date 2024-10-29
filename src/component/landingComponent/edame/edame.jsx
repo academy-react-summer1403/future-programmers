@@ -15,10 +15,11 @@ const Edame = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#f3f4f6] font-[sans] dark:bg-[#152a38]">
+    <div className="bg-[#f3f4f6] font-[sans] dark:bg-[#152a38]">
       {/* Best Selling Courses Section */}
       {/* Services Section */}
-      <section className="py-12">
+
+      {/* <section className="py-12">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold text-center mb-8">خدمات</h2>
           <div className=" p-6 rounded-lg shadow-md text-center">
@@ -29,8 +30,9 @@ const Edame = () => {
             </p>
           </div>
         </div>
-      </section>
-      <section className="py-12">
+      </section> */}
+
+      {/* <section className="py-12">
         <div className="container mx-auto px-4  md:flex flex-nowrap">
           <div className="md:w-1/2">
             <img className="" src="./Image 6.png" />
@@ -60,30 +62,27 @@ const Edame = () => {
                   </div>
 
               </div>
-              {/* <div className='flex flex-wrap justify-around basis-full'>
-                <p>دانشجو آکادمی</p>
-                <p>دوره اموزش</p>
-                <p>استاد فعال</p>
-                <p>رضایت مندی</p>
-              </div> */}
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+
+      
       {/* Category Section */}
       <section className="py-12 ">
         <div className="container mx-auto px-4">
           <h2 className="text-xl font-bold text-center mb-6">دسته بندی</h2>
-          <div className="flex flex-wrap justify-evenly gap-6">
+          <div className="flex flex-wrap justify-evenly gap-6 dark:text-[#d1d4c9]">
             {categories.map((category, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-400 rounded-lg shadow-md p-6 text-center md:basis-[22%] basis-full"
+                className="bg-white dark:bg-[#29435e] rounded-lg shadow-md p-6 text-center md:basis-[22%] basis-full"
               >
                 <img
                   src={category.image}
                   alt={category.title}
-                  className="w-full h-24 object-contain mb-4 rounded dark:bg-gray-400"
+                  className="w-full h-24  object-contain mb-4 rounded dark:bg-[#29435e]"
                 />
                 <h3 className="text-lg font-bold">{category.title}</h3>
                 <h4 className="text-lg font-normal">{category.description}</h4>
