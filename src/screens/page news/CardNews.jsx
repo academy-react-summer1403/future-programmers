@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom';
 
 const CardNews = () => {
     const [CardList, setCardList] = useState([
@@ -18,9 +19,12 @@ const CardNews = () => {
         return(
                     <div  key={index} className='flex-wrap w-[25%] h-[90%]   dark:bg-[#041c3254] '>
 
-                    <div className=' pr-5 mt-8  w-{100%] h-[60%] gap-2  '>
+<NavLink to='/newsdetail'>
+    <div className=' pr-5 mt-8  w-{100%] h-[60%] gap-2  '>
                         <img src="./newspaper.png" alt=""  className='w-[96%] h-52   '/>
                     </div >
+</NavLink>
+                    
 
                     <div className=' '>
                     <div className='  text-xl mr-2'>
