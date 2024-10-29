@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import{ useState } from "react";
 import Logo from '../../../public/Logo.png';
 
 import { Link, NavLink } from "react-router-dom";
@@ -23,7 +23,7 @@ const Header = () => {
       </div>
 
 
-        <div className=" dark:text-white flex justify-center  gap-5 w-[50%] h-10 mt-6">
+        <div className=" dark:text-white flex justify-center  max-md:hidden gap-5 w-[50%] h-10 mt-6">
           <NavLink to={'/'}>
                 <div className=" mb-3 ">
             <h2 className="   hover:border-b-2 border-orange-500 ">صفحه نخست</h2>

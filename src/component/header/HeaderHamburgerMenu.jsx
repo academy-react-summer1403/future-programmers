@@ -10,7 +10,7 @@ const HeaderHamburgerMenu = () => {
   //   setIsMenuVisible(!isMenuVisible);
   // };
   return (
-    <div className="drawer drawer-end ">
+    <div className="drawer drawer-end  ">
       <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         {/* Page content here */}
@@ -36,7 +36,7 @@ const HeaderHamburgerMenu = () => {
           </svg>
         </label>
       </div>
-      <div className="drawer-side">
+      <div className="drawer-side z-[999]">
         <label
           htmlFor="my-drawer-4"
           aria-label="close sidebar"
