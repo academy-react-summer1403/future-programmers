@@ -1,4 +1,5 @@
 // import React from 'react'
+import CourseComent from './CourseComent'
 import CourseExplain from './CourseExplain'
 import CourseInformation from './CourseInformation'
 import SimilarCourse from './SimilarCourse'
@@ -32,10 +33,11 @@ function CourseDetail() {
       <div className=' flex flex-wrap justify-between w-[88%] mx-auto mt-5 pb-[30px] overflow-hidden dark:bg-[#152a38]'>
         <CourseExplain />
        
-        <div className='flex flex-wrap  max-lg:h-[400px] max-md:h-[800px] w-[33%] gap-y-5 max-lg:w-[100%] md:max-lg:justify-between md:max-lg:mt-5'>
+        <div className='flex flex-wrap  max-lg:h-[400px]  max-sm:h-fit max-md:h-[800px] w-[33%] gap-y-5 max-lg:w-[100%] md:max-lg:justify-between md:max-lg:mt-5'>
         <CourseInformation />
+        <CourseComent />
 
-          <div className=' w-[99%] pb-4 lg:mb-[115px] bg-white rounded-[20px] max-md:w-[100%] max-md:mt-3 md:max-lg:w-[47%] max-md:mb-[3%] dark:bg-[#29435c]'>
+          <div className=' w-[99%] max-sm:hidden pb-4 lg:mb-[115px] bg-white rounded-[20px] max-md:w-[100%] max-md:mt-3 md:max-lg:w-[47%] max-md:mb-[3%] dark:bg-[#29435c]'>
             <h1 className='relative right-[30px] top-[10px]  text-[20px] text-cyan-700 inline dark:text-[#d1d4c9]'>دوره های مشابه</h1>
             <div className=' mt-[15px]'>
               {TeachersCourses.map((item,index)=>{
