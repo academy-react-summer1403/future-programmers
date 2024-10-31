@@ -1,5 +1,5 @@
 
-function CourseComent() {
+function CourseComment() {
   return (
     <div className='w-[100%] mx-[auto] pb-5'>
         <div className='w-[100%] h-[400px] bg-white  max-md:mt-0 rounded-[20px] max-md:w-[100%] md:max-lg:w-[100%] dark:bg-[#29435c]'>
@@ -15,4 +15,4 @@ function CourseComent() {
   )
 }
 
-export default CourseComent
+export default CourseComment
