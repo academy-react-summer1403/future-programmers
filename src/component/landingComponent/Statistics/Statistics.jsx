@@ -16,9 +16,9 @@ function Statistics() {
     }, []);
 
     return (
-        <div className=" mx-auto px-4 sm:h-44 lg:h-96 ">
+        <div className="flex justify-end mx-auto px-4 sm:h-44 lg:h-96 bg-[url(public/Group.png)] [background-size:49%_125%] [background-position-x:100%] bg-no-repeat">
             {/* <img className="relative h-[140%] w-[50%] right-[-3%] z-0 max-sm:hidden" src={pic} /> */}
-            <div className=" xl:left-[50px] sm:max-md:left-[20px] sm:max-md:w-[430px] overflow-hidden text-center content-center flex flex-wrap justify-between max-sm:h-9 max-sm:rounded-xl max-sm:shadow-md">
+            <div className=" sm:w-[60%] lg:pl-9 sm:max-md:left-[20px] sm:max-md:w-[430px] overflow-hidden text-center content-center flex flex-wrap justify-between max-sm:h-9 max-sm:rounded-xl max-sm:shadow-md">
                     <div className="flex flex-wrap justify-between max-sm:justify-between basis-full max-sm:text-[10px] max-md:text-[12px] dark:bg-[#29435c]">
                         <div className="w-[20%] max-md:w-[24%] dark:text-[#d1d4c9]">
                             <h2 className='text-[#436e8e]'>{landingInfo?.teacherCount }</h2>

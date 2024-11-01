@@ -3,7 +3,7 @@ const Edame = () => {
 
 
   return (
-    <div className="py-12 max-sm:pt-4">
+    <div className="py-12 lg:pt-0 max-sm:pt-4">
       {/* Category Section */}
       
         <div className="container mx-auto px-4 max-sm:w-[90%]">

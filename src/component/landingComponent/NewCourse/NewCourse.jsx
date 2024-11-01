@@ -23,7 +23,7 @@ const NewCourse = () => {
 
 
     return (
-        <section className=" mx-auto overflow-x-hidden pb-[30px] dark:text-[#d1d4c9]">
+        <section className="mx-auto overflow-x-hidden pb-[30px] dark:text-[#d1d4c9]">
             <div className="w-[90%] mx-auto max-sm:pt-2 px-4">
                 <div className='flex justify-between'>
                     <h2 className="text-2xl font-bold text-[#436e8e] max-sm:text-[14px] max-lg:text-[18px] max-sm:pr-[11px] pr-[2%] dark:text-[#d1d4c9]">برترین دوره‌ها</h2>
