@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios';
 import NewsCard from './newsCard.jsx'
+import pic from '../../../../public/cImage.png'
 
 
 
@@ -27,7 +28,7 @@ const LastNews = () => {
                     {NewsList?.map((item, index) => (
                             <NewsCard 
                             key={index}
-                            image={item.currentImageAddressTumb}
+                            image={item.currentImageAddressTumb??pic}
                             newsTitle={item.title}
                             newsText={item.miniDescribe}
                             writer={item.addUserFullName}  

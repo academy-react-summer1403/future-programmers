@@ -16,22 +16,7 @@ const Edame = () => {
 
   return (
     <div className="bg-[#f3f4f6] font-[sans] dark:bg-[#152a38]">
-      {/* Best Selling Courses Section */}
-      {/* Services Section */}
-
-      {/* <section className="py-12">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center mb-8">خدمات</h2>
-          <div className=" p-6 rounded-lg shadow-md text-center">
-            <h3 className="font-bold text-lg mb-4">مدرک معتبر</h3>
-            <p className="text-gray-600">
-              مدرک معتبر را با ما دریافت کنید که قابل ارائه به موسسات رسمی است و
-              معتبر برای کسب و کارها.
-            </p>
-          </div>
-        </div>
-      </section> */}
-
+    
       {/* <section className="py-12">
         <div className="container mx-auto px-4  md:flex flex-nowrap">
           <div className="md:w-1/2">

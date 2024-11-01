@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import CourseCard from '../../common/CorseCard/CourseCard';
 import axios from 'axios';
-import picture from '../../../../public/cImage.png';
+import pic from '../../../../public/cImage.png';
 
 
 
@@ -34,7 +34,7 @@ const NewCourse = () => {
                         <CourseCard 
                             key={index} 
                             title={course.title} 
-                            image={course.tumbImageAddress??picture} 
+                            image={course.tumbImageAddress??pic} 
                             describe={course.describe}
                             teacher={course.teacherName}
                             id={course.courseId} 
