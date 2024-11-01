@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CourseCard from "../../common/CorseCard/CourseCard";
 import http from '../../../core/services/interceptor'
+import pic from '../../../../public/Group.png'
 
 const Edame = () => {
   const [landingInfo, setLandingInfo] = useState(null);
@@ -15,12 +16,12 @@ const Edame = () => {
   }, []);
 
   return (
-    <div className="bg-[#f3f4f6] font-[sans] dark:bg-[#152a38]">
+    <div className="">
     
-      {/* <section className="py-12">
+      <section className="py-12">
         <div className="container mx-auto px-4  md:flex flex-nowrap">
           <div className="md:w-1/2">
-            <img className="" src="./Image 6.png" />
+            <img className="" src={pic} />
           </div>
           <div className="p-6 text-center md:w-1/2 content-center">
             <div className="flex flex-wrap justify-between content-center">
@@ -50,7 +51,7 @@ const Edame = () => {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
 
       

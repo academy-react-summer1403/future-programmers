@@ -2,7 +2,7 @@
 
 function Services() {
   return (
-    <section className="py-12 bg-[#f3f4f6] font-[sans] dark:bg-[#152a38] border border-black">
+    <section className="py-12 overflow-x-hidden bg-[url(public/line.png)] [background-size:100%_100%]  bg-no-repeat">
     <div className="container mx-auto px-4">
       <h2 className="text-2xl font-bold text-center mb-8">خدمات</h2>
       <div className=" p-6 rounded-lg shadow-md text-center">
