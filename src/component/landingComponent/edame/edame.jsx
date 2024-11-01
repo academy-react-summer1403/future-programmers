@@ -3,12 +3,11 @@ const Edame = () => {
 
 
   return (
-    <div className="">
-    
+    <div className="py-12 max-sm:pt-4">
       {/* Category Section */}
-      <section className="py-12 ">
-        <div className="container mx-auto px-4">
-          <h2 className="text-xl font-bold text-center mb-6">دسته بندی</h2>
+      
+        <div className="container mx-auto px-4 max-sm:w-[90%]">
+          <h2 className="text-xl max-sm:text-[14px] font-bold text-center mb-6 max-sm:text-right max-sm:pr-2 dark:text-[#d1d4c9]">دسته بندی</h2>
           <div className="flex flex-wrap justify-evenly gap-6 dark:text-[#d1d4c9]">
             {categories.map((category, index) => (
               <div
@@ -26,7 +25,6 @@ const Edame = () => {
             ))}
           </div>
         </div>
-      </section>
     </div>
   );
 };
