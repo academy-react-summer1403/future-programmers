@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import http from '../../../core/services/interceptor'
-import pic from '../../../../public/Group.png'
+
 
 function Statistics() {
     const [landingInfo, setLandingInfo] = useState(null);
