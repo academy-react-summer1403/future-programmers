@@ -2,9 +2,10 @@
 import HeroSection from '../../component/landingComponent/HeroSection/HeroSection'
 import NewCourse from '../../component/landingComponent/NewCourse/NewCourse'
 import LastNews from '../../component/landingComponent/LastNews/LastNews'
-import Edame from '../../component/landingComponent/edame/edame'
 import BestTeacher from '../../component/landingComponent/BestTeacher/BestTeacher'
 import Services from '../../component/landingComponent/servic/services'
+import Statistics from '../../component/landingComponent/Statistics/Statistics'
+import Edame from '../../component/landingComponent/edame/edame'
 
 const Landing = () => {
   return (
@@ -14,6 +15,7 @@ const Landing = () => {
       <LastNews/>
       <BestTeacher/>
       <Services />
+      <Statistics />
       <Edame/>
     </div>
   )
