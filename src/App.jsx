@@ -22,6 +22,7 @@ import SingIn from './screens/singIn/singIn'
 import News from './screens/page news/News'
 import UploadImage from './component/ProfileComponents/UploadImage/UploadImage'
 import NotFound from './screens/notFound/NotFound'
+import Error from './screens/Error/Error'
 
 
 
@@ -34,15 +35,18 @@ function App() {
       children:[
         {
           path:'',
-          element:<Landing/>
+          element:<Landing/>,
+          errorElement:<Error />
         },
         {
           path:'courses',
-          element:<Courses/>
+          element:<Courses/>,
+          errorElement:<Error />
         },
         {
           path:'coursedetail',
-          element:<CourseDetail/>
+          element:<CourseDetail/>,
+          errorElement:<Error />
         },
         {
           path:'/news',
