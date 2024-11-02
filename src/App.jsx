@@ -21,6 +21,7 @@ import StepThree from './screens/register/StepThree'
 import SingIn from './screens/singIn/singIn'
 import News from './screens/page news/News'
 import UploadImage from './component/ProfileComponents/UploadImage/UploadImage'
+import NotFound from './screens/notFound/NotFound'
 
 
 
@@ -111,6 +112,10 @@ function App() {
       
       ]
     },
+    {
+      path:'*',
+      element:<NotFound/>
+    }
     
   ])
 
