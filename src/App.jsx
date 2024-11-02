@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './component/layout/Layout'
@@ -32,6 +30,7 @@ function App() {
     {
       path:'/',
       element:<Layout/>,
+      errorElement:<Error />,
       children:[
         {
           path:'',
@@ -50,29 +49,35 @@ function App() {
         },
         {
           path:'/news',
-          element:<News/>
+          element:<News/>,
+          errorElement:<Error />
         },
         {
           path:'newsdetail',
-          element:<NewsDetail/>
+          element:<NewsDetail/>,
+          errorElement:<Error />
         },
       ]
     },
     {
       path:'/stepone',
-      element:<StepOne/>
+      element:<StepOne/>,
+      errorElement:<Error />
     }, 
     {
       path:'/steptwo',
-      element:<StepTwo/>
+      element:<StepTwo/>,
+      errorElement:<Error />
     },     
     {
       path:'/stepthree',
-      element:<StepThree/>
+      element:<StepThree/>,
+      errorElement:<Error />
     },  
     {
       path:'/singIn',
-      element:<SingIn/>
+      element:<SingIn/>,
+      errorElement:<Error />
     },
 
 
@@ -82,36 +87,44 @@ function App() {
     {
       path:'/profile',
       element:<Profile/>,
+      errorElement:<Error />,
       children:[
         {
           path:'pishkhan',
-          element:<Pishkhan/>
+          element:<Pishkhan/>,
+          errorElement:<Error />
         },
         {
           path:'ReserveCourse',
-          element:<ReserveCourse/>
+          element:<ReserveCourse/>,
+          errorElement:<Error />
         }, 
         {
           path:'AcceptCourse',
-          element:<AcceptCourse/>
+          element:<AcceptCourse/>,
+          errorElement:<Error />
         }, 
         {
           path:'FavoriteNews',
-          element:<FavoriteNews/>
+          element:<FavoriteNews/>,
+          errorElement:<Error />
         }, 
         {
           path:'FavoriteCourse',
-          element:<FavoriteCourse/>
+          element:<FavoriteCourse/>,
+          errorElement:<Error />
         }, 
         
         {
           path:'EditProfile',
-          element:<EditProfile/>
+          element:<EditProfile/>,
+          errorElement:<Error />
         },  
         
         {
           path:'UploadImage',
-          element:<UploadImage/>
+          element:<UploadImage/>,
+          errorElement:<Error />
         },
       
       ]
