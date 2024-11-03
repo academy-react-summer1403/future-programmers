@@ -3,11 +3,11 @@ const Edame = () => {
 
 
   return (
-    <div className="py-12 lg:pt-0 max-sm:pt-4">
+    <div className="flex justify-center overflow-x-hidden max-sm:pt-5 pb-[20px] max-sm:pb-[10px]">
       {/* Category Section */}
       
-        <div className="container mx-auto px-4 max-sm:w-[90%]">
-          <h2 className="text-xl max-sm:text-[14px] font-bold text-center mb-6 max-sm:text-right max-sm:pr-2 dark:text-[#d1d4c9]">دسته بندی</h2>
+        <div className="w-[90%] mx-auto max-sm:pt-2 px-4">
+          <h2 className="text-xl max-sm:text-[14px] font-bold pr-[2%] mb-6 max-sm:text-right max-sm:pr-2 text-[#436e8e] dark:text-[#d1d4c9]">دسته بندی</h2>
           <div className="flex flex-wrap justify-evenly gap-6 dark:text-[#d1d4c9]">
             {categories.map((category, index) => (
               <div

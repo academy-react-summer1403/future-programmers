@@ -71,7 +71,7 @@ return (
         <div className='w-[100%] text-center h-14 my-auto mt-3'>
             <div className="join y-5 md:max-lg:my-1">
                 <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">1</button>
-                <button className="join-item btn btn-active dark:bg-[#29435c] dark:text-[#d1d4c9]">2</button>
+                <button className="join-item btn  dark:bg-[#29435c] dark:text-[#d1d4c9]">2</button>
                 <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">3</button>
                 <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">4</button>
             </div>
