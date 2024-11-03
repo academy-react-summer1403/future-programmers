@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CustomCard from '../common/CustomCard';
 import pic from '../../../../public/item1.png'
+import { getFavoriteNews } from '../../../core/services/api/getFavoriteNews';
 
 const courses = [
   {
@@ -43,13 +44,25 @@ const courses = [
 ];
 
 const FavoriteNews = () => {
+  const [favNews, setFavNews] = useState([])
+  
+  const getNews = async () => {
+    const res = await getFavoriteNews()
+    console.log(favNews)
+    setFavNews(res.myFavoriteNews[0])
+  }
+
+useEffect(() => {
+  getNews()
+}, [])
+
   return (
     <div>
       <h2>اخبار مورد علاقه FavoriteNews</h2>
       <div className="flex flex-wrap gap-6 justify-evenly mt-10 ">
 
-        {courses.map((course, index) => (
-          <CustomCard course={course} index={index} />
+        {favNews?.map((course, index) => (
+          <CustomCard course={course} index={index} courseTitle={course.courseName } describe={course.reserverDate}/>
         ))}
       </div>
     </div>

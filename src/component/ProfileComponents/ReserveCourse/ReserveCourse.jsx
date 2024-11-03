@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CourseCard from '../../common/CorseCard/CourseCard';
 import CustomCard from '../common/CustomCard';
 import pic from '../../../../public/item1.png'
+import http from '../../../core/services/interceptor/'
 
 const courses = [
   {
@@ -44,14 +45,28 @@ const courses = [
 ];
 
 const ReserveCourse = () => {
+const [ReserveCourseList , setReserveCourseList] = useState(null)
+
+  const getRezeveCourse = async () => {
+    const res = await http.get("/SharePanel/GetMyCoursesReserve")
+    setReserveCourseList(res)
+  }
+  
+
+  useEffect(() => {
+    getRezeveCourse()
+  }, []);
+  
+  
+  
   return (
     <div>
       <h2>دوره های رزرو شذه   ReserveCourse</h2>
 
       <div className="flex flex-wrap gap-6 justify-evenly mt-10 ">
 
-        {courses.map((course, index) => (
-          <CustomCard course={course} index={index} />
+        {ReserveCourseList?.map((course, index) => (
+          <CustomCard course={course} index={index} courseTitle={course.courseName } describe={course.reserverDate}/>
         ))}
       </div>
     </div>

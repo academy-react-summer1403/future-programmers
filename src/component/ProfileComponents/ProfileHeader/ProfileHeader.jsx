@@ -4,7 +4,7 @@ import { FaRegMoon, FaRegUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import moon from "../../../../public/moon.png"
 import sun from "../../../../public/sun.png"
-import Profile from "../../../../public/profile-user.png"
+import home from "../../../../public/home.png"
 
 const Header = () => {
   const [dark, setdark] = useState(false);
@@ -26,8 +26,8 @@ const Header = () => {
           {dark === false && <img src={moon} alt="" />}
           {dark === true && <img src={sun} alt="" />}
         </button>
-        <Link to='/'>
-          <img src={Profile} alt="" />
+        <Link to='/' className="h-12 w-12 bg-[aqua] rounded-full flex justify-center">
+          <img src={home} alt="" />
         </Link>
 
       </div>

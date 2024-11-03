@@ -21,6 +21,18 @@ const Pishkhan = () => {
   return (
     <div className=" dark:bg-gray-400 mt-10 ">
       <div className="flex justify-around">
+      <div className="flex w-[40%] h-24 bg-white">
+          <div className="w-2/3 ps-5 pt-5">
+
+            <h2>نام :   {MyInfo?.fName }</h2>
+            <h2>نام خانوادگی :   {MyInfo?.lName }</h2>
+          </div>
+          <div className="w-1/3">
+            <div className="radial-progress text-primary ms-2 mt-2" style={{ "--value": 70 }} role="progressbar">
+              % {MyInfo?.profileCompletionPercentage}
+            </div>
+          </div>
+        </div>
         <div className="w-[20%]  shadow-2xl bg-white  relative">
           <img src={hat} alt="" className="absolute left-4 -top-8" />
           <h2 className="text-[#00B4AF] mt-6 ps-3 text-xl font-bold"> 4 دوره  </h2>
@@ -31,14 +43,7 @@ const Pishkhan = () => {
           <h2 className="text-[#FFB800] mt-6 ps-3 text-xl font-bold"> 2 دوره  </h2>
           <h2 className="ps-3 pb-2">رزرو کردید</h2> 
         </div>
-        <div className="flex w-[40%] h-24 bg-white">
-          <h3 className="w-2/3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, nemo!</h3>
-          <div className="w-1/3">
-            <div className="radial-progress text-primary ms-2 mt-2" style={{ "--value": 70 }} role="progressbar">
-              70%
-            </div>
-          </div>
-        </div>
+
 
         
       </div> 
