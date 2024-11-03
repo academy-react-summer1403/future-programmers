@@ -2,7 +2,8 @@ import http from '../interceptor'
 
 export const getlist=async(sort ,search, categoryFilter, typeCourseFilter)=>{
     try {
-        // console.log(categoryFilter)
+        console.log(categoryFilter)
+        console.log(typeCourseFilter)
         const queryObj = {RowsOfPage: 9}
 
         if(sort!== "" && sort!==null) queryObj.SortingCol = sort;
@@ -11,7 +12,7 @@ export const getlist=async(sort ,search, categoryFilter, typeCourseFilter)=>{
             queryObj.ListTech = categoryFilter.join(',');
             queryObj.TechCount = 1;
         }
-        if(typeCourseFilter!==''&& typeCourseFilter!==null) queryObj.CourseTypeId = typeCourseFilter;
+        if(typeCourseFilter!=="" && typeCourseFilter!==null) queryObj.CourseTypeId = typeCourseFilter;
 
         const result=await http.get('/Home/GetCoursesWithPagination',{params:queryObj})
         // console.log("result",result)
