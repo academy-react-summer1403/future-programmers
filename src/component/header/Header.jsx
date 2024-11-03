@@ -5,11 +5,11 @@ import { Link, NavLink } from "react-router-dom";
 import { HeaderHamburgerMenu } from "./HeaderHamburgerMenu";
 
 const Header = () => {
-  const [dark, setDark] = useState(false);
+  const [dark, setdark] = useState(false);
 
   const handleDark = () => {
     document.documentElement.classList.toggle("dark");
-    setDark(!dark);
+    setdark(!dark);
   };
 
   return (
@@ -45,12 +45,12 @@ const Header = () => {
           }
         >
           <div className="mb-3  w-14 h-10 lg:text-sm md:text-xs">
-            <h2 className="hover:border-b-2 text-center border-blue-500">دوره ها</h2>
+            <h2 className="hover:border-b-2 border-blue-500">دوره ها</h2>
           </div>
         </NavLink>
 
         <div className="mb-3  w-14 h-10 lg:text-sm md:text-xs">
-          <h2 className="hover:border-b-2 text-center border-blue-500">اساتید</h2>
+          <h2 className="hover:border-b-2 border-blue-500">اساتید</h2>
         </div>
 
         <NavLink
@@ -60,14 +60,14 @@ const Header = () => {
           }
         >
           <div className=" mb-3 h-10 lg:text-sm md:text-xs">
-            <h2 className="hover:border-b-2 text-center border-blue-500">
+            <h2 className="hover:border-b-2 border-blue-500">
               اخبار و مقالات{" "}
             </h2>
           </div>
         </NavLink>
 
         <div className="mb-3  w-20 h-10 whitespace-nowrap lg:text-sm md:text-xs">
-          <h2 className=" hover:border-b-2 text-center border-blue-500"> تماس با ما </h2>
+          <h2 className=" hover:border-b-2  border-blue-500"> تماس با ما </h2>
         </div>
       </div>
 
