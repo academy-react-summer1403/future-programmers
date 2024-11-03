@@ -8,7 +8,7 @@ function TopSorting2() {
   ];
   return (
     <div className="items-center md:flex mr-[25px] max-xl:mr-[5px] max-lg:mr-[15px]  ">
-      <ul className="whitespace-nowrap item-center gap-4 max-lg:mr-4 dark:text-[#d1d4c9] hidden max-sm:inline-block">
+      <ul className="flex item-center gap-4 max-lg:mr-4 dark:text-[#d1d4c9] max-sm:hidden ">
         {data.map((item, index) => {
           return (
             <Sort2
@@ -22,7 +22,7 @@ function TopSorting2() {
         })}
       </ul>
       <div>
-        <details className="dropdown block max-sm:hidden ">
+        <details className="dropdown block sm:hidden ">
           <summary className="btn m-1  max-sm:text-xs max-sm:w-[50px]">فیلتر </summary>
           <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow max-sm:w-[100px] max-md:w-[150px] max-sm:text-[10px] flex whitespace-nowrap">
             <li >  
