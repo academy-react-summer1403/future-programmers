@@ -2,7 +2,7 @@ import http from '../interceptor'
 
 export const getlist=async(sort ,search, categoryFilter, typeCourseFilter)=>{
     try {
-        console.log(categoryFilter)
+        // console.log(categoryFilter)
         const queryObj = {RowsOfPage: 9}
 
         if(sort!== "" && sort!==null) queryObj.SortingCol = sort;

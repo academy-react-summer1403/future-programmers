@@ -45,6 +45,7 @@ const handleTypeCourseFilter=((e)=>{
     const checkBoxId = e.target.id;
     if(typeCourseFilter.includes(checkBoxId)){setTypeCourseFilter(typeCourseFilter.filter((id)=>id!==checkBoxId))}
     else{setTypeCourseFilter([...typeCourseFilter,checkBoxId])}
+    // console.log('asas', checkBoxId)
 })
 
 return (
