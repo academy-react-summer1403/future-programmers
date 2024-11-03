@@ -43,7 +43,7 @@ function App() {
           errorElement:<Error />
         },
         {
-          path:'coursedetail',
+          path:'coursedetail/:id',
           element:<CourseDetail/>,
           errorElement:<Error />
         },

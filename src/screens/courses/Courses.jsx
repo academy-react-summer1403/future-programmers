@@ -48,7 +48,7 @@ return (
                 <SearchBox setSearch={setSearch} />
                 <TopSorting setSort={setSort}/>
                 {/* <Sorting /> */}
-                <FilterInTop />
+                <FilterInTop  handleCategoryFilter={handleCategoryFilter} />
             </div>
             <div className='flex w-[100%] sm:max-md:flex-wrap md:max-lg:flex-nowrap justify-between'>
                 <Filters handleCategoryFilter={handleCategoryFilter} />
