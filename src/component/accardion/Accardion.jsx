@@ -20,6 +20,7 @@ function Accardion({handleCategoryFilter, handleTypeCourseFilter}) {
     }
    }
 
+//    type 
    const getTypeCourse = async ()=>{
     try {
         const result = await typeCourse();
@@ -31,6 +32,7 @@ function Accardion({handleCategoryFilter, handleTypeCourseFilter}) {
 
     useEffect(()=>{
         getCategories();
+        getTypeCourse();
     },[])
   return (
     <>
@@ -46,10 +48,7 @@ function Accardion({handleCategoryFilter, handleTypeCourseFilter}) {
             <input type="checkbox" name="my-accordion-2" />
             <div className="collapse-title text-[14px] md:max-lg:text-[12px]">نوع دوره</div>
             <div className="collapse-content">
-
-                <CheckBox1 topic='حضوری' />
-                <CheckBox1 topic='حضوری' />
-                <CheckBox1 topic='حضوری-آنلاین' />
+                {typeCourses?.map((item,index)=> <CheckBox1 key={index} topic={item.typeName} id={item.id} handleTypeCourseFilter={handleTypeCourseFilter}/>)}
             </div>
         </div>
 

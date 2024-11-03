@@ -1,6 +1,6 @@
 import http from '../interceptor'
 
-export const getlist=async(sort ,search, categoryFilter)=>{
+export const getlist=async(sort ,search, categoryFilter, typeCourseFilter)=>{
     try {
         console.log(categoryFilter)
         const queryObj = {RowsOfPage: 9}
@@ -10,7 +10,9 @@ export const getlist=async(sort ,search, categoryFilter)=>{
         if(categoryFilter && categoryFilter.length > 0){
             queryObj.ListTech = categoryFilter.join(',');
             queryObj.TechCount = 1;
-        } 
+        }
+        // if(typeCourseFilter&& typeCourseFilter.length >0){queryObj.typeName= typeCourseFilter }
+
         const result=await http.get('/Home/GetCoursesWithPagination',{params:queryObj})
         // console.log("result",result)
         return result

@@ -21,7 +21,7 @@ const [typeCourseFilter, setTypeCourseFilter] = useState('')
 
 const getAllCoursesList = async (sort, search, categoryFilter, typeCourseFilter)=>{
     try {
-        const result = await getlist(sort, search, categoryFilter)
+        const result = await getlist(sort, search, categoryFilter, typeCourseFilter)
         setCourse(result.courseFilterDtos)
     } catch (error) {
         console.log(error)
