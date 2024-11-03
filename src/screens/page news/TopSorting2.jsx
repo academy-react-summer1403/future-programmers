@@ -24,7 +24,7 @@ function TopSorting2() {
       <div>
         <details className="dropdown block sm:hidden ">
           <summary className="btn m-1  max-sm:text-xs max-sm:w-[50px]">فیلتر </summary>
-          <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow max-sm:w-[100px] max-md:w-[150px] max-sm:text-[10px] flex whitespace-nowrap">
+          <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow max-sm:w-[100px] max-sm:text-[10px] flex whitespace-nowrap">
             <li >  
               <a>     مرتب سازی </a>
             </li>
