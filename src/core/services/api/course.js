@@ -11,7 +11,7 @@ export const getlist=async(sort ,search, categoryFilter, typeCourseFilter)=>{
             queryObj.ListTech = categoryFilter.join(',');
             queryObj.TechCount = 1;
         }
-        // if(typeCourseFilter&& typeCourseFilter.length >0){queryObj.typeName= typeCourseFilter }
+        // if(typeCourseFilter!==''&& typeCourseFilter!==null){queryObj.CourseTypeId = typeCourseFilter }
 
         const result=await http.get('/Home/GetCoursesWithPagination',{params:queryObj})
         // console.log("result",result)

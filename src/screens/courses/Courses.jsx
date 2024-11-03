@@ -11,13 +11,16 @@ import SearchBox from '../../component/SearchBoxInCourses/SearchBox';
 
 const Courses = () => {
 
-const [Course, setCourse] = useState([])
+const [Course, setCourse] = useState([]); 
 const [sort, setSort] = useState('')
 const [search, setSearch] = useState('')
 const [categoryFilter, setCategoryFilter] = useState('')
 // type
 const [typeCourseFilter, setTypeCourseFilter] = useState('')
 
+// course counting 
+const CourseCount = Course.length
+// console.log( '123',CourseCount);
 
 const getAllCoursesList = async (sort, search, categoryFilter, typeCourseFilter)=>{
     try {
@@ -50,7 +53,7 @@ return (
         <div className='flex flex-row-reverse flex-wrap gap-x-2 gap-y-4 w-[90%] mx-[auto]'>
             <div className='w-[100%] flex justify-between'>
                 <h1 className='dark:text-[#d1d4c9]'>دوره ها</h1>
-                <h1 className='dark:text-[#d1d4c9]'> 5 دوره آموزشی</h1>
+                <h1 className='dark:text-[#d1d4c9]'> {CourseCount} دوره آموزشی</h1>
             </div>
             <div className='w-[100%] h-[90px] max-lg:h-[70px] max-sm:h-[65px] bg-white rounded-[20px] flex items-center mt-[10px] md:max-lg:gap-0 gap-4 dark:bg-[#29435c]'>    
                 <SearchBox setSearch={setSearch} />
