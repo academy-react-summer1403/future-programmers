@@ -36,7 +36,7 @@ useEffect(()=>{
 },[sort,search,categoryFilter, typeCourseFilter]);
 
 const handleCategoryFilter= ((e)=>{
-    const checkBoxId = e.target.id;
+    const checkBoxId = e.target.id ;
     if(categoryFilter.includes(checkBoxId)){setCategoryFilter(categoryFilter.filter((id)=>id!==checkBoxId))}
     else{setCategoryFilter([...categoryFilter,checkBoxId])}
 })

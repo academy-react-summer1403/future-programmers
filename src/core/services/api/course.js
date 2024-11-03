@@ -33,8 +33,8 @@ export const categories = async()=>{
 export const typeCourse = async()=>{
     try {
         const result= await http.get('/CourseType/GetCourseTypes')
-        
-        return result
+         
+        return result 
     } catch (error) {
         console.log(error)
         
