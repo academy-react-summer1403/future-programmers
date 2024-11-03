@@ -9,7 +9,7 @@ export const getlist=async(sort ,search, categoryFilter)=>{
         if(search!== "" && search!==null) queryObj.Query = search;
         if(categoryFilter && categoryFilter.length > 0){
             queryObj.ListTech = categoryFilter.join(',');
-            queryObj.TechCount = categoryFilter.length;
+            queryObj.TechCount = 1;
         } 
         const result=await http.get('/Home/GetCoursesWithPagination',{params:queryObj})
         // console.log("result",result)
@@ -26,5 +26,15 @@ export const categories = async()=>{
         return result
     } catch (error) {
         console.log(error)
+    }
+}
+export const typeCourse = async()=>{
+    try {
+        const result= await http.get('/CourseType/GetCourseTypes')
+        
+        return result
+    } catch (error) {
+        console.log(error)
+        
     }
 }

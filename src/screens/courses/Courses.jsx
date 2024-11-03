@@ -15,9 +15,11 @@ const [Course, setCourse] = useState([])
 const [sort, setSort] = useState('')
 const [search, setSearch] = useState('')
 const [categoryFilter, setCategoryFilter] = useState('')
+// type
+const [typeCourseFilter, setTypeCourseFilter] = useState('')
 
 
-const getAllCoursesList = async (sort, search, categoryFilter)=>{
+const getAllCoursesList = async (sort, search, categoryFilter, typeCourseFilter)=>{
     try {
         const result = await getlist(sort, search, categoryFilter)
         setCourse(result.courseFilterDtos)
@@ -27,13 +29,19 @@ const getAllCoursesList = async (sort, search, categoryFilter)=>{
 }
 
 useEffect(()=>{
-    getAllCoursesList(sort,search,categoryFilter) 
-},[sort,search,categoryFilter]);
+    getAllCoursesList(sort,search,categoryFilter, typeCourseFilter) 
+},[sort,search,categoryFilter, typeCourseFilter]);
 
 const handleCategoryFilter= ((e)=>{
     const checkBoxId = e.target.id;
     if(categoryFilter.includes(checkBoxId)){setCategoryFilter(categoryFilter.filter((id)=>id!==checkBoxId))}
     else{setCategoryFilter([...categoryFilter,checkBoxId])}
+})
+// type
+const handleTypeCourseFilter=((e)=>{
+    const checkBoxId = e.target.id;
+    if(typeCourseFilter.includes(checkBoxId)){setTypeCourseFilter(typeCourseFilter.filter((id)=>id!==checkBoxId))}
+    else{setTypeCourseFilter([...typeCourseFilter,checkBoxId])}
 })
 
 return (
@@ -48,10 +56,10 @@ return (
                 <SearchBox setSearch={setSearch} />
                 <TopSorting setSort={setSort}/>
                 {/* <Sorting /> */}
-                <FilterInTop  handleCategoryFilter={handleCategoryFilter} />
+                <FilterInTop  handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} />
             </div>
             <div className='flex w-[100%] sm:max-md:flex-wrap md:max-lg:flex-nowrap justify-between'>
-                <Filters handleCategoryFilter={handleCategoryFilter} />
+                <Filters handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} />
                 <div className='w-[75%] mt-6 pt-5 h-fit flex flex-wrap justify-start gap-x-5 gap-y-12 max-md:justify-between md:max-lg:gap-y-10 max-md:w-full max-sm:justify-center sm:max-md:gap-y-11'>
                     {Course.map((item, index)=>{
                         return(
