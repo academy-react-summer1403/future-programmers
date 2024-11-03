@@ -18,7 +18,7 @@ function BestTeacher() {
     }, []);
 
   return (
-    <section className="bg-[#f3f4f6] font-[sans] dark:bg-[#152a38] pb-[15px]">
+    <section className="overflow-x-hidden pb-[15px]">
         <div className="w-[90%] flex max-md:block px-4 mx-auto">
             <div className="w-[30%] max-lg:w-[45%] max-md:w-[100%]">
                 <h2 className=" flex  text-[25px] max-xl:text-[22px] max-sm:text-[17px] mt-[18%] max-md:mt-[0px] dark:text-[#d1d4c9] max-sm:pr-[14%] text-black "> برترین اساتید 

@@ -1,13 +1,12 @@
-// import React from 'react'
 
 import Accardion from "../accardion/accardion"
 
 
-function Filters() {
+function Filters({handleCategoryFilter, handleTypeCourseFilter}) {
   return (
     <div className='w-[300px] md:max-lg:w-[25%]  max-md:hidden h-fit pb-3 mt-[19px] ml-5 rounded-[20px] bg-white dark:bg-[#29435c]'> 
       <h2 className='mr-4 mt-3 pb-2 md:max-lg:text-[15px] dark:text-[#d1d4c9]'>فیلترها</h2>
-      <Accardion />
+      <Accardion handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} />
 
       <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[95%] mx-auto dark:bg-[#556e53]">
           <input type="checkbox" name="my-accordion-2" />

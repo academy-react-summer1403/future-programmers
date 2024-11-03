@@ -2,7 +2,7 @@
 
 const HeroSection = () => {
     return (
-        <div className="pb-[30px] overflow-hidden bg-[#f3f4f6] font-[sans] dark:bg-[#152a38] dark:text-[#d1d4c9]">
+        <div className="z-[999] pb-[30px] overflow-x-hidden  dark:text-[#d1d4c9]">
             <div className=" py-8 px-4 mx-auto flex flex-row justify-around">
                     <div className="text-center md:text-right  w-full md:w-[40%] ">
                         <h1 className="text-[40px] max-lg:text-[35px] max-sm:text-[25px] mx-auto font-bold mb-4 mt-12 max-sm:mt-5 max-sm:mb-0  text-[#436E8E] dark:text-[#d1d4c9] ">دنبال چی می گردی؟</h1>
@@ -16,8 +16,6 @@ const HeroSection = () => {
                         <img src="./Path 2.png" className='absolute top-20 w-[21%] right-[78%]' />
                     </div>
             </div>
-
-
         </div>
     )
 }

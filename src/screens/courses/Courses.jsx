@@ -1,7 +1,4 @@
-import {Formik, Field, Form} from 'formik';
 import CourseCard from '../../component/CourseCard/CourseCard';
-// import Accardion from '../../component/accardion/accardion';
-// import FormField from '../../component/Fields/FormField';
 import Filters from '../../component/filters/UsualFilters';
 import FilterInTop from '../../component/filters/FilterInTop';
 import { useEffect, useState } from 'react';
@@ -14,15 +11,20 @@ import SearchBox from '../../component/SearchBoxInCourses/SearchBox';
 
 const Courses = () => {
 
-const [Course, setCourse] = useState([])
+const [Course, setCourse] = useState([]); 
 const [sort, setSort] = useState('')
 const [search, setSearch] = useState('')
+const [categoryFilter, setCategoryFilter] = useState('')
+// type
+const [typeCourseFilter, setTypeCourseFilter] = useState('')
 
-console.log(search, 'sort')
+// course counting 
+const CourseCount = Course.length
+// console.log( '123',CourseCount);
 
-const getAllCoursesList = async (sort, search)=>{
+const getAllCoursesList = async (sort, search, categoryFilter, typeCourseFilter)=>{
     try {
-        const result = await getlist(sort, search)
+        const result = await getlist(sort, search, categoryFilter, typeCourseFilter)
         setCourse(result.courseFilterDtos)
     } catch (error) {
         console.log(error)
@@ -30,8 +32,20 @@ const getAllCoursesList = async (sort, search)=>{
 }
 
 useEffect(()=>{
-    getAllCoursesList(sort,search) 
-},[sort,search]);
+    getAllCoursesList(sort,search,categoryFilter, typeCourseFilter) 
+},[sort,search,categoryFilter, typeCourseFilter]);
+
+const handleCategoryFilter= ((e)=>{
+    const checkBoxId = e.target.id;
+    if(categoryFilter.includes(checkBoxId)){setCategoryFilter(categoryFilter.filter((id)=>id!==checkBoxId))}
+    else{setCategoryFilter([...categoryFilter,checkBoxId])}
+})
+// type
+const handleTypeCourseFilter=((e)=>{
+    const checkBoxId = e.target.id;
+    if(typeCourseFilter.includes(checkBoxId)){setTypeCourseFilter(typeCourseFilter.filter((id)=>id!==checkBoxId))}
+    else{setTypeCourseFilter([...typeCourseFilter,checkBoxId])}
+})
 
 return (
 <div className='bg-[#f3f4f6] font-[sans] dark:bg-[#152a38]'>
@@ -39,16 +53,16 @@ return (
         <div className='flex flex-row-reverse flex-wrap gap-x-2 gap-y-4 w-[90%] mx-[auto]'>
             <div className='w-[100%] flex justify-between'>
                 <h1 className='dark:text-[#d1d4c9]'>دوره ها</h1>
-                <h1 className='dark:text-[#d1d4c9]'> 5 دوره آموزشی</h1>
+                <h1 className='dark:text-[#d1d4c9]'> {CourseCount} دوره آموزشی</h1>
             </div>
             <div className='w-[100%] h-[90px] max-lg:h-[70px] max-sm:h-[65px] bg-white rounded-[20px] flex items-center mt-[10px] md:max-lg:gap-0 gap-4 dark:bg-[#29435c]'>    
                 <SearchBox setSearch={setSearch} />
                 <TopSorting setSort={setSort}/>
                 {/* <Sorting /> */}
-                <FilterInTop />
+                <FilterInTop  handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} />
             </div>
-            <div className='flex sm:max-md:flex-wrap md:max-lg:flex-nowrap justify-between'>
-                <Filters />
+            <div className='flex w-[100%] sm:max-md:flex-wrap md:max-lg:flex-nowrap justify-between'>
+                <Filters handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} />
                 <div className='w-[75%] mt-6 pt-5 h-fit flex flex-wrap justify-start gap-x-5 gap-y-12 max-md:justify-between md:max-lg:gap-y-10 max-md:w-full max-sm:justify-center sm:max-md:gap-y-11'>
                     {Course.map((item, index)=>{
                         return(
@@ -63,18 +77,16 @@ return (
                         );   
                     })}             
                 </div>
-            </div>
-
-      
-    </div>
-    <div className='w-[100%] text-center h-14 my-auto mt-3'>
-        <div className="join y-5 md:max-lg:my-1">
-            <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">1</button>
-            <button className="join-item btn btn-active dark:bg-[#29435c] dark:text-[#d1d4c9]">2</button>
-            <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">3</button>
-            <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">4</button>
+            </div>  
         </div>
-    </div>
+        <div className='w-[100%] text-center h-14 my-auto mt-3'>
+            <div className="join y-5 md:max-lg:my-1">
+                <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">1</button>
+                <button className="join-item btn  dark:bg-[#29435c] dark:text-[#d1d4c9]">2</button>
+                <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">3</button>
+                <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">4</button>
+            </div>
+        </div>
     
 </div>
 )

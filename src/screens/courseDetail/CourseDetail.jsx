@@ -1,4 +1,7 @@
 // import React from 'react'
+import CourseComment from './CourseComment'
+import CourseExplain from './CourseExplain'
+import CourseInformation from './CourseInformation'
 import SimilarCourse from './SimilarCourse'
 
 
@@ -12,7 +15,7 @@ function CourseDetail() {
   ]
     
   return (
-    <div className='bg-[#f3f4f6] font-[sans] overflow-hidden dark:bg-[#152a38]'>
+    <div className='bg-[#f3f4f6] relative font-[sans] overflow-hidden dark:bg-[#152a38]'>
 
       <div className='w-[88%] mx-auto flex'>
         <div className=' relative h-[380px] w-[100%] max-md:h-[250px] md:max-lg:h-[300px] mt-4 rounded-[30px] bg-[url(public/p.01.png)] bg-no-repeat [background-size:100%_100%]'>
@@ -27,38 +30,15 @@ function CourseDetail() {
         </div>
       </div>
 
-      <div className=' flex flex-wrap justify-between w-[88%] mx-auto mt-5 pb-[30px] overflow-hidden dark:bg-[#152a38]'>
+      <div className=' flex flex-wrap justify-between w-[88%] mx-auto mt-5 max-sm:mt-3 pb-[30px] overflow-hidden dark:bg-[#152a38]'>
+        <CourseExplain />
+       
+        <div className='flex flex-wrap max-md:h-fit w-[33%] gap-y-2 max-lg:w-[100%] md:max-lg:justify-between md:max-lg:mt-5'>
+          <CourseInformation />
 
-        <div className='w-[63%] pb-3 h-fit bg-white rounded-[20px] max-md:w-[100%] md:max-lg:w-[100%] dark:bg-[#29435c]'>
-          <h1 className='mt-[3%] mr-[3%] my-3 text-cyan-700 font-bold text-[20px] max-md:text-[17px] dark:text-[#d1d4c9]'>توضیحات</h1>
-          <p className='mr-[3%] w-[95%] break-words max-md:text-[15px] dark:text-[#d1d4c9] '> jfjfjfjfjfjfj   jfjfjfjfjfjfj The longest word in any of the major English language dictionaries is pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it is the same as silicosis. The longest word in any of the major English language dictionaries is pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it is the same as silicosis.</p>
-           
-          <div className='w-[100%] mx-[auto] pb-5'>
-            <div className='w-[100%] h-[400px] bg-white mt-[30px] max-md:mt-0 rounded-[20px] max-md:w-[100%] md:max-lg:w-[100%] dark:bg-[#29435c]'>
-              <div className='w-[85%] h-[90%] my-[20px]  mx-auto'>
-                <h1 className='text-[25px] text-cyan-700 inline dark:text-[#d1d4c9]'>نظرات</h1>
-                <div className='border-[2px] border-cyan-700 dark:border-[#556e53] rounded-[20px] h-[250px] mt-[5px]'>
-                  <textarea className='w-[99%] h-[240px] mr-[6px] mt-[4px] rounded-[20px] [outline:none] max-md:w-[97%] dark:bg-[#29435c] dark:text-[#d1d4c9]' >نظر خود را اینجا بنویسید</textarea>
-                </div>
-                <button className='bg-cyan-700 mt-[10px]  py-3 px-4 rounded-[10px] text-white dark:bg-[#556e53]'>ارسال نظر</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className='flex flex-wrap h-[800px] max-lg:h-[400px] max-md:h-[800px] w-[33%] gap-y-5 max-md:w-[100%] md:max-lg:w-[100%] md:max-lg:justify-between md:max-lg:mt-5'>
-
-          <div className='w-[99%] h-[385px] max-md:w-[100%] max-md:mt-3 md:max-lg:w-[47%] bg-white rounded-[20px] dark:bg-[#29435c]'>
-            <img className='w-[18%] h-[18%] mt-[20px] mr-[27px] rounded-[50%] max-md:h-[70px] max-md:w-[70px] md:max-lg:h-[16%]' src='public/01.jpg'></img>
-            <h1 className='relative right-[103px] bottom-[63px] text-[20px] text-cyan-700 inline md:max-lg:text-[13px] dark:text-[#d1d4c9]'> آرمان غنی زاده</h1>
-            <h4 className='relative right-[111px] bottom-[60px] text-[14px] dark:text-[#d1d4c9]'> مدرس دوره</h4>
-            <p className=' w-[86%] border-t-2 border-b-2 mx-auto mt-[-34px] h-[205px]  dark:border-[#556e53] dark:text-[#d1d4c9]'> ssss</p>
-            <div className='align-center mt-[10px]'><a href='#' className='text-[12px] [background:url(public/external-link.svg)_no-repeat_93%_0%] pr-[30px] mr-[75px] max-md:mr-[30%] md:max-lg:mr-[41px] dark:text-[#d1d4c9]'>مشاهده سایر آموزش های این استاد</a></div>
-          </div>
-
-          <div className=' w-[99%] h-[385px] lg:mb-[115px] bg-white rounded-[20px] max-md:w-[100%] max-md:mt-3 md:max-lg:w-[47%] max-md:mb-[3%] dark:bg-[#29435c]'>
-            <h1 className='relative right-[30px] top-[30px] text-[20px] text-cyan-700 inline dark:text-[#d1d4c9]'>دوره های مشابه</h1>
-            <div className='relative top-[35px]'>
+          <div className=' w-[99%] md:max-lg:h-fit pb-4 bg-white rounded-[20px] max-md:w-[100%] md:max-lg:w-[47%] dark:bg-[#29435c]'>
+            <h1 className='relative right-[30px] top-[10px]  text-[20px] text-cyan-700 inline dark:text-[#d1d4c9]'>دوره های مشابه</h1>
+            <div className=' mt-[15px] max-sm:flex max-sm:flex-wrap'>
               {TeachersCourses.map((item,index)=>{
                 return(
                   <SimilarCourse 
@@ -68,13 +48,11 @@ function CourseDetail() {
                 )  
               })}
             </div>
-          </div>
+          </div> 
         </div>
+        
       </div>
-
-      
-      
-      
+      <CourseComment />
     </div>
   )
 }
@@ -82,7 +60,18 @@ function CourseDetail() {
 export default CourseDetail
 
 
-
+ {/* change and make better this part. */}
+           {/* <div className='w-[100%] mx-[auto] pb-5'>
+              <div className='w-[100%] h-[400px] bg-white mt-[30px] max-md:mt-0 rounded-[20px] max-md:w-[100%] md:max-lg:w-[100%] dark:bg-[#29435c]'>
+                <div className='w-[85%] h-[90%] my-[20px]  mx-auto'>
+                  <h1 className='text-[25px] text-cyan-700 inline dark:text-[#d1d4c9]'>نظرات</h1>
+                  <div className='border-[2px] border-cyan-700 dark:border-[#556e53] rounded-[20px] h-[250px] mt-[5px]'>
+                    <textarea className='w-[99%] h-[240px] mr-[6px] mt-[4px] rounded-[20px] [outline:none] max-md:w-[97%] dark:bg-[#29435c] dark:text-[#d1d4c9]' >نظر خود را اینجا بنویسید</textarea>
+                  </div>
+                  <button className='bg-cyan-700 mt-[10px]  py-3 px-4 rounded-[10px] text-white dark:bg-[#556e53]'>ارسال نظر</button>
+                </div>
+              </div>
+            </div> */}
 
 
 

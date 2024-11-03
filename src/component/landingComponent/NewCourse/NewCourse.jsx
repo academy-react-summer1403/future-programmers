@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import CourseCard from '../../common/CorseCard/CourseCard';
 import axios from 'axios';
-import picture from '../../../../public/cImage.png';
+import pic from '../../../../public/cImage.png';
 
 
 
@@ -23,7 +23,7 @@ const NewCourse = () => {
 
 
     return (
-        <section className=" mx-auto overflow-hidden pb-[30px] bg-[#f3f4f6] font-[sans] dark:bg-[#152a38] dark:text-[#d1d4c9]">
+        <section className="mx-auto overflow-x-hidden pb-[30px] dark:text-[#d1d4c9]">
             <div className="w-[90%] mx-auto max-sm:pt-2 px-4">
                 <div className='flex justify-between'>
                     <h2 className="text-2xl font-bold text-[#436e8e] max-sm:text-[14px] max-lg:text-[18px] max-sm:pr-[11px] pr-[2%] dark:text-[#d1d4c9]">برترین دوره‌ها</h2>
@@ -34,7 +34,7 @@ const NewCourse = () => {
                         <CourseCard 
                             key={index} 
                             title={course.title} 
-                            image={course.tumbImageAddress??picture} 
+                            image={course.tumbImageAddress??pic} 
                             describe={course.describe}
                             teacher={course.teacherName}
                             id={course.courseId} 
