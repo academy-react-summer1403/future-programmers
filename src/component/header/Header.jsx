@@ -1,5 +1,5 @@
-import{ useState } from "react";
-import Logo from '../../../public/Logo.png';
+import { useState } from "react";
+import Logo from "../../../public/Logo.png";
 
 import { Link, NavLink } from "react-router-dom";
 import { HeaderHamburgerMenu } from "./HeaderHamburgerMenu";
@@ -11,113 +11,118 @@ const Header = () => {
     document.documentElement.classList.toggle("dark");
     setdark(!dark);
   };
-  
+
   return (
-    <div className=" font-[sans] bg-[#f9f9f9] flex justify-between items-center w-full py-4 px-6  shadow-2xl dark:bg-[#152a38] ">
-      <div className="flex items-center  ">
-        <img src="header icon.png" alt="" className="w-14 h-14" />
+    <div className=" font-[sans] bg-[#f9f9f9]  flex  justify-between items-center w-full py-4 px-6  shadow-2xl dark:bg-[#152a38] ">
+      <div className="flex items-center max-sm:ml-14">
+        <img src="header icon.png" alt="" 
+        className="w-16 h-8 mr-6" />
         <span className=" ml-2 text-xl font-bold"></span>
         <div className="md:hidden mr-2">
           <HeaderHamburgerMenu />
         </div>
       </div>
 
-
-        <div className=" dark:text-white flex justify-center  max-md:hidden gap-5 w-[50%] h-10 mt-6">
-          <NavLink to={'/'}>
-                <div className=" mb-3 ">
-            <h2 className="   hover:border-b-2 border-orange-500 ">صفحه نخست</h2>
+      <div className=" dark:text-white flex justify-center  max-md:hidden gap-5 w-[50%] h-10 mt-6">
+        <NavLink
+          to={"/"}
+          className={({ isActive }) =>
+            `${
+              isActive && "text-blue-600"
+            } whitespace-nowrap hover:text-blue-600`
+          }
+        >
+          <div className=" mb-3 lg:text-sm md:text-xs ">
+            <h2 className="   hover:border-b-2 border-blue-500 ">صفحه نخست</h2>
           </div>
-          </NavLink>
-            <NavLink to={'/Courses'}>
-             <div className="mb-3  w-14 h-10">
-            <h2 className="hover:border-b-2 border-orange-500">دوره ها</h2>
-          </div>  
-            </NavLink>
-         
-          <div className="mb-3  w-14 h-10">
-          <h2 className="hover:border-b-2 border-orange-500">اساتید</h2>
-
+        </NavLink>
+        <NavLink
+          to={"/Courses"}
+          className={({ isActive }) =>
+            `${
+              isActive && "text-blue-600"
+            } whitespace-nowrap hover:text-blue-600`
+          }
+        >
+          <div className="mb-3  w-14 h-10 lg:text-sm md:text-xs">
+            <h2 className="hover:border-b-2 border-blue-500">دوره ها</h2>
           </div>
-          <NavLink to={'/news'}>
-          <div className="mb-3 flex ">
-          <h2 className="hover:border-b-2 border-orange-500">اخبار و مقالات </h2>
+        </NavLink>
 
-          </div>
-          </NavLink>
-          
-          <div className="mb-3  w-20 h-10">
-          <h2 className=" hover:border-b-2  border-orange-500"> تماس با ما </h2>
-
-          </div>
-                
-
-        
-
+        <div className="mb-3  w-14 h-10 lg:text-sm md:text-xs">
+          <h2 className="hover:border-b-2 border-blue-500">اساتید</h2>
         </div>
 
+        <NavLink
+          to={"/news"}
+          className={({ isActive }) =>`${ isActive && "text-blue-600"
+            } whitespace-nowrap hover:text-blue-600`
+          }
+        >
+          <div className=" mb-3 h-10 lg:text-sm md:text-xs">
+            <h2 className="hover:border-b-2 border-blue-500">
+              اخبار و مقالات{" "}
+            </h2>
+          </div>
+        </NavLink>
 
+        <div className="mb-3  w-20 h-10 whitespace-nowrap lg:text-sm md:text-xs">
+          <h2 className=" hover:border-b-2  border-blue-500"> تماس با ما </h2>
+        </div>
+      </div>
 
-    
-      <div className="flex gap-4 me-10">
+      <div className="flex gap-4">
         <button onClick={handleDark}>
-          {/* {dark === false && <img src="./moon.png" alt="" />}
-          {dark === true && <img src="./sun.png" alt="" />} */}
-
-<label className="flex cursor-pointer gap-2">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round">
-    <circle cx="12" cy="12" r="5" />
-    <path
-      d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
-  </svg>
-
-  <input type="checkbox" value="synthwave" className="toggle theme-controller" />
-
-
-
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round">
-    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-  </svg>
-
-</label>
-
+          <label className="grid cursor-pointer place-items-center max-sm:mr-[40px] ">
+            <input
+              type="checkbox"
+              value="synthwave"
+              className="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
+            />
+            <svg
+              className="stroke-base-100 fill-base-100 col-start-1 row-start-1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
+            </svg>
+            <svg
+              className="stroke-base-100 fill-base-100 col-start-2 row-start-1 "
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </label>
         </button>
         <Link to="/profile/pishkhan">
-          <img src="./profile-user.png" alt="" />
+          <img src="./profile-user.png" alt="" className="hidden" />
         </Link>
 
-
-
-        <NavLink to={'/singIn'}>
-  <div className="  bg-[#01cec9] flex justify-center text-sm rounded-full mt-1 items-center text-white w-28 h-10">
-          <h2 className="  text-center  dark:text-white">ورود / ثبت نام </h2>
-
+        <NavLink to={"/singIn"}>
+          <div className="  bg-[#436e8e] flex justify-center text-sm rounded-full mt-1 items-center max-sm:w-16 text-white w-28 h-10  ">
+            <h2 className="  text-center  dark:text-white max-sm:text-xs  ">
+              ورود / ثبت نام{" "}
+            </h2>
           </div>
-                </NavLink>
-
+        </NavLink>
       </div>
     </div>
-
-
-
   );
 };
 

@@ -9,8 +9,8 @@ const FormPhone = () => {
 
 return (
 <>
-<div className='flex items-center justify-center bg-gray-100 dark:bg-[#678cb1]'>
-        <div className='bg-white p-6  rounded-lg  w-96 dark:bg-[#678cb1]'>
+<div className='flex items-center justify-center  bg-gray-100 dark:bg-[#678cb1]'>
+        <div className=' bg-white p-6 rounded-lg w-96 dark:bg-[#678cb1]'>
             <h2 className='text-2xl font-bold mb-4 text-center '>  </h2>
         <Formik
         

@@ -6,121 +6,66 @@ import { Field, Form, Formik } from "formik";
 import axios from "axios";
 import { setItem } from "../../core/services/common/storage.services";
 
-
 const LogIn = () => {
-  
-  const handleLogin =async (values) => {
-    const res = await axios.post('https://classapi.sepehracademy.ir/api/Sign/Login', values)
-    console.log(res.data.token)
-    setItem("token" ,res.data.token)
-  }
+  const handleLogin = async (values) => {
+    const res = await axios.post(
+      "https://classapi.sepehracademy.ir/api/Sign/Login",
+      values
+    );
+    console.log(res.data.token);
+    setItem("token", res.data.token);
+  };
 
-
-  
-  
   return (
+    <div className="w-full h-full">
+      <div className="dark:bg-[#152a38]  h-[615px] flex justify-center">
+        <div
+          className=" shadow-2xl m-auto overflow-hidden dark:bg-[#678cb1]
+  h-[560px] w-[80%] dark:text-white rounded-lg mt-7 bg-white flex"
+        >
+          <div className=" h-[500px] mr-4 rounded-lg  pt-[20px] mx-md:w-[300px] ">
+            <div className=" border-x-slate-800 h-[55px] w-[327px] mx-auto ">
+              <div className="  flex h-[50px]  text-xl ">
+                <img src="./Logo.png" alt="" className="h-[100%] w-[20%]  " />
+                <h2 className="  mr-4 mt-2 font-bold dark:text-white">
+                  آکادمی سپهر{" "}
+                </h2>
+              </div>
 
-    <div className=" font-[sans]   bg-[#F3F4F6]   w-[100%] overflow-hidden flex justify-center "> 
+              <div className="mt-2 text-lg">
+                <h2 className="font-bold dark:text-white"> ورود به سیستم </h2>
+              </div>
 
-    {/* <div className=" border border-pink-400 flex justify-around  h-[680px] w-[100%] m-auto   dark:bg-gray-600 dark:text-white  rounded-lg"> */}
+              <div className="flex mt-5">
+                <h3 className="text-sm dark:text-white">
+                  حساب کاربری ندارید؟{" "}
+                </h3>
 
-    
-    <div className="  dark:bg-[#152a38]  h-[600px] flex justify-center bg-[#F3F4F6]  ">
-    <div className=" dark:bg-[#678cb1] flex  w-5/6 m-auto shadow-lg  bg-white    rounded-lg">
-    <div className="    w-[100%] h-full flex justify-center">
-
-      {/* <Formik initialValues={{phoneOrGmail:'' , password:'' , rememberMe:false}} onSubmit={handleLogin}>
-      
-        <Form>
-          <Field type='text' name='phoneOrGmail' placeholder='phoneOrGmail' />
-          <Field type='text' name='password' placeholder='password'/>
-          <Field type='checkbox' name='rememberMe' />
-          <button type="submit">click</button>
-        </Form>
-      </Formik> */}
-
-    <div className="  flex justify-around dark:border-black shadow-xl border border-black-500 h-[580px] hover:text-black-1000 w-screen m-auto    dark:text-white  rounded-lg">
-      <div className="   h-[500px]  rounded-lg  pt-[20px]">
-        <div className="  h-[55px] w-[327px] mx-auto ">
-          <div className="flex   h-[50px]  text-xl ">
-            <img src="./Logo.png" alt="" className="h-[100%] w-[20%] " />
-            <h2 className="  mr-4 mt-2 font-bold dark:text-white">آکادمی سپهر </h2>
-          </div>
-
-        <div className="mt-2 text-lg">
-            <h2 className="font-bold dark:text-white"> ورود به سیستم </h2>
+                <Link
+                  to={"/StepOne"}
+                  className="text-blue-700 underline text-sm dark:text-white"
+                >
+                  ثبت نام کنید
+                </Link>
+              </div>
             </div>
 
-          <div className="flex mt-5">
-
-            <h3 className="text-sm dark:text-white">حساب کاربری ندارید؟ </h3>
-
-
-            <Link to={'/StepOne'}  className="text-blue-700 underline text-sm dark:text-white" >ثبت نام کنید 
-           
-            
-            </Link>
+            <div className="    h-80 ">
+              <Log />
+            </div>
           </div>
-          
+
+          <div className="hidden md:block h-[578px] w-[500px] mr-36 ">
+            <img
+              src="./Image.png"
+              alt=""
+              className="w-[100%] h-[100%] rounded-xl "
+            />
+          </div>
         </div>
-
-        <div className="    h-80 ">
-          <Log />
-        </div>
-
-
-
-        <div className="  whitespace-nowrap">
-          {/* <div className="flex text-xs  ">
-
-            <a
-              href="#"
-              className="  text-#8D8D8D-500 mr-3 hover:text-#8D8D8D-800 underline dark:text-white "
-              target="-blank"
-              rel="noopener noreferrer "
-            >
-            </a>
-
-            <a
-              href="#"
-              className=" text-#8D8D8D-500 mr-44  hover:text-#8D8D8D-800 underline dark:text-white  "
-              target="-blank"
-              rel="noopener noreferrer "
-            >
-فراموشی رمز            </a>
-          </div> */}
-
-
-            
-        
-          
-        </div>
-      
       </div>
-      
-      <div className="hidden md:block h-[578px]  w-[500px]  ">
-        <img src="./Image.png" alt="" className="w-[100%] h-[100%] mr-20 rounded-xl" />
-      </div>
-      
     </div>
-  
-  
-    </div>
-
-
-    
-  </div>
-
-
-</div>
-{/* </div> */}
-
-</div>
-
-
   );
-
-}
-
+};
 
 export default LogIn;

@@ -10,9 +10,9 @@ const ValidationSchema = () => {
 });
   return (
 <>
-<div className='  flex items-center justify-center bg-gray-100 dark:bg-[#678cb1]'>
-        <div className='bg-white  p-6 rounded-lg  w-96 dark:bg-[#678cb1]'>
-            <h2 className=' bg-white text-2xl font-bold mb-4 text-right'> ثبت نام </h2>
+<div className='flex items-center justify-center dark:bg-[#678cb1]'>
+        <div className='p-6 rounded-lg w-[348px] dark:bg-[#678cb1]'>
+            <h2 className='bg-white text-2xl font-bold mb-4 text-right'> ثبت نام </h2>
         <Formik
         
         initialValues={{PhoneNumber: ''}}
@@ -89,7 +89,7 @@ classNames={{
                     
 
                     <button  type='submit'
-                        className=' bg-[#436E8E] h-[53px]  rounded mt-5 w-full hover:bg-blue-600'>
+                        className=' bg-[#436E8E] h-[53px] rounded mt-5 w-full hover:bg-blue-600'>
                     <h2 className='text-white  ' > تایید و ثبت نام  </h2>
                     </button>
                 </Form>

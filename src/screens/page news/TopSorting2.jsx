@@ -18,9 +18,15 @@ function TopSorting2() {
             id={item.lable}
             htmlFor={item.lable} 
             topicSort={item.lable} />
+
             )
+            
+
         })}
       </ul>
+      <div>
+    
+      </div>
     </div>
   )
 }
