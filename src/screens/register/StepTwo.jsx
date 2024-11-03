@@ -3,36 +3,36 @@ import StepNumber from "./StepNumber";
 const StepTwo = () => {
   return (
     <div className="text-{sans} dark:bg-[#152a38]  dark:text-[#ffff] h-screen flex justify-center bg-[#F3F4F6]">
-      <div className="flex justify-around bg-white dark:bg-[#678cb1] rounded-lg h-[580px] shadow-lg w-5/6 m-auto ">
-        <div className=" h-[500px] w-[351px] rounded-lg ">
+      <div className="bg-white flex shadow-lg dark:bg-[#678cb1] rounded-lg w-[80%] justify-around h-[580px] m-auto ">
+        <div className="h-[500px] w-[351px] rounded-lg mr-2 ">
           <div className="h-[10%] mt-8 w-[90%] mr-1 flex">
-            <div className="h-[50px] w-[65px]">
+            <div className="h-[50px] w-[65px] max-sm:w-[30px]">
               <img src="./Logo.png" alt="" />
             </div>
-            <h3 className="mr-3 font-bold text-xl dark:text-[#ffff] ">
+            <h3 className="mr-3 font-bold text-xl dark:text-[#ffff] max-sm:text-xs ">
               {" "}
               آکادمی سپهر{" "}
             </h3>
           </div>
 
-          <h3 className="mt-7 font-bold text-xl text-[#555555] dark:text-[#ffff] ">
+          <h3 className="mt-7 mr-6 font-bold text-xl text-[#555555] dark:text-[#ffff] max-sm:text-xs">
             {" "}
             ثبت نام با موبایل{" "}
           </h3>
 
           <div className="flex ">
-            <h2 className="font-light dark:text-[#ffff]  mt-4">
+            <h2 className="font-light dark:text-[#ffff] mr-6  mt-4 max-sm:text-xs">
               {" "}
               کد ارسال شده را وارد کنید{" "}
             </h2>
           </div>
 
-          <div className=" h-[160px]  ">
+          <div className="h-[160px]  ">
             <StepNumber />
           </div>
 
           <h2
-            className="  w-5/6 text-xs mt-8  text-[#BFBFBF] mr-7 
+            className="  w-5/6 text-xs mt-8  text-[#BFBFBF] mr-7 max-sm:text-xs
           ">
             با عضویت در سایت، تمامی قوانین و شرایط استفاده از خدمات آکادمی سپهر
             را پذیرفته اید

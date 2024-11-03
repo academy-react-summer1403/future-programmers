@@ -12,7 +12,7 @@ const StepThree = () => {
 <div className='h-[50px] w-[65px]' >
   <img src="./Logo.png" alt="" />
 </div>
-<h1 className='mr-4  text-xl dark:text-[#ffff] ' > آکادمی سپهر </h1>
+<h1 className='mr-4  text-xl dark:text-[#ffff] max-md:text-sm max-md:font-bold' > آکادمی سپهر </h1>
 </div>
 
 {/* <div className='flex'>

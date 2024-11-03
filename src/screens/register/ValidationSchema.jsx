@@ -12,7 +12,7 @@ const ValidationSchema = () => {
 <>
 <div className='flex items-center justify-center dark:bg-[#678cb1]'>
         <div className='p-6 rounded-lg w-[348px] dark:bg-[#678cb1]'>
-            <h2 className='bg-white text-2xl font-bold mb-4 text-right'> ثبت نام </h2>
+            <h2 className='bg-white text-2xl font-bold mb-4 text-right max-md:text-lg'> ثبت نام </h2>
         <Formik
         
         initialValues={{PhoneNumber: ''}}
@@ -29,7 +29,7 @@ const ValidationSchema = () => {
                         type='tel'
                         name=' name'
                         placeholder=' نام و نام خانوادگی'
-                        className='dark:text-[#ffff] border border-gray-300 dark:text-black text-right p-2 w-full rounded  '
+                        className='dark:text-[#ffff] border border-gray-300 dark:text-black text-right p-2 w-full rounded max-md:text-sm '
 />
                         <ErrorMessage
                         name='phoneNumber'
@@ -44,7 +44,7 @@ const ValidationSchema = () => {
                         type='tel'
                         name='phoneNumber'
                         placeholder='شماره موبایل'
-                        className=' dark:text-[#ffff] dark:text-black border border-gray-300  text-right p-2 w-full rounded  '
+                        className=' dark:text-[#ffff] dark:text-black border border-gray-300  text-right p-2 w-full rounded max-md:text-sm '
 />
                         <ErrorMessage
                         name='phoneNumber'
@@ -69,12 +69,12 @@ classNames={{
                         type='tel'
                         name='password'
                         placeholder=' رمز عبور'
-                        className='dark:text-[#ffff] border border-gray-300  text-right p-2 w-full rounded  '
+                        className='dark:text-[#ffff] border border-gray-300  text-right p-2 w-full rounded max-md:text-sm '
 />
                         <ErrorMessage
                         name='phoneNumber'
                         component={"p"}
-                        className='text-red-500 text-sm validationSchema'
+                        className='text-red-500 text-sm validationSchema max-md:text-sm'
                         />
 
                   </div>

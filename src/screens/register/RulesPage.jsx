@@ -8,11 +8,11 @@ const RulesPage = () => {
         </h1> */}
 
 
-        <button className="btn" onClick={()=>document.getElementById('my_modal_1').showModal()}> قوانین و شرایط</button>
+        <button className="btn max-md:text-xs" onClick={()=>document.getElementById('my_modal_1').showModal()}> قوانین و شرایط</button>
 <dialog id="my_modal_1" className="modal">
 
-  <div className="modal-box mt-28  text-xs  mr-64 text-[#8D8D8D]">
-    <h3 className="font-bold text-lg"> قوانین را مطالعه کنید </h3>
+  <div className="modal-box mt-28  text-xs mr-64 text-[#8D8D8D] max-md:w-[200px] max-sm:w-[140px]">
+    <h3 className="font-bold text-lg max-md:text-xs"> قوانین را مطالعه کنید </h3>
     <p className="py-4"> شما متعهد می‌شوید که از خدمات وب‌سایت به شیوه‌ای قانونی و مطابق با این قوانین استفاده کنید.
 
 • هرگونه سوءاستفاده از خدمات وب‌سایت، از جمله ارسال محتواهای غیرمجاز یا تبلیغات ناخواسته، ممنوع است. </p>

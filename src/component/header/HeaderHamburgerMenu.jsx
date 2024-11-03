@@ -19,9 +19,9 @@ const HeaderHamburgerMenu = () => {
             viewBox="0 0 20 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className=" cursor-pointer"
+            className=" cursor-pointer max-md:w-[30px]"
           >
-            <TfiAlignJustify />
+            <TfiAlignJustify/>
 
             
           </svg>
@@ -33,7 +33,7 @@ const HeaderHamburgerMenu = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4 absolute right-0">
+        <ul className=" menu bg-base-200 text-base-content min-h-full w-80 p-4 absolute right-0 dark:bg-[#152a38] dark:text-[#436E8E]">
           {/* Sidebar content here */}
           <nav className="flex flex-col ml-auto gap-4 justify-center ">
           

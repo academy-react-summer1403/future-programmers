@@ -17,13 +17,12 @@ const LogIn = () => {
   };
 
   return (
-    <div className="w-full h-full">
-      <div className="dark:bg-[#152a38]  h-[615px] flex justify-center">
+    <div className="w-[100%] overflow-hidden h-screen ">
+      <div className="dark:bg-[#152a38] bg-[#F3F4F6] h-[615px] flex justify-center">
         <div
-          className=" shadow-2xl m-auto overflow-hidden dark:bg-[#678cb1]
-  h-[560px] w-[80%] dark:text-white rounded-lg mt-7 bg-white flex"
+          className="bg-white flex dark:text-white shadow-lg dark:bg-[#678cb1] rounded-lg w-[80%] justify-around h-[580px] m-auto"
         >
-          <div className=" h-[500px] mr-4 rounded-lg  pt-[20px] mx-md:w-[300px] ">
+          <div className="h-[500px] mr-4 rounded-lg pt-[20px] mx-md:w-[300px] ">
             <div className=" border-x-slate-800 h-[55px] w-[327px] mx-auto ">
               <div className="  flex h-[50px]  text-xl ">
                 <img src="./Logo.png" alt="" className="h-[100%] w-[20%]  " />

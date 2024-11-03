@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Page = ({title,desc}) => {
   return (
-    <div className="  bg-white rounded-lg w-[23%] dark:bg-[#152a38] max-lg:w-[45%]  max-sm:w-[100%] max-sm:mt-2 shadow-lg ">
+    <div className=" mt-3 bg-white rounded-lg w-[23%] dark:bg-[#152a38] max-lg:w-[45%]  max-sm:w-[100%] max-sm:mt-2 shadow-lg ">
         <NavLink to="/newsdetail">
             <div className="h-[40%] w-[90%]  mx-auto pt-3 ">
                 <img src="./newspaper.png" alt="" className=" h-[100%] w-[100%]   " />

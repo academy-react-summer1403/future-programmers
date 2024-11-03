@@ -34,8 +34,8 @@ const CardNews1 = () => {
 return (
 
     <>
-<div className="flex flex-wrap w-[100%] dark:bg-[#152a38] dark:text-[#d1d4c9]        ">
-        <div className="  flex flex-wrap  w-[95%] mx-auto max-sm:gap-y-3 justify-between dark:bg-[#152a38] dark:text-white">
+<div className="flex flex-wrap w-[100%] dark:bg-[#29435c] dark:text-[#d1d4c9]">
+        <div className="flex flex-wrap w-[95%] mx-auto max-sm:gap-y-3 justify-between dark:bg-[#29435c] dark:text-white">
         {CardList.map((item, index) => {
             return (
                 <Page  

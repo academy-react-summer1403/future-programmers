@@ -13,10 +13,10 @@ const Header = () => {
   };
 
   return (
-    <div className=" font-[sans] bg-[#f9f9f9]  flex  justify-between items-center w-full py-4 px-6  shadow-2xl dark:bg-[#152a38] ">
+    <div className=" font-[sans] bg-[#f9f9f9] flex justify-between items-center w-full py-4 px-6  shadow-2xl dark:bg-[#152a38] ">
       <div className="flex items-center max-sm:ml-14">
         <img src="header icon.png" alt="" 
-        className="w-16 h-8 mr-6" />
+        className="w-16 h-8 mr-6 " />
         <span className=" ml-2 text-xl font-bold"></span>
         <div className="md:hidden mr-2">
           <HeaderHamburgerMenu />
