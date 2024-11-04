@@ -1,7 +1,7 @@
 import pic from '../../../../public/card.png'
 
 
-function serviceCards({title, text}) {
+function ServiceCards({title, text}) {
   return (
     <div className='bg-white rounded-3xl flex h-[250px] max-lg:h-[210px] max-md:h-40 w-[49%] max-sm:w-[100%] dark:bg-[#29435c] '>
         <img src={pic} alt="" className=' rounded-2xl h-[87%] lg:w-[38%] sm:w-[43%] max-sm:w-[26%] my-auto mr-[4%]' />
@@ -13,4 +13,4 @@ function serviceCards({title, text}) {
   )
 }
 
-export default serviceCards
+export default ServiceCards
