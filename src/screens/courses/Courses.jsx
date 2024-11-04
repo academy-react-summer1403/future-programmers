@@ -83,9 +83,10 @@ return (
                             teacher={item.teacherName} 
                             time={item.lastUpdate.toString().slice(11,19)} 
                             price={item.cost.toString().slice(-9,-1)}
-                            level={item.levelName} />  
+                            level={item.levelName}
+                            id={item.courseId} />  
                         );   
-                    })}             
+                    })}            
                 </div>
             </div>  
         </div>

@@ -1,9 +1,9 @@
 import { Link} from "react-router-dom";
 
-const CourseCard = ({image,topic, explain, teacher, time, price, level}) => {
+const CourseCard = ({image,topic, explain, teacher, time, price, level, id}) => {
   return (
    
-    <Link to={'/coursedetail/'} className=" relative w-[31%] max-sm:w-[95%] max-md:w-[31%] md:max-lg:w-[30%] h-[360px] max-md:h-[300px] md:max-lg:h-[220px] bg-white rounded-[20px] dark:dark:bg-[#29435c] dark:text-[#d1d4c9]">
+    <Link to={'/coursedetail/'+id} className=" relative w-[31%] max-sm:w-[95%] max-md:w-[31%] md:max-lg:w-[30%] h-[360px] max-md:h-[300px] md:max-lg:h-[220px] bg-white rounded-[20px] dark:dark:bg-[#29435c] dark:text-[#d1d4c9]">
       <img src={image} className="w-[92%] h-36 md:max-lg:h-[42%] mx-auto border border-[gray] relative bottom-6 rounded-3xl"></img>
       <h1 className="text-[14px] max-md:text-[12px] max-lg:text-[9px] font-bold mr-2 relative bottom-3 max-lg:bottom-4 dark:text-[#d1d4c9]">{topic}</h1>
       <p className="w-[95%] indent-[8px] h-9 max-sm:relative max-sm:bottom-[7px] max-sm:text-[11px] max-md:bottom-[10px] max-md:text-[10px] max-md:h-8 max-lg:h-6 mx-auto md:max-lg:mx-auto text-[12px] md:max-lg:text-[8px] max-lg:relative md:max-lg:bottom-3 bottom-0 overflow-hidden dark:text-[#d1d4c9]">{explain}</p>
