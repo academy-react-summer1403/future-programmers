@@ -12,9 +12,9 @@ export const getlist=async(sort ,search, categoryFilter, typeCourseFilter, level
             queryObj.ListTech = categoryFilter.join(',');
             queryObj.TechCount = 1;
         }
-        if(typeCourseFilter!=="" && typeCourseFilter!==null) queryObj.CourseTypeId = typeCourseFilter[0];
+        if(typeCourseFilter!=="" && typeCourseFilter!==null) queryObj.CourseTypeId = typeCourseFilter;
        
-        if(levelCourseFilter!=="" && levelCourseFilter!==null) queryObj.courseLevelId = arr;
+        if(levelCourseFilter!=="" && levelCourseFilter!==null) queryObj.courseLevelId =levelCourseFilter;
 
         const result=await http.get('/Home/GetCoursesWithPagination',{params:queryObj})
         // console.log("result",result)
