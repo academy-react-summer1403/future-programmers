@@ -29,7 +29,7 @@ function CourseDetail() {
   const getDetail = async ()=>{
     try {
         const result = await getCourseDetail()
-        setDetail(result.courseFilterDtos+id)
+        setDetail(result.courseFilterDtos)
         
         
         console.log(setDetail)
