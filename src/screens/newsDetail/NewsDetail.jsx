@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import NewsCard from './NewsCard.jsx'
+import { useState } from 'react';
 
 function NewsDetail() {
 
