@@ -53,7 +53,7 @@ function App() {
           errorElement:<Error />
         },
         {
-          path:'newsdetail',
+          path:'newsdetail/:id',
           element:<NewsDetail/>,
           errorElement:<Error />
         },

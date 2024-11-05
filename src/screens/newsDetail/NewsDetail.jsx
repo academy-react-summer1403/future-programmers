@@ -10,8 +10,8 @@ function NewsDetail() {
         {image:'public/newspaper.png',topic:'خبر چهار',explain:'سلام این یک خبر خیلی خوب است حتما بخوانید. چیزی را از دست نمی دهید.'}
     ]
 
-    const [nwesDetail, setNewsDetail]=useState([])
-    console.log(nwesDetail)
+    const [newsDetail, setNewsDetail]=useState([])
+    console.log(newsDetail)
   
     const {id} = useParams();
 
