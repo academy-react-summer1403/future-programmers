@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import NewsCard from './NewsCard.jsx'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function NewsDetail() {
 
@@ -14,7 +14,15 @@ function NewsDetail() {
     const [newsDetail, setNewsDetail]=useState([])
     console.log(newsDetail)
   
-    const {id} = useParams();
+    const {id} = useParams(); 
+    console.log(id)
+    
+
+    useEffect(() => {
+      first
+    
+    }, [])
+    
 
     return (
         <div className='bg-[#f3f4f6] font-[sans] dark:bg-[#152a38]'>
