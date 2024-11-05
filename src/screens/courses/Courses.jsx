@@ -17,14 +17,16 @@ const [search, setSearch] = useState('')
 const [categoryFilter, setCategoryFilter] = useState('')
 // type
 const [typeCourseFilter, setTypeCourseFilter] = useState('')
+// level 
+const [levelCourseFilter, setLevelCourseFilter] = useState('')
 
 // course counting 
 const CourseCount = Course.length
 // console.log( '123',CourseCount);
 
-const getAllCoursesList = async (sort, search, categoryFilter, typeCourseFilter)=>{
+const getAllCoursesList = async (sort, search, categoryFilter, typeCourseFilter, levelCourseFilter)=>{
     try {
-        const result = await getlist(sort, search, categoryFilter, typeCourseFilter)
+        const result = await getlist(sort, search, categoryFilter, typeCourseFilter,levelCourseFilter)
         setCourse(result.courseFilterDtos)
     } catch (error) {
         console.log(error)
@@ -32,11 +34,11 @@ const getAllCoursesList = async (sort, search, categoryFilter, typeCourseFilter)
 }
 
 useEffect(()=>{
-    getAllCoursesList(sort,search,categoryFilter, typeCourseFilter) 
-},[sort,search,categoryFilter, typeCourseFilter]);
+    getAllCoursesList(sort,search,categoryFilter, typeCourseFilter, levelCourseFilter) 
+},[sort,search,categoryFilter, typeCourseFilter, levelCourseFilter]);
 
 const handleCategoryFilter= ((e)=>{
-    const checkBoxId = e.target.id;
+    const checkBoxId = e.target.id ;
     if(categoryFilter.includes(checkBoxId)){setCategoryFilter(categoryFilter.filter((id)=>id!==checkBoxId))}
     else{setCategoryFilter([...categoryFilter,checkBoxId])}
 })
@@ -45,6 +47,13 @@ const handleTypeCourseFilter=((e)=>{
     const checkBoxId = e.target.id;
     if(typeCourseFilter.includes(checkBoxId)){setTypeCourseFilter(typeCourseFilter.filter((id)=>id!==checkBoxId))}
     else{setTypeCourseFilter([...typeCourseFilter,checkBoxId])}
+    // console.log('asas', checkBoxId)
+})
+// level 
+const handlelevelCourseFilter =((e)=>{
+    const checkBoxId = e.target.id;
+    if(levelCourseFilter.includes(checkBoxId)){setLevelCourseFilter(levelCourseFilter.filter((id)=>id!==checkBoxId))}
+    else{setLevelCourseFilter([...levelCourseFilter, checkBoxId])}
 })
 
 return (
@@ -62,7 +71,7 @@ return (
                 <FilterInTop  handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} />
             </div>
             <div className='flex w-[100%] sm:max-md:flex-wrap md:max-lg:flex-nowrap justify-between'>
-                <Filters handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} />
+                <Filters handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} handlelevelCourseFilter={handlelevelCourseFilter} />
                 <div className='w-[75%] mt-6 pt-5 h-fit flex flex-wrap justify-start gap-x-5 gap-y-12 max-md:justify-between md:max-lg:gap-y-10 max-md:w-full max-sm:justify-center sm:max-md:gap-y-11'>
                     {Course.map((item, index)=>{
                         return(
@@ -73,9 +82,11 @@ return (
                             explain={item.describe} 
                             teacher={item.teacherName} 
                             time={item.lastUpdate.toString().slice(11,19)} 
-                            price={item.cost.toString().slice(-9,-1)} />  
+                            price={item.cost.toString().slice(-9,-1)}
+                            level={item.levelName}
+                            id={item.courseId} />  
                         );   
-                    })}             
+                    })}            
                 </div>
             </div>  
         </div>

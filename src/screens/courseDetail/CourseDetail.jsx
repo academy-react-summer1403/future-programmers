@@ -1,8 +1,11 @@
 // import React from 'react'
+import { useParams } from 'react-router-dom'
+import { getCourseDetail } from '../../core/services/api/coursedetail'
 import CourseComment from './CourseComment'
 import CourseExplain from './CourseExplain'
 import CourseInformation from './CourseInformation'
 import SimilarCourse from './SimilarCourse'
+import { useEffect, useState } from 'react'
 
 
 
@@ -13,6 +16,32 @@ function CourseDetail() {
     {image:'public/01.jpg',teacher:' دوره دیگر استاد غنی زاده'},
     {image:'public/01.jpg',teacher:' دوره دیگر استاد غنی زاده'}
   ]
+
+  const [detail, setDetail]=useState([])
+  console.log(detail)
+
+  const {id} = useParams();
+  // console.log('params', id)
+
+  
+
+
+  const getDetail = async ()=>{
+    try {
+        const result = await getCourseDetail()
+        setDetail(result.courseFilterDtos)
+        
+        
+        console.log(setDetail)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+useEffect(() => {
+  getDetail();
+}, [])
+
     
   return (
     <div className='bg-[#f3f4f6] relative font-[sans] overflow-hidden dark:bg-[#152a38]'>
@@ -31,10 +60,32 @@ function CourseDetail() {
       </div>
 
       <div className=' flex flex-wrap justify-between w-[88%] mx-auto mt-5 max-sm:mt-3 pb-[30px] overflow-hidden dark:bg-[#152a38]'>
-        <CourseExplain />
+      <CourseExplain/>
+        {/* {detail?.map((item,index)=>{
+          return(
+            <CourseExplain 
+            key={index}
+            describe={item.describe}/>
+          )
+        })} */}
        
         <div className='flex flex-wrap max-md:h-fit w-[33%] gap-y-2 max-lg:w-[100%] md:max-lg:justify-between md:max-lg:mt-5'>
           <CourseInformation />
+          {/* {detail?.map((item,index)=>{
+          return(
+            <CourseInformation 
+            key={index}
+            teacherName={item.teacherName}
+            cost={item.cost}
+            technologyList={item.technologyList}
+            levelName={item.levelName}
+            currentRegistrants={item.currentRegistrants}
+            statusName={item.statusName}
+            courseRate={item.courseRate}
+            commandCount={item.commandCount}
+            lastUpdate={item.lastUpdate.toString().slice(0,10)}/>
+          )
+        })} */}
 
           <div className=' w-[99%] md:max-lg:h-fit pb-4 bg-white rounded-[20px] max-md:w-[100%] md:max-lg:w-[47%] dark:bg-[#29435c]'>
             <h1 className='relative right-[30px] top-[10px]  text-[20px] text-cyan-700 inline dark:text-[#d1d4c9]'>دوره های مشابه</h1>
@@ -57,25 +108,8 @@ function CourseDetail() {
   )
 }
 
+
 export default CourseDetail
 
 
- {/* change and make better this part. */}
-           {/* <div className='w-[100%] mx-[auto] pb-5'>
-              <div className='w-[100%] h-[400px] bg-white mt-[30px] max-md:mt-0 rounded-[20px] max-md:w-[100%] md:max-lg:w-[100%] dark:bg-[#29435c]'>
-                <div className='w-[85%] h-[90%] my-[20px]  mx-auto'>
-                  <h1 className='text-[25px] text-cyan-700 inline dark:text-[#d1d4c9]'>نظرات</h1>
-                  <div className='border-[2px] border-cyan-700 dark:border-[#556e53] rounded-[20px] h-[250px] mt-[5px]'>
-                    <textarea className='w-[99%] h-[240px] mr-[6px] mt-[4px] rounded-[20px] [outline:none] max-md:w-[97%] dark:bg-[#29435c] dark:text-[#d1d4c9]' >نظر خود را اینجا بنویسید</textarea>
-                  </div>
-                  <button className='bg-cyan-700 mt-[10px]  py-3 px-4 rounded-[10px] text-white dark:bg-[#556e53]'>ارسال نظر</button>
-                </div>
-              </div>
-            </div> */}
-
-
-
-
-
-// bg-gradient-to-l from-black to-gray-800
 

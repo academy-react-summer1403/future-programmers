@@ -1,17 +1,20 @@
 import http from '../interceptor'
 
-export const getlist=async(sort ,search, categoryFilter, typeCourseFilter)=>{
+export const getlist=async(sort ,search, categoryFilter, typeCourseFilter, levelCourseFilter)=>{
     try {
-        console.log(categoryFilter)
+        // console.log(categoryFilter)
+        // console.log(typeCourseFilter)
+        // console.log('5656',levelCourseFilter)
         const queryObj = {RowsOfPage: 9}
-
         if(sort!== "" && sort!==null) queryObj.SortingCol = sort;
         if(search!== "" && search!==null) queryObj.Query = search;
         if(categoryFilter && categoryFilter.length > 0){
             queryObj.ListTech = categoryFilter.join(',');
             queryObj.TechCount = 1;
         }
-        // if(typeCourseFilter!==''&& typeCourseFilter!==null){queryObj.CourseTypeId = typeCourseFilter }
+        if(typeCourseFilter!=="" && typeCourseFilter!==null) queryObj.CourseTypeId = typeCourseFilter;
+       
+        if(levelCourseFilter!=="" && levelCourseFilter!==null) queryObj.courseLevelId =levelCourseFilter;
 
         const result=await http.get('/Home/GetCoursesWithPagination',{params:queryObj})
         // console.log("result",result)
@@ -19,6 +22,7 @@ export const getlist=async(sort ,search, categoryFilter, typeCourseFilter)=>{
     } catch (error) {
         console.log(error)
     }
+    
 }
 
 export const categories = async()=>{
@@ -30,13 +34,22 @@ export const categories = async()=>{
         console.log(error)
     }
 }
+// type 
 export const typeCourse = async()=>{
     try {
-        const result= await http.get('/CourseType/GetCourseTypes')
-        
-        return result
+        const result= await http.get('/CourseType/GetCourseTypes')     
+        return result 
     } catch (error) {
         console.log(error)
         
+    }
+}
+// level 
+export const levelCourse = async()=>{
+    try {
+        const result = await http.get('/CourseLevel/GetAllCourseLevel')
+        return result
+    } catch (error) {
+        console.log(error)
     }
 }

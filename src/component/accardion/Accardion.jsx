@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react'
 import CheckBox from './checkBox'
-import { categories } from '../../core/services/api/course';
+import { categories, levelCourse } from '../../core/services/api/course';
 import {typeCourse} from '../../core/services/api/course';
 import CheckBox1 from './CheckBox1';
+import CheckBox2 from './CheckBox2';
 
-function Accardion({handleCategoryFilter, handleTypeCourseFilter}) {
+function Accardion({handleCategoryFilter, handleTypeCourseFilter, handlelevelCourseFilter}) {
 
    const [category, setCategory] = useState([]);
    const [typeCourses, setTypeCourses] = useState([]);
+   const[levelCourses, setLevelCourses] = useState([]);
    
     
    const getCategories = async ()=>{
@@ -30,9 +32,20 @@ function Accardion({handleCategoryFilter, handleTypeCourseFilter}) {
     }
    }
 
+// level 
+   const getLevelCourse = async ()=>{
+    try {
+        const result = await levelCourse();
+        setLevelCourses(result)
+    } catch (error) {
+        console.log(error)
+    }
+   }
+
     useEffect(()=>{
         getCategories();
         getTypeCourse();
+        getLevelCourse();
     },[])
   return (
     <>
@@ -56,9 +69,7 @@ function Accardion({handleCategoryFilter, handleTypeCourseFilter}) {
             <input type="checkbox" name="my-accordion-2"  />
             <div className="collapse-title text-[14px] md:max-lg:text-[12px]">سطح دوره</div>
             <div className="collapse-content">
-                <CheckBox topic='مبتدی' />
-                <CheckBox topic='متوسط' />
-                <CheckBox topic='پیشرفته' />
+                {levelCourses?.map((item, index)=> <CheckBox2 key={index} topic={item.levelName} id={item.id} handlelevelCourseFilter={handlelevelCourseFilter}/>)}
             </div>
         </div>
     </>

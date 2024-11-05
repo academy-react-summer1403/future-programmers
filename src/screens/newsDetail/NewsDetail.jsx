@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom';
 import NewsCard from './NewsCard.jsx'
 
 function NewsDetail() {
@@ -7,8 +8,13 @@ function NewsDetail() {
         {image:'public/newspaper.png',topic:'خبر دو',explain:'سلام این یک خبر خیلی خوب است حتما بخوانید. چیزی را از دست نمی دهید.'},
         {image:'public/newspaper.png',topic:'خبر سه',explain:'سلام این یک خبر خیلی خوب است حتما بخوانید. چیزی را از دست نمی دهید.'},
         {image:'public/newspaper.png',topic:'خبر چهار',explain:'سلام این یک خبر خیلی خوب است حتما بخوانید. چیزی را از دست نمی دهید.'}
-
     ]
+
+    const [nwesDetail, setNewsDetail]=useState([])
+    console.log(nwesDetail)
+  
+    const {id} = useParams();
+
     return (
         <div className='bg-[#f3f4f6] font-[sans] dark:bg-[#152a38]'>
             <div className='w-[88%] mx-auto flex pt-[15px]'>
@@ -21,7 +27,7 @@ function NewsDetail() {
                     <div className='w-[36%] h-[410px] bg-[#9F9F9F] relative left-[9%] bottom-[16%] rounded-[25px] rotate-[9deg] max-sm:rotate-[0] max-lg:h-[390px] max-lg:w-[41%] max-md:h-[267px] max-md:bottom-[24%] max-sm:h-[70px] max-sm:w-[70px]  max-sm:bottom-[16%] dark:bg-[#556e53]'>
                         <img src='public/newspaper.png' className='w-[100%] h-[100%] rounded-[26px] rotate-[-9deg] max-sm:rotate-[0]'></img>
                     </div>
-                    <p className='w-[64%] h-[320px] overflow-hidden absolute right-[30.5%] top-[25px] text-[17px] dark:text-white max-lg:right-[37%] max-lg:w-[58%] max-md:right-[37%] max-md:h-[197px] max-md:text-[15px] max-sm:right-[14%] max-sm:h-[150px] max-sm:text-[13px] max-sm:w-[78%] dark:text-[#d1d4c9]'> sdlkjlw sd;lsfew;l sdlfkjew;f</p>
+                    <p className='w-[64%] h-[320px] overflow-hidden absolute right-[30.5%] top-[25px] text-[17px] max-lg:right-[37%] max-lg:w-[58%] max-md:right-[37%] max-md:h-[197px] max-md:text-[15px] max-sm:right-[14%] max-sm:h-[150px] max-sm:text-[13px] max-sm:w-[78%] dark:text-[#d1d4c9]'> sdlkjlw sd;lsfew;l sdlfkjew;f</p>
                 </div>
                 <div className='w-[17%] relative text-[80%] py-5 right-[79%] rounded-b-[20px] text-center bg-[#9F9F9F] max-lg:text-[11px] max-lg:w-[19%] max-lg:right-[76%] max-lg:py-4 max-md:text-[10px] max-md:py-3 max-md:w-[24%] max-md:right-[71%] max-sm:text-[9px] max-sm:w-[42%] max-sm:right-[52%] dark:bg-[#556e53] dark:text-[#d1d4c9]'> نوشته شده توسط آرین کامیاب</div>
 
