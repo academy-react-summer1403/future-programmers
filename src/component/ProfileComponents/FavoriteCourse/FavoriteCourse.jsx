@@ -55,7 +55,6 @@ const FavoriteCourse = () => {
   }, []);
   return (
     <div>
-      <h2>دوره های  مورد علاقه  FavoriteCourse</h2>
       <div className="flex flex-wrap gap-6 justify-evenly mt-10 ">
 
         {FavoriteCOursesList?.favoriteCourseDto.map((course, index) => (

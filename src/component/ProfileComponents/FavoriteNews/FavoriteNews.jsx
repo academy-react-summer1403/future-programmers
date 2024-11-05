@@ -19,7 +19,6 @@ const FavoriteNews = () => {
 
   return (
     <div>
-      <h2>اخبار مورد علاقه FavoriteNews</h2>
       <div className="flex flex-wrap gap-6 justify-evenly mt-10 ">
         {favNews?.map((item, index) => (
           <NewsCard item={item} index={ index} />

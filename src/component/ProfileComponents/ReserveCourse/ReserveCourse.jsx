@@ -61,8 +61,6 @@ const [ReserveCourseList , setReserveCourseList] = useState(null)
   
   return (
     <div>
-      <h2>دوره های رزرو شذه   ReserveCourse</h2>
-
       <div className="flex flex-wrap gap-6 justify-evenly mt-10 ">
 
         {ReserveCourseList?.map((course, index) => (

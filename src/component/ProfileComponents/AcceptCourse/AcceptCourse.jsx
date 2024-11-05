@@ -45,7 +45,6 @@ const courses = [
 const AcceptCourse = () => {
   return (
     <div>
-      <h2>دوره های تایید شذه  AcceptCourse</h2>
       <div className="flex flex-wrap gap-6 justify-evenly mt-10 ">
 
         {courses.map((course, index) => (

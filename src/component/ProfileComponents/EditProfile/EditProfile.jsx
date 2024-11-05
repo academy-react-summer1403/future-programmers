@@ -4,6 +4,18 @@ import Pic from "./../../../../public/person.png";
 import http from '../../../core/services/interceptor'
 
 const EditProfile = () => {
+  const [MyInfo, setMyInfo] = useState(null);
+
+  const getProfile = async () => {
+    const res = await http.get(
+      "/SharePanel/GetProfileInfo"
+    );
+    setMyInfo(res);
+  };
+
+  useEffect(() => {
+    getProfile();
+  }, []);
 
   const obj = {
     name: 'ali',
@@ -136,7 +148,7 @@ const EditProfile = () => {
       </Formik>
       <div className="w-5/12 flex flex-col justify-center items-center gap-4">
         <div className="rounded-full w-3/4 h-64 object-fill">
-          <img className="w-full object-contain rounded-full" src={Pic}></img>
+          <img className="w-full object-contain rounded-full" src={MyInfo?.userImage[1].puctureAddress}></img>
         </div>
       </div>
     </div>
