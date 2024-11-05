@@ -11,8 +11,8 @@ const validationSchema = yup.object().shape({
 });
 return (
 <>
-<div className='flex items-center justify-center dark:bg-[#678cb1]'>
-        <div className='p-6 rounded-lg dark:bg-[#678cb1] w-96 max-md:w-[280px] max-md:ml-[30%]'>
+<div className='flex items-center justify-center dark:bg-[#678cb1] max-sm:w-[280px] '>
+        <div className='p-6 rounded-lg dark:bg-[#678cb1] w-96 max-md:w-[340px] max-md:ml-[10%]'>
             <h2 className=' text-sm font-light mb-4 text-right'>   </h2>
         <Formik
         
@@ -27,7 +27,7 @@ return (
                 <Form>
                     {/* <div className='mb-3'> */}
 
-                        <div className='mb-3'>
+                        <div className='mb-3 max-sm:mr-5'>
 
 
 <VerificationInput 
@@ -44,7 +44,7 @@ classNames= {{
 
                     {/* </div> */}
                     <button  type='submit'
-                        className=' bg-[#436E8E] h-[43px]  rounded w-full'>
+                        className=' bg-[#436E8E] h-[43px]  rounded w-full max-sm:mr-3'>
                 <h2 className='text-white w-full ' > تایید  </h2>
                     </button>
                 </Form>

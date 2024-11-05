@@ -9,8 +9,8 @@ const FormPhone = () => {
 
 return (
 <>
-<div className='flex items-center justify-center max-md:w-[190px] max-md:mr-[90px] dark:bg-[#678cb1]'>
-        <div className=' bg-white p-6 rounded-lg w-96 dark:bg-[#678cb1]'>
+<div className='flex items-center justify-center mr-9 max-md:w-[190px] max-md:mr-[90px] dark:bg-[#678cb1]'>
+        <div className=' bg-white p-6 rounded-lg w-96 dark:bg-[#678cb1] max-sm:w-[240px] max-sm:ml-[90px] '>
             <h2 className='text-2xl font-bold mb-4 text-center '>  </h2>
         <Formik
         
@@ -23,7 +23,7 @@ return (
         >
             {()=>(
                 <Form>
-                    <div className='mb-4 max-md:w-[290px]'>
+                    <div className='mb-4 max-md:w-[290px] max-sm:text-[13px] max-sm:w-[230px]' >
                         <Field 
                         type='tel'
                         name='phoneNumber'
@@ -37,7 +37,7 @@ return (
                         />
                     </div>
                     <button  type='submit'
-                        className=' bg-[#436E8E] h-[53px]  rounded w-full hover:bg-blue-600 max-md:w-[290px]'>
+                        className=' bg-[#436E8E] h-[53px] max-sm:w-[230px] rounded w-full hover:bg-blue-600 '>
                        <h2 className='text-white ' >ادامه </h2>
                     </button>
                 </Form>

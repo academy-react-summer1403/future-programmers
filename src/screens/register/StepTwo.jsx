@@ -3,10 +3,10 @@ import StepNumber from "./StepNumber";
 const StepTwo = () => {
   return (
     <div className="text-{sans} dark:bg-[#152a38]  dark:text-[#ffff] h-screen flex justify-center bg-[#F3F4F6]">
-      <div className="bg-white flex shadow-lg dark:bg-[#678cb1] rounded-lg w-[80%] justify-around h-[580px] m-auto ">
+      <div className="bg-white flex shadow-lg dark:bg-[#678cb1] rounded-lg w-[80%] justify-around h-[580px] m-auto">
         <div className="h-[500px] w-[351px] rounded-lg mr-2 ">
           <div className="h-[10%] mt-8 w-[90%] mr-1 flex">
-            <div className="h-[50px] w-[65px] max-sm:w-[30px]">
+            <div className="h-[50px] w-[65px] max-sm:w-[30px] max-sm:mr-5">
               <img src="./Logo.png" alt="" />
             </div>
             <h3 className="mr-3 font-bold text-xl dark:text-[#ffff] max-sm:text-xs ">
@@ -38,7 +38,7 @@ const StepTwo = () => {
             را پذیرفته اید
           </h2>
         </div>
-        <div className="hidden md:block mr-9 h-[100%] w-[500px]">
+        <div className="hidden md:block mr-56 h-[100%] w-[500px]">
           <img
             src="./Image.png"
             alt=""
