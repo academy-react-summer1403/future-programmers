@@ -27,7 +27,7 @@ const SidePanel = () => {
       {/* Logo Section */}
       <div className="flex items-center gap-3">
         <div className=" p-4 rounded-full">
-          <img src={MyInfo?.userImage[0].puctureAddress}  className="w-10 h-10" />
+          <img src={MyInfo?.userImage[1].puctureAddress}  className="w-20 h-20 rounded-full" />
         </div>
         <span className="text-xl font-bold">آکادمی سپهر</span>
       </div>
@@ -80,13 +80,13 @@ const SidePanel = () => {
         >
             ویرایش پروفایل
         </NavLink>
-{/* 
-        <Link
+
+        <NavLink
           to="/profile/UploadImage"
-          className="flex items-center gap-3 text-lg font-medium text-gray-700"
+          className={({isActive, isPending}) => isActive ? 'flex items-center gap-3 text-lg font-medium text-gray-700 bg-[aqua] py-2 px-4 rounded-2xl' : 'flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl'}
         >
           اپلود عکس
-        </Link> */}
+        </NavLink>
 
 
       </div>
