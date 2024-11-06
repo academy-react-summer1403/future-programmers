@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import NewsCard from './NewsCard.jsx'
 import { useEffect, useState } from 'react';
+import { getNewsDetail } from '../../core/services/api/NewsDetail.js';
 
 function NewsDetail() {
 
@@ -16,10 +17,22 @@ function NewsDetail() {
   
     const {id} = useParams(); 
     console.log(id)
-    
+
+    const getDetail = async ()=>{
+        try {
+            const result = await getNewsDetail()
+            setNewsDetail(result)
+            
+            
+            console.log(setNewsDetail)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
 
     useEffect(() => {
-      first
+        getDetail();
     
     }, [])
     
