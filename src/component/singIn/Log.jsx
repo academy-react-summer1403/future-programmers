@@ -3,18 +3,25 @@ import React, { useState } from "react";
 import { login } from "../../core/services/api/auth";
 import { NavLink, useNavigate } from "react-router-dom";
 import { getItem, setItem } from "../../core/services/common/storage.services";
+import http from '../../core/services/interceptor'
 
 const Log = () => {
   const navigate = useNavigate();
 
-  const handleLogin = async (values) => {
-    try {
-      const res = await http.post("/Sign/Login", values);
-      console.log(result.token);
-      setItem("token", result.token);
-    } catch (err) {
-      console.log(err);
-    }
+    const handleLogin =async (values) => {
+      try {
+        const res = await http.post('/Sign/Login', values)
+        console.log(res.token)
+        setItem("token", res.token)
+        navigate('/')
+
+
+      } catch (err) {
+        console.log(err)
+      }
+
+
+    
   };
 
   return (

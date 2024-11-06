@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CustomCard from '../common/CustomCard';
 import pic from '../../../../public/item1.png'
+import http from '../../../core/services/interceptor'
 
 const courses = [
   {
@@ -42,13 +43,23 @@ const courses = [
 
 ];
 const FavoriteCourse = () => {
+  const [FavoriteCOursesList, setFavoriteCOursesList] = useState(null);
+
+  const getFavoriveCourses =async () => {
+    const res = await http.get('/SharePanel/GetMyFavoriteCourses')
+    setFavoriteCOursesList(res)
+  }
+
+  useEffect(() => {
+    getFavoriveCourses()
+  }, []);
   return (
     <div>
-      <h2>دوره های  مورد علاقه  FavoriteCourse</h2>
       <div className="flex flex-wrap gap-6 justify-evenly mt-10 ">
 
-        {courses.map((course, index) => (
-          <CustomCard course={course} index={index} />
+        {FavoriteCOursesList?.favoriteCourseDto.map((course, index) => (
+          <CustomCard course={course} index={index} courseTitle={course.courseTitle} tumbImageAddress={course.tumbImageAddress}
+            describe={course.describe} teacheName={course.teacheName } />
         ))}
       </div>
     </div>
