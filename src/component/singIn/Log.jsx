@@ -13,7 +13,8 @@ const Log = () => {
       try {
         const res = await http.post('/Sign/Login', values)
         console.log(res.token)
-        setItem("token" ,res.token)
+        setItem("token", res.token)
+        navigate('/')
 
 
       } catch (err) {

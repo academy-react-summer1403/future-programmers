@@ -1,67 +1,61 @@
 import { Field, Form, Formik } from "formik";
 import React, { useEffect, useState } from "react";
 import Pic from "./../../../../public/person.png";
-import http from '../../../core/services/interceptor'
+import http from "../../../core/services/interceptor";
 
 const EditProfile = () => {
+  //get info
   const [MyInfo, setMyInfo] = useState(null);
-
   const getProfile = async () => {
-    const res = await http.get(
-      "/SharePanel/GetProfileInfo"
-    );
+    const res = await http.get("/SharePanel/GetProfileInfo");
+    console.log(res)
     setMyInfo(res);
   };
-
   useEffect(() => {
     getProfile();
   }, []);
 
-  const obj = {
-    name: 'ali',
-    family:'salari'
-  }
-
-  const myForm = new FormData()
-  myForm.append('name' , 'a;i')
-  myForm.append('family' , 'salari')
-
-
-
-
-
+  // update profile
   const handleUpdateProfile = async (values) => {
-    console.log(values)
-    const data = new FormData()
-    
-    const keys = Object.keys(values)
+    const data = new FormData();
 
-    keys.forEach(key => {
-      const item = values[key]
-      data.append(key , item)
-    })
+    const keys = Object.keys(values);
 
-    const res = await http.put('/SharePanel/UpdateProfileInfo', data)
-    console.log(res)
-    
-  }
+    keys.forEach((key) => {
+      const item = values[key];
+      data.append(key, item);
+    });
+
+    const res = await http.put("/SharePanel/UpdateProfileInfo", data);
+  };
+
+  // upload image
+  const [Image, setImage] = useState("");
+
+  const sendImage = async (e) => {
+    e.preventDefault();
+    const data = new FormData();
+    data.append("formFile", e.target.ax.files[0]);
+    const res = await http.post("/SharePanel/AddProfileImage", data);
+    console.log(res);
+  };
 
   return (
     <div className="flex dark:bg-gray-400 mt-10 p-4 pb-20 rounded-2xl">
       <Formik
         initialValues={{
-          LName: "",
-          FName: "",
-          ReceiveMessageEvent: false,
-          UserAbout: "",
-          LinkdinProfile: "",
-          TelegramLink: "",
-          HomeAdderess: "",
-          NationalCode: "",
-          Gender: false,
-          BirthDay: "",
+          LName: MyInfo?.lName,
+          FName: MyInfo?.fName,
+          ReceiveMessageEvent: MyInfo?.receiveMessageEvent,
+          UserAbout: MyInfo?.userAbout,
+          LinkdinProfile: MyInfo?.linkdinProfile,
+          TelegramLink: MyInfo?.telegramLink,
+          HomeAdderess: MyInfo?.homeAdderess,
+          NationalCode: MyInfo?.nationalCode,
+          Gender: MyInfo?.gender,
+          BirthDay: MyInfo?.birthDay,
         }}
-
+        enableReinitialize
         onSubmit={handleUpdateProfile}
       >
         <Form className="w-7/12">
@@ -103,9 +97,7 @@ const EditProfile = () => {
               className="input input-bordered w-full max-w-xs "
             />
             <Field as="select" name="tech" className="bg-white p-4 px-10">
-              <option value="">
-                جنسیت
-              </option>
+              <option value="">جنسیت</option>
               <option value="true">مرد</option>
               <option value="false">زن</option>
             </Field>
@@ -135,20 +127,35 @@ const EditProfile = () => {
             />
 
             <Field as="select" name="tech" className="bg-white p-4 px-10">
-              <option value="">
-                میخواهید پیام دریافت کنید؟
-              </option>
+              <option value="">میخواهید پیام دریافت کنید؟</option>
               <option value="true">بله</option>
               <option value="false">خیر</option>
             </Field>
           </div>
 
-          <button type="submit" className="btn btn-primary">clcik</button>
+          <button type="submit" className="btn btn-primary">
+            update profile
+          </button>
         </Form>
       </Formik>
       <div className="w-5/12 flex flex-col justify-center items-center gap-4">
         <div className="rounded-full w-3/4 h-64 object-fill">
-          <img className="w-full object-contain rounded-full" src={MyInfo?.userImage[1].puctureAddress}></img>
+          <img
+            className="w-full object-contain rounded-full"
+            src={MyInfo?.userImage[44].puctureAddress}
+          ></img>
+          <div>
+            <form onSubmit={sendImage}>
+              <input
+                name="ax"
+                type="file"
+                onChange={(e) => {
+                  setImage(e.target.files[0]);
+                }}
+              />
+              <button type="submit"  className="btn btn-primary">upload image</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

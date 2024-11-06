@@ -4,8 +4,10 @@ import { Link, NavLink } from "react-router-dom";
 import { FaHome, FaBook, FaRegCommentDots, FaSignOutAlt } from "react-icons/fa";
 import logoPic from "../../../../public/header icon.png"
 import http from "../../../core/services//interceptor";
+import ProfileModal from "../ProfileModal/ProfileModal";
 
 const SidePanel = () => {
+  const [Count, setCount] = useState(false);
   const [MyInfo, setMyInfo] = useState(null);
 
   const getProfile = async () => {
@@ -19,15 +21,15 @@ const SidePanel = () => {
     getProfile();
   }, []);
 
-  MyInfo && console.log(MyInfo)
 
 
   return (
     <div className=" h-screen bg-white dark:bg-gray-400 border border-gray-300 rounded-3xl p-6 flex flex-col justify- items-center ">
+      {Count === true && <ProfileModal MyInfo={ MyInfo} />}
       {/* Logo Section */}
       <div className="flex items-center gap-3">
         <div className=" p-4 rounded-full">
-          <img src={MyInfo?.userImage[1].puctureAddress}  className="w-20 h-20 rounded-full" />
+          <img src={MyInfo?.userImage[1].puctureAddress} onClick={()=>setCount(true)}  className="w-20 h-20 rounded-full" />
         </div>
         <span className="text-xl font-bold">آکادمی سپهر</span>
       </div>

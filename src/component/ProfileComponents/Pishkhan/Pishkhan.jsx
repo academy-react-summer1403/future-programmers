@@ -9,7 +9,7 @@ const Pishkhan = () => {
 
   const getProfile = async () => {
     const res = await http.get(
-      "https://classapi.sepehracademy.ir/api/SharePanel/GetProfileInfo"
+      "/SharePanel/GetProfileInfo"
     );
     setMyInfo(res);
   };
