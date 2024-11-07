@@ -66,7 +66,7 @@ return (
                 <SearchBox setSearch={setSearch} />
                 <TopSorting setSort={setSort}/>
                 {/* <Sorting /> */}
-                <FilterInTop  handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} />
+                <FilterInTop  handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} handlelevelCourseFilter={handlelevelCourseFilter}/>
             </div>
             <div className='flex w-[100%] sm:max-md:flex-wrap md:max-lg:flex-nowrap justify-between'>
                 <Filters handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} handlelevelCourseFilter={handlelevelCourseFilter} />
@@ -81,7 +81,6 @@ return (
                             teacher={item.teacherName} 
                             time={item.lastUpdate.toString().slice(11,19)} 
                             price={item.cost.toString().slice(-9,-1)}
-                            level={item.levelName}
                             id={item.courseId} />  
                         );   
                     })}            

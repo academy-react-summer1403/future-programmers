@@ -20,7 +20,7 @@ function CourseDetail() {
 
   const [detail, setDetail]=useState([])
   console.log('aaa',detail)
-   
+
   const {id} = useParams();
   // console.log('params', id)
 
@@ -58,36 +58,24 @@ useEffect(() => {
       </div>
 
       <div className=' flex flex-wrap justify-between w-[88%] mx-auto mt-5 max-sm:mt-3 pb-[30px] overflow-hidden dark:bg-[#152a38]'>
-      <CourseExplain/>
-        {/* {detail?.map((item,index)=>{
-          return(
-            <CourseExplain 
-            key={index}
-            describe={item.describe}/>
-          )
-        })} */}
+      {/* <CourseExplain/> */}
+        <CourseExplain describe={detail.describe}/>
+        
         <div className='flex flex-wrap max-md:h-fit w-[33%] gap-y-2 max-lg:w-[100%] md:max-lg:justify-between md:max-lg:mt-5'>
-          <CourseInformation />
-          {/* {detail?.map((item,index)=>{
-          return(
             <CourseInformation 
-            key={index}
-            teacherName={item.teacherName}
-            cost={item.cost}
-            techs={item.techs[0]}
-            courseLevelName={item.courseLevelName}
-            capacity={item.capacity}
-            courseStatusName={item.courseStatusName}
-            commentCount={item.commentCount}
-            currentRate={item.currentRate}
-            insertDate={item.insertDate.toString().slice(0,10)}
-            startTime={item.startTime.toString().slice(0,10)}
-            endTime={item.endTime.toString().slice(0,10)}
-            
-            // lastUpdate={item.lastUpdate.toString().slice(0,10)}
+            teacherName={detail.teacherName}
+            cost={detail.cost}
+            // techs={detail.techs[0]+', '+detail.techs[1]}
+            courseLevelName={detail.courseLevelName}
+            capacity={detail.capacity}
+            courseStatusName={detail.courseStatusName}
+            commentCount={detail.commentCount}
+            currentRate={detail.currentRate}
+            // insertDate={detail.insertDate.toString().slice(0,10)}
+            // startTime={detail.startTime.toString().slice(0,10)}
+            // endTime={detail.endTime.toString().slice(0,10)}
             />
-          )
-        })} */}
+
 
           <div className=' w-[99%] md:max-lg:h-fit pb-4 bg-white rounded-[20px] max-md:w-[100%] md:max-lg:w-[47%] dark:bg-[#29435c]'>
             <h1 className='relative right-[30px] top-[10px]  text-[20px] text-cyan-700 inline dark:text-[#d1d4c9]'>دوره های مشابه</h1>
