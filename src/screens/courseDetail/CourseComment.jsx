@@ -13,7 +13,7 @@ function CourseComment() {
                       <h2 className='flex max-sm:text-[12px]'>salam aryanpour
                         <h2 className='mr-2  pr-2 border-r-2 border-gray-300'>کاربر</h2>
                       </h2>
-                      <h2 className='pt-2 text-gray-400 text-[14px] max-sm:text-[12px] '>21/21/21333</h2>
+                      <h2 className='pt-2 text-gray-400 text-[14px] max-sm:text-[12px] '>21/21/2133</h2>
                     </div>
                     <div className='flex max-sm:flex-col absolute left-0 top-2 text-[13px]'>
                       <div className='pr-7 max-sm:pr-5 ml-2 bg-[url(public/like.png)] dark:bg-[url(public/like.dark.png)] [background-size:50%_100%] max-sm:[background-size:35%_75%] [background-position-x:100%] [background-position-y:50%] bg-no-repeat'>937</div>

@@ -20,7 +20,10 @@ function CourseDetail() {
 
   const [detail, setDetail]=useState([])
   console.log('aaa',detail)
-
+//  off in top image
+  const costOff = (detail?.cost?.toString().slice(0,7)) * 90/100;
+  
+  
   const {id} = useParams();
   // console.log('params', id)
 
@@ -50,8 +53,8 @@ useEffect(() => {
               <h1 className="text-stone-50  text-[24px] max-md:text-[10px] max-sm:text-[11px] max-md:right-[30px] md:max-lg:text-[13px] md:max-lg:right-[38px] font-black absolute top-[40px] right-[65px]">در لاراول Restful API آموزش کاربردی</h1>
               <p className=' text-gray-400 w-[420px] absolute top-[85px] right-[65px] max-md:right-[30px] max-md:w-[205px] max-md:top-[56px] max-md:text-[8px] md:max-lg:top-[60px] md:max-lg:text-[10px] md:max-lg:right-[38px] md:max-lg:w-[251px] max-sm:text-[10px] max-sm:w-[250px] max-sm:top-[60px] max-sm:text-slate-200'> در اینجا یاد می گیرید.ر اینجا یاد می گیرید.ر اینجا یاد می گیرید ر اینجا یاد می گیرید.گیرید.ر اینجا یاد می گیرید.ر ا</p>
               <img src={detail?.imageAddress??pic} className='w-[450px] h-[310px] shadow-[8px_-13px_35px_-18px_gray] rounded-[25px] absolute right-[770px] top-[30px]  max-md:right-[334px] max-md:w-[44%] max-md:h-[76%] md:max-lg:right-[406px] md:max-lg:h-[76%] md:max-lg:w-[43%]  max-sm:hidden'></img>
-              <h3 className=' text-gray-400 line-through absolute top-[220px] right-[625px] max-md:text-[11px] max-md:right-[240px] max-md:top-[164px] md:max-lg:text-[12px] md:max-lg:top-[175px] md:max-lg:right-[295px]'> تومان 500,000</h3>
-              <h2 className=' text-white	text-[22px] font-bold	absolute top-[250px] right-[580px] max-md:text-[13px] max-md:top-[180px] max-md:right-[221px] md:max-lg:text-[14px] md:max-lg:top-[200px] md:max-lg:right-[273px]'>تومان 400,000</h2>
+              <h3 className=' text-gray-400 line-through absolute top-[220px] right-[625px] max-md:text-[11px] max-md:right-[240px] max-md:top-[164px] md:max-lg:text-[12px] md:max-lg:top-[175px] md:max-lg:right-[295px]'> تومان {detail?.cost}</h3>
+              <h2 className=' text-white	text-[22px] font-bold	absolute top-[250px] right-[580px] max-md:text-[13px] max-md:top-[180px] max-md:right-[221px] md:max-lg:text-[14px] md:max-lg:top-[200px] md:max-lg:right-[273px]'>تومان {costOff}</h2>
               <button type='Submit' className='bg-cyan-700 text-[white] py-3 px-4 rounded-[10px] absolute top-[242px] right-[70px] max-md:top-[165px] max-md:p-[7px] max-md:text-[11px] max-md:right-[24px] md:max-lg:text-[12px] md:max-lg:right-[38px] md:max-lg:top-[190px] dark:bg-[#556e53]'>خرید نقدی دوره</button>
             </div>  
         </div>
@@ -62,10 +65,10 @@ useEffect(() => {
         <CourseExplain describe={detail?.describe}/>
         
         <div className='flex flex-wrap max-md:h-fit w-[33%] gap-y-2 max-lg:w-[100%] md:max-lg:justify-between md:max-lg:mt-5'>
-            <CourseInformation 
+          <CourseInformation 
             teacherName={detail?.teacherName}
-            cost={detail?.cost}
-            // techs={detail?.techs}
+            cost={detail?.cost?.toString().slice(0,7)+' '}
+            techs={detail?.techs}
             courseLevelName={detail?.courseLevelName}
             capacity={detail?.capacity}
             courseStatusName={detail?.courseStatusName}
@@ -74,7 +77,7 @@ useEffect(() => {
             insertDate={detail?.insertDate?.toString().slice(0,10)}
             startTime={detail?.startTime?.toString().slice(0,10)}
             endTime={detail?.endTime?.toString().slice(0,10)}
-            />
+          />
 
 
           <div className=' w-[99%] md:max-lg:h-fit pb-4 bg-white rounded-[20px] max-md:w-[100%] md:max-lg:w-[47%] dark:bg-[#29435c]'>
@@ -91,7 +94,7 @@ useEffect(() => {
             </div>
           </div> 
         </div>
-        
+        {/* <CourseComment /> */}
       </div>
       <CourseComment />
     </div>
