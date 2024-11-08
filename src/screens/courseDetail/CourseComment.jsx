@@ -16,7 +16,7 @@ function CourseComment() {
                       <h2 className='pt-2 text-gray-400 max-sm:text-[12px] '>21/21/21333</h2>
                     </div>
                     <div className='flex border border-black absolute left-0 top-2 text-[13px]'>
-                      <h2 className='pr-4'>987</h2>
+                      <h2 className='pr-4 bg-[url()]'>987</h2>
                       <h2 className='pr-4'>123</h2>
                     </div>
                   </div>
