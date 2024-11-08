@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import NewsCard from './NewsCard.jsx'
 import { useEffect, useState } from 'react';
 import { getNewsDetail } from '../../core/services/api/NewsDetail.js';
+import NewsComment from './NewsComment.jsx';
 
 function NewsDetail() {
 
@@ -70,7 +71,7 @@ function NewsDetail() {
                 })}             
             </div>
             </div>
-            
+            <NewsComment />
         </div>
     ) 
 }
