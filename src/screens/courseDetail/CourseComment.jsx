@@ -13,15 +13,15 @@ function CourseComment() {
                       <h2 className='flex max-sm:text-[12px]'>salam aryanpour
                         <h2 className='mr-2  pr-2 border-r-2 border-gray-300'>کاربر</h2>
                       </h2>
-                      <h2 className='pt-2 text-gray-400 max-sm:text-[12px] '>21/21/21333</h2>
+                      <h2 className='pt-2 text-gray-400 text-[14px] max-sm:text-[12px] '>21/21/21333</h2>
                     </div>
-                    <div className='flex border border-black absolute left-0 top-2 text-[13px]'>
-                      <h2 className='pr-4 bg-[url()]'>987</h2>
-                      <h2 className='pr-4'>123</h2>
+                    <div className='flex max-sm:flex-col absolute left-0 top-2 text-[13px]'>
+                      <div className='pr-7 max-sm:pr-5 ml-2 bg-[url(public/like.png)] dark:bg-[url(public/like.dark.png)] [background-size:50%_100%] max-sm:[background-size:35%_75%] [background-position-x:100%] [background-position-y:50%] bg-no-repeat'>937</div>
+                      <div className='pr-7 max-sm:pr-5 max-sm:mt-2 bg-[url(public/dislike.png)] dark:bg-[url(public/dislike.dark.png)] [background-size:50%_100%] max-sm:[background-size:30%_75%] [background-position-x:100%] [background-position-y:50%] bg-no-repeat'>123</div>
                     </div>
                   </div>
-                  <p className='w-full max-h-12 overflow-x-hidden overflow-y-scroll rounded-lg mt-1 pr-2 max-sm:text-[12px] '>salak sdkj alkf jweoif fsw iehf jdks kfw jhfg weyu salak sdkj alkf jweoif fsw iehf jdks kfw jhfg weyu salak sdkj alkf jweoif fsw iehf jdks kfw jhfg weyu salak sdkj alkf jweoif fsw iehf jdks kfw jhfg weyu</p>
-                  <div className='flex content-end pt-2 text-[11px]'>
+                  <p className='w-full max-h-12 overflow-x-hidden overflow-y-scroll rounded-lg mt-1 pr-2 max-sm:pl-[8px] max-sm:text-[12px] '>salak sdkj alkf jweoif fsw iehf jdks kfw jhfg weyu salak sdkj alkf jweoif fsw iehf jdks kfw jhfg weyu salak sdkj alkf jweoif fsw iehf jdks kfw jhfg weyu salak sdkj alkf jweoif fsw iehf jdks kfw jhfg weyu</p>
+                  <div className='flex justify-end pt-2 text-[11px]'>
                     <div className='hover:text-red-600 cursor-pointer'>مشاهده پاسخ ها</div>
                     <div className='pr-3 hover:text-red-600 cursor-pointer'>پاسخ دادن</div>
                   </div>
