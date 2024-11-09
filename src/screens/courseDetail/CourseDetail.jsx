@@ -94,7 +94,6 @@ useEffect(() => {
             </div>
           </div> 
         </div>
-        {/* <CourseComment /> */}
       </div>
       <CourseComment />
     </div>
