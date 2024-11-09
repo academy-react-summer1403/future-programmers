@@ -1,4 +1,6 @@
 import pic from '../../../public/01.jpg'
+import pic1 from '../../../public/Like.empty.png'
+import pic2 from '../../../public/Like.red.png'
 
 function CourseComment() {
   return (
@@ -16,6 +18,7 @@ function CourseComment() {
                       <h2 className='pt-2 text-gray-400 text-[14px] max-sm:text-[12px] '>21/21/2133</h2>
                     </div>
                     <div className='flex max-sm:flex-col absolute left-0 top-2 text-[13px]'>
+                    <img src={pic1} className='w-[30px] max-sm:w-[25px] h-[32px] max-sm:h-[20px] pl-[5px] mb-[3px] max-sm:mr-[24px] cursor-pointer'></img>
                       <div className='pr-7 max-sm:pr-5 ml-2 bg-[url(public/like.png)] dark:bg-[url(public/like.dark.png)] [background-size:50%_100%] max-sm:[background-size:35%_75%] [background-position-x:100%] [background-position-y:50%] bg-no-repeat'>937</div>
                       <div className='pr-7 max-sm:pr-5 max-sm:mt-2 bg-[url(public/dislike.png)] dark:bg-[url(public/dislike.dark.png)] [background-size:50%_100%] max-sm:[background-size:30%_75%] [background-position-x:100%] [background-position-y:50%] bg-no-repeat'>123</div>
                     </div>
