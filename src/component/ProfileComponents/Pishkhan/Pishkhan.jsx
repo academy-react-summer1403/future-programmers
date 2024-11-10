@@ -19,7 +19,7 @@ const Pishkhan = () => {
   }, []);
 
   return (
-    <div className=" dark:bg-gray-400 mt-10 ">
+    <div className=" dark:bg-[#29435c] mt-10 ">
       <div className="flex justify-around">
       <div className="flex w-[40%] h-24 bg-white">
           <div className="w-2/3 ps-5 pt-5">
@@ -63,7 +63,7 @@ const Pishkhan = () => {
        
       <div className="flex mt-4 gap-24">
         <div className="w-1/2 h-60  flex flex-col gap-2">
-          <h2>دوره های در حال برگزاری:</h2>
+          <h2 className='dark:text-[#d1d4c9]'>دوره های در حال برگزاری:</h2>
           <div className="bg-white shadow-lg h-2/5 flex justify-between p-2 rounded-lg">
             <div className="w-2/3 flex flex-col justify-between ">
               <h3>react</h3>
@@ -90,7 +90,7 @@ const Pishkhan = () => {
           </div>
         </div>
         <div className="w-1/2 h-60  flex flex-col gap-2">
-          <h2>دوره های پیشنهادی:</h2>
+          <h2 className='dark:text-[#d1d4c9]'>دوره های پیشنهادی:</h2>
           <div className="bg-white shadow-lg h-2/5 flex justify-between p-2 rounded-lg">
             <div className="w-2/3 flex flex-col justify-between ">
               <h3>react</h3>
