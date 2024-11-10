@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import CustomCard from '../common/CustomCard';
 import pic from '../../../../public/item1.png'
 import http from '../../../core/services/interceptor'
+import pic2 from '../../../../public/02.jpg'
 
 const courses = [
   {
@@ -53,12 +54,13 @@ const FavoriteCourse = () => {
   useEffect(() => {
     getFavoriveCourses()
   }, []);
+  console.log(FavoriteCOursesList)
   return (
     <div>
       <div className="flex flex-wrap gap-6 justify-evenly mt-10 ">
 
         {FavoriteCOursesList?.favoriteCourseDto.map((course, index) => (
-          <CustomCard course={course} index={index} courseTitle={course.courseTitle} tumbImageAddress={course.tumbImageAddress}
+          <CustomCard course={course} index={index} courseTitle={course.courseTitle} tumbImageAddress={course.tumbImageAddress ?? pic2}
             describe={course.describe} teacheName={course.teacheName } />
         ))}
       </div>
