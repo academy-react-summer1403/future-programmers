@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom'
 const Profile = () => {
   
   return (
-    <div className='flex justify-around dark:bg-[#152a38]'>
+    <div className='flex justify-around font-[sans] dark:bg-[#152a38]'>
         <div className='w-[30%]'>
             <SideBar/>
         </div>

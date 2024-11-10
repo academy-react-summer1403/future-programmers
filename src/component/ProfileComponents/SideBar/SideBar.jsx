@@ -38,14 +38,14 @@ const SidePanel = () => {
       <div className="flex flex-col gap-4 mt-12">
         <NavLink
           to="/profile/pishkhan"
-          className={({isActive, isPending}) => isActive ? 'flex items-center gap-3 text-lg font-medium text-gray-700 bg-[aqua] py-2 px-4 rounded-2xl' : 'flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl'}
+          className={({isActive, isPending}) => isActive ? 'flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl' : 'flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl'}
         >
           پیشخوان
         </NavLink>
 
         <NavLink
           to="/profile/ReserveCourse"
-          className={({isActive, isPending}) => isActive ? 'flex items-center gap-3 text-lg font-medium text-gray-700 bg-[aqua] py-2 px-4 rounded-2xl' : 'flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl'}
+          className={({isActive, isPending}) => isActive ? 'flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl' : 'flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl'}
 
         >
           دوره‌های رزرو شده
@@ -53,7 +53,7 @@ const SidePanel = () => {
 
         <NavLink
           to="/profile/AcceptCourse"
-          className={({isActive, isPending}) => isActive ? 'flex items-center gap-3 text-lg font-medium text-gray-700 bg-[aqua] py-2 px-4 rounded-2xl' : 'flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl'}
+          className={({isActive, isPending}) => isActive ? 'flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl' : 'flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl'}
 
         >
           دوره های من
@@ -61,7 +61,7 @@ const SidePanel = () => {
 
         <NavLink
           to="/profile/FavoriteNews"
-          className={({isActive, isPending}) => isActive ? 'flex items-center gap-3 text-lg font-medium text-gray-700 bg-[aqua] py-2 px-4 rounded-2xl' : 'flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl'}
+          className={({isActive, isPending}) => isActive ? 'flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl' : 'flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl'}
 
         >
           اخبار مورد علاقه
@@ -69,7 +69,7 @@ const SidePanel = () => {
 
         <NavLink
           to="/profile/FavoriteCourse"
-          className={({isActive, isPending}) => isActive ? 'flex items-center gap-3 text-lg font-medium text-gray-700 bg-[aqua] py-2 px-4 rounded-2xl' : 'flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl'}
+          className={({isActive, isPending}) => isActive ? 'flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl' : 'flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl'}
 
         >
           دوره های مورد علاقه
@@ -77,7 +77,7 @@ const SidePanel = () => {
 
         <NavLink
           to="/profile/EditProfile"
-          className={({isActive, isPending}) => isActive ? 'flex items-center gap-3 text-lg font-medium text-gray-700 bg-[aqua] py-2 px-4 rounded-2xl' : 'flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl'}
+          className={({isActive, isPending}) => isActive ? 'flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl' : 'flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl'}
 
         >
             ویرایش پروفایل
@@ -85,7 +85,7 @@ const SidePanel = () => {
 
         <NavLink
           to="/profile/UploadImage"
-          className={({isActive, isPending}) => isActive ? 'flex items-center gap-3 text-lg font-medium text-gray-700 bg-[aqua] py-2 px-4 rounded-2xl' : 'flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl'}
+          className={({isActive, isPending}) => isActive ? 'flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl' : 'flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl'}
         >
           اپلود عکس
         </NavLink>
