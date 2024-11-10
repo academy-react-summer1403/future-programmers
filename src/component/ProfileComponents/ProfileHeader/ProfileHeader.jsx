@@ -15,9 +15,9 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-between items-center px-10 py-4 bg-gray-100 rounded-3xl dark:bg-gray-400">
+    <div className=" flex justify-between items-center px-10 py-4 bg-[#f9f9f9] rounded-3xl dark:bg-[#29435c] ">
       {/* Welcome Message */}
-      <div className="text-xl font-bold text-gray-700">
+      <div className="text-xl font-bold text-gray-700 dark:text-[#d1d4c9]">
         آرمان غنی زاده عزیز؛ خوش آمدی 👋
       </div>
       {/* Icons */}
