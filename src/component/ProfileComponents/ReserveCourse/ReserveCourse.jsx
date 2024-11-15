@@ -20,7 +20,10 @@ const ReserveCourse = () => {
 
   return (
     <div>
-      <div className="flex flex-wrap  justify-evenly h-[70px] border bg-black mt-10"></div>
+      <div className="flex flex-wrap  justify-evenly h-[70px] border-4 border-dotted bg-white shadow-2xl  border-gray-300 mt-10 items-center">
+        <span>نام دوره</span>
+        <span> تاریخ رزرو</span>
+      </div>
       <div className="flex flex-wrap  justify-evenly mt-2 ">
         {ReserveCourseList?.map((course, index) => (
           <CustomCard

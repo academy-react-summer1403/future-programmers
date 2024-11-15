@@ -11,15 +11,13 @@ const CustomCard = ({ course, index , courseTitle , tumbImageAddress , date , te
         src={tumbImageAddress}
         className="relative  w-1/12 object-cover rounded"
       />
-      <h3 className=" text-lg font-bold text-ellipsis">{courseTitle}</h3>
-      <h3 className="text-gray-600 text-sm  w-40 h-16 overflow-clip ">
+      <h3 className=" text-lg font-bold w-48 text-ellipsis ms-20">{courseTitle}</h3>
+      <h3 className="text-gray-600 text-sm  w-40  overflow-clip ">
         {date}
       </h3>
-      <div className="">{teacherName}</div>
-
       <div className="flex justify-between">
         <button
-        //   href={course.link}
+          //   href={course.link}
           className="inline-block mt-4  text-white py-2 px-4 rounded hover:bg-blue-600"
         >
           <svg
