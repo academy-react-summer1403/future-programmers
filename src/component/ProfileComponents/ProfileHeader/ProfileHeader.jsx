@@ -22,8 +22,11 @@ const Header = () => {
       </div>
       {/* Icons */}
       <div className="flex gap-4 me-10">
-      <button >
-          <label onClick={handleDark} className="grid cursor-pointer place-items-center max-sm:mr-[40px] ">
+        <button>
+          <label
+            onClick={handleDark}
+            className="grid cursor-pointer place-items-center max-sm:mr-[40px] "
+          >
             <input
               type="checkbox"
               value="synthwave"
@@ -60,10 +63,12 @@ const Header = () => {
             </svg>
           </label>
         </button>
-        <Link to='/' className="h-12 w-12 bg-[aqua] rounded-full flex justify-center">
+        <Link
+          to="/"
+          className="h-12 w-12 bg-primary rounded-full flex justify-center"
+        >
           <img src={home} alt="" />
         </Link>
-
       </div>
     </div>
   );
