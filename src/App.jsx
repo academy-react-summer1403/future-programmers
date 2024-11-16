@@ -21,7 +21,7 @@ import News from './screens/page news/News'
 import UploadImage from './component/ProfileComponents/UploadImage/UploadImage'
 import NotFound from './screens/notFound/NotFound'
 import Error from './screens/Error/Error'
-
+import ForgotPassword from './screens/singIn/forgotPassword'
 
 
 
@@ -79,6 +79,12 @@ function App() {
       element:<SingIn/>,
       errorElement:<Error />
     },
+    {
+      path:'/forgotPassword',
+      element:<ForgotPassword/>,
+      errorElement:<Error />
+    },
+    
 
 
 

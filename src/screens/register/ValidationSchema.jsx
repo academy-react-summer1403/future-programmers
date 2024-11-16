@@ -17,11 +17,13 @@ const ValidationSchema = () => {
             ثبت نام{" "}
           </h2>
           <Formik
-            initialValues={{ PhoneNumber: "" }}
-            validationSchema={validationSchema}
-            onSubmit={(values) => {
-              console.log("Submitted Phone Number:", values.PhoneNumber);
-            }}
+          initialValues={{email:"",pass:"",confirmpass:""}}
+          onsubmit={(values) => onsubmit(values)}
+            // initialValues={{ PhoneNumber: "" }}
+            // validationSchema={validationSchema}
+            // onSubmit={(values) => {
+            //   console.log("Submitted Phone Number:", values.PhoneNumber);
+            // }}
           >
             {() => (
               <Form>

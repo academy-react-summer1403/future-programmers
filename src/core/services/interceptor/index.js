@@ -14,6 +14,8 @@ const onSuccess = (response) => {
     return response.data
 }
 
+
+
 const onError = (err) => {
     // console.log(err);
 
@@ -37,12 +39,20 @@ instance.interceptors.request.use(opt => {
     //const user = useSelector(state => state.user)
 
     const token = getItem("token") ? getItem("token") : null;
-
-
+    
     //  opt.headers['MessageTest'] = "Hello World"; 
     //  opt.headers['Content-Type'] = "application/json";
     if (token) opt.headers.Authorization = 'Bearer ' + token;
     return opt
 })
+
+
+// instance.interceptors.request.use(opt) => {
+//     const token = getData ('login') 
+//     opt.headers.Authorization = 'Bearer' + token
+//     return opt}
+
+
+
 
 export default instance;

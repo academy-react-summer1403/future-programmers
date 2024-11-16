@@ -49,7 +49,7 @@ const Header = () => {
           </div>
         </NavLink>
 
-<NavLink to={"/StepThree"}>
+<NavLink to={"/"}>
   <div className="mb-3  w-14 h-10 lg:text-sm md:text-xs">
           <h2 className="hover:border-b-2 border-blue-500">اساتید</h2>
         </div>
@@ -68,12 +68,12 @@ const Header = () => {
             </h2>
           </div>
         </NavLink>
-<NavLink to={"/StepTwo"} >
- <div className="mb-3  w-20 h-10 whitespace-nowrap lg:text-sm md:text-xs">
-          <h2 className=" hover:border-b-2  border-blue-500"> تماس با ما </h2>
-        </div>
-</NavLink>
-       
+  <NavLink to={"/"} >
+  <div className="mb-3  w-20 h-10 whitespace-nowrap lg:text-sm md:text-xs">
+            <h2 className=" hover:border-b-2  border-blue-500"> تماس با ما </h2>
+          </div>
+  </NavLink>
+        
       </div>
 
       <div className="flex gap-4">
@@ -116,7 +116,7 @@ const Header = () => {
           </label>
         </button>
         <Link to="/profile/pishkhan">
-          <img src="./profile-user.png" alt="" className="hidden" />
+          <img src="./profile-user.png" alt="" className="" />
         </Link>
 
         <NavLink to={"/singIn"}>

@@ -1,6 +1,32 @@
 import React from "react";
 import StepNumber from "./StepNumber";
+import { useNavigate } from "react-router-dom";
 const StepTwo = () => {
+
+const tel = getData("phoneNumber");
+const navigate = useNavigate();
+
+const onsubmit = async (valuse) => {
+  const tel = getData("phoneNumber");
+  
+  const obj = {
+    phoneNumber:tel,
+    verifycode: valuse.vercode,
+
+  };
+  console.log("userVerify", obj);
+
+  const user =await signUpTwoApI (obj);
+  console.log("user" , user);
+
+  navigate("/step3");
+
+  
+  };
+
+
+
+
   return (
     <div className="text-{sans} dark:bg-[#152a38]  dark:text-[#ffff] h-screen flex justify-center bg-[#F3F4F6]">
       <div className="bg-white flex shadow-lg dark:bg-[#678cb1] rounded-lg w-[80%] justify-around h-[580px] m-auto">
