@@ -58,6 +58,11 @@ const Log = () => {
                 بازگشت به صفحه اصلی
               </button>
             </NavLink>
+            <NavLink to={"/ForgotPass"}>
+                          <h2 className=" dark:text-white max-sm:mr-2 max-sm:text-[13px]">  بازیابی رمز عبور </h2>
+
+            </NavLink>
+
           </div>
         </Form>
       </Formik>
