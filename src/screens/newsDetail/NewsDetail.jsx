@@ -1,5 +1,8 @@
 import { useParams } from 'react-router-dom';
 import NewsCard from './NewsCard.jsx'
+import { useEffect, useState } from 'react';
+import { getNewsDetail } from '../../core/services/api/NewsDetail.js';
+import NewsComment from './NewsComment.jsx';
 
 function NewsDetail() {
 
@@ -10,10 +13,30 @@ function NewsDetail() {
         {image:'public/newspaper.png',topic:'خبر چهار',explain:'سلام این یک خبر خیلی خوب است حتما بخوانید. چیزی را از دست نمی دهید.'}
     ]
 
-    const [nwesDetail, setNewsDetail]=useState([])
-    console.log(nwesDetail)
+    const [newsDetail, setNewsDetail]=useState([])
+    console.log(newsDetail)
   
-    const {id} = useParams();
+    const {id} = useParams(); 
+    console.log(id)
+
+    const getDetail = async ()=>{
+        try {
+            const result = await getNewsDetail()
+            setNewsDetail(result)
+            
+            
+            console.log(setNewsDetail)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
+    useEffect(() => {
+        getDetail();
+    
+    }, [])
+    
 
     return (
         <div className='bg-[#f3f4f6] font-[sans] dark:bg-[#152a38]'>
@@ -48,7 +71,7 @@ function NewsDetail() {
                 })}             
             </div>
             </div>
-            
+            <NewsComment />
         </div>
     ) 
 }

@@ -42,6 +42,7 @@ return (
                     key={index}
                     title={item.title}
                     desc={item.desc}
+                    id={item.id}
                 />
 
             );
