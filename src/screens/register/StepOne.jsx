@@ -1,7 +1,11 @@
+import { setData } from "../../core/services/storage/localStorage.storage";
 import FormPhone from "./FormPhone";
 import { NavLink, useNavigate } from "react-router-dom";
 
+
 const StepOne = () => {
+
+
   return (
     <div className=" dark:bg-[#152a38] flex dark:text-[#ffff] h-screen justify-between bg-[#F3F4F6] ">
       <div className=" bg-white flex dark:bg-[#678cb1] rounded-lg h-[580px] w-[80%] shadow-lg m-auto ">

@@ -16,7 +16,9 @@ return (
             <h2 className=' text-sm font-light mb-4 text-right'>   </h2>
         <Formik
         
-        initialValues={{PhoneNumber: ''}}
+        initialValues={{verCode:""}}
+        onsubmit={(values) => onsubmit(values)}
+        // initialValues={{PhoneNumber: ''}}
             validationSchema={validationSchema}
             onSubmit={(values) =>{
                 console.log('Submitted Phone Number:', values.PhoneNumber);

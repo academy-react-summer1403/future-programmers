@@ -13,11 +13,11 @@ const LineNews = () => {
 
         <div className='flex item-center justify-center py-4  w-[95%] ml-28 mr-10 max-lg:h-[70px] max-sm:h-[65px] max-sm:m-auto items-center  md:max-lg:gap-0'>
 
-        <div className='border-b border-[#c2346f] flex-grow  dark:border-white max-sm:w-mr-[40px] '></div>
+        <div className='border-b border-[#707070] flex-grow  dark:border-white max-sm:w-mr-[40px] '></div>
 
             <span className='px-4 text-2xl font-semibold dark:text-white max-md:text-sm'> روزنامه سپهر </span>
 
-            <div className='border-b border-[#3acf35] flex-grow dark:border-white'></div>
+            <div className='border-b border-[#707070] flex-grow dark:border-white'></div>
         </div>
         
 

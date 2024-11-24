@@ -15,8 +15,7 @@ const Header = () => {
   return (
     <div className=" font-[sans] bg-[#f9f9f9] flex justify-between items-center w-full py-4 px-6  shadow-2xl dark:bg-[#152a38] ">
       <div className="flex items-center max-sm:ml-14">
-        <img src="header icon.png" alt="" 
-        className="w-16 h-8 mr-6 " />
+        <img src="header icon.png" alt="" className="w-16 h-8 mr-6 " />
         <span className=" ml-2 text-xl font-bold"></span>
         <div className="md:hidden mr-2">
           <HeaderHamburgerMenu />
@@ -33,7 +32,9 @@ const Header = () => {
           }
         >
           <div className=" mb-3 lg:text-sm md:text-xs ">
-            <h2 className="text-center  hover:border-b-2 border-blue-500 ">صفحه نخست</h2>
+            <h2 className="text-center  hover:border-b-2 border-blue-500 ">
+              صفحه نخست
+            </h2>
           </div>
         </NavLink>
         <NavLink
@@ -45,20 +46,25 @@ const Header = () => {
           }
         >
           <div className="mb-3  w-14 h-10 lg:text-sm md:text-xs">
-            <h2 className="text-center hover:border-b-2 border-blue-500">دوره ها</h2>
+            <h2 className="text-center hover:border-b-2 border-blue-500">
+              دوره ها
+            </h2>
           </div>
         </NavLink>
 
-<NavLink to={"/StepThree"}>
-  <div className="mb-3  w-14 h-10 lg:text-sm md:text-xs">
-          <h2 className="text-center hover:border-b-2 border-blue-500">اساتید</h2>
-        </div>
-</NavLink>
-        
+        <NavLink to={"/"}>
+          <div className="mb-3  w-14 h-10 lg:text-sm md:text-xs">
+            <h2 className="text-center hover:border-b-2 border-blue-500">
+              اساتید
+            </h2>
+          </div>
+        </NavLink>
 
         <NavLink
           to={"/news"}
-          className={({ isActive }) =>`${ isActive && "text-blue-600"
+          className={({ isActive }) =>
+            `${
+              isActive && "text-blue-600"
             } whitespace-nowrap hover:text-blue-600`
           }
         >
@@ -68,12 +74,20 @@ const Header = () => {
             </h2>
           </div>
         </NavLink>
-<NavLink to={"/StepTwo"} >
- <div className="mb-3  w-20 h-10 whitespace-nowrap lg:text-sm md:text-xs">
-          <h2 className="text-center hover:border-b-2  border-blue-500"> تماس با ما </h2>
-        </div>
-</NavLink>
-       
+        <NavLink to={"/StepTwo"}>
+          <div className="mb-3  w-20 h-10 whitespace-nowrap lg:text-sm md:text-xs">
+            <h2 className="text-center hover:border-b-2  border-blue-500">
+              {" "}
+              تماس با ما{" "}
+            </h2>
+          </div>
+        </NavLink>
+
+        {/* <NavLink to={"/"}>
+          <div className="mb-3  w-20 h-10 whitespace-nowrap lg:text-sm md:text-xs">
+            <h2 className=" hover:border-b-2  border-blue-500"> تماس با ما </h2>
+          </div>
+        </NavLink> */}
       </div>
 
       <div className="flex gap-4">
@@ -116,7 +130,7 @@ const Header = () => {
           </label>
         </button>
         <Link to="/profile/pishkhan">
-          <img src="./profile-user.png" alt="" className="hidden" />
+          <img src="./profile-user.png" alt="" className="" />
         </Link>
 
         <NavLink to={"/singIn"}>

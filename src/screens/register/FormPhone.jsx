@@ -1,11 +1,31 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup'
+import { signUpOneAPI } from '../../core/services/api/auth/Register.api';
 
 const FormPhone = () => {
     const validationSchema = yup.object().shape({
     PhoneNumber:yup.string().required('شماره موبایل الزامی است')
     // .matches(/^+?d{1,3}[-]?d{10}$/, 'شماره تلفن باید 10 رقمی باشد')
 });
+
+    const navigate = useNavigate();
+
+const onsubmit = async (valuse) => {
+//   const userPhoneNum ={
+//     phoneNumber: valuse.mobile,
+
+//   };
+console.log("ddddddd" , valuse);
+
+const user = await signUpOneAPI(valuse);
+console.log(user);
+    if (user.success) 
+  // setData("phoneNumber" , userPhoneNum.phoneNumber);
+  // console.log("ccccccccc" , setData);
+    navigate("/step2");
+};
+
 
 return (
 <>
@@ -14,11 +34,10 @@ return (
             <h2 className='text-2xl font-bold mb-4 text-center '>  </h2>
         <Formik
         
-        initialValues={{PhoneNumber: ''}}
-            validationSchema={validationSchema}
-            onSubmit={(values) =>{
-                console.log('Submitted Phone Number:', values.PhoneNumber);
-            }} 
+        
+        initialValues={{phoneNumber: ''}}
+            // validationSchema={validationSchema}
+            onSubmit={(e) => onsubmit(e)} 
         
         >
             {()=>(

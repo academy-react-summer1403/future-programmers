@@ -81,14 +81,13 @@ function App() {
       errorElement:<Error />
     },
     {
+
       path:'/ForgotPass',
       element:<ForgotPass/>,
       errorElement:<Error />
     },
-
-
-
-
+    
+    
 
     {
       path:'/profile',
