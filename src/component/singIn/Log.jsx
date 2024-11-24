@@ -19,9 +19,6 @@ const Log = () => {
       } catch (err) {
         console.log(err)
       }
-
-
-    
   };
 
   return (
@@ -65,10 +62,17 @@ const Log = () => {
                 بازگشت به صفحه اصلی
               </button>
             </NavLink>
+
             <NavLink to={"/ForgotPass"}>
                           <h2 className=" dark:text-white max-sm:mr-2 max-sm:text-[13px]">  بازیابی رمز عبور </h2>
 
             </NavLink>
+
+            {/* {/* <NavLink to={'/forgotPassword'}>
+            <h3 className="text-sm mr-2 dark:text-white max-sm:mr-16 max-sm:text-[13px]">
+              بازیابی رمز عبور
+                </h3>
+                </NavLink> */}
 
           </div>
         </Form>
