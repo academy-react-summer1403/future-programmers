@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import NewsCard from './NewsCard.jsx'
-
+import pic from '../../../public/newspaper.png'
 import { useEffect, useState } from 'react';
 import { getNewsDetail } from '../../core/services/api/NewsDetail.js';
 import NewsComment from './NewsComment.jsx';
@@ -50,7 +50,7 @@ function NewsDetail() {
                 <h1 className='mt-[16px] mr-[36%] pb-[5px] text-[20px] max-md:text-[15px] max-lg:mr-[42%] max-sm:text-[12px] max-sm:mr-[24%] max-sm:pb-[3px] dark:text-[#d1d4c9]'>{newsDetail.title}</h1>
                 <div className='w-[92%] h-[400px] relative rounded-[15px] mr-[8%] mt-[15px] bg-white dark:bg-[#29435c] max-lg:h-[380px] max-md:h-[250px] max-sm:h-[200px] max-sm:mt-[5px]'>
                     <div className='w-[36%] h-[410px] bg-[#9F9F9F] relative left-[9%] bottom-[16%] rounded-[25px] rotate-[9deg] max-sm:rotate-[0] max-lg:h-[390px] max-lg:w-[41%] max-md:h-[267px] max-md:bottom-[24%] max-sm:h-[70px] max-sm:w-[70px]  max-sm:bottom-[16%] dark:bg-[#556e53]'>
-                        <img src={newsDetail?.currentImageAddressTumb} className='w-[100%] h-[100%] rounded-[26px] rotate-[-9deg] max-sm:rotate-[0]'></img>
+                        <img src={newsDetail?.currentImageAddressTumb??pic} className='w-[100%] h-[100%] rounded-[26px] rotate-[-9deg] max-sm:rotate-[0]'></img>
                     </div>
                     <p className='w-[64%] h-[320px] overflow-hidden absolute right-[30.5%] top-[25px] text-[17px] max-lg:right-[37%] max-lg:w-[58%] max-md:right-[37%] max-md:h-[197px] max-md:text-[15px] max-sm:right-[14%] max-sm:h-[150px] max-sm:text-[13px] max-sm:w-[78%] dark:text-[#d1d4c9]'>{newsDetail.describe}</p>
                 </div>
