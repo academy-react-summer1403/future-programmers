@@ -2,7 +2,7 @@ import TopSortingResponsive from "../topSorting/TopSortingResponsive"
 import ReponsiveFilters from "./ReponsiveFilters"
 
 
-function FilterInTop({handleCategoryFilter, handleTypeCourseFilter, handlelevelCourseFilter, setCostUp, setCostDown}) {
+function FilterInTop({handleCategoryFilter, handleTypeCourseFilter, handlelevelCourseFilter, setCostUp, setCostDown, costUp, costDown}) {
   return (
     <div className="drawer drawer-end md:hidden  w-[10%]">
         <input id="filter" type="checkbox" className="drawer-toggle" />
@@ -15,7 +15,7 @@ function FilterInTop({handleCategoryFilter, handleTypeCourseFilter, handlelevelC
             <ul className="menu bg-base-200 text-base-content min-h-full p-4 dark:bg-[#29435c]">
                 {/* Sidebar content here */}
                 <TopSortingResponsive />
-                <ReponsiveFilters handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} handlelevelCourseFilter={handlelevelCourseFilter} setCostUp={setCostUp} setCostDown={setCostDown}/>
+                <ReponsiveFilters handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} handlelevelCourseFilter={handlelevelCourseFilter} setCostUp={setCostUp} setCostDown={setCostDown} costUp={costUp} costDown={costDown}/>
             </ul>
         </div>
     </div>

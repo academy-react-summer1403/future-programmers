@@ -3,7 +3,7 @@ import Accardion from "../accardion/accardion"
 import {Slider} from "antd"
 
 
-function Filters({handleCategoryFilter, handleTypeCourseFilter, handlelevelCourseFilter,setCostUp,setCostDown}) {
+function Filters({handleCategoryFilter, handleTypeCourseFilter, handlelevelCourseFilter,setCostUp,setCostDown, costUp, costDown}) {
 
   return (
     <div className='w-[300px] md:max-lg:w-[25%]  max-md:hidden h-fit pb-3 mt-[19px] ml-5 rounded-[20px] bg-white dark:bg-[#29435c]'> 
@@ -14,9 +14,12 @@ function Filters({handleCategoryFilter, handleTypeCourseFilter, handlelevelCours
           <input type="checkbox" name="my-accordion-2" />
           <div className="collapse-title text-[14px] md:max-lg:text-[12px]"> قیمت</div>
           <div className="collapse-content">
+          <output className='pr-[15px]'>از {costDown}</output>
+          <output className='pr-[15px]'> تا {costUp} </output>
+
             <Slider 
               max={20000000}
-              min={1}
+              min={0}
               className="border w-[90%] mx-auto"
               onChange={(f)=>setCostDown(f[0]) & setCostUp(f[1])}
               range
