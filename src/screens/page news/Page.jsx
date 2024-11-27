@@ -17,10 +17,10 @@ import { AiOutlineLike } from "react-icons/ai";
 import { AiOutlineDislike } from "react-icons/ai";
 
 const Page = ({title,miniDescribe,currentDissLikeCount,currentLikeCount,id}) => {
+    console.log(id)
 return (
     
     <div className=" mt-3 bg-white rounded-lg w-[23%] dark:bg-[#152a38] max-lg:w-[45%]  max-sm:w-[100%] max-sm:mt-2 shadow-lg">
-        
         
         <div className="h-[40%] w-[90%]  mx-auto pt-3 ">
             <img src="./newspaper.png" alt="" className=" h-[100%] w-[100%]" />

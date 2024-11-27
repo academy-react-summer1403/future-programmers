@@ -37,6 +37,7 @@ return (
                 miniDescribe={item.miniDescribe}
                 currentDissLikeCount={item.currentDissLikeCount}
                 currentLikeCount={item.currentLikeCount}
+                id={item.id}
                 />)}  
                 )
             } 
@@ -55,6 +56,7 @@ return (
                         miniDescribe={item.miniDescribe}
                         currentDissLikeCount={item.currentDissLikeCount}
                         currentLikeCount={item.currentLikeCount}
+                        id={item.id}
                     />)}  
                 )
             }  
