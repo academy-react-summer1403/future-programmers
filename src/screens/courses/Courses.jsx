@@ -19,14 +19,16 @@ const [categoryFilter, setCategoryFilter] = useState('')
 const [typeCourseFilter, setTypeCourseFilter] = useState('')
 // level 
 const [levelCourseFilter, setLevelCourseFilter] = useState('')
+const [costUp, setCostUp] = useState(null)
+const [costDown, setCostDown] = useState(null)
 
 // course counting 
 const CourseCount = Course.length
 // console.log( '123',CourseCount);
 
-const getAllCoursesList = async (sort, search, categoryFilter, typeCourseFilter, levelCourseFilter)=>{
+const getAllCoursesList = async (sort, search, categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown)=>{
     try {
-        const result = await getlist(sort, search, categoryFilter, typeCourseFilter,levelCourseFilter)
+        const result = await getlist(sort, search, categoryFilter, typeCourseFilter,levelCourseFilter, costUp, costDown)
         setCourse(result.courseFilterDtos)
     } catch (error) {
         console.log(error)
@@ -34,8 +36,8 @@ const getAllCoursesList = async (sort, search, categoryFilter, typeCourseFilter,
 }
 
 useEffect(()=>{
-    getAllCoursesList(sort,search,categoryFilter, typeCourseFilter, levelCourseFilter) 
-},[sort,search,categoryFilter, typeCourseFilter, levelCourseFilter]);
+    getAllCoursesList(sort,search,categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown) 
+},[sort,search,categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown]);
 
 const handleCategoryFilter= ((e)=>{
     const checkBoxId = e.target.id ;
@@ -66,10 +68,10 @@ return (
                 <SearchBox setSearch={setSearch} />
                 <TopSorting setSort={setSort}/>
                 {/* <Sorting /> */}
-                <FilterInTop  handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} handlelevelCourseFilter={handlelevelCourseFilter}/>
+                <FilterInTop  handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} handlelevelCourseFilter={handlelevelCourseFilter} setCostUp={setCostUp} setCostDown={setCostDown}/>
             </div>
             <div className='flex w-[100%] sm:max-md:flex-wrap md:max-lg:flex-nowrap justify-between'>
-                <Filters handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} handlelevelCourseFilter={handlelevelCourseFilter} />
+                <Filters handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} handlelevelCourseFilter={handlelevelCourseFilter}  setCostUp={setCostUp} setCostDown={setCostDown}/>
                 <div className='w-[75%] mt-6 pt-5 h-fit flex flex-wrap justify-start gap-x-5 gap-y-12 max-md:justify-between md:max-lg:gap-y-10 max-md:w-full max-sm:justify-center sm:max-md:gap-y-11'>
                     {Course.map((item, index)=>{
                         return(
