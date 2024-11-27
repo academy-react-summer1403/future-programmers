@@ -4,6 +4,7 @@ import { getCardNews } from '../../core/services/api/news';
 import Page from './Page';
 import PictureBox from './PictureBox';
 import CardPage2 from './CardPage2';
+import pic from '../../../public/newspaper.png'
 
 const CardNews = () => {
     const [cardNews, setCardNews] = useState([]); 
@@ -37,6 +38,7 @@ return (
                 miniDescribe={item.miniDescribe}
                 currentDissLikeCount={item.currentDissLikeCount}
                 currentLikeCount={item.currentLikeCount}
+                image={item.currentImageAddressTumb??pic}
                 id={item.id}
                 />)}  
                 )
@@ -56,6 +58,7 @@ return (
                         miniDescribe={item.miniDescribe}
                         currentDissLikeCount={item.currentDissLikeCount}
                         currentLikeCount={item.currentLikeCount}
+                        image={item.currentImageAddressTumb??pic}
                         id={item.id}
                     />)}  
                 )

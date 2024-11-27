@@ -17,12 +17,12 @@ import { AiOutlineDislike, AiOutlineLike } from 'react-icons/ai'
 import { TiHeartOutline } from 'react-icons/ti'
 import { Link, NavLink } from 'react-router-dom'
 
-const CardPage2 = ({title,miniDescribe,currentDissLikeCount,currentLikeCount,id}) => {
+const CardPage2 = ({title,miniDescribe,currentDissLikeCount,currentLikeCount,image,id}) => {
 return (
     <div className=" bg-white rounded-lg w-[23%] dark:bg-[#152a38] max-lg:w-[45%]  max-sm:w-[100%] max-sm:mt-2 shadow-lg ">
     
         <div className="h-[40%] w-[90%]  mx-auto pt-3 ">
-            <img src="./newspaper.png" alt="" className=" h-[100%] w-[100%]   " />
+            <img src={image} alt="" className=" h-[100%] w-[100%] rounded-[20px]  " />
         </div>
 
     <h1 className="pr-5 mt-2"> {title} </h1>
