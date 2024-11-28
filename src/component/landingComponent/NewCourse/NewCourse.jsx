@@ -9,7 +9,7 @@ import pic from '../../../../public/cImage.png';
 const NewCourse = () => {
 
     const [List, setList] = useState(null);
-    // console.log(List)
+    console.log(List)
 
     const getTopCourses =async () => {
         const res = await axios.get('https://classapi.sepehracademy.ir/api/Home/GetCoursesTop?Count=4')
@@ -39,7 +39,10 @@ const NewCourse = () => {
                             describe={course.describe}
                             teacher={course.teacherName}
                             id={course.courseId} 
-                            userIsLiked={course.userIsLiked} 
+                            userIsLiked={course.userIsLiked}
+                            dissLikeCount={course.dissLikeCount} 
+                            likeCount={course.likeCount}
+                            userIsDissLiked={course.userIsDissLiked}
                         />
                     ))}
                 </div>
