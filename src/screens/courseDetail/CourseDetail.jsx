@@ -83,16 +83,16 @@ useEffect(() => {
         <div className='flex flex-wrap max-md:h-fit w-[33%] gap-y-2 max-lg:w-[100%] md:max-lg:justify-between md:max-lg:mt-5'>
           <CourseInformation 
             teacherName={detail?.teacherName}
-            cost={detail?.cost?.toString().slice(0,7)+' '}
+            cost={detail?.cost?.toString()?.slice(0,7)+' '}
             techs={detail?.techs}
             courseLevelName={detail?.courseLevelName}
             capacity={detail?.capacity}
             courseStatusName={detail?.courseStatusName}
             commentCount={detail?.commentCount}
             currentRate={detail?.currentRate}
-            insertDate={detail?.insertDate?.toString().slice(0,10)}
-            startTime={detail?.startTime?.toString().slice(0,10)}
-            endTime={detail?.endTime?.toString().slice(0,10)}
+            insertDate={detail?.insertDate?.toString()?.slice(0,10)}
+            startTime={detail?.startTime?.toString()?.slice(0,10)}
+            endTime={detail?.endTime?.toString()?.slice(0,10)}
           />
 
 
