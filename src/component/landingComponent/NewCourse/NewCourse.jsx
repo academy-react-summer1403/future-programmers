@@ -28,7 +28,7 @@ const NewCourse = () => {
             <div className="w-[90%] mx-auto max-sm:pt-2 px-4">
                 <div className='flex justify-between'>
                     <h2 className="text-2xl font-bold text-[#436e8e] max-sm:text-[14px] max-lg:text-[18px] max-sm:pr-[11px] pr-[2%] dark:text-[#d1d4c9]">برترین دوره‌ها</h2>
-                    <h3 className='max-sm:text-[14px] my-auto'>مشاهده همه </h3>
+                    <Link to={'/courses/'} className='max-sm:text-[14px] my-auto'>مشاهده همه </Link>
                 </div>
                 <div className="flex flex-wrap justify-between max-md:gap-y-11 max-sm:pt-[30px] max-lg:pt-[35px] pt-[45px] ">
                     {List?.map((course, index) => (
