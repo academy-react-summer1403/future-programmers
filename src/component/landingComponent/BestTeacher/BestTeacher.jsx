@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import http from '../../../core/services/interceptor';
 import TeachersCard from "./TeachersCard";
+import pic from '../../../../public/pic.jpg'
 
 
 
 function BestTeacher() {
     const [teachersList, setteachersList] = useState(null);
-    // console.log(teachersList)
+    console.log(teachersList)
     const getTeachers = async () => {
         const res = await http.get("/Home/GetTeachers");
         setteachersList(res);
@@ -30,7 +31,7 @@ function BestTeacher() {
                 {teachersList?.map((item, index) => ( 
                     <TeachersCard
                     key={index}
-                    image={item.pictureAddress}
+                    image={item.pictureAddress===null  ? pic :item.pictureAddress}
                     fullName={item.fullName}
                     courseCounts={item.courseCounts} />
                 ))}
