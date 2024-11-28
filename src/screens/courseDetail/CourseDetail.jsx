@@ -7,26 +7,41 @@ import CourseInformation from './CourseInformation'
 import SimilarCourse from './SimilarCourse'
 import { useEffect, useState } from 'react'
 import pic from '../../../public/item1.png'
+import { allcourse } from '../../core/services/api/course'
+
 
 
 
 function CourseDetail() {
-  const TeachersCourses=[
-    {image:'public/01.jpg', teacher:' دوره دیگر استاد غنی زاده'},
-    {image:'public/01.jpg',teacher:' دوره دیگر استاد غنی زاده'},
-    {image:'public/01.jpg',teacher:' دوره دیگر استاد غنی زاده'},
-    {image:'public/01.jpg',teacher:' دوره دیگر استاد غنی زاده'}
-  ]
+  // const TeachersCourses=[
+  //   {image:'public/01.jpg', teacher:' دوره دیگر استاد غنی زاده'},
+  //   {image:'public/01.jpg',teacher:' دوره دیگر استاد غنی زاده'},
+  //   {image:'public/01.jpg',teacher:' دوره دیگر استاد غنی زاده'},
+  //   {image:'public/01.jpg',teacher:' دوره دیگر استاد غنی زاده'}
+  // ]
 
   const [detail, setDetail]=useState([])
-  // console.log('aaa',detail)
+  const [Course, setCourse] = useState([]); 
+  const [number, setNumber] = useState()
+  
 //  off in top image
   const costOff = (detail?.cost?.toString().slice(0,7)) * 90/100;
+  const teacher = detail.teacherName;
   
-  
+  const similar = Course?.filter((e)=>e.teacherName===teacher)
+  const similar1= similar.slice(0,4)
   const {id} = useParams();
-  // console.log('params', id)
 
+
+  const getAllCoursesList = async ()=>{
+    try {
+        const result = await allcourse(number,1)
+        setCourse(result?.courseFilterDtos)
+        setNumber(result?.totalCount)
+    } catch (error) {
+        console.log(error)
+    }
+}
   
 
 
@@ -41,6 +56,7 @@ function CourseDetail() {
 
 useEffect(() => {
   getDetail(id);
+  getAllCoursesList()
 }, [])
 
     
@@ -50,7 +66,7 @@ useEffect(() => {
       <div className='w-[88%] mx-auto flex'>
         <div className=' relative h-[380px] w-[100%] max-md:h-[250px] md:max-lg:h-[300px] mt-4 rounded-[30px] bg-[url(public/p.01.png)] bg-no-repeat [background-size:100%_100%]'>
             <div className="h-[100%] w-[100%] bg-black opacity-[0.98]  max-sm:opacity-[0.91] rounded-[30px]">
-              <h1 className="text-stone-50  text-[24px] max-md:text-[10px] max-sm:text-[11px] max-md:right-[30px] md:max-lg:text-[13px] md:max-lg:right-[38px] font-black absolute top-[40px] right-[65px]">در لاراول Restful API آموزش کاربردی</h1>
+              <h1 className="text-stone-50  text-[24px] max-md:text-[10px] max-sm:text-[11px] max-md:right-[30px] md:max-lg:text-[13px] md:max-lg:right-[38px] font-black absolute top-[40px] right-[65px]">{detail.title}</h1>
               <p className=' text-gray-400 w-[420px] absolute top-[85px] right-[65px] max-md:right-[30px] max-md:w-[205px] max-md:top-[56px] max-md:text-[8px] md:max-lg:top-[60px] md:max-lg:text-[10px] md:max-lg:right-[38px] md:max-lg:w-[251px] max-sm:text-[10px] max-sm:w-[250px] max-sm:top-[60px] max-sm:text-slate-200'> در اینجا یاد می گیرید.ر اینجا یاد می گیرید.ر اینجا یاد می گیرید ر اینجا یاد می گیرید.گیرید.ر اینجا یاد می گیرید.ر ا</p>
               <img src={detail?.imageAddress??pic} className='w-[450px] h-[310px] shadow-[8px_-13px_35px_-18px_gray] rounded-[25px] absolute right-[770px] top-[30px]  max-md:right-[334px] max-md:w-[44%] max-md:h-[76%] md:max-lg:right-[406px] md:max-lg:h-[76%] md:max-lg:w-[43%]  max-sm:hidden'></img>
               <h3 className=' text-gray-400 line-through absolute top-[220px] right-[625px] max-md:text-[11px] max-md:right-[240px] max-md:top-[164px] md:max-lg:text-[12px] md:max-lg:top-[175px] md:max-lg:right-[295px]'> تومان {detail?.cost}</h3>
@@ -83,12 +99,13 @@ useEffect(() => {
           <div className=' w-[99%] md:max-lg:h-fit pb-4 bg-white rounded-[20px] max-md:w-[100%] md:max-lg:w-[47%] dark:bg-[#29435c]'>
             <h1 className='relative right-[30px] top-[10px]  text-[20px] text-cyan-700 inline dark:text-[#d1d4c9]'>دوره های مشابه</h1>
             <div className=' mt-[15px] max-sm:flex max-sm:flex-wrap'>
-              {TeachersCourses.map((item,index)=>{
+              {similar1.map((item,index)=>{
                 return(
                   <SimilarCourse 
                   key={index}
-                  image={item.image}
-                  teacher={item.teacher} />
+                  image={item.tumbImageAddress??pic}
+                  title={item.title}
+                  id={item.courseId} />
                 )  
               })}
             </div>

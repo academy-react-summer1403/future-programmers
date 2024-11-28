@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import http from '../../../core/services/interceptor'
-import liked from '../../../../public/Like.red.png'
-import notLiked from '../../../../public/Like.empty.png'
+import liked from '../../../../public/Liked.red.png'
+import notLiked from '../../../../public/NotLiked.png'
 import disliked from '../../../../public/dislike.red.png'
 import notDisLiked from '../../../../public/dislike.empty.png'
 

@@ -55,3 +55,16 @@ export const levelCourse = async()=>{
         console.log(error)
     }
 }
+
+export const allcourse = async(RowsOfPage, PageNumber,TeacherId)=>{
+    try {
+        const queryObj = {}
+        if(RowsOfPage!== "" && RowsOfPage!==null) queryObj.RowsOfPage = RowsOfPage;
+        if(PageNumber!== "" && PageNumber!==null) queryObj.PageNumber = PageNumber;
+        if(TeacherId!=="" && TeacherId!==null) queryObj.TeacherId = TeacherId;
+        const result=await http.get('/Home/GetCoursesWithPagination',{params:queryObj})
+        return result;
+    } catch (error) {
+        console.log(error)
+    }
+}
