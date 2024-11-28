@@ -79,19 +79,19 @@ function Accardion({handleCategoryFilter, handleTypeCourseFilter, handlelevelCou
         <div className="collapse-title text-[14px] md:max-lg:text-[12px]"> قیمت</div>
         <div className="collapse-content">
             
-          <output className='pr-[15px]'>از {costDown}</output>
-          <output className='pr-[15px]'> تا {costUp} </output>
+            <output className='pr-[15px] dark:text-[#d1d4c9]'>از {costDown}</output>
+            <output className='pr-[15px] dark:text-[#d1d4c9]'> تا {costUp} </output>
             <Slider 
-              id='cost'
-              max={20000000}
-              min={1}
-              className="border w-[90%] mx-auto"
-              onChange={(f)=>setCostDown(f[0]) & setCostUp(f[1])}
-              range
-              step={100000}
-              tooltipVisble={false}
-              defaultValue={[1,20000000]}
-              />
+                id='cost'
+                max={20000000}
+                min={1}
+                className="border w-[90%] mx-auto"
+                onChange={(f)=>setCostDown(f[0]) & setCostUp(f[1])}
+                range
+                step={100000}
+                tooltipVisble={false}
+                defaultValue={[1,20000000]}
+            />
         </div>
         </div> 
     </>
