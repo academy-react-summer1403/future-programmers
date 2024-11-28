@@ -8,7 +8,7 @@ function Statistics() {
     const getLandingInfo = async () => { 
         const res = await http.get("/Home/LandingReport");
         setLandingInfo(res)
-        console.log('res', res )
+        // console.log('res', res )
     }
 
     useEffect(() => {

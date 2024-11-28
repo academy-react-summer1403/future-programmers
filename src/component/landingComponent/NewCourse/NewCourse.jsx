@@ -9,6 +9,7 @@ import pic from '../../../../public/cImage.png';
 const NewCourse = () => {
 
     const [List, setList] = useState(null);
+    // console.log(List)
 
     const getTopCourses =async () => {
         const res = await axios.get('https://classapi.sepehracademy.ir/api/Home/GetCoursesTop?Count=4')
@@ -34,7 +35,7 @@ const NewCourse = () => {
                         <CourseCard 
                             key={index} 
                             title={course.title} 
-                            image={course.tumbImageAddress??pic} 
+                            image={course.tumbImageAddress==='null'?pic:course.tumbImageAddress} 
                             describe={course.describe}
                             teacher={course.teacherName}
                             id={course.courseId} 

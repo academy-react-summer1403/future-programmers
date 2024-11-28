@@ -19,7 +19,7 @@ function CourseDetail() {
   ]
 
   const [detail, setDetail]=useState([])
-  console.log('aaa',detail)
+  // console.log('aaa',detail)
 //  off in top image
   const costOff = (detail?.cost?.toString().slice(0,7)) * 90/100;
   

@@ -7,7 +7,7 @@ import TeachersCard from "./TeachersCard";
 
 function BestTeacher() {
     const [teachersList, setteachersList] = useState(null);
-    console.log(teachersList)
+    // console.log(teachersList)
     const getTeachers = async () => {
         const res = await http.get("/Home/GetTeachers");
         setteachersList(res);
