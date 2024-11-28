@@ -24,7 +24,7 @@ const [costDown, setCostDown] = useState(null)
 
 // course counting 
 const CourseCount = Course.length
-// console.log( '123',CourseCount);
+console.log( '123',Course);
 
 const getAllCoursesList = async (sort, search, categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown)=>{
     try {
@@ -72,18 +72,26 @@ return (
             </div>
             <div className='flex w-[100%] sm:max-md:flex-wrap md:max-lg:flex-nowrap justify-between'>
                 <Filters handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} handlelevelCourseFilter={handlelevelCourseFilter}  setCostUp={setCostUp} setCostDown={setCostDown} costUp={costUp} costDown={costDown}/>
-                <div className='w-[75%] mt-6 pt-5 h-fit flex flex-wrap justify-start gap-x-5 gap-y-12 max-md:justify-between md:max-lg:gap-y-10 max-md:w-full max-sm:justify-center sm:max-md:gap-y-11'>
+                <div className='w-[75%] mt-6 pt-5 h-fit flex flex-wrap justify-start gap-x-5 sm:max-md:gap-x-3 gap-y-12 max-md:justify-between md:max-lg:gap-y-10 max-md:w-full max-sm:justify-center sm:max-md:gap-y-11'>
                     {Course.map((item, index)=>{
                         return(
                             <CourseCard 
                             key={index}
-                            image={item.tumbImageAddress??pic}
-                            topic={item.title} 
-                            explain={item.describe} 
-                            teacher={item.teacherName} 
-                            time={item.lastUpdate.toString().slice(11,19)} 
-                            price={item.cost.toString().slice(-9,-1)}
-                            id={item.courseId} />  
+                            image={item?.tumbImageAddress??pic}
+                            topic={item?.title} 
+                            explain={item?.describe} 
+                            teacher={item?.teacherName} 
+                            time={item?.lastUpdate?.toString()?.slice(11,19)} 
+                            price={item?.cost?.toString()?.slice(-9,-1)}
+                            courseRate={item?.courseRate}
+                            likeCount={item?.likeCount}
+                            dissLikeCount={item?.dissLikeCount}
+                            userIsLiked={item?.userIsLiked}
+                            levelName={item?.levelName}
+                            currentUserDissLike={item?.currentUserDissLike}
+                            userFavorite={item?.userFavorite}
+                            id={item?.courseId} 
+                            />  
                         );   
                     })}            
                 </div>
