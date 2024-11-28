@@ -93,27 +93,7 @@ function Accardion({handleCategoryFilter, handleTypeCourseFilter, handlelevelCou
               defaultValue={[1,20000000]}
               />
         </div>
-        </div>
-
-        <div className="collapse collapse-arrow shadow shadow-black mt-2 w-[95%] mx-auto dark:bg-[#556e53]">
-            <input type="checkbox" name="my-accordion-2" />
-            <div className="collapse-title text-[14px] md:max-lg:text-[12px]"> قیمت</div>
-            <div className="collapse-content">
-            <output className='pr-[15px]'>از {costDown}</output>
-            <output className='pr-[15px]'> تا {costUp} </output>
-
-            <Slider 
-                max={20000000}
-                min={0}
-                className="border w-[90%] mx-auto"
-                onChange={(f)=>setCostDown(f[0]) & setCostUp(f[1])}
-                range
-                step={100000}
-                tooltipVisble={false}
-                defaultValue={[1,20000000]}
-            />
-        </div>
-        </div>  
+        </div> 
     </>
     
   )
