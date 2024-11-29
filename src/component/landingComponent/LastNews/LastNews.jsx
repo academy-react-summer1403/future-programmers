@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const LastNews = () => {
     const [NewsList, setNewsList] = useState(null);
-    console.log(NewsList)
+    // console.log(NewsList)
     const getNews =async () => {
         const res = await axios.get('https://classapi.sepehracademy.ir/api/News?PageNumber=1&RowsOfPage=4&SortingCol=InsertDate&SortType=DESC')
         setNewsList(res.data.news)

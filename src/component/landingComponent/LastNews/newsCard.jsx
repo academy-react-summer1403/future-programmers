@@ -23,18 +23,18 @@ function NewsCard({image, currentDissLikeCount, currentUserIsDissLike, currentUs
         </div>
         <div className="flex gap-3">
           <span className="relative bottom-2 bg-slate-400 mr-4 px-1 pt-1 pb-2 bg-opacity-60 rounded-md text-[12px] md:max-lg:text-[10px] dark:bg-opacity-50 dark:dark:bg-[#556e53]">{newsCatregoryName}</span>
-          <img src={isCurrentUserFavorite === true ? saved : save} className='w-5 max-lg:w-4 h-5 max-lg:h-4' alt=""></img>
+          <img src={isCurrentUserFavorite === true ? saved : save} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""></img>
         </div>
         <p className="w-[95%] indent-[8px] h-9 max-lg:h-6 max-md:h-8 pr-2 relative  max-sm:text-[11px]  max-md:text-[10px]  mx-auto text-[12px] md:max-lg:text-[8px]  overflow-hidden dark:text-[#d1d4c9]">{miniDescribe}</p>
         
         <div className="flex justify-between mt-1 pl-3">
         <div className="flex pr-4 gap-2">
           <div className=''>
-            <img src={currentUserIsLike === true ? liked : notLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 ' alt=""></img>
+            <img src={currentUserIsLike === true ? liked : notLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""></img>
             <span className='text-xs max-lg:text-[9px] mt-2  pr-[2px]'>{currentLikeCount}</span>
           </div>
           <div className=''>
-            <img src={currentUserIsDissLike === true ? disliked : notDisLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4' alt=""></img>
+            <img src={currentUserIsDissLike === true ? disliked : notDisLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""></img>
             <span className='text-[12px] max-lg:text-[9px] mt-2  pr-[2px]'>{currentDissLikeCount}</span>
           </div>
         </div>

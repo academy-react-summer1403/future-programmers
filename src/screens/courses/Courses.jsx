@@ -110,5 +110,3 @@ return (
 }
 
 export default Courses
-
-

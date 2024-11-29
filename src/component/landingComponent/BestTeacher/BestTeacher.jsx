@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import http from '../../../core/services/interceptor';
 import TeachersCard from "./TeachersCard";
 import pic from '../../../../public/pic.jpg'
@@ -9,7 +8,7 @@ import pic from '../../../../public/pic.jpg'
 function BestTeacher() {
     const [teachersList, setteachersList] = useState(null);
         const teachers = teachersList?.slice(4,8)
-        // console.log(teachers)
+        // console.log(teachersList)
     const getTeachers = async () => {
         const res = await http.get("/Home/GetTeachers");
         setteachersList(res);
