@@ -142,7 +142,7 @@ const EditProfile = () => {
         <div className="rounded-full w-3/4 h-64 object-fill">
           <img
             className="w-full object-contain rounded-full"
-            src={MyInfo?.userImage[44].puctureAddress}
+            src={MyInfo?.userImage[MyInfo?.userImage.length - 1].puctureAddress}
           ></img>
           <div>
             <form onSubmit={sendImage}>
@@ -153,7 +153,9 @@ const EditProfile = () => {
                   setImage(e.target.files[0]);
                 }}
               />
-              <button type="submit"  className="btn btn-primary">upload image</button>
+              <button type="submit" className="btn btn-primary">
+                upload image
+              </button>
             </form>
           </div>
         </div>
