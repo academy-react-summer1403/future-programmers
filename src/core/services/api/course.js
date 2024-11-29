@@ -2,9 +2,6 @@ import http from '../interceptor'
 
 export const getlist=async( sort ,search, categoryFilter, typeCourseFilter, levelCourseFilter,costUp, costDown)=>{
     try {
-        // console.log(categoryFilter)
-        // console.log(typeCourseFilter)
-        // console.log('5656',levelCourseFilter)
         const queryObj = {RowsOfPage: 9}
         // if(RowsOfPage!== "" && RowsOfPage!==null) queryObj.RowsOfPage = RowsOfPage;
         // if(PageNumber!== "" && PageNumber!==null) queryObj.PageNumber = PageNumber;
