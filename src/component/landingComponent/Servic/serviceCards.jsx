@@ -2,6 +2,7 @@ import pic from '../../../../public/card.png'
 
 
 function ServiceCards({title, text}) {
+ 
   return (
     <div className='bg-white rounded-3xl flex h-[250px] max-lg:h-[210px] max-md:h-40 w-[49%] max-sm:w-[100%] dark:bg-[#29435c] hover:scale-105 duration-500 '>
         <img src={pic} alt="" className=' rounded-2xl h-[87%] lg:w-[38%] sm:w-[43%] max-sm:w-[26%] my-auto mr-[4%]' />

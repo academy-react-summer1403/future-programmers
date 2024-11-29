@@ -2,8 +2,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 const Category = () => {
 
-  AOS.init(
-   { disable: false,
+  AOS.init({
+    disable: false,
     startEvent: 'DOMContentLoaded', 
     initClassName: 'aos-init', 
     animatedClassName: 'aos-animate',
@@ -18,8 +18,8 @@ const Category = () => {
     easing: 'ease', 
     once: false, 
     mirror: false, 
-    anchorPlacement: 'top-bottom'}
-  );
+    anchorPlacement: 'top-bottom'
+  });
   return (
     <div className="flex justify-center overflow-x-hidden max-sm:pt-3 pb-[20px] max-sm:pb-[10px]">
       {/* Category Section */}
