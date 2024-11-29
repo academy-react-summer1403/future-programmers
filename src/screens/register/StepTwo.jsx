@@ -1,31 +1,25 @@
 import React from "react";
 import StepNumber from "./StepNumber";
 import { useNavigate } from "react-router-dom";
+
 const StepTwo = () => {
+  // const tel = signUpTwoAPI("phoneNumber");
+  const navigate = useNavigate();
 
-const tel = signUpTwoAPI("phoneNumber");
-const navigate = useNavigate();
+  const onsubmit = async (valuse) => {
+    const tel = getData("phoneNumber");
 
-const onsubmit = async (valuse) => {
-  const tel = getData("phoneNumber");
-  
-  const obj = {
-    phoneNumber:tel,
-    verifycode: valuse.vercode,
+    const obj = {
+      phoneNumber: tel,
+      verifycode: valuse.vercode,
+    };
+    console.log("userVerify", obj);
 
+    const user = await signUpTwoApI(obj);
+    console.log("user", user);
+
+    navigate("/step3");
   };
-  console.log("userVerify", obj);
-
-  const user =await signUpTwoApI (obj);
-  console.log("user" , user);
-
-  navigate("/step3");
-
-  
-  };
-
-
-
 
   return (
     <div className="text-{sans} dark:bg-[#152a38]  dark:text-[#ffff] h-screen flex justify-center bg-[#F3F4F6]">
@@ -59,7 +53,8 @@ const onsubmit = async (valuse) => {
 
           <h2
             className="  w-5/6 text-xs mt-8  text-[#BFBFBF] mr-7 max-sm:text-xs
-          ">
+          "
+          >
             با عضویت در سایت، تمامی قوانین و شرایط استفاده از خدمات آکادمی سپهر
             را پذیرفته اید
           </h2>
