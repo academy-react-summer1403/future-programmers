@@ -1,7 +1,25 @@
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Category = () => {
 
-
+  AOS.init(
+   { disable: false,
+    startEvent: 'DOMContentLoaded', 
+    initClassName: 'aos-init', 
+    animatedClassName: 'aos-animate',
+    useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+    disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+    debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+    throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+    // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+    offset: 120, 
+    delay: 0, 
+    duration: 400,
+    easing: 'ease', 
+    once: false, 
+    mirror: false, 
+    anchorPlacement: 'top-bottom'}
+  );
   return (
     <div className="flex justify-center overflow-x-hidden max-sm:pt-3 pb-[20px] max-sm:pb-[10px]">
       {/* Category Section */}
@@ -13,14 +31,17 @@ const Category = () => {
               <div
                 key={index}
                 className="bg-white dark:bg-[#29435e] rounded-lg shadow-md p-6 text-center md:basis-[22%] basis-full"
+                data-aos="flip-left"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="4000"
               >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-24  object-contain mb-4 rounded dark:bg-[#29435e]"
-                />
-                <h3 className="text-lg font-bold">{item.title}</h3>
-                <h4 className="text-lg font-normal">{item.description}</h4>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-24  object-contain mb-4 rounded dark:bg-[#29435e]"
+                  />
+                  <h3 className="text-lg font-bold">{item.title}</h3>
+                  <h4 className="text-lg font-normal">{item.description}</h4>
               </div>
             ))}
           </div>
