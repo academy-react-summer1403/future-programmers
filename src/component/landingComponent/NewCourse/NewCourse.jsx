@@ -15,7 +15,7 @@ const NewCourse = () => {
         const res = await axios.get('https://classapi.sepehracademy.ir/api/Home/GetCoursesTop?Count=4')
         setList(res.data)
     }
-
+console.log(List)
     
     useEffect(() => {
         getTopCourses()    
@@ -34,15 +34,19 @@ const NewCourse = () => {
                     {List?.map((course, index) => (
                         <CourseCard 
                             key={index} 
-                            title={course.title} 
-                            image={course.tumbImageAddress==='null'?pic:course.tumbImageAddress} 
-                            describe={course.describe}
-                            teacher={course.teacherName}
-                            id={course.courseId} 
-                            userIsLiked={course.userIsLiked}
-                            dissLikeCount={course.dissLikeCount} 
-                            likeCount={course.likeCount}
-                            userIsDissLiked={course.userIsDissLiked}
+                            title={course?.title} 
+                            image={course?.tumbImageAddress==='null'? pic :course.tumbImageAddress} 
+                            describe={course?.describe}
+                            teacher={course?.teacherName}
+                            id={course?.courseId} 
+                            userIsLiked={course?.userIsLiked}
+                            userIsDissLiked={course?.userIsDissLiked}
+                            dissLikeCount={course?.dissLikeCount} 
+                            likeCount={course?.likeCount}
+                            levelName={course?.levelName}
+                            courseRate={course?.courseRate}
+                            isUserFavorite={course?.isUserFavorite}
+                            cost={course?.cost?.toString()?.slice(0,8)}
                         />
                     ))}
                 </div>
