@@ -9,13 +9,11 @@ import pic from '../../../../public/cImage.png';
 const NewCourse = () => {
 
     const [List, setList] = useState(null);
-    console.log(List)
 
     const getTopCourses =async () => {
         const res = await axios.get('https://classapi.sepehracademy.ir/api/Home/GetCoursesTop?Count=4')
         setList(res.data)
     }
-console.log(List)
     
     useEffect(() => {
         getTopCourses()    

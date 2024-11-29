@@ -8,7 +8,8 @@ import pic from '../../../../public/pic.jpg'
 
 function BestTeacher() {
     const [teachersList, setteachersList] = useState(null);
-    console.log(teachersList)
+        const teachers = teachersList?.slice(4,8)
+        // console.log(teachers)
     const getTeachers = async () => {
         const res = await http.get("/Home/GetTeachers");
         setteachersList(res);
@@ -28,7 +29,7 @@ function BestTeacher() {
                 <p className="w-[69%] text-center max-xl:w-[85%] text-[12px]  max-sm:text-[11px] mr-[3%] max-sm:mx-auto max-lg:mt-[20px] max-sm:mt-[5px]  dark:text-[#d1d4c9]">برجسته ترین اساتید بزرگترین مجموعه برنامه نویسی استان مازندران رو بهتر بشناسیم !</p>
             </div>
             <div className="flex flex-wrap justify-between w-[70%] max-md:w-[100%] gap-y-3 mt-5 max-sm:mt-3">
-                {teachersList?.map((item, index) => ( 
+                {teachers?.map((item, index) => ( 
                     <TeachersCard
                     key={index}
                     image={item.pictureAddress===null  ? pic :item.pictureAddress}
