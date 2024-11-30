@@ -2,9 +2,9 @@ import pic from '../../../public/01.jpg'
 import pic1 from '../../../public/Like.empty.png'
 import pic2 from '../../../public/Like.red.png'
 
-function CourseComment() {
+function CourseCommentResponsive() {
   return (
-    <div className='max-lg:hidden  mx-[auto] mt-5 pb-5 dark:text-[#d1d4c9]'>
+    <div className='lg:hidden w-[90%] mx-[auto] mt-5 pb-5 dark:text-[#d1d4c9]'>
         <div className='w-[100%] pb-4 bg-white  max-md:mt-0 rounded-[20px] max-md:w-[100%] md:max-lg:w-[100%] dark:bg-[#29435c]'>
             <div className='w-[85%] h-[90%] mx-auto'>
                 <h1 className='text-[25px] text-cyan-700 inline dark:text-[#d1d4c9]'>نظرات</h1>
@@ -37,4 +37,4 @@ function CourseComment() {
   )
 }
 
-export default CourseComment
+export default CourseCommentResponsive

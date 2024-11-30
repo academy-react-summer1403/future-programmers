@@ -2,6 +2,7 @@
 import { useParams } from 'react-router-dom'
 import { getCourseDetail } from '../../core/services/api/coursedetail'
 import CourseComment from './CourseComment'
+import CourseCommentResponsive from './CourseCommentResponsive'
 import CourseExplain from './CourseExplain'
 import CourseInformation from './CourseInformation'
 import SimilarCourse from './SimilarCourse'
@@ -71,16 +72,20 @@ useEffect(() => {
               <img src={detail?.imageAddress??pic} className='w-[450px] h-[310px] shadow-[8px_-13px_35px_-18px_gray] rounded-[25px] absolute right-[770px] top-[30px]  max-md:right-[334px] max-md:w-[44%] max-md:h-[76%] md:max-lg:right-[406px] md:max-lg:h-[76%] md:max-lg:w-[43%]  max-sm:hidden'></img>
               <h3 className=' text-gray-400 line-through absolute top-[220px] right-[625px] max-md:text-[11px] max-md:right-[240px] max-md:top-[164px] md:max-lg:text-[12px] md:max-lg:top-[175px] md:max-lg:right-[295px]'> تومان {detail?.cost}</h3>
               <h2 className=' text-white	text-[22px] font-bold	absolute top-[250px] right-[580px] max-md:text-[13px] max-md:top-[180px] max-md:right-[221px] md:max-lg:text-[14px] md:max-lg:top-[200px] md:max-lg:right-[273px]'>تومان {costOff}</h2>
-              <button type='Submit' className='bg-cyan-700 text-[white] py-3 px-4 rounded-[10px] absolute top-[242px] right-[70px] max-md:top-[165px] max-md:p-[7px] max-md:text-[11px] max-md:right-[24px] md:max-lg:text-[12px] md:max-lg:right-[38px] md:max-lg:top-[190px] dark:bg-[#556e53]'>خرید نقدی دوره</button>
+              <button type='Submit' className='bg-cyan-700 text-[white] py-3 px-4 rounded-[10px] absolute top-[242px] right-[70px] max-md:top-[165px] max-md:p-[7px] max-md:text-[11px] max-md:right-[24px] md:max-lg:text-[12px] md:max-lg:right-[38px] md:max-lg:top-[190px] dark:bg-[#556e53]'>رزرو دوره</button>
             </div>  
         </div>
       </div>
-
+      
       <div className=' flex flex-wrap justify-between w-[88%] mx-auto mt-5 max-sm:mt-3 pb-[30px] overflow-hidden dark:bg-[#152a38]'>
       {/* <CourseExplain/> */}
-        <CourseExplain describe={detail?.describe}/>
+        <div className='w-[65%] max-lg:w-[100%]'>
+          <CourseExplain describe={detail?.describe}/>
+          <CourseComment />
+        </div>
         
-        <div className='flex flex-wrap max-md:h-fit w-[33%] gap-y-2 max-lg:w-[100%] md:max-lg:justify-between md:max-lg:mt-5'>
+        
+        <div className='flex flex-wrap h-fit w-[33%] gap-y-2 max-lg:w-[100%] md:max-lg:justify-between md:max-lg:mt-5'>
           <CourseInformation 
             teacherName={detail?.teacherName}
             cost={detail?.cost?.toString()?.slice(0,7)+' '}
@@ -96,7 +101,7 @@ useEffect(() => {
           />
 
 
-          <div className=' w-[99%] md:max-lg:h-fit pb-4 bg-white rounded-[20px] max-md:w-[100%] md:max-lg:w-[47%] dark:bg-[#29435c]'>
+          <div className=' w-[99%] h-fit pb-4 bg-white rounded-[20px] max-md:w-[100%] md:max-lg:w-[47%] dark:bg-[#29435c]'>
             <h1 className='relative right-[30px] top-[10px]  text-[20px] text-cyan-700 inline dark:text-[#d1d4c9]'>دوره های مشابه</h1>
             <div className=' mt-[15px] max-sm:flex max-sm:flex-wrap'>
               {similar1.map((item,index)=>{
@@ -112,7 +117,7 @@ useEffect(() => {
           </div> 
         </div>
       </div>
-      <CourseComment />
+      <CourseCommentResponsive />
     </div>
   )
 }
