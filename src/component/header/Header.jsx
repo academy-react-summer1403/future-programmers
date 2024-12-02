@@ -3,6 +3,7 @@ import Logo from "../../../public/Logo.png";
 
 import { Link, NavLink } from "react-router-dom";
 import { HeaderHamburgerMenu } from "./HeaderHamburgerMenu";
+import { getItem } from "../../core/services/common/storage.services";
 
 const Header = () => {
   const [dark, setdark] = useState(false);
@@ -11,6 +12,9 @@ const Header = () => {
     document.documentElement.classList.toggle("dark");
     setdark(!dark);
   };
+
+
+  const token = getItem('token')
 
   return (
     <div className=" font-[sans] bg-[#f9f9f9] flex justify-between items-center w-full py-4 px-6  shadow-2xl dark:bg-[#152a38] ">
@@ -48,14 +52,6 @@ const Header = () => {
           <div className="mb-3  w-14 h-10 lg:text-sm md:text-xs">
             <h2 className="text-center hover:border-b-2 border-blue-500">
               دوره ها
-            </h2>
-          </div>
-        </NavLink>
-
-        <NavLink to={"/"}>
-          <div className="mb-3  w-14 h-10 lg:text-sm md:text-xs">
-            <h2 className="text-center hover:border-b-2 border-blue-500">
-              اساتید
             </h2>
           </div>
         </NavLink>
@@ -129,17 +125,20 @@ const Header = () => {
             </svg>
           </label>
         </button>
-        <Link to="/profile/pishkhan">
-          <img src="./profile-user.png" alt="" className="" />
-        </Link>
 
-        <NavLink to={"/singIn"}>
-          <div className="  bg-[#436e8e] flex justify-center text-sm rounded-full mt-1 items-center max-sm:w-16 text-white w-28 h-10  ">
-            <h2 className="  text-center  dark:text-white max-sm:text-xs  ">
-              ورود / ثبت نام{" "}
-            </h2>
-          </div>
-        </NavLink>
+        {token ? (
+          <Link to="/profile/pishkhan">
+            <img src="./profile-user.png" alt="" className="" />
+          </Link>
+        ) : (
+          <NavLink to={"/singIn"}>
+            <div className="  bg-[#436e8e] flex justify-center text-sm rounded-full mt-1 items-center max-sm:w-16 text-white w-28 h-10  ">
+              <h2 className="  text-center  dark:text-white max-sm:text-xs  ">
+                ورود / ثبت نام{" "}
+              </h2>
+            </div>
+          </NavLink>
+        )}
       </div>
     </div>
   );
