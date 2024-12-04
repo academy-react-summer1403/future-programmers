@@ -7,9 +7,19 @@ import star from '../../../public/star.png'
 import save from '../../../public/save.png'
 import saved from '../../../public/saved.png'
 import eye from '../../../public/eye.png'
+import { addNewsLike, deleteNewsLike } from "../../core/services/api/newsLike"
 
-const Page = ({image, currentDissLikeCount, currentUserIsDissLike, currentUserIsLike, newsTitle, currentView, isCurrentUserFavorite, miniDescribe, addUserFullName, newsCatregoryName, currentLikeCount, insertDate, id}) => {
+const Page = ({setReFetch, image, currentDissLikeCount, currentUserIsDissLike, currentUserIsLike, newsTitle, currentView, isCurrentUserFavorite, miniDescribe, addUserFullName, newsCatregoryName, currentLikeCount, insertDate, id}) => {
     // console.log(currentUserIsDissLike)
+    const handleLike = async (e) => {
+        if(currentUserIsLike===false){
+          await addNewsLike(e)
+        }else{
+          // const CourseLikeId = {CourseLikeId:id}
+          await deleteNewsLike(CourseLikeId)
+        }
+        setReFetch(old=>old+1)    
+      }
 return (
     
     <div className=" relative w-[24%] max-md:mt-10 max-sm:w-[95%] max-md:w-[47%] md:max-lg:w-[24%] pb-2 bg-white rounded-[20px] dark:dark:bg-[#29435c] dark:text-[#d1d4c9]">
@@ -31,7 +41,7 @@ return (
         <div className="flex justify-between mt-1 pl-3">
         <div className="flex pr-4 gap-2">
             <div className=''>
-                <img src={currentUserIsLike === true ? liked : notLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""></img>
+                <img src={currentUserIsLike === true ? liked : notLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" onClick={()=>handleLike(id)}></img>
                 <span className='text-xs max-lg:text-[9px] mt-2  pr-[2px]'>{currentLikeCount}</span>
             </div>
             <div className=''>

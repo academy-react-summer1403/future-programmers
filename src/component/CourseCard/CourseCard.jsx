@@ -22,9 +22,8 @@ const CourseCard = ({image,topic, explain, teacher, price, id, courseRate, likeC
       // const CourseLikeId = {CourseLikeId:id}
       await deleteCourseLike(CourseLikeId)
     }
-    setReFetch(old=>old+1)
-     
-}
+    setReFetch(old=>old+1)    
+  }
 
 const handleDisLike = async(e)=>{
      await addDislikeCourse(e)

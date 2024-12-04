@@ -3,9 +3,9 @@ import PictureBox from "./PictureBox";
 // import CardPage2 from "./CardPage2";
 import pic from "../../../public/newspaper.png";
 
-const CardNews = ({cardNews}) => {
+const CardNews = ({cardNews, setReFetch}) => {
   
-
+  
 
   // console.log(cardNews);
   const topNews = cardNews?.slice(0, 4);
@@ -33,7 +33,8 @@ const CardNews = ({cardNews}) => {
               isCurrentUserFavorite={item?.isCurrentUserFavorite}
               currentLikeCount={item?.currentLikeCount}
               insertDate={item?.insertDate?.toString()?.slice(0,10)}
-              id={item.id} 
+              id={item.id}
+              setReFetch={setReFetch} 
               />
             );
           })}

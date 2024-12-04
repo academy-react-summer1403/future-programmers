@@ -18,7 +18,7 @@ export const deleteNewsLike = async(value)=>{
         const result = await http.delete('/News/DeleteLikeNews',value)
         return result
     } catch (error) {
-        // toast.error(error)
+        console.log(error)
     }
 }
 

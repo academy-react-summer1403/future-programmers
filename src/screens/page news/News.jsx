@@ -10,11 +10,13 @@ import { getCardNews } from "../../core/services/api/news";
 const News = () => {
   const [cardNews, setCardNews] = useState([]);
   const [search, setSearch] = useState('')
+  const [sort, setSort] = useState('')
+  const [reFetch, setReFetch] = useState(1)
 
 
-  const getAllCardNews = async (search) => {
+  const getAllCardNews = async (search, sort) => {
     try {
-      const result = await getCardNews(search);
+      const result = await getCardNews(search, sort);
 
       setCardNews(result.news);
     } catch (error) {
@@ -23,14 +25,14 @@ const News = () => {
   };
 
   useEffect(() => {
-    getAllCardNews(search);
-  },[search]);
+    getAllCardNews(search, sort);
+  },[search, sort,reFetch]);
 
   return (
     <div className='bg-[#F3F4F6]  dark:bg-[#152a38]'>
-        <SearchBar setSearch={setSearch}/>
+        <SearchBar setSearch={setSearch} setSort={setSort}/>
         <LineNews/>
-        <CardNews cardNews={cardNews}/>
+        <CardNews cardNews={cardNews} setReFetch={setReFetch}/>
     </div>
     
     

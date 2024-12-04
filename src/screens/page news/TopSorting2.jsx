@@ -1,6 +1,6 @@
 
 
-function TopSorting2() {
+function TopSorting2({setSort}) {
   const data = [
     { value: "cost", lable: "مرتب سازی" },
     { value: "likeCount", lable: " جدید ترین" },
@@ -10,7 +10,7 @@ function TopSorting2() {
     <div className="items-center md:flex mr-[25px] max-xl:mr-[5px] max-lg:mr-[15px]  ">
       <details className="dropdown block  max-sm:ml-10">
         <summary className="btn m-1 max-sm:text-xs max-sm:w-[50px]">فیلتر </summary>
-        <ul className="menu dropdown-content bg-base-100 max-sm:left-[0px] rounded-box z-[1] w-[200px] p-2 shadow    whitespace-nowrap">
+        <ul onChange={(e)=>setSort(e.target.value)} className="menu dropdown-content bg-base-100 max-sm:left-[0px] rounded-box z-[1] w-[200px] p-2 shadow    whitespace-nowrap">
           {data.map((item,index) =>{
             return(
               <li className="" key={index}>
