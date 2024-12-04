@@ -22,11 +22,11 @@ const [levelCourseFilter, setLevelCourseFilter] = useState('')
 const [costUp, setCostUp] = useState(null)
 const [costDown, setCostDown] = useState(null)
 const [reFetch, setReFetch] = useState(1)
-console.log(reFetch)
+
 
 // course counting 
 const CourseCount = Course.length
-console.log( '123',Course);
+
 
 const getAllCoursesList = async (sort, search, categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown)=>{
     try {

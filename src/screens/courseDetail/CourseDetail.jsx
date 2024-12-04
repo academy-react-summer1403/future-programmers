@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react'
 import pic from '../../../public/item1.png'
 import { allcourse } from '../../core/services/api/course'
 import { addCourseReserve } from '../../core/services/api/addCourseReserve'
+import { deleteCourseReserve } from '../../core/services/api/deleteCourseReserve'
 
 
 
@@ -25,7 +26,7 @@ function CourseDetail() {
   const [detail, setDetail]=useState([])
   const [Course, setCourse] = useState([]); 
   const [number, setNumber] = useState()
-  // console.log(detail)
+  console.log(detail)
   
 //  off in top image
   const costOff = (detail?.cost?.toString().slice(0,7)) * 90/100;
@@ -58,7 +59,14 @@ function CourseDetail() {
 }
 
 const handleAddReserve = async (value) => {
-  const result = await addCourseReserve(value)
+  if(detail?.isCourseReseve==='0'){
+    const courseId = {courseId:value}
+    const result = await addCourseReserve(courseId)
+  }else{
+    const courseReseveId = {courseId:courseReseveId}
+    await deleteCourseReserve(courseReseveId)
+  }
+  
   // console.log(res)
   
 }
