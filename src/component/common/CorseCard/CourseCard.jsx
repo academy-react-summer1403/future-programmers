@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import http from '../../../core/services/interceptor'
 import liked from '../../../../public/Liked.red.png'
 import notLiked from '../../../../public/NotLiked.png'
 import disliked from '../../../../public/dislike.red.png'
@@ -7,27 +6,26 @@ import notDisLiked from '../../../../public/dislike.empty.png'
 import star from '../../../../public/star.png'
 import save from '../../../../public/save.png'
 import saved from '../../../../public/saved.png'
-import { useState } from 'react'
+import { addDislikeCourse } from '../../../core/services/api/addDislikeCourse'
+import { addLikeCourse } from '../../../core/services/api/addLikeCourse'
+import { addFavoritCourse } from '../../../core/services/api/addFavoritCourse'
 
 const CourseCard = ({ title, image, describe, teacher, id , userIsLiked, userIsDissLiked ,dissLikeCount, likeCount, levelName, courseRate, isUserFavorite, cost}) => {
-    const [like, setLike] = useState()
-    const [disLike, setDisLike] = useState()
-    const [favorit, setFavorit] = useState()
+    
 
-    const handleLike = async () => {
-        const res = await http.post(`/Course/AddCourseLike?CourseId=${id}`)
-        console.log(res)
-        setLike(res)
+    // console.log(userIsLiked)
+    const handleLike = async (e) => {
+        const result = await addLikeCourse(e)
     }
-    const handleDisLike = async () => {
-        const res = await http.post(`/Course/AddCourseDissLike?CourseId=${id}`)
-        console.log(res)
-        setDisLike(res)
+    
+    const handleDisLike = async(e)=>{
+        const result = await addDislikeCourse(e)
+        // toast.success(result.message)
     }
-    const handleFavorit = async () => {
-        const res = await http.post('/Course/AddCourseFavorite')
-        console.log(res)
-        setFavorit(res)
+    const handleFavorit = async (value) => {
+        const result = await addFavoritCourse(value)
+        // console.log(res)
+        
     }
 
     return(
@@ -43,18 +41,18 @@ const CourseCard = ({ title, image, describe, teacher, id , userIsLiked, userIsD
         </div>
         <div className="flex gap-3">
             <span className="relative bottom-2 bg-slate-400 mr-4 px-1 pt-1 pb-2 bg-opacity-60 rounded-md text-[11px] md:max-lg:text-[10px] dark:bg-opacity-50 dark:dark:bg-[#556e53]">سطح دوره:{levelName}</span>
-            <img src={favorit?.success === true ? saved : save} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" onClick={handleFavorit}></img>
+            <img src={isUserFavorite === true ? saved : save} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" onClick={()=>handleFavorit(id)}></img>
         </div>
         <p className="w-[95%] indent-[8px] h-9 max-lg:h-6 max-md:h-8 pr-2 relative  max-sm:text-[11px]  max-md:text-[10px]  mx-auto text-[12px] md:max-lg:text-[8px]  overflow-hidden dark:text-[#d1d4c9]">{describe}</p>
         
         <div className="flex justify-between mt-1 pl-3">
             <div className="flex pr-4 gap-2">
                 <div className=''>
-                <img src={like?.success === true ? liked : notLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" onClick={handleLike}></img>
+                <img src={userIsLiked === true ? liked : notLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""  onClick={()=>handleLike(id)}></img>
                 <span className='text-xs max-lg:text-[9px] mt-2  pr-[2px]'>{likeCount}</span>
                 </div>
                 <div className=''>
-                <img src={disLike?.success === true ? disliked : notDisLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" onClick={handleDisLike}></img>
+                <img src={userIsDissLiked === true ? disliked : notDisLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""  onClick={()=>handleDisLike(id)}></img>
                 <span className='text-[12px] max-lg:text-[9px] mt-2  pr-[2px]'>{dissLikeCount}</span>
                 </div>
             </div>

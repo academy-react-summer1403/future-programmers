@@ -6,9 +6,27 @@ import notDisLiked from '../../../public/dislike.empty.png'
 import star from '../../../public/star.png'
 import save from '../../../public/save.png'
 import saved from '../../../public/saved.png'
+import { addLikeCourse } from "../../core/services/api/addLikeCourse";
+import { addDislikeCourse } from "../../core/services/api/addDislikeCourse";
+import { addFavoritCourse } from "../../core/services/api/addFavoritCourse";
 
 
 const CourseCard = ({image,topic, explain, teacher, price, id, courseRate, likeCount, userIsLiked, dissLikeCount, currentUserDissLike, levelName, userFavorite}) => {
+  
+  const handleLike = async (e) => {
+    const result = await addLikeCourse(e)
+}
+
+const handleDisLike = async(e)=>{
+    const result = await addDislikeCourse(e)
+    // toast.success(result.message)
+}
+const handleFavorit = async (value) => {
+    const result = await addFavoritCourse(value)
+    // console.log(res)
+    
+}
+  
   return (
     <div className=" relative w-[31%] max-sm:w-[95%] max-md:w-[31%] md:max-lg:w-[30%] pb-2 bg-white rounded-[20px] dark:dark:bg-[#29435c] dark:text-[#d1d4c9]">
       <img src={image} className="w-[92%] h-36 md:max-lg:h-[42%] mx-auto border border-[gray] relative bottom-6 rounded-3xl"></img>
@@ -22,18 +40,18 @@ const CourseCard = ({image,topic, explain, teacher, price, id, courseRate, likeC
       </div>
       <div className="flex gap-3">
         <span className="relative bottom-2 bg-slate-400 mr-4 px-1 pt-1 pb-2 bg-opacity-60 rounded-md text-[12px] md:max-lg:text-[10px] dark:bg-opacity-50 dark:dark:bg-[#556e53]">سطح دوره:{levelName}</span>
-        <img src={userFavorite === true ? saved : save} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""></img>
+        <img src={userFavorite === true ? saved : save} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" onClick={()=>handleFavorit(id)}></img>
       </div>
       <p className="w-[95%] indent-[8px] h-9 max-lg:h-6 max-md:h-8 pr-2 relative  max-sm:text-[11px]  max-md:text-[10px]  mx-auto text-[12px] md:max-lg:text-[8px]  overflow-hidden dark:text-[#d1d4c9]">{explain}</p>
       
       <div className="flex justify-between mt-1 pl-3">
         <div className="flex pr-4 gap-2">
           <div className=''>
-            <img src={userIsLiked === true ? liked : notLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""></img>
+            <img src={userIsLiked === true ? liked : notLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" onClick={()=>handleLike(id)}></img>
             <span className='text-xs max-lg:text-[9px] mt-2  pr-[2px]'>{likeCount}</span>
           </div>
           <div className=''>
-            <img src={currentUserDissLike === true ? disliked : notDisLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""></img>
+            <img src={currentUserDissLike === true ? disliked : notDisLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" onClick={()=>handleDisLike(id)}></img>
             <span className='text-[12px] max-lg:text-[9px] mt-2  pr-[2px]'>{dissLikeCount}</span>
           </div>
         </div>
