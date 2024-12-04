@@ -9,21 +9,38 @@ import saved from '../../../public/saved.png'
 import { addLikeCourse } from "../../core/services/api/addLikeCourse";
 import { addDislikeCourse } from "../../core/services/api/addDislikeCourse";
 import { addFavoritCourse } from "../../core/services/api/addFavoritCourse";
+import { deleteCourseLike } from "../../core/services/api/deleteCourseLike";
+import { deleteFavoritCourse } from "../../core/services/api/deleteCourseFavorit";
 
 
-const CourseCard = ({image,topic, explain, teacher, price, id, courseRate, likeCount, userIsLiked, dissLikeCount, currentUserDissLike, levelName, userFavorite}) => {
+const CourseCard = ({image,topic, explain, teacher, price, id, courseRate, likeCount, userIsLiked, dissLikeCount, currentUserDissLike, levelName, userFavorite, setReFetch, userLikedI, userFavoriteId}) => {
   
   const handleLike = async (e) => {
-    const result = await addLikeCourse(e)
+    if(userIsLiked===false){
+      await addLikeCourse(e)
+    }else{
+      // const CourseLikeId = {CourseLikeId:id}
+      await deleteCourseLike(CourseLikeId)
+    }
+    setReFetch(old=>old+1)
+     
 }
 
 const handleDisLike = async(e)=>{
-    const result = await addDislikeCourse(e)
-    // toast.success(result.message)
+     await addDislikeCourse(e)
+    setReFetch(old=>old+1)
+    
 }
 const handleFavorit = async (value) => {
-    const result = await addFavoritCourse(value)
-    // console.log(res)
+  if(userFavorite===false){
+    const courseId= {courseId:value}
+    await addFavoritCourse(courseId)
+  }else{
+    const CourseFavoriteId= {CourseFavoriteId:userFavoriteId}
+    deleteFavoritCourse(CourseFavoriteId)
+  }
+  setReFetch(old=>old+1)
+    
     
 }
   
@@ -47,7 +64,7 @@ const handleFavorit = async (value) => {
       <div className="flex justify-between mt-1 pl-3">
         <div className="flex pr-4 gap-2">
           <div className=''>
-            <img src={userIsLiked === true ? liked : notLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" onClick={()=>handleLike(id)}></img>
+            <img src={userIsLiked === true ? liked : notLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""  onClick={()=>handleLike(id)}></img>
             <span className='text-xs max-lg:text-[9px] mt-2  pr-[2px]'>{likeCount}</span>
           </div>
           <div className=''>

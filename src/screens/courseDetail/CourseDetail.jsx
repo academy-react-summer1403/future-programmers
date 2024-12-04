@@ -9,6 +9,7 @@ import SimilarCourse from './SimilarCourse'
 import { useEffect, useState } from 'react'
 import pic from '../../../public/item1.png'
 import { allcourse } from '../../core/services/api/course'
+import { addCourseReserve } from '../../core/services/api/addCourseReserve'
 
 
 
@@ -24,7 +25,7 @@ function CourseDetail() {
   const [detail, setDetail]=useState([])
   const [Course, setCourse] = useState([]); 
   const [number, setNumber] = useState()
-  console.log(detail)
+  // console.log(detail)
   
 //  off in top image
   const costOff = (detail?.cost?.toString().slice(0,7)) * 90/100;
@@ -56,6 +57,12 @@ function CourseDetail() {
     }
 }
 
+const handleAddReserve = async (value) => {
+  const result = await addCourseReserve(value)
+  // console.log(res)
+  
+}
+
 useEffect(() => {
   getDetail(id);
   getAllCoursesList()
@@ -73,7 +80,7 @@ useEffect(() => {
               <img src={detail?.imageAddress??pic} className='w-[450px] h-[310px] shadow-[8px_-13px_35px_-18px_gray] rounded-[25px] absolute right-[770px] top-[30px]  max-md:right-[334px] max-md:w-[44%] max-md:h-[76%] md:max-lg:right-[406px] md:max-lg:h-[76%] md:max-lg:w-[43%]  max-sm:hidden'></img>
               <h3 className=' text-gray-400 line-through absolute top-[220px] right-[625px] max-md:text-[11px] max-md:right-[240px] max-md:top-[164px] md:max-lg:text-[12px] md:max-lg:top-[175px] md:max-lg:right-[295px]'> تومان {detail?.cost}</h3>
               <h2 className=' text-white	text-[22px] font-bold	absolute top-[250px] right-[580px] max-md:text-[13px] max-md:top-[180px] max-md:right-[221px] md:max-lg:text-[14px] md:max-lg:top-[200px] md:max-lg:right-[273px]'>تومان {costOff}</h2>
-              <button type='Submit' className='bg-cyan-700 text-[white] py-3 px-4 rounded-[10px] absolute top-[242px] right-[70px] max-md:top-[165px] max-md:p-[7px] max-md:text-[11px] max-md:right-[24px] md:max-lg:text-[12px] md:max-lg:right-[38px] md:max-lg:top-[190px] dark:bg-[#556e53]'>رزرو دوره</button>
+              <button type='Submit' onClick={()=>handleAddReserve(detail.courseId)} className='bg-cyan-700 text-[white] py-3 px-4 rounded-[10px] absolute top-[242px] right-[70px] max-md:top-[165px] max-md:p-[7px] max-md:text-[11px] max-md:right-[24px] md:max-lg:text-[12px] md:max-lg:right-[38px] md:max-lg:top-[190px] dark:bg-[#556e53]'>رزرو دوره</button>
             </div>  
         </div>
       </div>

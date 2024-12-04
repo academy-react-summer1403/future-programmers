@@ -9,6 +9,8 @@ import saved from '../../../../public/saved.png'
 import { addDislikeCourse } from '../../../core/services/api/addDislikeCourse'
 import { addLikeCourse } from '../../../core/services/api/addLikeCourse'
 import { addFavoritCourse } from '../../../core/services/api/addFavoritCourse'
+import { deleteFavoritCourse } from '../../../core/services/api/deleteCourseFavorit'
+import { deleteCourseLike } from '../../../core/services/api/deleteCourseLike'
 
 const CourseCard = ({ title, image, describe, teacher, id , userIsLiked, userIsDissLiked ,dissLikeCount, likeCount, levelName, courseRate, isUserFavorite, cost}) => {
     
@@ -17,13 +19,24 @@ const CourseCard = ({ title, image, describe, teacher, id , userIsLiked, userIsD
     const handleLike = async (e) => {
         const result = await addLikeCourse(e)
     }
+    const handleDeleteLike = async (value) => {
+        const result = await deleteCourseLike(value)
+        // console.log(res)
+        
+    }
     
     const handleDisLike = async(e)=>{
         const result = await addDislikeCourse(e)
         // toast.success(result.message)
     }
     const handleFavorit = async (value) => {
-        const result = await addFavoritCourse(value)
+        const courseId= {courseId:value}
+        const result = await addFavoritCourse(courseId)
+        // console.log(res)
+        
+    }
+    const handleDeleteFavorit = async (value) => {
+        const result = await deleteFavoritCourse(value)
         // console.log(res)
         
     }

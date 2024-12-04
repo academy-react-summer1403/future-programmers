@@ -21,6 +21,8 @@ const [typeCourseFilter, setTypeCourseFilter] = useState('')
 const [levelCourseFilter, setLevelCourseFilter] = useState('')
 const [costUp, setCostUp] = useState(null)
 const [costDown, setCostDown] = useState(null)
+const [reFetch, setReFetch] = useState(1)
+console.log(reFetch)
 
 // course counting 
 const CourseCount = Course.length
@@ -37,7 +39,7 @@ const getAllCoursesList = async (sort, search, categoryFilter, typeCourseFilter,
 
 useEffect(()=>{
     getAllCoursesList(sort,search,categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown) 
-},[sort,search,categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown]);
+},[sort,search,categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown, reFetch]);
 
 const handleCategoryFilter= ((e)=>{
     const checkBoxId = e.target.id ;
@@ -90,6 +92,9 @@ return (
                             currentUserDissLike={item?.currentUserDissLike}
                             userFavorite={item?.userFavorite}
                             id={item?.courseId} 
+                            userLikedId={item?.userLikedId}
+                            userFavoriteId={item?.userFavoriteId}
+                            setReFetch={setReFetch}
                             />  
                         );   
                     })}            
