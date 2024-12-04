@@ -16,7 +16,7 @@ import FavoriteCourse from './component/ProfileComponents/FavoriteCourse/Favorit
 import StepOne from './screens/register/StepOne'
 import StepTwo from './screens/register/StepTwo'
 import StepThree from './screens/register/StepThree'
-import SingIn from './screens/singIn/singIn'
+import SignIn from './screens/signIn/SignIn'
 import News from './screens/page news/News'
 import UploadImage from './component/ProfileComponents/UploadImage/UploadImage'
 import NotFound from './screens/notFound/NotFound'
@@ -79,7 +79,7 @@ function App() {
       },
       {
         path: "/singIn",
-        element: <SingIn />,
+        element: <SignIn />,
         errorElement: <Error />,
       },
       {
@@ -145,8 +145,8 @@ function App() {
       errorElement:<Error />
     },  
     {
-      path:'/singIn',
-      element:<SingIn/>,
+      path:'/signIn',
+      element:<signIn/>,
       errorElement:<Error />
     },
     {

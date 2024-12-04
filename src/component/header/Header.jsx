@@ -127,11 +127,15 @@ const Header = () => {
         </button>
 
         {token ? (
-          <Link to="/profile/pishkhan">
-            <img src="./profile-user.png" alt="" className="" />
-          </Link>
+          <div className="dropdown dropdown-bottom">
+            <div tabIndex={0} role="button" className=" m-1"><img src="./profile-user.png" alt="" className="" /></div>
+            <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-36 p-2 left-3 shadow">
+              <li><Link to="/profile/pishkhan">پنل دانشجو</Link></li>
+              <li><a>خروج</a></li>
+            </ul>
+          </div>
         ) : (
-          <NavLink to={"/singIn"}>
+          <NavLink to={"/signIn"}>
             <div className="  bg-[#436e8e] flex justify-center text-sm rounded-full mt-1 items-center max-sm:w-16 text-white w-28 h-10  ">
               <h2 className="  text-center  dark:text-white max-sm:text-xs  ">
                 ورود / ثبت نام{" "}
