@@ -13,7 +13,7 @@ import saved from '../../../public/saved.png'
 import eye from '../../../public/eye.png'
 
 const Page = ({image, currentDissLikeCount, currentUserIsDissLike, currentUserIsLike, newsTitle, currentView, isCurrentUserFavorite, miniDescribe, addUserFullName, newsCatregoryName, currentLikeCount, insertDate, id}) => {
-    console.log(currentUserIsDissLike)
+    // console.log(currentUserIsDissLike)
 return (
     
     <div className=" relative w-[24%] max-md:mt-10 max-sm:w-[95%] max-md:w-[47%] md:max-lg:w-[24%] pb-2 bg-white rounded-[20px] dark:dark:bg-[#29435c] dark:text-[#d1d4c9]">
