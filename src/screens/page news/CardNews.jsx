@@ -1,30 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { getCardNews } from "../../core/services/api/news";
 import Page from "./Page";
 import PictureBox from "./PictureBox";
 // import CardPage2 from "./CardPage2";
 import pic from "../../../public/newspaper.png";
 
-const CardNews = () => {
-  const [cardNews, setCardNews] = useState([]);
-  console.log(cardNews);
-  const topNews = cardNews.slice(0, 4);
-  const bottomNews = cardNews.slice(4, 8);
+const CardNews = ({cardNews}) => {
+  
+
+
+  // console.log(cardNews);
+  const topNews = cardNews?.slice(0, 4);
+  const bottomNews = cardNews?.slice(4, 8);
 
   
-  const getAllCardNews = async () => {
-    try {
-      const result = await getCardNews();
-
-      setCardNews(result.news);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getAllCardNews();
-  });
+  
   return (
     <div className=" shadow-lg w-[95%] m-auto bg-[#f3f4f6] rounded-lg dark:bg-[#152a38]  max-lg:w-[95%] max-md:w-[80%]  max-md: max-sm:w-[80%]">
       <div className="flex flex-wrap w-[100%] dark:bg-[#152a38] dark:text-[#d1d4c9]">

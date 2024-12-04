@@ -25,15 +25,23 @@ function TopSorting2() {
         <details className="dropdown block sm:hidden max-sm:ml-10">
           <summary className="btn m-1 max-sm:text-xs max-sm:w-[50px]">فیلتر </summary>
           <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-56 p-2 shadow max-sm:w-[100px] max-sm:text-[10px]  whitespace-nowrap">
-            <li className="w-[90px]">  
-              <a>     مرتب سازی </a>
-            </li>
-            <li>
-              <a> جدید ترین</a>
-            </li>
-            <li>
-              <a> قدیمی ترین</a>
-            </li>
+            {data.map((item,index) =>{
+              return(
+                <li className="w-[90px]" key={index}>
+                  <input
+                    type="radio"
+                    value={item.value}
+                    id={item.lable}
+                    name="sort"
+                    className="hidden"
+                  />  
+                  <label htmlFor={item.lable}>
+                  {item.lable}
+                  </label>  
+                  
+                </li>
+              )
+            })}
           </ul>
         </details>
       </div>

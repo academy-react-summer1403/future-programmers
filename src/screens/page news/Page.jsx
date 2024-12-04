@@ -1,7 +1,3 @@
-import { TiHeartOutline } from "react-icons/ti";
-import { AiOutlineLike } from "react-icons/ai";
-import { AiOutlineDislike } from "react-icons/ai";
-
 import { Link } from "react-router-dom"
 import liked from '../../../public/Liked.red.png'
 import notLiked from '../../../public/NotLiked.png'

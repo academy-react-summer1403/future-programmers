@@ -18,7 +18,7 @@ function Sort2({ value, id, htmlFor, topicSort }) {
         >
           {topicSort}
         </label>
-</li>
+      </li>
     </>
   );
 }
