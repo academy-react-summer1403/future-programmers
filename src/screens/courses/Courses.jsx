@@ -14,6 +14,7 @@ import { Pagination } from 'antd';
 const Courses = () => {
 
 const [Course, setCourse] = useState([]); 
+const [totalCount, setTotalCount] = useState([]);
 const [sort, setSort] = useState('')
 const [search, setSearch] = useState('')
 const [categoryFilter, setCategoryFilter] = useState('')
@@ -35,7 +36,7 @@ const getAllCoursesList = async (currentPage, sort, search, categoryFilter, type
     try {
         const result = await getlist(9, currentPage, sort, search, categoryFilter, typeCourseFilter,levelCourseFilter, costUp, costDown)
         setCourse(result.courseFilterDtos)
-        const total =result.totalCount
+        setTotalCount(result.totalCount)
     } catch (error) {
         console.log(error)
     }
@@ -107,7 +108,7 @@ return (
             </div>  
         </div>
         <div className='w-[100%] text-center h-14 my-auto mt-3'>
-            <Pagination align="center" defaultCurrent={1} total={50} />
+            <Pagination align="center" defaultCurrent={currentPage} total={totalCount} />
         </div>
         
     

@@ -30,6 +30,7 @@ const handleDisLike = async(e)=>{
     setReFetch(old=>old+1)
     
 }
+
 const handleFavorit = async (value) => {
   if(userFavorite===false){
     const courseId= {courseId:value}
