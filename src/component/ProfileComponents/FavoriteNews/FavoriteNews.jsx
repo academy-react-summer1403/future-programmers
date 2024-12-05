@@ -6,10 +6,10 @@ import NewsCard from "../common/NewsCard";
 
 const FavoriteNews = () => {
   const [favNews, setFavNews] = useState([]);
-
+  // console.log("aa", favNews);
   const getNews = async () => {
     const res = await getFavoriteNews();
-    console.log(favNews);
+   
     setFavNews(res.myFavoriteNews);
   };
 

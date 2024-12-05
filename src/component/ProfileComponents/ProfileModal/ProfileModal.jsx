@@ -9,16 +9,36 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-const ProfileModal = ({ MyInfo, setCount }) => {
+const ProfileModal = ({ MyInfo, setCount, getProfile }) => {
+
   const deleteImage = async (id) => {
     const data = new FormData();
     data.append("DeleteEntityId", id);
-    const res = await http.delete("/SharePanel/GetProfileInfo", { data: data });
-    console.log(res);
+
+    const result = await http.delete("/SharePanel/DeleteProfileImage", {
+      data: data,
+    });
+    getProfile()
+    console.log(result);
   };
+
+    const SelectProfileImage = async (x) => {
+      const data = new FormData();
+      data.append("ImageId", x);
+
+      const result = await http.post("/SharePanel/SelectProfileImage", data);
+    getProfile();
+      
+      console.log(result);
+    };
   return (
     <div className="h-[500px] bg-gray-300  w-[80%] absolute left-40 top-36 z-50">
-      <p onClick={() => setCount(false)}>close</p>
+      <button
+        onClick={() => setCount(false)}
+        className="btn btn-active btn-primary"
+      >
+        close
+      </button>
       <div>
         <div className="">
           <Swiper
@@ -33,9 +53,9 @@ const ProfileModal = ({ MyInfo, setCount }) => {
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log("slide change")}
           >
-            {MyInfo?.userImage.map((item) => {
+            {MyInfo?.userImage?.map((item, index) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={index}>
                   <div className="text-center">
                     <img
                       src={item.puctureAddress}
@@ -47,6 +67,13 @@ const ProfileModal = ({ MyInfo, setCount }) => {
                       onClick={() => deleteImage(item.id)}
                     >
                       delete
+                    </button>
+
+                    <button
+                      className=" bg-green-400 z-40 mx-auto"
+                      onClick={() => SelectProfileImage(item.id)}
+                    >
+                      choose
                     </button>
                   </div>
                 </SwiperSlide>

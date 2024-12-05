@@ -27,6 +27,8 @@ const EditProfile = () => {
     });
 
     const res = await http.put("/SharePanel/UpdateProfileInfo", data);
+    getProfile();
+
   };
 
   // upload image
@@ -38,6 +40,8 @@ const EditProfile = () => {
     data.append("formFile", e.target.ax.files[0]);
     const res = await http.post("/SharePanel/AddProfileImage", data);
     console.log(res);
+    getProfile();
+
   };
 
   return (
@@ -140,10 +144,16 @@ const EditProfile = () => {
       </Formik>
       <div className="w-5/12 flex flex-col justify-center items-center gap-4">
         <div className="rounded-full w-3/4 h-64 object-fill">
-          <img
-            className="w-full object-contain rounded-full"
-            src={MyInfo?.userImage[MyInfo?.userImage.length - 1].puctureAddress}
-          ></img>
+          {MyInfo?.userImage.length > 0 && (
+            <img
+              src={
+                MyInfo?.userImage[MyInfo?.userImage.length - 1].puctureAddress
+              }
+              onClick={() => setCount(true)}
+              className="w-full object-contain rounded-full"
+            />
+          )}
+
           <div>
             <form onSubmit={sendImage}>
               <input

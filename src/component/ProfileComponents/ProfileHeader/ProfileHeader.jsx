@@ -15,15 +15,18 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-between items-center px-10 py-4 bg-gray-100 rounded-3xl dark:bg-gray-400">
+    <div className=" flex justify-between items-center px-10 py-4 bg-[#f9f9f9] rounded-3xl dark:bg-[#29435c] ">
       {/* Welcome Message */}
-      <div className="text-xl font-bold text-gray-700">
+      <div className="text-xl font-bold text-gray-700 dark:text-[#d1d4c9]">
         آرمان غنی زاده عزیز؛ خوش آمدی 👋
       </div>
       {/* Icons */}
       <div className="flex gap-4 me-10">
-      <button >
-          <label onClick={handleDark} className="grid cursor-pointer place-items-center max-sm:mr-[40px] ">
+        <button>
+          <label
+            onClick={handleDark}
+            className="grid cursor-pointer place-items-center max-sm:mr-[40px] "
+          >
             <input
               type="checkbox"
               value="synthwave"
@@ -60,10 +63,12 @@ const Header = () => {
             </svg>
           </label>
         </button>
-        <Link to='/' className="h-12 w-12 bg-[aqua] rounded-full flex justify-center">
+        <Link
+          to="/"
+          className="h-12 w-12 bg-primary rounded-full flex justify-center"
+        >
           <img src={home} alt="" />
         </Link>
-
       </div>
     </div>
   );

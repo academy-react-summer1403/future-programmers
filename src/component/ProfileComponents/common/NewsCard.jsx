@@ -7,11 +7,11 @@ const NewsCard = ({item , index }) => {
       className="bg-white dark:bg-gray-400 px-4 shadow-2xl  rounded-2xl mt-4 w-full h-16 flex flex-row justify-between items-center "
     >
       <img
-        src={item.currentImageAddressTumb}
-        className="relative -top-5 w-1/12 object-cover rounded"
+        src={item?.currentImageAddressTumb}
+        className="relative top-5 w-1/12 object-cover rounded"
       />
       <h3 className=" text-lg font-bold text-ellipsis">{item.title}</h3>
-      <p className="text-gray-600 text-sm mt-2 w-40 h-16 overflow-clip ">
+      <p className="text-gray-600 text-sm mt-10 w-40 h-16 overflow-clip ">
         امتیاز : {item.currentRate}
       </p>
       <div className="">تعداد بازدید : {item.currentView}</div>
