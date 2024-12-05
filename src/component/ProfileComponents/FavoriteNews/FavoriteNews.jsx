@@ -12,6 +12,7 @@ const FavoriteNews = () => {
    
     setFavNews(res.myFavoriteNews);
   };
+  console.log(favNews)
 
   useEffect(() => {
     getNews();
@@ -21,7 +22,9 @@ const FavoriteNews = () => {
     <div>
       <div className="flex flex-wrap gap-6 justify-evenly mt-10 ">
         {favNews?.map((item, index) => (
-          <NewsCard item={item} index={ index} />
+          <NewsCard 
+            key={ index} 
+            item={item}  />
         ))}
       </div>
     </div>
