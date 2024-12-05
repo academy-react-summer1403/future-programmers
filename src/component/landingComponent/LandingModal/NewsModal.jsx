@@ -19,11 +19,11 @@ const NewsModal = ({Query}) => {
 
   return (
     <div>
-      {newsList?.news.map((item) => {
+      {newsList?.news.map((item, index) => {
           return (
-            <div className="bg-gray-400 my-4 p-2 mx-2 rounded-xl flex justify-between">
-              <h2>{item.title}</h2>
-              <Link to={`/NewsDetail/${item.id}`}>detail</Link>
+            <div key={index} className="bg-gray-200 shadow my-4 p-2 mx-2 rounded-xl flex justify-between">
+              <h2 className='text-[12px] max-sm:text-[9px]'>{item.title}</h2>
+              <Link to={`/NewsDetail/${item.id}`} className='text-[12px] max-sm:text-[9px]'>جزئیات خبر</Link>
             </div>
           );
       })}
