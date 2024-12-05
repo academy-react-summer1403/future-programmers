@@ -9,8 +9,9 @@ import SimilarCourse from './SimilarCourse'
 import { useEffect, useState } from 'react'
 import pic from '../../../public/item1.png'
 import { allcourse } from '../../core/services/api/course'
-import { addCourseReserve } from '../../core/services/api/addCourseReserve'
-import { deleteCourseReserve } from '../../core/services/api/deleteCourseReserve'
+import { addCourseReserve, deleteCourseReserve } from '../../core/services/api/courseReserve'
+
+
 
 
 
