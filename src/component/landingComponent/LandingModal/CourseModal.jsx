@@ -35,7 +35,7 @@ const CourseModal = ({ Query }) => {
     <div>
       {CoureList?.courseFilterDtos.map((item,index) => {
         return (
-          <div key={index} className="bg-gray-200 shadow my-4 p-2 mx-2 rounded-xl flex justify-between">
+          <div key={index} className="bg-[#97a7e2] shadow my-4 p-2 mx-2 rounded-xl flex justify-between">
             <h2 className='text-[12px] max-sm:text-[9px]'>{item.title}</h2>
             <Link to={`/coursedetail/${item.courseId}`} className='text-[12px] max-sm:text-[9px]'>جزئیات دوره</Link>
           </div>
