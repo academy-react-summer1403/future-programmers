@@ -2,6 +2,7 @@ import Page from "./Page";
 import PictureBox from "./PictureBox";
 // import CardPage2 from "./CardPage2";
 import pic from "../../../public/newspaper.png";
+import Pagination from './Pagination'
 
 const CardNews = ({cardNews, setReFetch}) => {
   
@@ -42,8 +43,8 @@ const CardNews = ({cardNews, setReFetch}) => {
         </div>
       </div>
 
-      <div className="bg-[#f3f4f6] w-[100%] dark:bg-[#29435c] md:mt-8 dark:text-[#d1d4c9]  ">
-        <div className=" flex flex-wrap w-[95%] mx-auto max-sm:gap-y-3 justify-between dark:bg-[#29435c] dark:text-white ">
+      <div className="bg-[#f3f4f6] w-[100%] dark:bg-[#152a38] md:mt-8 dark:text-[#d1d4c9]  ">
+        <div className=" flex flex-wrap w-[95%] mx-auto max-sm:gap-y-3 justify-between dark:bg-[#152a38] dark:text-white ">
           {bottomNews.map((item, index) => {
             return (
               <Page
@@ -65,8 +66,8 @@ const CardNews = ({cardNews, setReFetch}) => {
             );
           })}
 
-          {/* <Pagination />
-           */}
+          <Pagination />
+          
         </div>
       </div>
     </div>

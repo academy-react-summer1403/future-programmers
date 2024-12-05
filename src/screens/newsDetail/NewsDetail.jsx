@@ -52,13 +52,13 @@ function NewsDetail() {
                     <div className='w-[36%] h-[410px] bg-[#9F9F9F] relative left-[9%] bottom-[16%] rounded-[25px] rotate-[9deg] max-sm:rotate-[0] max-lg:h-[390px] max-lg:w-[41%] max-md:h-[267px] max-md:bottom-[24%] max-sm:h-[70px] max-sm:w-[70px]  max-sm:bottom-[16%] dark:bg-[#556e53]'>
                         <img src={newsDetail?.currentImageAddressTumb??pic} className='w-[100%] h-[100%] rounded-[26px] rotate-[-9deg] max-sm:rotate-[0]'></img>
                     </div>
-                    <p className='w-[64%] h-[320px] overflow-hidden absolute right-[30.5%] top-[25px] text-[17px] max-lg:right-[37%] max-lg:w-[58%] max-md:right-[37%] max-md:h-[197px] max-md:text-[15px] max-sm:right-[14%] max-sm:h-[150px] max-sm:text-[13px] max-sm:w-[78%] dark:text-[#d1d4c9]'>{newsDetail.describe}</p>
+                    <p className='w-[64%] h-[320px] overflow-hidden overflow-y-scroll absolute right-[30.5%] top-[25px] text-[17px] max-lg:right-[37%] max-lg:w-[58%] max-md:right-[37%] max-md:h-[197px] max-md:text-[15px] max-sm:right-[14%] max-sm:h-[150px] max-sm:text-[13px] max-sm:w-[78%] dark:text-[#d1d4c9]'>{newsDetail.describe}</p>
                 </div>
                 <div className='w-[17%] relative text-[80%] py-5 right-[79%] rounded-b-[20px] text-center bg-[#9F9F9F] max-lg:text-[11px] max-lg:w-[19%] max-lg:right-[76%] max-lg:py-4 max-md:text-[10px] max-md:py-3 max-md:w-[24%] max-md:right-[71%] max-sm:text-[9px] max-sm:w-[42%] max-sm:right-[52%] dark:bg-[#556e53] dark:text-[#d1d4c9]'> نوشته شده توسط {newsDetail.addUserFullName}    </div>
 
             </div>
 
-            <div className='w-[88%] mx-auto pb-[30px] max-md:mt-[20px]'>
+            {/* <div className='w-[88%] mx-auto pb-[30px] max-md:mt-[20px]'>
                 <h1 className='text-[18px] max-lg:text-[16px] dark:text-[#d1d4c9]'>اخبار مشابه</h1>
                 <div className='w-[100%] mt-6 pt-5 h-fit flex flex-row justify-start gap-[25px] gap-y-12 md:max-lg:gap-y-10 sm:max-md:w-full sm:max-md:gap-y-11 max-md:flex-wrap max-sm:flex-wrap max-sm:justify-center'>
                 {News.map((item, index)=>{
@@ -72,7 +72,7 @@ function NewsDetail() {
                     );   
                 })}             
             </div>
-            </div>
+            </div> */}
             <NewsComment />
         </div>
     ) 

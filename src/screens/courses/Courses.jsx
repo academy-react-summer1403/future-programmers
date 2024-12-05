@@ -6,6 +6,8 @@ import { getlist } from '../../core/services/api/course';
 import pic from '../../../public/item1.png'
 import TopSorting from '../../component/topSorting/TopSorting';
 import SearchBox from '../../component/SearchBoxInCourses/SearchBox';
+
+import { Pagination } from 'antd';
 // import UseDarkMood from './UseDarkMood';
 
 
@@ -15,6 +17,7 @@ const [Course, setCourse] = useState([]);
 const [sort, setSort] = useState('')
 const [search, setSearch] = useState('')
 const [categoryFilter, setCategoryFilter] = useState('')
+const [currentPage, setCurrentPage] = useState(1)
 // type
 const [typeCourseFilter, setTypeCourseFilter] = useState('')
 // level 
@@ -28,18 +31,19 @@ const [reFetch, setReFetch] = useState(1)
 const CourseCount = Course.length
 
 
-const getAllCoursesList = async (sort, search, categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown)=>{
+const getAllCoursesList = async (currentPage, sort, search, categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown)=>{
     try {
-        const result = await getlist(sort, search, categoryFilter, typeCourseFilter,levelCourseFilter, costUp, costDown)
+        const result = await getlist(9, currentPage, sort, search, categoryFilter, typeCourseFilter,levelCourseFilter, costUp, costDown)
         setCourse(result.courseFilterDtos)
+        const total =result.totalCount
     } catch (error) {
         console.log(error)
     }
 }
 
 useEffect(()=>{
-    getAllCoursesList(sort,search,categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown) 
-},[sort,search,categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown, reFetch]);
+    getAllCoursesList(currentPage, sort,search,categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown) 
+},[currentPage, sort,search,categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown, reFetch]);
 
 const handleCategoryFilter= ((e)=>{
     const checkBoxId = e.target.id ;
@@ -57,6 +61,7 @@ const handlelevelCourseFilter =((e)=>{
     const checkBoxId = e.target.id;
     setLevelCourseFilter(checkBoxId)
 })
+
 
 return (
 <div className='bg-[#f3f4f6] font-[sans] dark:bg-[#152a38]'>
@@ -102,13 +107,9 @@ return (
             </div>  
         </div>
         <div className='w-[100%] text-center h-14 my-auto mt-3'>
-            <div className="join y-5 md:max-lg:my-1">
-                <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">1</button>
-                <button className="join-item btn  dark:bg-[#29435c] dark:text-[#d1d4c9]">2</button>
-                <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">3</button>
-                <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">4</button>
-            </div>
+            <Pagination align="center" defaultCurrent={1} total={50} />
         </div>
+        
     
 </div>
 )

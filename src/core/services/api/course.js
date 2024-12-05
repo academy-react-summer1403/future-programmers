@@ -1,10 +1,10 @@
 import http from '../interceptor'
 
-export const getlist=async( sort ,search, categoryFilter, typeCourseFilter, levelCourseFilter,costUp, costDown)=>{
+export const getlist=async(RowsOfPage, PageNumber, sort ,search, categoryFilter, typeCourseFilter, levelCourseFilter,costUp, costDown)=>{
     try {
-        const queryObj = {RowsOfPage: 9}
-        // if(RowsOfPage!== "" && RowsOfPage!==null) queryObj.RowsOfPage = RowsOfPage;
-        // if(PageNumber!== "" && PageNumber!==null) queryObj.PageNumber = PageNumber;
+        const queryObj = {}
+        if(RowsOfPage!== "" && RowsOfPage!==null) queryObj.RowsOfPage = RowsOfPage;
+        if(PageNumber!== "" && PageNumber!==null) queryObj.PageNumber = PageNumber;
         if(sort!== "" && sort!==null) queryObj.SortingCol = sort;
         if(search!== "" && search!==null) queryObj.Query = search;
         if(categoryFilter && categoryFilter.length > 0){
