@@ -22,11 +22,80 @@ import UploadImage from './component/ProfileComponents/UploadImage/UploadImage'
 import NotFound from './screens/notFound/NotFound'
 import Error from './screens/Error/Error'
 import ForgotPass from './component/singIn/ForgotPass'
+import { getItem } from './core/services/common/storage.services'
 
 
-
+const token = getItem('token')
 
 function App() {
+
+    const publicRoutes = createBrowserRouter([
+      {
+        path: "/",
+        element: <Layout />,
+        errorElement: <Error />,
+        children: [
+          {
+            path: "",
+            element: <Landing />,
+            errorElement: <Error />,
+          },
+          {
+            path: "courses",
+            element: <Courses />,
+            errorElement: <Error />,
+          },
+          {
+            path: "coursedetail/:id",
+            element: <CourseDetail />,
+            errorElement: <Error />,
+          },
+          {
+            path: "/news",
+            element: <News />,
+            errorElement: <Error />,
+          },
+          {
+            path: "newsdetail/:id",
+            element: <NewsDetail />,
+            errorElement: <Error />,
+          },
+        ],
+      },
+      {
+        path: "/stepone",
+        element: <StepOne />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/steptwo",
+        element: <StepTwo />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/stepthree",
+        element: <StepThree />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/singIn",
+        element: <SingIn />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/ForgotPass",
+        element: <ForgotPass />,
+        errorElement: <Error />,
+      },
+
+
+      {
+        path: "*",
+        element: <NotFound />,
+      },
+    ]);
+  
+  
   const myRoutes = createBrowserRouter([
     {
       path:'/',
@@ -143,7 +212,7 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={myRoutes}/>
+      <RouterProvider router={token ? myRoutes : publicRoutes}/>
       
     </>
   )

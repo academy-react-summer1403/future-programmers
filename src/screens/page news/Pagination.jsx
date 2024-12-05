@@ -2,12 +2,6 @@ import React from 'react'
 
 const Pagination = () => {
 
-
-
-
-
-
-
   return (
     
     <div className="join w-[100%] h-[50px] mb-4 mt-[16px] mx-14 max-md:mx-[20%] max-lg:mx-[30%] max-xl:mx-[40%] max-2xl:mx-[40%] max-sm:w-[10%]">

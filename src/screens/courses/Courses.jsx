@@ -6,6 +6,8 @@ import { getlist } from '../../core/services/api/course';
 import pic from '../../../public/item1.png'
 import TopSorting from '../../component/topSorting/TopSorting';
 import SearchBox from '../../component/SearchBoxInCourses/SearchBox';
+
+import { Pagination } from 'antd';
 // import UseDarkMood from './UseDarkMood';
 
 
@@ -15,27 +17,33 @@ const [Course, setCourse] = useState([]);
 const [sort, setSort] = useState('')
 const [search, setSearch] = useState('')
 const [categoryFilter, setCategoryFilter] = useState('')
+const [currentPage, setCurrentPage] = useState(1)
 // type
 const [typeCourseFilter, setTypeCourseFilter] = useState('')
 // level 
 const [levelCourseFilter, setLevelCourseFilter] = useState('')
+const [costUp, setCostUp] = useState(null)
+const [costDown, setCostDown] = useState(null)
+const [reFetch, setReFetch] = useState(1)
+
 
 // course counting 
 const CourseCount = Course.length
-// console.log( '123',CourseCount);
 
-const getAllCoursesList = async (sort, search, categoryFilter, typeCourseFilter, levelCourseFilter)=>{
+
+const getAllCoursesList = async (currentPage, sort, search, categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown)=>{
     try {
-        const result = await getlist(sort, search, categoryFilter, typeCourseFilter,levelCourseFilter)
+        const result = await getlist(9, currentPage, sort, search, categoryFilter, typeCourseFilter,levelCourseFilter, costUp, costDown)
         setCourse(result.courseFilterDtos)
+        const total =result.totalCount
     } catch (error) {
         console.log(error)
     }
 }
 
 useEffect(()=>{
-    getAllCoursesList(sort,search,categoryFilter, typeCourseFilter, levelCourseFilter) 
-},[sort,search,categoryFilter, typeCourseFilter, levelCourseFilter]);
+    getAllCoursesList(currentPage, sort,search,categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown) 
+},[currentPage, sort,search,categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown, reFetch]);
 
 const handleCategoryFilter= ((e)=>{
     const checkBoxId = e.target.id ;
@@ -54,6 +62,7 @@ const handlelevelCourseFilter =((e)=>{
     setLevelCourseFilter(checkBoxId)
 })
 
+
 return (
 <div className='bg-[#f3f4f6] font-[sans] dark:bg-[#152a38]'>
 
@@ -65,45 +74,45 @@ return (
             <div className='w-[100%] h-[90px] max-lg:h-[70px] max-sm:h-[65px] bg-white rounded-[20px] flex items-center mt-[10px] md:max-lg:gap-0 gap-4 dark:bg-[#29435c]'>    
                 <SearchBox setSearch={setSearch} />
                 <TopSorting setSort={setSort}/>
-                {/* <Sorting /> */}
-                <FilterInTop  handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} handlelevelCourseFilter={handlelevelCourseFilter}/>
+                <FilterInTop  handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} handlelevelCourseFilter={handlelevelCourseFilter} setCostUp={setCostUp} setCostDown={setCostDown} costUp={costUp} costDown={costDown}/>
             </div>
             <div className='flex w-[100%] sm:max-md:flex-wrap md:max-lg:flex-nowrap justify-between'>
-                <Filters handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} handlelevelCourseFilter={handlelevelCourseFilter} />
-                <div className='w-[75%] mt-6 pt-5 h-fit flex flex-wrap justify-start gap-x-5 gap-y-12 max-md:justify-between md:max-lg:gap-y-10 max-md:w-full max-sm:justify-center sm:max-md:gap-y-11'>
+                <Filters handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} handlelevelCourseFilter={handlelevelCourseFilter}  setCostUp={setCostUp} setCostDown={setCostDown} costUp={costUp} costDown={costDown}/>
+                <div className='w-[75%] mt-6 pt-5 h-fit flex flex-wrap justify-start gap-x-5 sm:max-md:gap-x-3 gap-y-12 max-md:justify-between md:max-lg:gap-y-10 max-md:w-full max-sm:justify-center sm:max-md:gap-y-11'>
                     {Course.map((item, index)=>{
                         return(
                             <CourseCard 
                             key={index}
-                            image={item.tumbImageAddress??pic}
-                            topic={item.title} 
-                            explain={item.describe} 
-                            teacher={item.teacherName} 
-                            time={item.lastUpdate.toString().slice(11,19)} 
-                            price={item.cost.toString().slice(-9,-1)}
-                            id={item.courseId} />  
+                            image={item?.tumbImageAddress??pic}
+                            topic={item?.title} 
+                            explain={item?.describe} 
+                            teacher={item?.teacherName} 
+                            time={item?.lastUpdate?.toString()?.slice(11,19)} 
+                            price={item?.cost?.toString()?.slice(-9,-1)}
+                            courseRate={item?.courseRate}
+                            likeCount={item?.likeCount}
+                            dissLikeCount={item?.dissLikeCount}
+                            userIsLiked={item?.userIsLiked}
+                            levelName={item?.levelName}
+                            currentUserDissLike={item?.currentUserDissLike}
+                            userFavorite={item?.userFavorite}
+                            id={item?.courseId} 
+                            userLikedId={item?.userLikedId}
+                            userFavoriteId={item?.userFavoriteId}
+                            setReFetch={setReFetch}
+                            />  
                         );   
                     })}            
                 </div>
             </div>  
         </div>
         <div className='w-[100%] text-center h-14 my-auto mt-3'>
-            <div className="join y-5 md:max-lg:my-1">
-                <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">1</button>
-                <button className="join-item btn  dark:bg-[#29435c] dark:text-[#d1d4c9]">2</button>
-                <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">3</button>
-                <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">4</button>
-            </div>
+            <Pagination align="center" defaultCurrent={1} total={50} />
         </div>
+        
     
 </div>
 )
 }
 
 export default Courses
-
-
-
-
-
-{/* <input type="text" placeholder='تو فقط اسم ببر ...' className='border-2 divide-purple-800 outline-0 w-[57%] p-3 rounded-[18px] bg-[url(public/search.svg)] bg-no-repeat bg-left [background-size:35px]'/> */}

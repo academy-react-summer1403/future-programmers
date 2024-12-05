@@ -1,22 +1,81 @@
 import { Link } from 'react-router-dom'
-import http from '../../../core/services/interceptor'
-import heart from '../../../../public/heart.png'
+import liked from '../../../../public/Liked.red.png'
+import notLiked from '../../../../public/NotLiked.png'
+import disliked from '../../../../public/dislike.red.png'
+import notDisLiked from '../../../../public/dislike.empty.png'
+import star from '../../../../public/star.png'
+import save from '../../../../public/save.png'
+import saved from '../../../../public/saved.png'
+import { addDislikeCourse } from '../../../core/services/api/addDislikeCourse'
+import { addLikeCourse } from '../../../core/services/api/addLikeCourse'
+import { addFavoritCourse } from '../../../core/services/api/addFavoritCourse'
+import { deleteFavoritCourse } from '../../../core/services/api/deleteCourseFavorit'
+import { deleteCourseLike } from '../../../core/services/api/deleteCourseLike'
 
-const CourseCard = ({ title, image, describe, teacher, index , id , userIsLiked}) => {
-    const handleLike = async () => {
-        const res = await http.post(`/Course/AddCourseLike?CourseId=${id}`)
-        console.log(res)
+const CourseCard = ({ title, image, describe, teacher, id , userIsLiked, userIsDissLiked ,dissLikeCount, likeCount, levelName, courseRate, isUserFavorite, cost}) => {
+    
+
+    // console.log(userIsLiked)
+    const handleLike = async (e) => {
+        const result = await addLikeCourse(e)
     }
+    const handleDeleteLike = async (value) => {
+        const result = await deleteCourseLike(value)
+        // console.log(res)
+        
+    }
+    
+    const handleDisLike = async(e)=>{
+        const result = await addDislikeCourse(e)
+        // toast.success(result.message)
+    }
+    const handleFavorit = async (value) => {
+        const courseId= {courseId:value}
+        const result = await addFavoritCourse(courseId)
+        // console.log(res)
+        
+    }
+    const handleDeleteFavorit = async (value) => {
+        const result = await deleteFavoritCourse(value)
+        // console.log(res)
+        
+    }
+
     return(
-        <div className=" relative w-[23%] max-sm:w-[95%] max-md:w-[45%] -[5px] h-[290px] max-md:h-[300px] md:max-lg:h-[220px] bg-white rounded-[20px] dark:dark:bg-[#29435c] dark:text-[#d1d4c9]">
-            <img src={image} className="w-[92%] h-36 md:max-lg:h-[42%] mx-auto border border-[gray] relative bottom-6 rounded-3xl"></img>
-            <h1 className="text-[14px] max-md:text-[12px] max-lg:text-[9px] font-bold mr-3 relative bottom-3 max-lg:bottom-4 dark:text-[#d1d4c9]">{title}</h1>
-            <p className="w-[90%] indent-[8px] h-9 max-sm:relative max-sm:bottom-[7px] max-sm:text-[11px] max-md:bottom-[10px] max-md:text-[10px] max-md:h-8 max-lg:h-6 mx-auto md:max-lg:mx-auto text-[12px] md:max-lg:text-[8px] max-lg:relative md:max-lg:bottom-3 bottom-0 overflow-hidden dark:text-[#d1d4c9]">{describe}</p>
-            <ul className="relative top-3 mr-3 max-md:text-[11px] max-md:mt-[1px] max-md:top-[0] md:max-lg:top-[-10px] text-[13px] md:max-lg:text-[10px] list-disc list-inside text-[#0004ff] dark:text-[#d1d4c9]"><li>{teacher}</li></ul>
-            <div className='flex justify-between w-[90%] mx:auto'>
-                <Link className='mr-[4%] mt-[16%] max-sm:mt-[20%]  max-md:mt-[18%] max-lg:mt-[25%] max-sm:text-[13px] max-md:text-[14px] max-lg:text-[13px] text-blue-800 dark:text-[#d1d4c9] hover:text-[#da4747] dark:hover:text-[#da4747]'> جزییات</Link>
-                {userIsLiked === true && <img src={heart} className='w-4 h-4 mt-5' alt="" onClick={handleLike}/>}
+        <div className=" relative w-[24%] max-sm:w-[95%] md:max-lg:w-[24%]  pb-2 bg-white rounded-[20px] dark:dark:bg-[#29435c] dark:text-[#d1d4c9]">
+        <img src={image} className="w-[92%] h-36 md:max-lg:h-[42%] mx-auto border border-[gray] relative bottom-6 rounded-3xl"></img>
+        <h1 className="text-[14px] max-md:text-[12px] max-lg:text-[9px] font-bold pr-4 relative bottom-5 dark:text-[#d1d4c9]">{title}</h1>
+        <div className="relative flex justify-between bottom-3 pr-4 pl-3 max-md:text-[11px] text-[13px] md:max-lg:text-[10px] text-[#0004ff] dark:text-[#d1d4c9]">
+            <h6>{teacher}</h6>
+            <div className='flex items-center'>
+                <span className='text-xs max-lg:text-[9px] pl-2'>{courseRate}</span>
+                <img src={star} className='w-5 max-lg:w-4 h-5 max-lg:h-4' alt=""></img>
             </div>
+        </div>
+        <div className="flex gap-3">
+            <span className="relative bottom-2 bg-slate-400 mr-4 px-1 pt-1 pb-2 bg-opacity-60 rounded-md text-[11px] md:max-lg:text-[10px] dark:bg-opacity-50 dark:dark:bg-[#556e53]">سطح دوره:{levelName}</span>
+            <img src={isUserFavorite === true ? saved : save} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" onClick={()=>handleFavorit(id)}></img>
+        </div>
+        <p className="w-[95%] indent-[8px] h-9 max-lg:h-6 max-md:h-8 pr-2 relative  max-sm:text-[11px]  max-md:text-[10px]  mx-auto text-[12px] md:max-lg:text-[8px]  overflow-hidden dark:text-[#d1d4c9]">{describe}</p>
+        
+        <div className="flex justify-between mt-1 pl-3">
+            <div className="flex pr-4 gap-2">
+                <div className=''>
+                <img src={userIsLiked === true ? liked : notLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""  onClick={()=>handleLike(id)}></img>
+                <span className='text-xs max-lg:text-[9px] mt-2  pr-[2px]'>{likeCount}</span>
+                </div>
+                <div className=''>
+                <img src={userIsDissLiked === true ? disliked : notDisLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""  onClick={()=>handleDisLike(id)}></img>
+                <span className='text-[12px] max-lg:text-[9px] mt-2  pr-[2px]'>{dissLikeCount}</span>
+                </div>
+            </div>
+            <Link to={'/coursedetail/'+id} className="text-[12px] sm:text-[10px] h-9 md:max-lg:h-7 pt-2 md:max-lg:pt-1 px-2 my-auto rounded-lg bg-slate-400 dark:dark:bg-[#556e53] dark:text-[#d1d4c9]">جزئیات دوره</Link>
+        </div>
+        <div  className="border-t border-slate-400 flex items-center justify-between w-[90%] mx-auto pt-2 max-lg:pt-1">
+            <span className="text-[13px] md:max-lg:text-[11px]">قیمت دوره</span>
+            <span className="   max-md:text-[12px] max-lg:text-[11px] text-[13px] max-xl:text-[13px] text-red-700 dark:text-[#d1d4c9]" >{cost} تومان </span>
+        </div>
+        {/* <span className="absolute mt-6 md:max-lg:mt-2 left-[2%] max-md:left-[3%]  max-md:text-[11px]  max-lg:pr-[4px] bg-slate-400 rounded-2xl text-[14px] max-xl:text-[13px] max-lg:text-[10px] p-[2px] pr-1 pl-5 md:max-lg:pl-4 bg-[url(public/timer.png)] bg-no-repeat [background-position:2%_50%] max-lg:[background-position:4%_50%] [background-size:18px] md:max-lg:[background-size:14px] dark:dark:bg-[#556e53] dark:text-[#d1d4c9]">{time}</span> */}
         </div> 
     )
 }

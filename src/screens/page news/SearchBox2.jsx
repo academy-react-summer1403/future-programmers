@@ -1,8 +1,8 @@
-function SearchBox2() {
+function SearchBox2({setSearch}) {
   return (
     <div>
       <input
-        
+        onChange={(e)=>setSearch(e.target.value)}
         type="text"
         placeholder="جستجوی دوره"
         name="SearchCourse"

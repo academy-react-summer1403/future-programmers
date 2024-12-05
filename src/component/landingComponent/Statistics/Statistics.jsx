@@ -8,7 +8,7 @@ function Statistics() {
     const getLandingInfo = async () => { 
         const res = await http.get("/Home/LandingReport");
         setLandingInfo(res)
-        console.log('res', res )
+        // console.log('res', res )
     }
 
     useEffect(() => {
@@ -30,11 +30,11 @@ function Statistics() {
                         </div>
                         <div className="w-[24%] dark:text-[#d1d4c9]">
                             <h2 className='text-[#436e8e] dark:text-[#e19f9f]'>{ landingInfo?.courseCount}</h2>
-                            <h3>تعداد کورس ها</h3>
+                            <h3>تعداد دوره ها</h3>
                         </div>
                         <div className="w-[24%] dark:text-[#d1d4c9]">
                             <h2 className='text-[#436e8e] dark:text-[#e19f9f]'>{ landingInfo?.newsCount}</h2>
-                            <h3>تعداد خبر ها</h3>
+                            <h3>تعداد خبرها</h3>
                         </div>
                     </div>
             </div>

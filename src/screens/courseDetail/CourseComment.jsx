@@ -34,7 +34,7 @@ console.log(res)
 
 
   return (
-    <div className='w-[90%] lg:w-[55%] lg: lg:mt-[-410px] mx-[auto] lg:mr-[6%] pb-5 dark:text-[#d1d4c9]'>
+    <div className='max-lg:hidden  mx-[auto] mt-5 pb-5 dark:text-[#d1d4c9]'>
         <div className='w-[100%] pb-4 bg-white  max-md:mt-0 rounded-[20px] max-md:w-[100%] md:max-lg:w-[100%] dark:bg-[#29435c]'>
             <div className='w-[85%] h-[90%] mx-auto'>
                 <h1 className='text-[25px] text-cyan-700 inline dark:text-[#d1d4c9]'>نظرات</h1>
