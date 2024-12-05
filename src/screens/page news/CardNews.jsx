@@ -8,7 +8,7 @@ const CardNews = ({cardNews, setReFetch}) => {
   
   
 
-  // console.log(cardNews);
+  console.log(cardNews);
   const topNews = cardNews?.slice(0, 4);
   const bottomNews = cardNews?.slice(4, 8);
 
@@ -32,9 +32,10 @@ const CardNews = ({cardNews, setReFetch}) => {
               newsCatregoryName={item?.newsCatregoryName}
               currentView={item?.currentView}
               isCurrentUserFavorite={item?.isCurrentUserFavorite}
+              currentUserFavoriteId={item?.currentUserFavoriteId}
               currentLikeCount={item?.currentLikeCount}
               insertDate={item?.insertDate?.toString()?.slice(0,10)}
-              id={item.id}
+              id={item?.id}
               setReFetch={setReFetch} 
               />
             );
@@ -59,9 +60,11 @@ const CardNews = ({cardNews, setReFetch}) => {
               newsCatregoryName={item?.newsCatregoryName}
               currentView={item?.currentView}
               isCurrentUserFavorite={item?.isCurrentUserFavorite}
+              currentUserFavoriteId={item?.currentUserFavoriteId}
               currentLikeCount={item?.currentLikeCount}
               insertDate={item?.insertDate?.toString()?.slice(0,10)}
               id={item.id} 
+              setReFetch={setReFetch}
               />
             );
           })}

@@ -2,7 +2,7 @@ import http from '../interceptor'
 
 export const addNewsLike = async(id)=>{
     try {
-        const result = await http.post(`/News/NewsLike/:${id}`)
+        const result = await http.post(`/News/NewsLike/${id}`)
         
         return result
         

@@ -26,7 +26,7 @@ const CourseCard = ({image,topic, explain, teacher, price, id, courseRate, likeC
   }
 
 const handleDisLike = async(e)=>{
-     await addDislikeCourse(e)
+    await addDislikeCourse(e)
     setReFetch(old=>old+1)
     
 }
@@ -57,18 +57,18 @@ const handleFavorit = async (value) => {
       </div>
       <div className="flex gap-3">
         <span className="relative bottom-2 bg-slate-400 mr-4 px-1 pt-1 pb-2 bg-opacity-60 rounded-md text-[12px] md:max-lg:text-[10px] dark:bg-opacity-50 dark:dark:bg-[#556e53]">سطح دوره:{levelName}</span>
-        <img src={userFavorite === true ? saved : save} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" onClick={()=>handleFavorit(id)}></img>
+        <img onClick={()=>handleFavorit(id)} src={userFavorite === true ? saved : save} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" ></img>
       </div>
       <p className="w-[95%] indent-[8px] h-9 max-lg:h-6 max-md:h-8 pr-2 relative  max-sm:text-[11px]  max-md:text-[10px]  mx-auto text-[12px] md:max-lg:text-[8px]  overflow-hidden dark:text-[#d1d4c9]">{explain}</p>
       
       <div className="flex justify-between mt-1 pl-3">
         <div className="flex pr-4 gap-2">
           <div className=''>
-            <img src={userIsLiked === true ? liked : notLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""  onClick={()=>handleLike(id)}></img>
+            <img onClick={()=>handleLike(id)} src={userIsLiked === true ? liked : notLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" ></img>
             <span className='text-xs max-lg:text-[9px] mt-2  pr-[2px]'>{likeCount}</span>
           </div>
           <div className=''>
-            <img src={currentUserDissLike === true ? disliked : notDisLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" onClick={()=>handleDisLike(id)}></img>
+            <img onClick={()=>handleDisLike(id)} src={currentUserDissLike === true ? disliked : notDisLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""></img>
             <span className='text-[12px] max-lg:text-[9px] mt-2  pr-[2px]'>{dissLikeCount}</span>
           </div>
         </div>

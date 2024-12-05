@@ -8,18 +8,38 @@ import save from '../../../public/save.png'
 import saved from '../../../public/saved.png'
 import eye from '../../../public/eye.png'
 import { addNewsLike, deleteNewsLike } from "../../core/services/api/newsLike"
+import { addNewsDisLike } from "../../core/services/api/newsDisLike"
+import { addNewsFavorite, deleteFavoritNews } from "../../core/services/api/NewsFavorite"
 
-const Page = ({setReFetch, image, currentDissLikeCount, currentUserIsDissLike, currentUserIsLike, newsTitle, currentView, isCurrentUserFavorite, miniDescribe, addUserFullName, newsCatregoryName, currentLikeCount, insertDate, id}) => {
+const Page = ({setReFetch, image, currentDissLikeCount, currentUserIsDissLike, currentUserIsLike, newsTitle, currentView, isCurrentUserFavorite, currentUserFavoriteId, miniDescribe, addUserFullName, newsCatregoryName, currentLikeCount, insertDate, id}) => {
     // console.log(currentUserIsDissLike)
+
     const handleLike = async (e) => {
         if(currentUserIsLike===false){
-          await addNewsLike(e)
+            await addNewsLike(e)
         }else{
           // const CourseLikeId = {CourseLikeId:id}
-          await deleteNewsLike(CourseLikeId)
+            await deleteNewsLike(e)
         }
         setReFetch(old=>old+1)    
-      }
+    }
+
+    const handleDisLike = async (e) =>{
+        await addNewsDisLike(e)
+        setReFetch(old=>old+1)
+    }
+
+    const landleFavorit = async (e)=> {
+        if(isCurrentUserFavorite===false){
+            await addNewsFavorite(e)
+        }else{
+            // currentUserFavoriteId
+            deleteFavoritNews()
+        }
+        setReFetch(old=>old+1)
+    }
+    
+
 return (
     
     <div className=" relative w-[24%] max-md:mt-10 max-sm:w-[95%] max-md:w-[47%] md:max-lg:w-[24%] pb-2 bg-white rounded-[20px] dark:dark:bg-[#29435c] dark:text-[#d1d4c9]">
@@ -34,18 +54,18 @@ return (
         </div>
         <div className="flex gap-3">
             <span className="relative bottom-2 bg-slate-400 mr-4 px-1 pt-1 pb-2 bg-opacity-60 rounded-md text-[12px] md:max-lg:text-[10px] dark:bg-opacity-50 dark:dark:bg-[#556e53]">{newsCatregoryName}</span>
-            <img src={isCurrentUserFavorite === true ? saved : save} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""></img>
+            <img onClick={()=>landleFavorit(id)} src={isCurrentUserFavorite === true ? saved : save} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""></img>
         </div>
         <p className="w-[95%] indent-[8px] h-9 max-lg:h-6 max-md:h-8 pr-2 relative  max-sm:text-[11px]  max-md:text-[10px]  mx-auto text-[12px] md:max-lg:text-[8px]  overflow-hidden dark:text-[#d1d4c9]">{miniDescribe}</p>
         
         <div className="flex justify-between mt-1 pl-3">
         <div className="flex pr-4 gap-2">
             <div className=''>
-                <img src={currentUserIsLike === true ? liked : notLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" onClick={()=>handleLike(id)}></img>
+                <img onClick={()=>handleLike(id)} src={currentUserIsLike === true ? liked : notLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" ></img>
                 <span className='text-xs max-lg:text-[9px] mt-2  pr-[2px]'>{currentLikeCount}</span>
             </div>
             <div className=''>
-                <img src={currentUserIsDissLike === true ? disliked : notDisLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""></img>
+                <img onClick={()=>handleDisLike(id)} src={currentUserIsDissLike === true ? disliked : notDisLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" ></img>
                 <span className='text-[12px] max-lg:text-[9px] mt-2  pr-[2px]'>{currentDissLikeCount}</span>
             </div>
         </div>

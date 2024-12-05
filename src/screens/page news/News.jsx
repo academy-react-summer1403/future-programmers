@@ -13,7 +13,7 @@ const News = () => {
   const [sort, setSort] = useState('')
   const [reFetch, setReFetch] = useState(1)
 
-
+  console.log(cardNews)
   const getAllCardNews = async (search, sort) => {
     try {
       const result = await getCardNews(search, sort);
