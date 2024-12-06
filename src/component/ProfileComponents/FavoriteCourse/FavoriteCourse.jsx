@@ -55,15 +55,27 @@ const FavoriteCourse = () => {
   }, []);
   return (
     <div>
-      <div className="flex flex-wrap gap-6 justify-evenly mt-10 ">
+      <div className=" mt-10 ">
+        <div className="flex flex-wrap   h-[70px] border-4 border-dotted bg-white shadow-2xl  border-gray-300 mt-10 items-center">
+          <span className="w-[35%] ms-20">عنوان </span>
+          <span className="w-[25%]"> مدرس</span>
+          <span className="w-[20%]"> </span>
+        </div>
 
         {FavoriteCOursesList?.favoriteCourseDto.map((course, index) => (
-          <CustomCard course={course} index={index} courseTitle={course.courseTitle} tumbImageAddress={course.tumbImageAddress}
-            describe={course.describe} teacheName={course.teacheName } />
+          <CustomCard
+            course={course}
+            index={index}
+            courseTitle={course.courseTitle}
+            tumbImageAddress={course.tumbImageAddress}
+            describe={course.teacheName}
+            teacheName={course.teacheName}
+            courseId={course.courseId}
+          />
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 export default FavoriteCourse

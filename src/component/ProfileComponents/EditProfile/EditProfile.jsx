@@ -3,12 +3,11 @@ import React, { useEffect, useState } from "react";
 import Pic from "./../../../../public/person.png";
 import http from "../../../core/services/interceptor";
 
-const EditProfile = () => {
+const EditProfile = ({Rand}) => {
   //get info
   const [MyInfo, setMyInfo] = useState(null);
   const getProfile = async () => {
     const res = await http.get("/SharePanel/GetProfileInfo");
-    console.log(res)
     setMyInfo(res);
   };
   useEffect(() => {
@@ -133,8 +132,8 @@ const EditProfile = () => {
             </Field>
           </div>
 
-          <button type="submit" className="btn btn-primary">
-            update profile
+          <button type="submit" className="btn btn-primary mt-5">
+            update profile {Rand}
           </button>
         </Form>
       </Formik>

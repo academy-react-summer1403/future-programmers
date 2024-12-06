@@ -19,9 +19,15 @@ const FavoriteNews = () => {
 
   return (
     <div>
-      <div className="flex flex-wrap gap-6 justify-evenly mt-10 ">
+      <div className="mt-10 ">
+        <div className="flex flex-wrap   h-[70px] border-4 border-dotted bg-white shadow-2xl  border-gray-300 mt-10 items-center">
+          <span className="w-[35%] ms-20">عنوان </span>
+          <span className="w-[25%]"> امتیاز</span>
+          <span className="w-[20%]"> تعداد بازدید</span>
+        </div>
+
         {favNews?.map((item, index) => (
-          <NewsCard item={item} index={ index} />
+          <NewsCard item={item} index={index} />
         ))}
       </div>
     </div>
