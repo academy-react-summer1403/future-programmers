@@ -62,9 +62,22 @@ const AcceptCourse = () => {
   }, []);
   return (
     <div>
-      <div className="flex flex-wrap gap-6 justify-evenly mt-10 ">
+      <div className=" mt-10 ">
+        <div className="flex   h-[70px] border-4 border-dotted bg-white shadow-2xl  border-gray-300 mt-10 ">
+          <span className="w-[30%] text-center">نام دوره</span>
+          <span className="w-[30%]  text-center"> مدرس</span>
+          <span className="w-[10%] ms-10 text-center"> ترم</span>
+          <span className="w-[10%]  text-center"> سطح</span>
+        </div>
         {MyCourses?.listOfMyCourses.map((course, index) => (
-          <AcceptCourseCard index={index} courseTitle={course.courseTitle} fullName={course.fullName} termName={course.termName} levelName={ course.levelName} />
+          <AcceptCourseCard
+            index={index}
+            courseTitle={course.courseTitle}
+            fullName={course.fullName}
+            termName={course.termName}
+            levelName={course.levelName}
+            courseId={course.courseId}
+          />
         ))}
       </div>
     </div>

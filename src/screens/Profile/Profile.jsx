@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SideBar from '../../component/ProfileComponents/SideBar/SideBar'
 import ProfileHeader from '../../component/ProfileComponents/ProfileHeader/ProfileHeader'
 import { Outlet } from 'react-router-dom'
 
 const Profile = () => {
+
+  const [Rand, setRand] = useState(0);
   
   return (
     <div className='flex justify-around font-[sans] bg-[#f3f4f6] dark:bg-[#152a38]'>
@@ -15,7 +17,7 @@ const Profile = () => {
             <Outlet/>
         </div>
     </div>
-  )
+  );
 }
 
 export default Profile

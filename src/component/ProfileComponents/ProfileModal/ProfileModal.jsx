@@ -69,12 +69,12 @@ const ProfileModal = ({ MyInfo, setCount, getProfile }) => {
                       delete
                     </button>
 
-                    <button
+                    {/* <button
                       className=" bg-green-400 z-40 mx-auto"
                       onClick={() => SelectProfileImage(item.id)}
                     >
                       choose
-                    </button>
+                    </button> */}
                   </div>
                 </SwiperSlide>
               );

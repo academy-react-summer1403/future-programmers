@@ -20,26 +20,25 @@ const ReserveCourse = () => {
 
   return (
     <div>
-      <div className="flex flex-wrap  justify-evenly h-[70px] border-4 border-dotted bg-white shadow-2xl  border-gray-300 mt-10 items-center">
-        <span>نام دوره</span>
-        <span> تاریخ رزرو</span>
-      </div>
-      <div className="flex flex-wrap  justify-evenly mt-2 ">
+      <div className=" mt-10 ">
+        <div className="flex flex-wrap   h-[70px] border-4 border-dotted bg-white shadow-2xl  border-gray-300 mt-10 items-center">
+          <span className="w-[40%] ms-20">نام دوره</span>
+          <span className="w-[40%]"> تاریخ رزرو</span>
+        </div>
+
         {ReserveCourseList?.map((course, index) => (
           <CustomCard
             course={course}
             index={index}
             courseTitle={course.courseName}
-            date={course.reserverDate.toString().slice(0, 10)}
-            teacherName={course.studentName}
-            tumbImageAddress={
-              "https://s3-alpha-sig.figma.com/img/4ef1/210f/534f36bd3b2b1b43f9e9ac7e0859a1a8?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=AoF5j3mnVAi0RbqBaiMUJh6YQo3bK7u8I1t4pdpK6VZgWyJNOlZHf5J5Se2Wdw8xO1hMmL0~Jyk84qNYwh6qFKMncQElR96qGknkk25jJmlpmFdjMz2EkGSiykF7iYqhEaUs4fuMG-h6IY-MT9Wi3EMwrMei-NPF1Oe5boeDv-JI2Lgsle1ZHyB-3hPV3qXU4upU82SFe4yyNKLriu-y4ho4r2heipqMW51YrwEW7LKXsQimkOo-uGTUgFI2zAowZCf3UUadyAEL1PsfHeyaXNl0f3BMc8kuHxH~MzQ8hgo386v~k44K~C2xRVT1UpnCcxWsnE2TIyBnixeKV5MKiA__"
-            }
+            describe={course.reserverDate}
+            reserveId={course.reserveId}
+            courseId={course.courseId}
           />
         ))}
       </div>
     </div>
   );
-};
+}
 
 export default ReserveCourse;

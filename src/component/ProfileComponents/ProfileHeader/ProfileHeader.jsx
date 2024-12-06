@@ -17,8 +17,8 @@ const Header = () => {
   return (
     <div className=" flex justify-between items-center px-10 py-4 bg-[#f9f9f9] rounded-3xl dark:bg-[#29435c] ">
       {/* Welcome Message */}
-      <div className="text-xl font-bold text-gray-700 dark:text-[#d1d4c9]">
-        آرمان غنی زاده عزیز؛ خوش آمدی 👋
+      <div className="text-xl font-bold text-gray-700">
+        خوش آمدید
       </div>
       {/* Icons */}
       <div className="flex gap-4 me-10">
@@ -65,7 +65,7 @@ const Header = () => {
         </button>
         <Link
           to="/"
-          className="h-12 w-12 bg-primary rounded-full flex justify-center"
+          className="h-12 w-12  bg-cyan-700 rounded-full flex justify-center"
         >
           <img src={home} alt="" />
         </Link>
