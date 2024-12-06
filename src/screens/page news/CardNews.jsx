@@ -8,7 +8,7 @@ const CardNews = ({currentPage, setCurrentPage, totalCount, cardNews, setReFetch
   
   
 
-  console.log(cardNews);
+  // console.log(cardNews);
   const topNews = cardNews?.slice(0, 4);
   const bottomNews = cardNews?.slice(4, 8);
 

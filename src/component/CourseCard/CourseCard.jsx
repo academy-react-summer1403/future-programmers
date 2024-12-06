@@ -33,12 +33,13 @@ const handleDisLike = async(e)=>{
 }
 
 const handleFavorit = async (value) => {
+  const form = new FormData()
   if(userFavorite===false){
     const courseId= {courseId:value}
     await addFavoritCourse(courseId)
   }else{
-    const CourseFavoriteId= {CourseFavoriteId:userFavoriteId}
-    deleteFavoritCourse(CourseFavoriteId)
+     form.append('CourseFavoriteId',userFavoriteId) 
+    deleteFavoritCourse(form)
   }
   setReFetch(old=>old+1)
     

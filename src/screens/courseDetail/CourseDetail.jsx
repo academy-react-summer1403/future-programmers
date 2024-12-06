@@ -60,9 +60,9 @@ function CourseDetail() {
 }
 
 const handleAddReserve = async (value) => {
-  if(detail?.isCourseReseve==='0'){
-    const courseId = {courseId:value}
-    const result = await addCourseReserve(courseId)
+  if(detail?.isCourseReseve==='1'){
+    courseId : detail.courseId
+    const result = await addCourseReserve()
   }else{
     const courseReseveId = {courseId:courseReseveId}
     await deleteCourseReserve(courseReseveId)

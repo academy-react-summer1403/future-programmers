@@ -2,9 +2,9 @@
 
 function TopSorting2({setSort}) {
   const data = [
-    { value: "cost", lable: "مرتب سازی" },
-    { value: "likeCount", lable: " جدید ترین" },
-    { value: "courseRate", lable: "قدیمی ترین" },
+    { value: "", lable: "مرتب سازی" },
+    { value: "LastUpdate", lable: " جدید ترین" },
+    { value: "InsertDate", lable: "قدیمی ترین" },
   ];
   return (
     <div className="items-center md:flex mr-[25px] max-xl:mr-[5px] max-lg:mr-[15px]  ">

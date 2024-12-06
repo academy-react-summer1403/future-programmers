@@ -27,7 +27,7 @@ const [costUp, setCostUp] = useState(null)
 const [costDown, setCostDown] = useState(null)
 const [reFetch, setReFetch] = useState(1)
 
-
+console.log(Course)
 // course counting 
 const CourseCount = Course.length
 

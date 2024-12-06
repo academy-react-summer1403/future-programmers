@@ -16,7 +16,7 @@ const News = () => {
   const [reFetch, setReFetch] = useState(1)
 
 
-  console.log(cardNews)
+  // console.log(cardNews)
   const getAllCardNews = async (currentPage, search, sort) => {
     try {
       const result = await getCardNews(8, currentPage, search, sort);
