@@ -21,7 +21,7 @@ const CustomCard = ({ course, index, courseTitle, tumbImageAddress, describe, te
         src={tumbImageAddress}
         className="relative -top-5 w-1/12 object-cover rounded"
       /> */}
-      <h3 className=" text-lg font-bold text-ellipsis border w-[40%]">
+      <h3 className=" text-lg font-bold text-ellipsis  w-[40%]">
         {courseTitle} 
       </h3>
       <p className="text-gray-600 text-sm mt-10 h-16 overflow-clip w-[40%]">
