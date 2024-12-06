@@ -11,15 +11,15 @@ import { addNewsLike, deleteNewsLike } from "../../core/services/api/newsLike"
 import { addNewsDisLike } from "../../core/services/api/newsDisLike"
 import { addNewsFavorite, deleteFavoritNews } from "../../core/services/api/NewsFavorite"
 
-const Page = ({setReFetch, image, currentDissLikeCount, currentUserIsDissLike, currentUserIsLike, newsTitle, currentView, isCurrentUserFavorite, currentUserFavoriteId, miniDescribe, addUserFullName, newsCatregoryName, currentLikeCount, insertDate, id}) => {
+const Page = ({setReFetch, image, likeId, currentDissLikeCount, currentUserIsDissLike, currentUserIsLike, newsTitle, currentView, isCurrentUserFavorite, currentUserFavoriteId, miniDescribe, addUserFullName, newsCatregoryName, currentLikeCount, insertDate, id}) => {
     // console.log(currentUserIsDissLike)
 
     const handleLike = async (e) => {
         if(currentUserIsLike===false){
             await addNewsLike(e)
         }else{
-          // const CourseLikeId = {CourseLikeId:id}
-            await deleteNewsLike(e)
+          const deleteEntityId = {deleteEntityId:e}
+            await deleteNewsLike(deleteEntityId)
         }
         setReFetch(old=>old+1)    
     }
@@ -29,12 +29,12 @@ const Page = ({setReFetch, image, currentDissLikeCount, currentUserIsDissLike, c
         setReFetch(old=>old+1)
     }
 
-    const landleFavorit = async (e)=> {
+    const handleFavorit = async (e)=> {
         if(isCurrentUserFavorite===false){
             await addNewsFavorite(e)
         }else{
-            // currentUserFavoriteId
-            deleteFavoritNews()
+            const deleteEntityId= {deleteEntityId:currentUserFavoriteId}
+            deleteFavoritNews(deleteEntityId)
         }
         setReFetch(old=>old+1)
     }
@@ -54,7 +54,7 @@ return (
         </div>
         <div className="flex gap-3">
             <span className="relative bottom-2 bg-slate-400 mr-4 px-1 pt-1 pb-2 bg-opacity-60 rounded-md text-[12px] md:max-lg:text-[10px] dark:bg-opacity-50 dark:dark:bg-[#556e53]">{newsCatregoryName}</span>
-            <img onClick={()=>landleFavorit(id)} src={isCurrentUserFavorite === true ? saved : save} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""></img>
+            <img onClick={()=>handleFavorit(id)} src={isCurrentUserFavorite === true ? saved : save} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""></img>
         </div>
         <p className="w-[95%] indent-[8px] h-9 max-lg:h-6 max-md:h-8 pr-2 relative  max-sm:text-[11px]  max-md:text-[10px]  mx-auto text-[12px] md:max-lg:text-[8px]  overflow-hidden dark:text-[#d1d4c9]">{miniDescribe}</p>
         

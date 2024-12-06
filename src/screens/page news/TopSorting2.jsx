@@ -3,7 +3,7 @@
 function TopSorting2({setSort}) {
   const data = [
     { value: "", lable: "مرتب سازی" },
-    { value: "LastUpdate", lable: " جدید ترین" },
+    { value: "LastUpdate", lable: " بروز ترین" },
     { value: "InsertDate", lable: "قدیمی ترین" },
   ];
   return (

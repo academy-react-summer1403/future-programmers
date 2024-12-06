@@ -1,23 +1,31 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios';
 import NewsCard from './newsCard.jsx'
 import pic from '../../../../public/cImage.png'
 import { Link } from 'react-router-dom';
+import { getCardNews } from '../../../core/services/api/news.js';
 
 
 
 const LastNews = () => {
-    const [NewsList, setNewsList] = useState(null);
-    // console.log(NewsList)
-    const getNews =async () => {
-        const res = await axios.get('https://classapi.sepehracademy.ir/api/News?PageNumber=1&RowsOfPage=4&SortingCol=InsertDate&SortType=DESC')
-        setNewsList(res.data.news)
-    }
+    const [NewsList, setNewsList] = useState([]);
+    const [reFetch, setReFetch] = useState(1)
+    console.log(NewsList)
+
+
+    const getAllCardNews = async (currentPage) => {
+        try {
+            const result = await getCardNews(4, currentPage);
+    
+            setNewsList(result.news);
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
 
     useEffect(() => {
-        getNews()
-    }, []);
+        getAllCardNews()
+    }, [reFetch]);
 
 
     return (
@@ -41,9 +49,11 @@ const LastNews = () => {
                             newsCatregoryName={item?.newsCatregoryName}
                             currentView={item?.currentView}
                             isCurrentUserFavorite={item?.isCurrentUserFavorite}
+                            currentUserFavoriteId={item?.currentUserFavoriteId}
                             currentLikeCount={item?.currentLikeCount}
                             insertDate={item?.insertDate?.toString()?.slice(0,10)}
                             id={item.id}  
+                            setReFetch={setReFetch}
                             />
                         )
                     )}

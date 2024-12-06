@@ -8,7 +8,7 @@ const CardNews = ({currentPage, setCurrentPage, totalCount, cardNews, setReFetch
   
   
 
-  // console.log(cardNews);
+  console.log(cardNews);
   const topNews = cardNews?.slice(0, 4);
   const bottomNews = cardNews?.slice(4, 8);
 
@@ -22,10 +22,10 @@ const CardNews = ({currentPage, setCurrentPage, totalCount, cardNews, setReFetch
             return (
               <Page
               key={index}
-              image={item.currentImageAddressTumb??pic}
-              newsTitle={item.title}
-              miniDescribe={item.miniDescribe}
-              addUserFullName={item.addUserFullName}
+              image={item?.currentImageAddressTumb??pic}
+              newsTitle={item?.title}
+              miniDescribe={item?.miniDescribe}
+              addUserFullName={item?.addUserFullName}
               currentDissLikeCount={item?.currentDissLikeCount}
               currentUserIsLike={item?.currentUserIsLike}
               currentUserIsDissLike={item?.currentUserIsDissLike}
@@ -36,6 +36,7 @@ const CardNews = ({currentPage, setCurrentPage, totalCount, cardNews, setReFetch
               currentLikeCount={item?.currentLikeCount}
               insertDate={item?.insertDate?.toString()?.slice(0,10)}
               id={item?.id}
+              likeId={item?.likeId}
               setReFetch={setReFetch} 
               />
             );
@@ -50,10 +51,10 @@ const CardNews = ({currentPage, setCurrentPage, totalCount, cardNews, setReFetch
             return (
               <Page
               key={index}
-              image={item.currentImageAddressTumb??pic}
-              newsTitle={item.title}
-              miniDescribe={item.miniDescribe}
-              addUserFullName={item.addUserFullName}
+              image={item?.currentImageAddressTumb??pic}
+              newsTitle={item?.title}
+              miniDescribe={item?.miniDescribe}
+              addUserFullName={item?.addUserFullName}
               currentDissLikeCount={item?.currentDissLikeCount}
               currentUserIsLike={item?.currentUserIsLike}
               currentUserIsDissLike={item?.currentUserIsDissLike}
@@ -63,7 +64,8 @@ const CardNews = ({currentPage, setCurrentPage, totalCount, cardNews, setReFetch
               currentUserFavoriteId={item?.currentUserFavoriteId}
               currentLikeCount={item?.currentLikeCount}
               insertDate={item?.insertDate?.toString()?.slice(0,10)}
-              id={item.id} 
+              id={item?.id} 
+              likeId={item?.likeId}
               setReFetch={setReFetch}
               />
             );

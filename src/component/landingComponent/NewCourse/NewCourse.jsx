@@ -9,6 +9,7 @@ import pic from '../../../../public/cImage.png';
 const NewCourse = () => {
 
     const [List, setList] = useState(null);
+    const [reFetch, setReFetch] = useState(1)
     console.log(List)
     const getTopCourses =async () => {
         const res = await axios.get('https://classapi.sepehracademy.ir/api/Home/GetCoursesTop?Count=4')
@@ -17,7 +18,7 @@ const NewCourse = () => {
     
     useEffect(() => {
         getTopCourses()    
-    }, []);
+    }, [reFetch]);
 
 
 
@@ -38,6 +39,7 @@ const NewCourse = () => {
                             teacher={course?.teacherName}
                             id={course?.courseId} 
                             userIsLiked={course?.userIsLiked}
+                            userLikedId={course?.userLikedId}
                             userIsDissLiked={course?.userIsDissLiked}
                             dissLikeCount={course?.dissLikeCount} 
                             likeCount={course?.likeCount}
@@ -45,6 +47,8 @@ const NewCourse = () => {
                             courseRate={course?.courseRate}
                             isUserFavorite={course?.isUserFavorite}
                             cost={course?.cost?.toString()?.slice(0,8)}
+                            userFavoriteId={course?.userFavoriteId}
+                            setReFetch={setReFetch}
                         />
                     ))}
                 </div>

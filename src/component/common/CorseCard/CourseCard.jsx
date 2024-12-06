@@ -12,32 +12,40 @@ import { addFavoritCourse } from '../../../core/services/api/addFavoritCourse'
 import { deleteFavoritCourse } from '../../../core/services/api/deleteCourseFavorit'
 import { deleteCourseLike } from '../../../core/services/api/deleteCourseLike'
 
-const CourseCard = ({ title, image, describe, teacher, id , userIsLiked, userIsDissLiked ,dissLikeCount, likeCount, levelName, courseRate, isUserFavorite, cost}) => {
+const CourseCard = ({ title, image, describe, teacher, id , userIsLiked, userIsDissLiked, userLikedId, dissLikeCount, likeCount, levelName, courseRate, isUserFavorite, userFavoriteId, cost, setReFetch}) => {
     
 
-    // console.log(userIsLiked)
+   
+   
+
     const handleLike = async (e) => {
-        const result = await addLikeCourse(e)
-    }
-    const handleDeleteLike = async (value) => {
-        const result = await deleteCourseLike(value)
-        // console.log(res)
+        const form = new FormData()
+        if(userIsLiked===false){
+          await addLikeCourse(e)
+        }else{
+          form.append('CourseLikeId', userLikedId)
+          await deleteCourseLike(form)
+        }
+        setReFetch(old=>old+1)    
+      }
+    
+    const handleDisLike = async(e)=>{
+        await addDislikeCourse(e)
+        setReFetch(old=>old+1)
         
     }
     
-    const handleDisLike = async(e)=>{
-        const result = await addDislikeCourse(e)
-        // toast.success(result.message)
-    }
     const handleFavorit = async (value) => {
+      const form = new FormData()
+      if(isUserFavorite===false){
         const courseId= {courseId:value}
-        const result = await addFavoritCourse(courseId)
-        // console.log(res)
+        await addFavoritCourse(courseId)
+      }else{
+         form.append('CourseFavoriteId',userFavoriteId) 
+        deleteFavoritCourse(form)
+      }
+      setReFetch(old=>old+1)
         
-    }
-    const handleDeleteFavorit = async (value) => {
-        const result = await deleteFavoritCourse(value)
-        // console.log(res)
         
     }
 
@@ -54,14 +62,14 @@ const CourseCard = ({ title, image, describe, teacher, id , userIsLiked, userIsD
         </div>
         <div className="flex gap-3">
             <span className="relative bottom-2 bg-slate-400 mr-4 px-1 pt-1 pb-2 bg-opacity-60 rounded-md text-[11px] md:max-lg:text-[10px] dark:bg-opacity-50 dark:dark:bg-[#556e53]">سطح دوره:{levelName}</span>
-            <img src={isUserFavorite === true ? saved : save} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" onClick={()=>handleFavorit(id)}></img>
+            <img onClick={()=>handleFavorit(id)} src={isUserFavorite === true ? saved : save} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" onClick={()=>handleFavorit(id)}></img>
         </div>
         <p className="w-[95%] indent-[8px] h-9 max-lg:h-6 max-md:h-8 pr-2 relative  max-sm:text-[11px]  max-md:text-[10px]  mx-auto text-[12px] md:max-lg:text-[8px]  overflow-hidden dark:text-[#d1d4c9]">{describe}</p>
         
         <div className="flex justify-between mt-1 pl-3">
             <div className="flex pr-4 gap-2">
                 <div className=''>
-                <img src={userIsLiked === true ? liked : notLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""  onClick={()=>handleLike(id)}></img>
+                <img onClick={()=>handleLike(id)} src={userIsLiked === true ? liked : notLiked} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt=""  ></img>
                 <span className='text-xs max-lg:text-[9px] mt-2  pr-[2px]'>{likeCount}</span>
                 </div>
                 <div className=''>
