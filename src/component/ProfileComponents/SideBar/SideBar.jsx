@@ -30,7 +30,11 @@ const SidePanel = () => {
       <div className="flex items-center gap-3">
         <div className=" p-4 rounded-full">
           <img
-            src={MyInfo?.userImage.length>0 ? MyInfo?.userImage[MyInfo?.userImage.length - 1 ].puctureAddress : ''}
+            src={
+              MyInfo?.userImage.length > 0
+                ? MyInfo?.userImage[MyInfo?.userImage.length - 1].puctureAddress
+                : ""
+            }
             onClick={() => setCount(true)}
             className="w-20 h-20 rounded-full"
           />
@@ -44,7 +48,7 @@ const SidePanel = () => {
           to="/profile/pishkhan"
           className={({ isActive, isPending }) =>
             isActive
-              ? "flex items-center gap-3 text-lg font-medium text-gray-700 bg-[aqua] py-2 px-4 rounded-2xl"
+              ? "flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl"
               : "flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl"
           }
         >
@@ -55,7 +59,7 @@ const SidePanel = () => {
           to="/profile/ReserveCourse"
           className={({ isActive, isPending }) =>
             isActive
-              ? "flex items-center gap-3 text-lg font-medium text-gray-700 bg-[aqua] py-2 px-4 rounded-2xl"
+              ? "flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl"
               : "flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl"
           }
         >
@@ -66,7 +70,7 @@ const SidePanel = () => {
           to="/profile/AcceptCourse"
           className={({ isActive, isPending }) =>
             isActive
-              ? "flex items-center gap-3 text-lg font-medium text-gray-700 bg-[aqua] py-2 px-4 rounded-2xl"
+              ? "flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl"
               : "flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl"
           }
         >
@@ -77,7 +81,7 @@ const SidePanel = () => {
           to="/profile/FavoriteNews"
           className={({ isActive, isPending }) =>
             isActive
-              ? "flex items-center gap-3 text-lg font-medium text-gray-700 bg-[aqua] py-2 px-4 rounded-2xl"
+              ? "flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl"
               : "flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl"
           }
         >
@@ -88,7 +92,7 @@ const SidePanel = () => {
           to="/profile/FavoriteCourse"
           className={({ isActive, isPending }) =>
             isActive
-              ? "flex items-center gap-3 text-lg font-medium text-gray-700 bg-[aqua] py-2 px-4 rounded-2xl"
+              ? "flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl"
               : "flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl"
           }
         >
@@ -99,7 +103,7 @@ const SidePanel = () => {
           to="/profile/EditProfile"
           className={({ isActive, isPending }) =>
             isActive
-              ? "flex items-center gap-3 text-lg font-medium text-gray-700 bg-[aqua] py-2 px-4 rounded-2xl"
+              ? "flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl"
               : "flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl"
           }
         >
@@ -110,7 +114,7 @@ const SidePanel = () => {
           to="/profile/UploadImage"
           className={({ isActive, isPending }) =>
             isActive
-              ? "flex items-center gap-3 text-lg font-medium text-gray-700 bg-[aqua] py-2 px-4 rounded-2xl"
+              ? "flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl"
               : "flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl"
           }
         >
