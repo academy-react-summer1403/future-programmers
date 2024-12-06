@@ -70,14 +70,14 @@ const Header = () => {
             </h2>
           </div>
         </NavLink>
-        <NavLink to={"/StepTwo"}>
+        {/* <NavLink to={"/StepTwo"}>
           <div className="mb-3  w-20 h-10 whitespace-nowrap lg:text-sm md:text-xs">
             <h2 className="text-center hover:border-b-2  border-blue-500">
               {" "}
               تماس با ما{" "}
             </h2>
           </div>
-        </NavLink>
+        </NavLink> */}
 
         {/* <NavLink to={"/"}>
           <div className="mb-3  w-20 h-10 whitespace-nowrap lg:text-sm md:text-xs">
