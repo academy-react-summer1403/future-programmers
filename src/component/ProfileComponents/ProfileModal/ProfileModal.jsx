@@ -32,17 +32,17 @@ const ProfileModal = ({ MyInfo, setCount, getProfile }) => {
       console.log(result);
     };
   return (
-    <div className="h-[500px] bg-gray-300  w-[80%] absolute left-40 top-36 z-50">
+    <div className=" selection:h-[500px]  shadow-md bg-gray-200  w-[40%] absolute left-72 top-36 z-50">
       <button
         onClick={() => setCount(false)}
-        className="btn btn-active btn-primary"
+        className="text-[30px] pr-3 "
       >
-        close
+        &#215;
       </button>
       <div>
         <div className="">
           <Swiper
-            className="h-96"
+            className="h-96 "
             // install Swiper modules
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={50}
@@ -60,13 +60,13 @@ const ProfileModal = ({ MyInfo, setCount, getProfile }) => {
                     <img
                       src={item.puctureAddress}
                       alt=""
-                      className="mx-auto w-[25%]"
+                      className="mx-auto h-[280px] w-[85%]"
                     />
                     <button
-                      className=" bg-red-400 z-40 mx-auto"
+                      className=" bg-cyan-700 rounded-md p-2 mt-2 z-40 mx-auto"
                       onClick={() => deleteImage(item.id)}
                     >
-                      delete
+                     پاک کردن
                     </button>
 
                     {/* <button

@@ -57,9 +57,7 @@ const LastNews = () => {
                             />
                         )
                     )}
-                </div>
-                
-                {/* <h4 className='text-left mt-[1%] pl-[1%] text-[15px] max-lg:text-[14px] max-md:text-[13px] max-sm:text-[11px] max-sm:mt-[3%]'><a href=''> مشاهده همه اخبار</a></h4> */}
+                </div>                
             </div>
         </section>
         
