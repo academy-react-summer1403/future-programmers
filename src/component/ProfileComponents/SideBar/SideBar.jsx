@@ -30,7 +30,7 @@ const SidePanel = () => {
       <div className="flex items-center gap-3">
         <div className=" p-4 rounded-full">
           <img
-            src={MyInfo?.userImage[1].puctureAddress}
+            src={MyInfo?.userImage.length>0 ? MyInfo?.userImage[MyInfo?.userImage.length - 1 ].puctureAddress : ''}
             onClick={() => setCount(true)}
             className="w-20 h-20 rounded-full"
           />

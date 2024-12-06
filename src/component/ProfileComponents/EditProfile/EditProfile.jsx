@@ -142,7 +142,7 @@ const EditProfile = () => {
         <div className="rounded-full w-3/4 h-64 object-fill">
           <img
             className="w-full object-contain rounded-full"
-            src={MyInfo?.userImage[MyInfo?.userImage.length - 1].puctureAddress}
+            src={MyInfo?.userImage.length>0 ? MyInfo?.userImage[MyInfo?.userImage.length - 1 ].puctureAddress : ''}
           ></img>
           <div>
             <form onSubmit={sendImage}>
