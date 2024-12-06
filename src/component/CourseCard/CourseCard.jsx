@@ -13,14 +13,15 @@ import { deleteCourseLike } from "../../core/services/api/deleteCourseLike";
 import { deleteFavoritCourse } from "../../core/services/api/deleteCourseFavorit";
 
 
-const CourseCard = ({image,topic, explain, teacher, price, id, courseRate, likeCount, userIsLiked, dissLikeCount, currentUserDissLike, levelName, userFavorite, setReFetch, userLikedI, userFavoriteId}) => {
+const CourseCard = ({image,topic, explain, teacher, price, id, courseRate, likeCount, userIsLiked, dissLikeCount, currentUserDissLike, levelName, userFavorite, setReFetch, userLikedId, userFavoriteId}) => {
   
   const handleLike = async (e) => {
+    const form = new FormData()
     if(userIsLiked===false){
       await addLikeCourse(e)
     }else{
-      // const CourseLikeId = {CourseLikeId:id}
-      await deleteCourseLike(CourseLikeId)
+      form.append('CourseLikeId', userLikedId)
+      await deleteCourseLike(form)
     }
     setReFetch(old=>old+1)    
   }

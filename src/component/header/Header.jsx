@@ -131,11 +131,11 @@ const Header = () => {
             <div tabIndex={0} role="button" className=" m-1"><img src="./profile-user.png" alt="" className="" /></div>
             <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-36 p-2 left-3 shadow dark:bg-[#29435c]">
               <li className="dark:text-[#d1d4c9]"><Link to="/profile/pishkhan">پنل دانشجو</Link></li>
-              <li className="dark:text-[#d1d4c9]"><Link to="/singIn">خروج</Link></li>
+              <li className="dark:text-[#d1d4c9]"><Link to="/singIn" onClick={()=>localStorage.removeItem('token')}>خروج</Link></li>
             </ul>
           </div>
         ) : (
-          <NavLink to={"/signIn"}>
+          <NavLink to={"/singIn"}>
             <div className="  bg-[#436e8e] flex justify-center text-sm rounded-full mt-1 items-center max-sm:w-16 text-white w-28 h-10  ">
               <h2 className="  text-center  dark:text-white max-sm:text-xs  ">
                 ورود / ثبت نام{" "}

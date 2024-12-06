@@ -2,9 +2,9 @@ import Page from "./Page";
 import PictureBox from "./PictureBox";
 // import CardPage2 from "./CardPage2";
 import pic from "../../../public/newspaper.png";
-import Pagination from './Pagination'
+import { Pagination } from 'antd';
 
-const CardNews = ({cardNews, setReFetch}) => {
+const CardNews = ({currentPage, setCurrentPage, totalCount, cardNews, setReFetch}) => {
   
   
 
@@ -45,7 +45,7 @@ const CardNews = ({cardNews, setReFetch}) => {
       </div>
 
       <div className="bg-[#f3f4f6] w-[100%] dark:bg-[#152a38] md:mt-8 dark:text-[#d1d4c9]  ">
-        <div className=" flex flex-wrap w-[95%] mx-auto max-sm:gap-y-3 justify-between dark:bg-[#152a38] dark:text-white ">
+        <div className=" flex flex-wrap w-[95%] mx-auto max-sm:gap-y-3 justify-start gap-4 dark:bg-[#152a38] dark:text-white ">
           {bottomNews.map((item, index) => {
             return (
               <Page
@@ -68,8 +68,9 @@ const CardNews = ({cardNews, setReFetch}) => {
               />
             );
           })}
-
-          <Pagination />
+          <div className=' py-3  w-[100%]'>
+            <Pagination align="center" onChange={(e)=>setCurrentPage(e)} current={currentPage} pageSize={8} total={totalCount} />
+          </div>
           
         </div>
       </div>

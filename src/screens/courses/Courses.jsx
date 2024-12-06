@@ -109,7 +109,7 @@ return (
         </div>
         <div className='w-[100%] text-center h-14 my-auto mt-3'>
             
-            <Pagination align="center" defaultCurrent={currentPage} total={totalCount} />
+            <Pagination align="center" onChange={(e)=>setCurrentPage(e)} current={currentPage} pageSize={9} total={totalCount} />
         </div>
         
     
