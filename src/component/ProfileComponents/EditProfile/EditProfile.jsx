@@ -3,12 +3,11 @@ import React, { useEffect, useState } from "react";
 import Pic from "./../../../../public/person.png";
 import http from "../../../core/services/interceptor";
 
-const EditProfile = () => {
+const EditProfile = ({Rand}) => {
   //get info
   const [MyInfo, setMyInfo] = useState(null);
   const getProfile = async () => {
     const res = await http.get("/SharePanel/GetProfileInfo");
-    console.log(res)
     setMyInfo(res);
   };
   useEffect(() => {
@@ -137,23 +136,21 @@ const EditProfile = () => {
             </Field>
           </div>
 
-          <button type="submit" className="btn btn-primary">
-            update profile
+          <button type="submit" className="btn bg-cyan-700 mt-5">
+            update profile {Rand}
           </button>
         </Form>
       </Formik>
       <div className="w-5/12 flex flex-col justify-center items-center gap-4">
         <div className="rounded-full w-3/4 h-64 object-fill">
-          {MyInfo?.userImage.length > 0 && (
-            <img
-              src={
-                MyInfo?.userImage[MyInfo?.userImage.length - 1].puctureAddress
-              }
-              onClick={() => setCount(true)}
-              className="w-full object-contain rounded-full"
-            />
-          )}
-
+          <img
+            className="w-full object-contain rounded-full"
+            src={
+              MyInfo?.userImage.length > 0
+                ? MyInfo?.userImage[MyInfo?.userImage.length - 1].puctureAddress
+                : ""
+            }
+          ></img>
           <div>
             <form onSubmit={sendImage}>
               <input
@@ -163,7 +160,7 @@ const EditProfile = () => {
                   setImage(e.target.files[0]);
                 }}
               />
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn bg-cyan-700 mt-5">
                 upload image
               </button>
             </form>

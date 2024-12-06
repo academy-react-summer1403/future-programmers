@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaHome, FaBook, FaRegCommentDots, FaSignOutAlt } from "react-icons/fa";
-import logoPic from "../../../../public/header icon.png";
+import logoPic from "../../../../public/header icon.png"
 import http from "../../../core/services//interceptor";
 import ProfileModal from "../ProfileModal/ProfileModal";
 
@@ -11,7 +11,9 @@ const SidePanel = () => {
   const [MyInfo, setMyInfo] = useState(null);
 
   const getProfile = async () => {
-    const res = await http.get("/SharePanel/GetProfileInfo");
+    const res = await http.get(
+      "/SharePanel/GetProfileInfo"
+    );
     setMyInfo(res);
   };
 
@@ -19,34 +21,23 @@ const SidePanel = () => {
     getProfile();
   }, []);
 
+
+
   return (
     <div className=" h-screen bg-white dark:bg-gray-400 border border-gray-300 rounded-3xl p-6 flex flex-col justify- items-center ">
-      {Count === true && (
-        <ProfileModal
-          MyInfo={MyInfo}
-          setCount={setCount}
-          getProfile={getProfile}
-        />
-      )}
+      {Count === true && <ProfileModal setCount={setCount} MyInfo={MyInfo} />}
       {/* Logo Section */}
       <div className="flex items-center gap-3">
         <div className=" p-4 rounded-full">
-          {/* {MyInfo?.currentPictureAddress !== "Not-set" && (
-            <img
-              src={MyInfo?.currentPictureAddress}
-              onClick={() => setCount(true)}
-              className="w-20 h-20 rounded-full"
-            />
-          )} */}
-          {MyInfo?.userImage.length > 0 && (
-            <img
-              src={
-                MyInfo?.userImage[MyInfo?.userImage.length - 1].puctureAddress
-              }
-              onClick={() => setCount(true)}
-              className="w-20 h-20 rounded-full"
-            />
-          )}
+          <img
+            src={
+              MyInfo?.userImage.length > 0
+                ? MyInfo?.userImage[MyInfo?.userImage.length - 1].puctureAddress
+                : ""
+            }
+            onClick={() => setCount(true)}
+            className="w-20 h-20 rounded-full"
+          />
         </div>
         <span className="text-xl font-bold">آکادمی سپهر</span>
       </div>
@@ -119,7 +110,7 @@ const SidePanel = () => {
           ویرایش پروفایل
         </NavLink>
 
-        {/* <NavLink
+        <NavLink
           to="/profile/UploadImage"
           className={({ isActive, isPending }) =>
             isActive
@@ -128,7 +119,7 @@ const SidePanel = () => {
           }
         >
           اپلود عکس
-        </NavLink> */}
+        </NavLink>
       </div>
     </div>
   );
