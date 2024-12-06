@@ -6,9 +6,9 @@ function FilterInTop({handleCategoryFilter, handleTypeCourseFilter, handlelevelC
   return (
     <div className="drawer drawer-end md:hidden">
         <input id="filter" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content w-[10%] ">
+        <div className="drawer-content w-[50px] ">
             {/* Page content here */}
-            <label htmlFor="filter" className="drawer-button btn btn-primary hover:bg-[white] border-0 bg-[white] bg-center w-[100%] h-[100%] bg-[url(public/filter.png)] bg-no-repeat [background-size:19px] dark:bg-[#556e53]"></label>
+            <label htmlFor="filter" className="drawer-button btn btn-primary hover:bg-[white] border-0 bg-[white] w-[100%] h-[100%]  dark:bg-[#556e53]"> فیلترها</label>
         </div>
         <div className="drawer-side z-[999]">
             <label htmlFor="filter" aria-label="close sidebar" className="drawer-overlay"></label>

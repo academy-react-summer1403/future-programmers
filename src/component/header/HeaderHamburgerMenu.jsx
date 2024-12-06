@@ -58,10 +58,10 @@ const HeaderHamburgerMenu = () => {
           
 </NavLink>
             
-
+{/* 
             <Link href="#contact" className="text-gray-700 hover:text-blue-500">
               تماس با ما
-            </Link>
+            </Link> */}
           </nav>
         </ul>
       </div>
