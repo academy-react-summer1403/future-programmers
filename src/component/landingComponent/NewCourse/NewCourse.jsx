@@ -34,7 +34,7 @@ const NewCourse = () => {
                         <CourseCard 
                             key={index} 
                             title={course?.title} 
-                            image={course?.tumbImageAddress==='null'? pic :course.tumbImageAddress} 
+                            image={course?.tumbImageAddress===null ||course?.tumbImageAddress==="null" ? pic :course.tumbImageAddress} 
                             describe={course?.describe}
                             teacher={course?.teacherName}
                             id={course?.courseId} 

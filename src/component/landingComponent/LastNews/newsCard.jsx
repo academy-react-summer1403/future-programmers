@@ -43,7 +43,7 @@ const handleFavorit = async (e)=> {
   return (
     <div className=" relative w-[24%] max-sm:w-[95%] max-md:w-[47%] md:max-lg:w-[24%] pb-2 bg-white rounded-[20px] dark:dark:bg-[#29435c] dark:text-[#d1d4c9]">
         <img src={image} className="w-[92%] h-36 md:max-lg:h-[42%] mx-auto border border-[gray] relative bottom-6 rounded-3xl"></img>
-        <h1 className="text-[14px] max-md:text-[12px] max-lg:text-[9px] font-bold pr-4 relative bottom-5 dark:text-[#d1d4c9]">{newsTitle}</h1>
+        <h1 className="text-[14px] w-[98%] overflow-hidden max-md:text-[12px] max-lg:text-[9px] font-bold pr-4 relative bottom-5 dark:text-[#d1d4c9]">{newsTitle}</h1>
         <div className="relative flex justify-between bottom-3 pr-4 pl-3 max-md:text-[11px] text-[13px] md:max-lg:text-[10px] text-[#0004ff] dark:text-[#d1d4c9]">
           <h6 className="text-red-700 dark:text-[#e19f9f]">{addUserFullName}</h6>
           <div className='flex items-center'>

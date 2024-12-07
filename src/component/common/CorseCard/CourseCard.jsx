@@ -52,7 +52,7 @@ const CourseCard = ({ title, image, describe, teacher, id , userIsLiked, userIsD
     return(
         <div className=" relative w-[24%] max-sm:w-[95%] md:max-lg:w-[24%]  pb-2 bg-white rounded-[20px] dark:dark:bg-[#29435c] dark:text-[#d1d4c9]">
         <img src={image} className="w-[92%] h-36 md:max-lg:h-[42%] mx-auto border border-[gray] relative bottom-6 rounded-3xl"></img>
-        <h1 className="text-[14px] max-md:text-[12px] max-lg:text-[9px] font-bold pr-4 relative bottom-5 dark:text-[#d1d4c9]">{title}</h1>
+        <h1 className="text-[14px] w-[90%] max-md:text-[12px] max-lg:text-[9px] font-bold pr-4 relative bottom-5 dark:text-[#d1d4c9]">{title}</h1>
         <div className="relative flex justify-between bottom-3 pr-4 pl-3 max-md:text-[11px] text-[13px] md:max-lg:text-[10px] text-[#0004ff] dark:text-[#d1d4c9]">
             <h6>{teacher}</h6>
             <div className='flex items-center'>
@@ -62,7 +62,7 @@ const CourseCard = ({ title, image, describe, teacher, id , userIsLiked, userIsD
         </div>
         <div className="flex gap-3">
             <span className="relative bottom-2 bg-slate-400 mr-4 px-1 pt-1 pb-2 bg-opacity-60 rounded-md text-[11px] md:max-lg:text-[10px] dark:bg-opacity-50 dark:dark:bg-[#556e53]">سطح دوره:{levelName}</span>
-            <img onClick={()=>handleFavorit(id)} src={isUserFavorite === true ? saved : save} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" onClick={()=>handleFavorit(id)}></img>
+            <img onClick={()=>handleFavorit(id)} src={isUserFavorite === true ? saved : save} className='w-5 max-lg:w-4 h-5 max-lg:h-4 cursor-pointer' alt="" ></img>
         </div>
         <p className="w-[95%] indent-[8px] h-9 max-lg:h-6 max-md:h-8 pr-2 relative  max-sm:text-[11px]  max-md:text-[10px]  mx-auto text-[12px] md:max-lg:text-[8px]  overflow-hidden dark:text-[#d1d4c9]">{describe}</p>
         
