@@ -3,6 +3,7 @@ import pic1 from '../../../public/Like.empty.png'
 import pic2 from '../../../public/Like.red.png'
 
 function CourseComment() {
+  // console.log(aaa)
   return (
     <div className='max-lg:hidden  mx-[auto] mt-5 pb-5 dark:text-[#d1d4c9]'>
         <div className='w-[100%] pb-4 bg-white  max-md:mt-0 rounded-[20px] max-md:w-[100%] md:max-lg:w-[100%] dark:bg-[#29435c]'>
