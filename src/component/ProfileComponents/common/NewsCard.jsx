@@ -1,0 +1,58 @@
+import React from "react";
+import { NavLink } from "react-router-dom";
+
+const NewsCard = ({item , index }) => {
+  return (
+    <div
+      key={index}
+      className="bg-white dark:bg-gray-400 px-4 shadow-2xl  rounded-2xl mt-4 w-full h-16 flex flex-row justify-around pt-4 "
+    >
+      {/* <img
+        src={item.currentImageAddressTumb}
+        className="relative -top-5 w-1/12 object-cover rounded"
+      /> */}
+      <h3 className=" text-lg font-bold truncate w-[40%]">{item.title}</h3>
+      <p className="text-gray-600 text-sm mt-2 w-[30%] h-16 overflow-clip ">
+        {item.currentRate}
+      </p>
+      <div className="w-[20%]"> {item.currentView}</div>
+
+      <div className="flex justify-between">
+        <NavLink to={`/newsdetail/${item.newsId}`}>
+          <button
+            //   href={course.link}
+            className="inline-block mt-2 text-white py-2 px-4 rounded hover:bg-blue-600"
+          >
+            <svg
+              width="19"
+              height="17"
+              viewBox="0 0 19 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_547_722)">
+                <path
+                  d="M16.9561 7.82338C17.1953 8.12534 17.315 8.27636 17.315 8.49984C17.315 8.72332 17.1953 8.87433 16.9561 9.1763C15.8809 10.5332 13.1352 13.4582 9.44459 13.4582C5.754 13.4582 3.00828 10.5332 1.93314 9.1763C1.69386 8.87433 1.57422 8.72332 1.57422 8.49984C1.57422 8.27636 1.69386 8.12534 1.93314 7.82338C3.00828 6.46652 5.754 3.5415 9.44459 3.5415C13.1352 3.5415 15.8809 6.46652 16.9561 7.82338Z"
+                  stroke="#00BFB3"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M11.8052 8.5C11.8052 7.32636 10.7482 6.375 9.44412 6.375C8.14008 6.375 7.08301 7.32636 7.08301 8.5C7.08301 9.67364 8.14008 10.625 9.44412 10.625C10.7482 10.625 11.8052 9.67364 11.8052 8.5Z"
+                  stroke="#00BFB3"
+                  stroke-width="1.5"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_547_722">
+                  <rect width="18.8889" height="17" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+        </NavLink>
+      </div>
+    </div>
+  );
+};
+
+export default NewsCard;

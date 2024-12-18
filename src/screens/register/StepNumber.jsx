@@ -1,85 +1,49 @@
-import React from 'react'
-import * as yup from 'yup'
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import React from "react";
+import * as yup from "yup";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import VerificationInput from "react-verification-input";
-
+import axios from "axios";
 
 const StepNumber = () => {
-const validationSchema = yup.object().shape({
-    PhoneNumber:yup.string().required('شماره موبایل الزامی است')
-    // .matches(/^+?d{1,3}[-]?d{10}$/, 'شماره تلفن باید 10 رقمی باشد')
-});
-return (
-<>
-<div className='flex items-center justify-center bg-gray-100'>
-        <div className='bg-white p-6 rounded-lg  w-96'>
-            <h2 className='text-2xl font-bold mb-4 text-center'>  </h2>
-        <Formik
-        
-        initialValues={{PhoneNumber: ''}}
-            validationSchema={validationSchema}
-            onSubmit={(values) =>{
-                console.log('Submitted Phone Number:', values.PhoneNumber);
-            }} 
-        
-        >
-            {()=>(
-                <Form>
-                    <div className='mb-3'>
-            
+  //   const validationSchema = yup.object().shape({
+  //     PhoneNumber: yup.string().required("شماره موبایل الزامی است"),
+  //     // .matches(/^+?d{1,3}[-]?d{10}$/, 'شماره تلفن باید 10 رقمی باشد')
+  //   });
 
-                        {/* <Field 
-                        
-                        type='tel'
-                        name='phoneNumber'
-                        placeholder='شماره موبایل'
-                        className='border border-gray-300  text-right p-2 w-full rounded  '
-/>
-                        <ErrorMessage
-                        name='phoneNumber'
-                        component={"p"}
-                        className='text-red-500 text-sm validationSchema'
-                        /> */}
+  const handleVerify = async (values) => {
+      const res = await axios.post("https://classapi.sepehracademy.ir/api/Sign/VerifyMessage", values);
+      if (res.status === 200) {
+          navigate("/stepthree");
+      }
+  };
+  return (
+    <>
+      <div className="flex items-center justify-center dark:bg-[#678cb1] max-sm:w-[280px] ">
+        <div className="p-6 rounded-lg dark:bg-[#678cb1] w-96 max-md:w-[340px] max-md:ml-[10%]">
+          <h2 className=" text-sm font-light mb-4 text-right"> </h2>
+          <Formik
+            initialValues={{ phoneNumber: "", verifyCode: "" }}
+            onsubmit={handleVerify}
+            // initialValues={{PhoneNumber: ''}}
+            // validationSchema={validationSchema}
+          >
+            <Form>
+              <Field name="phoneNumber" placeholder="phoneNumber"  className="input w-full max-w-xs" />
+              <Field name="verifyCode" placeholder="verifyCode"  className="input w-full max-w-xs" />
 
-                        <div className=''>
-{/* <div className="join gap-9 ">
-<button className="btn join-item rounded-lg "> </button>
-<button className="btn join-item">  </button>
-<button className="btn join-item"> </button>
-<button className="btn join-item"> </button>
-
-</div> */}
-
-<VerificationInput 
-classNames= {{
-    container: "container",
-    character: "character",
-    characterInactive: "character--inactive",
-    characterSelected: "character--selected",
-    characterFilled: "character--filled",
-  }}
-  />
-
-</div>
-
-                    </div>
-                    <button  type='submit'
-                        className=' bg-[#436E8E] h-[43px]  rounded w-full'>
-                <h2 className='text-white w-full ' > تایید  </h2>
-                    </button>
-                </Form>
-            )}
-        </Formik>
+              {/* </div> */}
+              <button
+                type="submit"
+                className=" bg-[#436E8E] h-[43px]  rounded w-full max-sm:mr-3"
+              >
+                <h2 className="text-white w-full "> تایید </h2>
+              </button>
+            </Form>
+          </Formik>
         </div>
+      </div>
+    </>
+  );
+};
 
-
-
-
-    </div>
-</>
-
-    
-  )
-}
-
-export default StepNumber
+export default StepNumber;

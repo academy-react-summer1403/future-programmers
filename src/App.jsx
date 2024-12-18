@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './component/layout/Layout'
@@ -20,96 +18,201 @@ import StepTwo from './screens/register/StepTwo'
 import StepThree from './screens/register/StepThree'
 import SingIn from './screens/singIn/singIn'
 import News from './screens/page news/News'
+import UploadImage from './component/ProfileComponents/UploadImage/UploadImage'
+import NotFound from './screens/notFound/NotFound'
+import Error from './screens/Error/Error'
+import ForgotPass from './component/singIn/ForgotPass'
+import { getItem } from './core/services/common/storage.services'
 
 
-
+const token = getItem('token')
 
 function App() {
+
+    const publicRoutes = createBrowserRouter([
+      {
+        path: "/",
+        element: <Layout />,
+        errorElement: <Error />,
+        children: [
+          {
+            path: "",
+            element: <Landing />,
+            errorElement: <Error />,
+          },
+          {
+            path: "courses",
+            element: <Courses />,
+            errorElement: <Error />,
+          },
+          {
+            path: "coursedetail/:id",
+            element: <CourseDetail />,
+            errorElement: <Error />,
+          },
+          {
+            path: "/news",
+            element: <News />,
+            errorElement: <Error />,
+          },
+          {
+            path: "newsdetail/:id",
+            element: <NewsDetail />,
+            errorElement: <Error />,
+          },
+        ],
+      },
+      {
+        path: "/stepone",
+        element: <StepOne />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/steptwo",
+        element: <StepTwo />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/stepthree",
+        element: <StepThree />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/singIn",
+        element: <SingIn />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/ForgotPass",
+        element: <ForgotPass />,
+        errorElement: <Error />,
+      },
+
+
+      {
+        path: "*",
+        element: <NotFound />,
+      },
+    ]);
+  
+  
   const myRoutes = createBrowserRouter([
     {
       path:'/',
       element:<Layout/>,
+      errorElement:<Error />,
       children:[
         {
           path:'',
-          element:<Landing/>
+          element:<Landing/>,
+          errorElement:<Error />
         },
         {
           path:'courses',
-          element:<Courses/>
+          element:<Courses/>,
+          errorElement:<Error />
         },
         {
-          path:'coursedetail',
-          element:<CourseDetail/>
+          path:'coursedetail/:id',
+          element:<CourseDetail/>,
+          errorElement:<Error />
         },
         {
           path:'/news',
-          element:<News/>
+          element:<News/>,
+          errorElement:<Error />
         },
         {
-          path:'newsdetail',
-          element:<NewsDetail/>
+          path:'newsdetail/:id',
+          element:<NewsDetail/>,
+          errorElement:<Error />
         },
       ]
     },
     {
       path:'/stepone',
-      element:<StepOne/>
+      element:<StepOne/>,
+      errorElement:<Error />
     }, 
     {
       path:'/steptwo',
-      element:<StepTwo/>
+      element:<StepTwo/>,
+      errorElement:<Error />
     },     
     {
       path:'/stepthree',
-      element:<StepThree/>
+      element:<StepThree/>,
+      errorElement:<Error />
     },  
     {
       path:'/singIn',
-      element:<SingIn/>
+      element:<SingIn/>,
+      errorElement:<Error />
     },
+    {
 
-
-
-
+      path:'/ForgotPass',
+      element:<ForgotPass/>,
+      errorElement:<Error />
+    },
+    
+    
 
     {
       path:'/profile',
       element:<Profile/>,
+      errorElement:<Error />,
       children:[
         {
-          path:'',
-          element:<Pishkhan/>
+          path:'pishkhan',
+          element:<Pishkhan/>,
+          errorElement:<Error />
         },
         {
           path:'ReserveCourse',
-          element:<ReserveCourse/>
+          element:<ReserveCourse/>,
+          errorElement:<Error />
         }, 
         {
           path:'AcceptCourse',
-          element:<AcceptCourse/>
+          element:<AcceptCourse/>,
+          errorElement:<Error />
         }, 
         {
           path:'FavoriteNews',
-          element:<FavoriteNews/>
+          element:<FavoriteNews/>,
+          errorElement:<Error />
         }, 
         {
           path:'FavoriteCourse',
-          element:<FavoriteCourse/>
+          element:<FavoriteCourse/>,
+          errorElement:<Error />
         }, 
         
         {
           path:'EditProfile',
-          element:<EditProfile/>
-        },                        
+          element:<EditProfile/>,
+          errorElement:<Error />
+        },  
+        
+        {
+          path:'UploadImage',
+          element:<UploadImage/>,
+          errorElement:<Error />
+        },
+      
       ]
     },
+    {
+      path:'*',
+      element:<NotFound/>
+    }
     
   ])
 
   return (
     <>
-      <RouterProvider router={myRoutes}/>
+      <RouterProvider router={token ? myRoutes : publicRoutes}/>
       
     </>
   )

@@ -1,89 +1,81 @@
 import { Field, Form, Formik } from "formik";
 import React, { useState } from "react";
+import { login } from "../../core/services/api/auth";
+import { NavLink, useNavigate } from "react-router-dom";
+import { getItem, setItem } from "../../core/services/common/storage.services";
+import http from '../../core/services/interceptor'
 
 const Log = () => {
-  // const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const [successMessage, setSuccessMessage] = useState(false);
+    const handleLogin =async (values) => {
+      try {
+        const res = await http.post('/Sign/Login', values)
+        console.log(res.token)
+        setItem("token", res.token)
+        navigate('/')
 
 
-
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    setSuccessMessage(true);
-
-    setTimeout(() => setSuccessMessage(false), 3000);
+      } catch (err) {
+        console.log(err)
+      }
   };
+
   return (
-    <div className="  h-[300px] mt-20    ">
-      {successMessage && (
-        <div className="bg-green-400 text-white p-2 rounded-lg mb-4 text-center">
-با موفقیت وارد شدید         </div>
-      )}
-<Formik initialValues={{phoneOrGmail:"",password:"",rememberMe:false}} onSubmit={(e)=>console.log(e)}>
-  <Form>
-    
+    <div className="h-[300px] mt-20 max-sm:w-[260px] max-sm:mr-8 ">
+      <Formik
+        initialValues={{ phoneOrGmail: "", password: "", rememberMe: false }}
+        onSubmit={handleLogin}
+      >
+        <Form>
+          <div className="  w-[327px] h-[53px] flex justify-content m-3 gap-[2px] rounded-lg ">
+            <Field
+              className="text-right bg-[#F3F4F6] pr-2 w-full rounded-lg dark:text-black max-sm:w-[240px] max-sm:text-[13px]"
+              placeholder="  شماره تماس ...."
+              type="text"
+              name="phoneOrGmail"
+              required
+            />
+          </div>
+          <div className="  h-[53px] flex justify-content m-3 gap-[2px] rounded-lg">
+            <Field
+              className="text-right bg-[#F3F4F6] pr-4 w-full rounded-lg dark:text-black max-sm:w-[240px] max-sm:text-[13px]"
+              placeholder=" رمز عبور"
+              type="password"
+              name="password"
+              required
+            />
+          </div>
+          <div className="ml-2 ">
+            <button
+              className="text-white w-[100%] h-[53px] max-sm:text-[13px] m-1 gap-[2px] bg-[#436E8E] text-center rounded-lg"
+              type="submit"
+            >
+              ورود
+            </button>
 
-        {/* <div className=" border border-#707070-500 w-[325px] h-[53px]  m-3 rounded-lg ">
-          <input
-            className="text-right bg-[#F3F4F6] h-full w-[325px] rounded-lg "
-            placeholder=" نام"
-            type="text"
-            id="firstName"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            required
-          />
-        </div> */}
+            <NavLink to={"/"}>
+              <button
+                className="border border-#707070-500 dark:text-black w-[100%] h-[53px] m-1 gap-[2px] bg-[#fff] text-center rounded-lg max-sm:text-[13px]"
+                type="submit"
+              >
+                بازگشت به صفحه اصلی
+              </button>
+            </NavLink>
 
+            <NavLink to={"/ForgotPass"}>
+                          <h2 className=" dark:text-white max-sm:mr-2 max-sm:text-[13px]">  بازیابی رمز عبور </h2>
 
+            </NavLink>
 
-        
-        <div className="border border-#707070-500 w-[327px] h-[53px] flex justify-content m-3 gap-[2px] rounded-lg ">
-          <Field
-            className="text-right bg-[#F3F4F6] w-full "
-            placeholder=" شماره تماس"
-            type="text"
-           name='phoneOrGmail'
+            {/* {/* <NavLink to={'/forgotPassword'}>
+            <h3 className="text-sm mr-2 dark:text-white max-sm:mr-16 max-sm:text-[13px]">
+              بازیابی رمز عبور
+                </h3>
+                </NavLink> */}
 
-            required
-          />
-        </div>
-        <div className="border border-#707070-500  h-[53px] flex justify-content m-3 gap-[2px] rounded-lg">
-          <Field
-            className="text-right bg-[#F3F4F6]  w-full"
-            placeholder=" رمز عبور"
-            type="password"
-            name="password"
-
-
-            required
-          />
-        </div >
-        <div className="ml-2">
-        <button
-          className="text-white w-[100%] h-[53px]  m-1 gap-[2px] bg-[#436E8E] text-center rounded-lg"
-          type="submit"
-        >
-        
-          ورود
-        </button>
-
-
-        <button
-          className="border border-#707070-500 w-[100%] h-[53px]  m-1 gap-[2px] bg-[#fff] text-center rounded-lg"
-          type="submit"
-        >
-        
-          بازگشت به صفحه اصلی
-        </button>
-        </div>
-
-      </Form>
+          </div>
+        </Form>
       </Formik>
     </div>
   );

@@ -1,80 +1,120 @@
-import {Formik, Field, Form} from 'formik';
 import CourseCard from '../../component/CourseCard/CourseCard';
-// import Accardion from '../../component/accardion/accardion';
-// import FormField from '../../component/Fields/FormField';
-import TopCategory from '../../component/topCategory/TopCategory';
 import Filters from '../../component/filters/UsualFilters';
 import FilterInTop from '../../component/filters/FilterInTop';
+import { useEffect, useState } from 'react';
+import { getlist } from '../../core/services/api/course';
+import pic from '../../../public/item1.png'
+import TopSorting from '../../component/topSorting/TopSorting';
+import SearchBox from '../../component/SearchBoxInCourses/SearchBox';
+
+import { Pagination } from 'antd';
 // import UseDarkMood from './UseDarkMood';
 
 
 const Courses = () => {
-  const Course=[
-    {image:'public/01.jpg', topic:'آموزش ری اکت 1', explain:'آموزش می دهیم. آموزش نمی دهیم', teacher:'استاد یک',time:'12:12:12', price:'رایگان!'},
-    {image:'public/01.jpg',topic:'آموزش ری اکت 2', explain:'آموزش می دهیم. آموزش می دهیم', teacher:'استاد دو',time:'12:12:12', price:'رایگان!'},
-    {image:'public/01.jpg',topic:'آموزش ری اکت 3', explain:'آموزش می دهیم. آموزش نمی دهیم', teacher:'استاد سه',time:'12:12:12', price:'رایگان!'},
-    {image:'public/01.jpg',topic:'آموزش ری اکت 3', explain:'آموزش می دهیم. آموزش نمی دهیم', teacher:'استاد سه',time:'12:12:12', price:'رایگان!'}
-]
+
+const [Course, setCourse] = useState([]); 
+const [totalCount, setTotalCount] = useState([]);
+const [sort, setSort] = useState('')
+const [search, setSearch] = useState('')
+const [categoryFilter, setCategoryFilter] = useState('')
+const [currentPage, setCurrentPage] = useState(1)
+// type
+const [typeCourseFilter, setTypeCourseFilter] = useState('')
+// level 
+const [levelCourseFilter, setLevelCourseFilter] = useState('')
+const [costUp, setCostUp] = useState(null)
+const [costDown, setCostDown] = useState(null)
+const [reFetch, setReFetch] = useState(1)
+
+console.log(Course)
+// course counting 
+const CourseCount = Course.length
+
+
+const getAllCoursesList = async (currentPage, sort, search, categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown)=>{
+    try {
+        const result = await getlist(9, currentPage, sort, search, categoryFilter, typeCourseFilter,levelCourseFilter, costUp, costDown)
+        setCourse(result.courseFilterDtos)
+        setTotalCount(result.totalCount)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+useEffect(()=>{
+    getAllCoursesList(currentPage, sort,search,categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown) 
+},[currentPage, sort,search,categoryFilter, typeCourseFilter, levelCourseFilter, costUp, costDown, reFetch]);
+
+const handleCategoryFilter= ((e)=>{
+    const checkBoxId = e.target.id ;
+    if(categoryFilter.includes(checkBoxId)){setCategoryFilter(categoryFilter.filter((id)=>id!==checkBoxId))}
+    else{setCategoryFilter([...categoryFilter,checkBoxId])}
+})
+// type
+const handleTypeCourseFilter=((e)=>{
+    const checkBoxId = e.target.id;
+    setTypeCourseFilter(checkBoxId)
+    // console.log('asas', checkBoxId)
+})
+// level 
+const handlelevelCourseFilter =((e)=>{
+    const checkBoxId = e.target.id;
+    setLevelCourseFilter(checkBoxId)
+})
+
 
 return (
-<div className='bg-[#e6e5e5] font-[sans] dark:bg-[#152a38]'>
+<div className='bg-[#f3f4f6] font-[sans] dark:bg-[#152a38]'>
 
         <div className='flex flex-row-reverse flex-wrap gap-x-2 gap-y-4 w-[90%] mx-[auto]'>
-        <div className='w-[100%] flex justify-between'>
-            <h1 className='dark:text-[#d1d4c9]'>دوره ها</h1>
-            <h1 className='dark:text-[#d1d4c9]'> 5 دوره آموزشی</h1>
-        </div>
-        <div className='w-[100%] h-[115px] md:max-lg:h-[70px] max-md:h-[90px] max-sm:h-[65px] bg-white rounded-[20px] flex items-center mt-[10px] dark:bg-[#29435c]'>
-            <Formik initialValues={{SearchCourse:'', New:'',BestSelling:'',Expensive:'',Cheap:'' , sort:null }}>
-                <Form  className='w-[100%] h-[115px] md:max-lg:h-[100%] max-md:h-[100%] bg-white rounded-[20px] flex items-center md:max-lg:gap-0 gap-4 gap-0 dark:bg-[#29435c]'>
-            
-                    <Field className='p-4 md:max-lg:p-2 w-[25%] md:max-lg:w-[27%] max-md:w-[50%] max-md:mx max-sm:w-[70%] mr-[1%] max-sm:mr-[3%] bg-[url(public/search.svg)] [background-position-y:center] max-sm:[background-position-x:3%] bg-no-repeat text-base max-sm:p-[9px] md:max-lg:text-[11px] font-bold [background-size:35px] md:max-lg:[background-size:25px] max-sm:[background-size:25px] max-sm:text-[13px] [center] shadow-inner shadow-slate-400 rounded-xl dark:bg-[#556e53] dark:placeholder-[#d1d4c9]' type='text' placeholder='جستجوی دوره' name='SearchCourse'  />
-                    <TopCategory />
-
-                    {/* <Sorting /> */}
-                    <FilterInTop />
-
-                </Form>
-            </Formik>
-        </div>
-        <div className='flex sm:max-md:flex-wrap md:max-lg:flex-nowrap sm:max-md:max-md:max-lg:justify-center'>
-            <Filters />
-
-            <div className='w-[72%] mt-6 pt-5 h-fit flex flex-row flex-wrap justify-start gap-x-4 gap-y-12 max-md:justify-between md:max-lg:gap-y-10 max-md:w-full max-sm:justify-center sm:max-md:gap-y-11'>
-                {Course.map((item, index)=>{
-                    return(
-                        <CourseCard 
-                        key={index}
-                        image={item.image}
-                        topic={item.topic} 
-                        explain={item.explain} 
-                        teacher={item.teacher} 
-                        time={item.time} 
-                        price={item.price} />  
-                    );   
-                })}             
+            <div className='w-[100%] flex justify-between'>
+                <h1 className='dark:text-[#d1d4c9]'>دوره ها</h1>
+                <h1 className='dark:text-[#d1d4c9]'> {CourseCount} دوره آموزشی</h1>
             </div>
+            <div className='w-[100%] h-[90px] max-lg:h-[70px] max-sm:h-[65px] bg-white rounded-[20px] flex items-center mt-[10px] md:max-lg:gap-0 gap-4 dark:bg-[#29435c]'>    
+                <SearchBox setSearch={setSearch} />
+                <TopSorting setSort={setSort}/>
+                <FilterInTop  handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} handlelevelCourseFilter={handlelevelCourseFilter} setCostUp={setCostUp} setCostDown={setCostDown} costUp={costUp} costDown={costDown}/>
+            </div>
+            <div className='flex w-[100%] sm:max-md:flex-wrap md:max-lg:flex-nowrap justify-between'>
+                <Filters handleCategoryFilter={handleCategoryFilter} handleTypeCourseFilter={handleTypeCourseFilter} handlelevelCourseFilter={handlelevelCourseFilter}  setCostUp={setCostUp} setCostDown={setCostDown} costUp={costUp} costDown={costDown}/>
+                <div className='w-[75%] mt-6 pt-5 h-fit flex flex-wrap justify-start gap-x-5 sm:max-md:gap-x-3 gap-y-12 max-md:justify-between md:max-lg:gap-y-10 max-md:w-full max-sm:justify-center sm:max-md:gap-y-11'>
+                    {Course.map((item, index)=>{
+                        return(
+                            <CourseCard 
+                            key={index}
+                            image={item?.tumbImageAddress??pic}
+                            topic={item?.title} 
+                            explain={item?.describe} 
+                            teacher={item?.teacherName} 
+                            time={item?.lastUpdate?.toString()?.slice(11,19)} 
+                            price={item?.cost?.toString()?.slice(-9,-1)}
+                            courseRate={item?.courseRate}
+                            likeCount={item?.likeCount}
+                            dissLikeCount={item?.dissLikeCount}
+                            userIsLiked={item?.userIsLiked}
+                            levelName={item?.levelName}
+                            currentUserDissLike={item?.currentUserDissLike}
+                            userFavorite={item?.userFavorite}
+                            id={item?.courseId} 
+                            userLikedId={item?.userLikedId}
+                            userFavoriteId={item?.userFavoriteId}
+                            setReFetch={setReFetch}
+                            />  
+                        );   
+                    })}            
+                </div>
+            </div>  
         </div>
-
-      
-    </div>
-    <div className='w-[100%] text-center h-14 my-auto mt-3'>
-        <div className="join y-5 md:max-lg:my-1">
-            <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">1</button>
-            <button className="join-item btn btn-active dark:bg-[#29435c] dark:text-[#d1d4c9]">2</button>
-            <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">3</button>
-            <button className="join-item btn dark:bg-[#29435c] dark:text-[#d1d4c9]">4</button>
+        <div className='w-[100%] text-center h-14 my-auto mt-3'>
+            
+            <Pagination align="center" onChange={(e)=>setCurrentPage(e)} current={currentPage} pageSize={9} total={totalCount} />
         </div>
-    </div>
+        
     
 </div>
 )
 }
 
 export default Courses
-
-
-
-
-
-{/* <input type="text" placeholder='تو فقط اسم ببر ...' className='border-2 divide-purple-800 outline-0 w-[57%] p-3 rounded-[18px] bg-[url(public/search.svg)] bg-no-repeat bg-left [background-size:35px]'/> */}

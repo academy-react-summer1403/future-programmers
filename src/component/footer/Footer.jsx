@@ -1,79 +1,52 @@
-import React from 'react';
+import linkedin from '../../../public/linkedin.png';
+import youtube from '../../../public/youtube.png';
+import instagram from '../../../public/instagram.png';
+import telegram from '../../../public/telegram.png';
+import samandehi from '../../../public/samandehi.png';
+import Logo from '../../../public/Logo.png';
 
-// Related Links Component
-const RelatedLinks = () => {
+
+function Footer() {
   return (
-    <div className="flex-1 text-center space-y-2">
-      <h4 className="font-bold text-lg">لینک های مرتبط</h4>
-      <ul className="space-y-1">
-        <li>لینک های مرتبط</li>
-        <li>لینک های مرتبط</li>
-        <li>لینک های مرتبط</li>
-        <li>لینک های مرتبط</li>
-        <li>لینک های مرتبط</li>   
-      </ul>
-    </div>
-  );
-};
-
-// Contact Section Component
-const ContactSection = () => {
-  return (
-    <div className="bg-white dark:bg-gray-400 p-6 rounded-lg shadow-lg w-1/3">
-      <h4 className="font-bold text-xl mb-4">به ما بپیوندید</h4>
-      <p className="text-gray-600 mb-4">
-        در دوره آموزش پیشرفته درس، قصد داریم نیروهای جوان و مدرس پرکار آماده کنیم که
-        بتوانند در سایت درسی به ما بپیوندند.
-      </p>
-      <button className="bg-blue-600 text-white px-4 py-2 rounded-md">
-        ارسال رزومه
-      </button>
-    </div>
-  );
-};
-
-// Bottom Section Component
-const BottomSection = () => {
-  return (
-    <div className="flex justify-between items-center mt-8 border-t pt-4 text-gray-600">
-      {/* Left Side Text */}
-      <p>Designed by Sleepy Guis Group</p>
-
-      {/* Right Side Social Icons */}
-      <div className="flex space-x-4 text-2xl">
-        <a href="#" className="hover:text-blue-500">
-          <i className="fab fa-telegram"></i> {/* Telegram Icon */}
-        </a>
-        <a href="#" className="hover:text-pink-500">
-          <i className="fab fa-instagram"></i> {/* Instagram Icon */}
-        </a>
-      </div>
-    </div>
-  );
-};
-
-// Footer Component (Main)
-const Footer = () => {
-  return (
-    <footer className="bg-gray-100 dark:bg-gray-500 py-10 px-6 rtl">
-      <div className="container mx-auto flex flex-col lg:flex-row justify-between items-start space-x-8">
-        {/* Right Side - Related Links (3 columns) */}
-        <div className="flex-1 flex flex-col lg:flex-row justify-center space-x-8">
-          <RelatedLinks />
-          <RelatedLinks />
-          <RelatedLinks />
+    <div className=' border-solid font-[sans] bg-[#f3f4f6] dark:bg-[#152a38] dark:text-[#d1d4c9]'>
+      <div className='flex relative top-[15px] max-sm:flex-col-reverse'>
+        <div className='w-2/5 border[1px_solid_red] text-[11px] max-sm:w-[100%] max-md:w-[35%] '>
+          <p className='mr-[17%] mt-[12%] w-[74%] max-sm:mt-[10%] max-md:mt-[20%] max-md:mx-auto max-md:w-[84%]'>مجموعه آموزشی فلان فعالیت خود را از سال 1390 آغاز کرده است و امروز به بزرگترین کلونی برنامه نویسی شمال کشور تبدیل شده است.</p>
+          <p className='mr-[17%] mt-[4%] w-[74%] font-bold text-[13px] max-md:mx-auto max-sm:text-[15px] max-md:w-[84%] max-md:text-[13px] max-md:mt-[5%]'> ساری، جاده خزر، میدان فرح آباد، جنب مجتمع دنیای آرزو  43332000-011</p>
         </div>
-        
-        {/* Left Side - Contact Section */}
-        <ContactSection />
 
-        
+        <div className='w-1/5  max-sm:w-[100%] max-md:w-[30%]'>
+          <div className='h-1/3 sm:max-md:h-[40%]'><img src={Logo} className='rounded-[30%] h-[100%] w-[46%] max-sm:w-[30%] max-md:w-[42%] max-md:h-[95%] m-[auto]'></img></div>
+          <div className='bg-slate-400 dark:bg-[#29435c] text-center rounded-[23px] mt-[35px] max-md:mt-[25px] max-md:w-[75%] max-md:mr-[12%] max-sm:mt-[15px] w-[70%] mr-[15%] max-sm:w-[50%] max-sm:mr-[25%]'><a href='' className='relative bottom-[2px] text-[16px] max-md:text-[15px] max-lg:text-[12px] max-sm:m-x:auto'>info@pazhooheshgah.ir</a></div>
+          <div className='flex justify-center gap-3 mt-[15%] max-sm:mt-[5%] max-md:mt-[7%]'>
+            <div className='bg-slate-400 dark:bg-[#29435c] w-[40px] h-[40px] sm:max-md:w-[32px] sm:max-md:h-[32px] rounded-[50%]'><a href='#'><img src={linkedin} className='w-[79%] mr-[10%] mt-[10%] sm:max-md:w-[25px]'></img></a></div>
+            <div className='bg-slate-400 dark:bg-[#29435c] w-[40px] h-[40px] sm:max-md:w-[32px] sm:max-md:h-[32px] rounded-[50%]'><a href='#'><img src={youtube} className='w-[79%] mr-[10%] mt-[10%] sm:max-md:w-[25px]'></img></a></div>
+            <div className='bg-slate-400 dark:bg-[#29435c] w-[40px] h-[40px] sm:max-md:w-[32px] sm:max-md:h-[32px] rounded-[50%]'><a href='#'><img src={instagram} className='w-[79%] mr-[10%] mt-[10%] sm:max-md:w-[25px]'></img></a></div>
+            <div className='bg-slate-400 dark:bg-[#29435c] w-[40px] h-[40px] sm:max-md:w-[32px] sm:max-md:h-[32px] rounded-[50%]'><a href='#'><img src={telegram} className='w-[79%] mr-[10%] mt-[10%] sm:max-md:w-[25px] sm:max-md:mx-auto'></img></a></div>
+          </div>
+        </div>
+
+        <div className='w-2/5 flex items-center text-[13px] max-lg:text-[10px] max-sm:hidden max-md:w-[35%]'>
+          <ul className='mr-14 list-disc mt-4 leading-6 sm:max-md:leading-5 sm:max-lg:mr-[50px]'>
+            <li><a href='#'>دوره ها</a></li>
+            <li><a href='#'>اخبار و مقالات</a></li>
+            <li><a href='#'>پادکست ها</a></li>
+            <li><a href='#'>تماس ها</a></li>
+          </ul>
+          <ul className='mr-12 list-disc mt-4 leading-6 sm:max-md:leading-5 sm:max-lg:mr-[20px]'>
+            <li><a href='#'>اساتید برتر</a></li>
+            <li><a href='#'>دسته بندی ها</a></li>
+            <li><a href='#'>خدمات ما</a></li>
+            <li><a href='#'>ورود به حساب</a></li>
+          </ul>
+          <img src={samandehi} className='w-44 max-lg:w-32 mr-5 sm:max-md:w-[23%] sm:max-md:mr-0 max-lg:mr-[4]'></img>
+        </div>
       </div>
+      <div className='bg-slate-400 dark:bg-[#29435c] h-[31px] relative bottom-[-31px] max-md:bottom-[-30px] border border-transparent'>
+        <h3 className=' text-center max-md:text-[13px] mt-[4px]'>کلیه حقوق این وبسایت متعلق به آموزشگاه فلان می باشد.</h3>
+      </div>
+    </div>
+  )
+}
 
-      {/* Bottom Section */}
-      <BottomSection />
-    </footer>
-  );
-};
-
-export { Footer}
+export {Footer}

@@ -1,59 +1,69 @@
-import FormPhone from "./FormPhone"
+import { setData } from "../../core/services/storage/localStorage.storage";
+import FormPhone from "./FormPhone";
+import { NavLink, useNavigate } from "react-router-dom";
+
 
 const StepOne = () => {
+
+
   return (
-    <div className='dark:bg-gray-600  h-screen flex justify-center bg-white'>
-      <div className='flex justify-around border-black-500 h-[580px] dark:bg-gray-600 dark:text-white shadow-lg  w-5/6 m-auto '>
-        <div className=' border border-[#ccc] h-[580px] w-[1349px] rounded-lg pt[20px] flex gap-52'>
-          <div className='h-[500px] w-[351px] rounded-lg mr-[140px] '>
-
-<div className='  h-[10%] mt-8 w-[90%] mr-1 flex'>
-  <div className=' h-[50px] w-[65px]' >
-    <img className="" src="./Logo.png" alt="" />
-  </div>
-  <h3 className='mr-4 font-bold text-xl ' > آکادمی سپهر </h3>
-</div>
-
-<div className="mt-2 text-lg">
-<h3 className='mt-7 font-bold text-lg text-[#555555] '> ثبت نام با موبایل</h3>
-</div>
-
-{/* <div className='flex '>
-<h2 className='font-light'> حساب کاربری ندارید ؟ </h2>
-
-<a href="#" className=' text-sm text-[#436E8E] mr-2'> ثبت نام کنید</a>
-
-</div> */}
+    <div className=" dark:bg-[#152a38] flex dark:text-[#ffff] h-screen justify-between bg-[#F3F4F6] ">
+      <div className=" bg-white flex dark:bg-[#678cb1] rounded-lg h-[580px] w-[80%] shadow-lg m-auto ">
+        {/* <div className=" bg-pink-500 h-[580px] w-[80%] dark:bg-[#678cb1] dark:text-[#d1d4c9] pt[20px] ml-[30%] rounded-lg flex justify-between"> */}
+          <div className="dark:text-[#fff] h-[90%] w-96 rounded-xl ml-48  ">
 
 
-
-<div className='   h-[160px] '>
-
-<FormPhone />
-</div>
-
+            <div className="h-[10%] mt-8 w-[90%]  flex">
+              <div className="h-[50px] w-[65px]">
+                <img className="mr-7 " src="./Logo.png" alt="" />
+              </div>
 
 
+              <h3 className="mr-12 font-bold text-xl dark:text-[#ffff] max-md:text-sm">
+                {" "}
+                آکادمی سپهر{" "}
+              </h3>
+            </div>
 
-<div className="flex whitespace-nowrap">
-<h2 className="text-[#8D8D8D] text-xs mr-2"> ثبت نام با ایمیل </h2>
+            {/* <div className=" bg-cyan-400 mt-2 text-lg"> */}
+              <h3 className="mt-7 font-bold mr-9 text-lg text-[#555555] dark:text-[#ffff] max-md:text-sm">
+                {" "}
+                ثبت نام با موبایل
+              </h3>
+            {/* </div> */}
 
-<a href="#" 
- className=" text-#8D8D8D-500 hover:text-#8D8D8D-800 underline text-xs mr-52 text-[#8D8D8D] "
- target="-blank"
- rel="noopener noreferrer "> حریم خصوصی </a>
-</div>
-<h2 className=" text-xs mt-8  text-[#8D8D8D] mr-2
-">با عضویت در سایت، تمامی قوانین و شرایط استفاده از خدمات
-آکادمی سپهر را پذیرفته اید</h2>
+            <div className=" h-[160px] ">
+              <FormPhone />
+            </div>
+
+            <NavLink to={"/SingIn"}>
+              {/* <div className=" flex whitespace-nowrap"> */}
+                <h2 className="text-[#8D8D8D] text-xs mr-9 whitespace-nowrap dark:text-[#ffff] max-md:text-[10px]">
+                  {" "}
+                  ورود با شماره موبایل یا ایمیل{" "}
+                </h2>
+              {/* </div> */}
+            </NavLink>
+
+            <h2
+              className=" text-xs mt-8  text-[#8D8D8D] mr-9 dark:text-[#ffff] max-md:text-[10px]"
+            >
+              با عضویت در سایت، تمامی قوانین و شرایط استفاده از خدمات آکادمی
+              سپهر را پذیرفته اید
+            </h2>
           </div>
-          <div className='  hidden md:block h-[100%] w-[50%]'>
-            <img className="w-[100%] h-[100%]" src="./Image.png" alt="" />
+
+          <div className="hidden md:block h-[100%] w-[500px] max-md:w-[250px]">
+            <img
+              className="w-[100%] h-[100%] rounded-lg dark:bg-[#001F3F] mr-12"
+              src="./Image.png"
+              alt=""
+            />
           </div>
-        </div>
+        {/* </div> */}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default StepOne
+export default StepOne;

@@ -1,22 +1,66 @@
-import React from 'react'
-import telegram from '../../../../public/Image 1.png'
+import { useEffect, useState } from 'react'
+import NewsCard from './newsCard.jsx'
+import pic from '../../../../public/cImage.png'
+import { Link } from 'react-router-dom';
+import { getCardNews } from '../../../core/services/api/news.js';
+
+
+
 const LastNews = () => {
+    const [NewsList, setNewsList] = useState([]);
+    const [reFetch, setReFetch] = useState(1)
+    console.log(NewsList)
+
+
+    const getAllCardNews = async (currentPage) => {
+        try {
+            const result = await getCardNews(4, currentPage);
+    
+            setNewsList(result.news);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+
+    useEffect(() => {
+        getAllCardNews()
+    }, [reFetch]);
+
+
     return (
-        <section className="mt-10 flex justify-center">
-            <div className="container flex flex-col justify-center items-center">
-                <div className='flex pt-20 justify-center'>
-                    <h2 className="font-bold text-center text-blue-400 text-4xl">آخرین اخبار</h2>
-                    <img src={telegram} className='mr-20 w-20 h-20'></img>
+        <section className="flex justify-center overflow-x-hidden pt-5 pb-[20px] max-sm:pb-[10px] ">
+            <div className="w-[90%] mx-auto px-4">
+                <div className='flex justify-between'>
+                    <h2 className="text-2xl font-bold text-[#436e8e] max-sm:text-[14px] max-lg:text-[18px] max-sm:pr-[11px] pr-[2%] dark:text-[#d1d4c9]">آخرین اخبار</h2>
+                    <Link to={'/news/'} className='max-sm:text-[14px] my-auto'> مشاهده همه اخبار</Link>
                 </div>
-                <div className="dark:bg-gray-700 p-6 rounded-lg shadow-md w-[20rem] lg:w-[40rem] flex flex-col justify-center">
-                    <h3 className="font-bold mb-2 text-2xl  text-blue-400">سر تیتر خبر</h3>
-                    <p className="text-gray-600">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit maxime obcaecati vitae voluptate voluptatem, consectetur deleniti minima, alias ipsam incidunt similique veniam quos rerum inventore veritatis cumque officia dignissimos aspernatur!
-                    </p>
-                </div>
-                <div className='float-left pl-8'>مشاهده همه اخبار</div>
+                <div className="flex flex-wrap justify-between gap-y-10 mt-10 max-sm:mt-8">
+                    {NewsList?.map((item, index) => (
+                            <NewsCard 
+                            key={index}
+                            image={item.currentImageAddressTumb??pic}
+                            newsTitle={item.title}
+                            miniDescribe={item.miniDescribe}
+                            addUserFullName={item.addUserFullName}
+                            currentDissLikeCount={item?.currentDissLikeCount}
+                            currentUserIsLike={item?.currentUserIsLike}
+                            currentUserIsDissLike={item?.currentUserIsDissLike}
+                            newsCatregoryName={item?.newsCatregoryName}
+                            currentView={item?.currentView}
+                            isCurrentUserFavorite={item?.isCurrentUserFavorite}
+                            currentUserFavoriteId={item?.currentUserFavoriteId}
+                            currentLikeCount={item?.currentLikeCount}
+                            insertDate={item?.insertDate?.toString()?.slice(0,10)}
+                            id={item.id}  
+                            setReFetch={setReFetch}
+                            />
+                        )
+                    )}
+                </div>                
             </div>
         </section>
+        
     )
 }
 

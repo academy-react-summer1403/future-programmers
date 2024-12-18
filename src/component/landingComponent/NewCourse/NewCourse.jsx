@@ -1,50 +1,55 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import CourseCard from '../../common/CorseCard/CourseCard';
+import axios from 'axios';
+import pic from '../../../../public/cImage.png';
 
-const courses = [
-    {
-        image: './item1.png',
-        title: 'دوره خسرو',
-        description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.',
-        teacher: 'خسرو دلها محمدی',
-        link: '#',
-    },
-    {
-        image: './item1.png',
-        title: 'دوره دوم',
-        description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد',
-        teacher: 'عارف سالاریه',
-        link: '#',
-    },
-    {
-        image: './item1.png',
-        title: 'دوره سوم',
-        description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد',
-        teacher: 'بحر',
-        link: '#',
-    },
-    {
-        image: './item1.png',
-        title: 'دوره چهارم',
-        description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد',
-        teacher: 'مهدی قاسمی',
-        link: '#',
-    },
-];
+
 
 const NewCourse = () => {
-    return (
-        <section className=" mx-auto ">
-            <div className="container mx-auto px-4">
-                <div className='flex '>
-                    <h2 className="text-2xl font-bold mb-8 text-blue-700">جدیدترین دوره‌ها</h2>
-                    <h3 className='mr-auto mt5'>مشاهده همه </h3>
-                </div>
-                <div className="flex flex-wrap gap-6 justify-evenly mt-10 ">
 
-                    {courses.map((course, index) => (
-                        <CourseCard course={course} index={index}/>
+    const [List, setList] = useState(null);
+    const [reFetch, setReFetch] = useState(1)
+    console.log(List)
+    const getTopCourses =async () => {
+        const res = await axios.get('https://classapi.sepehracademy.ir/api/Home/GetCoursesTop?Count=4')
+        setList(res.data)
+    }
+    
+    useEffect(() => {
+        getTopCourses()    
+    }, [reFetch]);
+
+
+
+    return (
+        <section className="mx-auto overflow-x-hidden pb-[30px] dark:text-[#d1d4c9]">
+            <div className="w-[90%] mx-auto max-sm:pt-2 px-4">
+                <div className='flex justify-between'>
+                    <h2 className="text-2xl font-bold text-[#436e8e] max-sm:text-[14px] max-lg:text-[18px] max-sm:pr-[11px] pr-[2%] dark:text-[#d1d4c9]">برترین دوره‌ها</h2>
+                    <Link to={'/courses/'} className='max-sm:text-[14px] my-auto'>مشاهده همه </Link>
+                </div>
+                <div className="flex flex-wrap justify-between max-md:gap-y-11 max-sm:pt-[30px] max-lg:pt-[35px] pt-[45px] ">
+                    {List?.map((course, index) => (
+                        <CourseCard 
+                            key={index} 
+                            title={course?.title} 
+                            image={course?.tumbImageAddress===null ||course?.tumbImageAddress==="null" ? pic :course.tumbImageAddress} 
+                            describe={course?.describe}
+                            teacher={course?.teacherName}
+                            id={course?.courseId} 
+                            userIsLiked={course?.userIsLiked}
+                            userLikedId={course?.userLikedId}
+                            userIsDissLiked={course?.userIsDissLiked}
+                            dissLikeCount={course?.dissLikeCount} 
+                            likeCount={course?.likeCount}
+                            levelName={course?.levelName}
+                            courseRate={course?.courseRate}
+                            isUserFavorite={course?.isUserFavorite}
+                            cost={course?.cost?.toString()?.slice(0,8)}
+                            userFavoriteId={course?.userFavoriteId}
+                            setReFetch={setReFetch}
+                        />
                     ))}
                 </div>
             </div>

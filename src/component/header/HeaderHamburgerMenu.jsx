@@ -1,16 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { TfiAlignJustify } from "react-icons/tfi";
 
 const HeaderHamburgerMenu = () => {
-  // const [isMenuVisible, setIsMenuVisible] = useState(false);
-
-  // Toggle menu visibility
-
-  // const toggleMenu = () => {
-  //   setIsMenuVisible(!isMenuVisible);
-  // };
+  
   return (
-    <div className="drawer drawer-end ">
+    <div className="drawer drawer-end  ">
       <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         {/* Page content here */}
@@ -24,42 +19,49 @@ const HeaderHamburgerMenu = () => {
             viewBox="0 0 20 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className=" cursor-pointer"
+            className=" cursor-pointer max-md:w-[30px]"
           >
-            <path
-              d="M15 7.50004C15 7.50004 11.3176 12.5 10 12.5C8.68233 12.5 5 7.5 5 7.5"
-              stroke="#2F2F2F"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+            <TfiAlignJustify/>
+
+            
           </svg>
         </label>
       </div>
-      <div className="drawer-side">
+      <div className="drawer-side z-[999]">
         <label
           htmlFor="my-drawer-4"
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4 absolute right-0">
+        <ul className=" menu bg-base-200 text-base-content min-h-full w-80 p-4 absolute right-0 dark:bg-[#152a38] dark:text-[#436E8E]">
           {/* Sidebar content here */}
           <nav className="flex flex-col ml-auto gap-4 justify-center ">
-            <Link to="/" className="text-gray-700 hover:text-blue-500">
-              خانه
-            </Link>
+          
 
-            <Link to="/courses" className="text-gray-700 hover:text-blue-500">
+          <NavLink to={"/"}>
+            <div  className="text-gray-700 hover:text-blue-500">
+              صفحه نخست
+            </div>
+            </NavLink>
+
+<NavLink to={"/courses"}>
+            <div  className="text-gray-700 hover:text-blue-500">
               دوره ها
-            </Link>
+            </div>
+            </NavLink>
 
-            <Link href="#about" className="text-gray-700 hover:text-blue-500">
-              درباره ما
-            </Link>
 
+<NavLink to={'/News'}>
+<div  className="text-gray-700 hover:text-blue-500">
+        اخبار و مقالات 
+          </div>
+          
+</NavLink>
+            
+{/* 
             <Link href="#contact" className="text-gray-700 hover:text-blue-500">
               تماس با ما
-            </Link>
+            </Link> */}
           </nav>
         </ul>
       </div>

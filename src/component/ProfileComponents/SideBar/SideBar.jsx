@@ -1,63 +1,125 @@
 // src/components/SidePanel.jsx
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { FaHome, FaBook, FaRegCommentDots, FaSignOutAlt } from "react-icons/fa";
 import logoPic from "../../../../public/header icon.png"
+import http from "../../../core/services//interceptor";
+import ProfileModal from "../ProfileModal/ProfileModal";
 
 const SidePanel = () => {
+  const [Count, setCount] = useState(false);
+  const [MyInfo, setMyInfo] = useState(null);
+
+  const getProfile = async () => {
+    const res = await http.get(
+      "/SharePanel/GetProfileInfo"
+    );
+    setMyInfo(res);
+  };
+
+  useEffect(() => {
+    getProfile();
+  }, []);
+
+
+
   return (
     <div className=" h-screen bg-white dark:bg-gray-400 border border-gray-300 rounded-3xl p-6 flex flex-col justify- items-center ">
+      {Count === true && <ProfileModal setCount={setCount} MyInfo={MyInfo} />}
       {/* Logo Section */}
       <div className="flex items-center gap-3">
         <div className=" p-4 rounded-full">
-          <img src={logoPic} alt="Logo" className="w-10 h-10" />
+          <img
+            src={
+              MyInfo?.userImage.length > 0
+                ? MyInfo?.userImage[MyInfo?.userImage.length - 1].puctureAddress
+                : ""
+            }
+            onClick={() => setCount(true)}
+            className="w-20 h-20 rounded-full"
+          />
         </div>
         <span className="text-xl font-bold">آکادمی سپهر</span>
       </div>
 
       {/* Links Section */}
       <div className="flex flex-col gap-4 mt-12">
-        <Link
-          to="/profile"
-          className="flex items-center gap-3 text-lg font-medium text-gray-700"
+        <NavLink
+          to="/profile/pishkhan"
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl"
+              : "flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl"
+          }
         >
           پیشخوان
-        </Link>
+        </NavLink>
 
-        <Link
+        <NavLink
           to="/profile/ReserveCourse"
-          className="flex items-center gap-3 text-lg font-medium text-gray-700"
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl"
+              : "flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl"
+          }
         >
           دوره‌های رزرو شده
-        </Link>
+        </NavLink>
 
-        <Link
+        <NavLink
           to="/profile/AcceptCourse"
-          className="flex items-center gap-3 text-lg font-medium text-gray-700"
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl"
+              : "flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl"
+          }
         >
           دوره های من
-        </Link>
+        </NavLink>
 
-        <Link
+        <NavLink
           to="/profile/FavoriteNews"
-          className="flex items-center gap-3 text-lg font-medium text-gray-700"
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl"
+              : "flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl"
+          }
         >
           اخبار مورد علاقه
-        </Link>
+        </NavLink>
 
-        <Link
+        <NavLink
           to="/profile/FavoriteCourse"
-          className="flex items-center gap-3 text-lg font-medium text-gray-700"
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl"
+              : "flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl"
+          }
         >
           دوره های مورد علاقه
-        </Link>
+        </NavLink>
 
-        <Link
+        <NavLink
           to="/profile/EditProfile"
-          className="flex items-center gap-3 text-lg font-medium text-gray-700"
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl"
+              : "flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl"
+          }
         >
-            ویرایش پروفایل
-        </Link>
+          ویرایش پروفایل
+        </NavLink>
+
+        <NavLink
+          to="/profile/UploadImage"
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "flex items-center gap-3 text-lg font-medium text-white bg-cyan-700 py-2 px-4 rounded-2xl"
+              : "flex items-center gap-3 text-lg font-medium text-gray-700 py-2 px-4 rounded-2xl"
+          }
+        >
+          اپلود عکس
+        </NavLink>
       </div>
     </div>
   );
